@@ -14,6 +14,10 @@
 		D7D8558B1CF34BFF0028B92D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7D8558A1CF34BFF0028B92D /* Assets.xcassets */; };
 		D7D8558E1CF34BFF0028B92D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D8558C1CF34BFF0028B92D /* LaunchScreen.storyboard */; };
 		D7D855991CF34BFF0028B92D /* SimpleMetroUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D855981CF34BFF0028B92D /* SimpleMetroUITests.m */; };
+		D7D855A41CF34C1D0028B92D /* metroline.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7D855A31CF34C1D0028B92D /* metroline.plist */; };
+		D7D855A71CF3531A0028B92D /* StationInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D855A61CF3531A0028B92D /* StationInfoController.m */; };
+		D7D855AA1CF359290028B92D /* StationInfoDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D855A91CF359290028B92D /* StationInfoDataSource.m */; };
+		D7D855AD1CF3594A0028B92D /* MetroLineInfoDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D855AC1CF3594A0028B92D /* MetroLineInfoDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,14 @@
 		D7D855941CF34BFF0028B92D /* SimpleMetroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleMetroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7D855981CF34BFF0028B92D /* SimpleMetroUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleMetroUITests.m; sourceTree = "<group>"; };
 		D7D8559A1CF34BFF0028B92D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7D855A31CF34C1D0028B92D /* metroline.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = metroline.plist; sourceTree = "<group>"; };
+		D7D855A51CF3531A0028B92D /* StationInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationInfoController.h; sourceTree = "<group>"; };
+		D7D855A61CF3531A0028B92D /* StationInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationInfoController.m; sourceTree = "<group>"; };
+		D7D855A81CF359290028B92D /* StationInfoDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationInfoDataSource.h; sourceTree = "<group>"; };
+		D7D855A91CF359290028B92D /* StationInfoDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationInfoDataSource.m; sourceTree = "<group>"; };
+		D7D855AB1CF3594A0028B92D /* MetroLineInfoDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetroLineInfoDataSource.h; sourceTree = "<group>"; };
+		D7D855AC1CF3594A0028B92D /* MetroLineInfoDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetroLineInfoDataSource.m; sourceTree = "<group>"; };
+		D7D855AE1CF359670028B92D /* DataSourceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSourceProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +95,9 @@
 			children = (
 				D7D855811CF34BFF0028B92D /* AppDelegate.h */,
 				D7D855821CF34BFF0028B92D /* AppDelegate.m */,
-				D7D855841CF34BFF0028B92D /* ViewController.h */,
-				D7D855851CF34BFF0028B92D /* ViewController.m */,
+				D7D855B01CF3646B0028B92D /* Controller */,
+				D7D855AF1CF364600028B92D /* DataSource */,
+				D7D855A31CF34C1D0028B92D /* metroline.plist */,
 				D7D855871CF34BFF0028B92D /* Main.storyboard */,
 				D7D8558A1CF34BFF0028B92D /* Assets.xcassets */,
 				D7D8558C1CF34BFF0028B92D /* LaunchScreen.storyboard */,
@@ -109,6 +122,29 @@
 				D7D8559A1CF34BFF0028B92D /* Info.plist */,
 			);
 			path = SimpleMetroUITests;
+			sourceTree = "<group>";
+		};
+		D7D855AF1CF364600028B92D /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				D7D855AB1CF3594A0028B92D /* MetroLineInfoDataSource.h */,
+				D7D855AC1CF3594A0028B92D /* MetroLineInfoDataSource.m */,
+				D7D855A81CF359290028B92D /* StationInfoDataSource.h */,
+				D7D855A91CF359290028B92D /* StationInfoDataSource.m */,
+				D7D855AE1CF359670028B92D /* DataSourceProtocol.h */,
+			);
+			name = DataSource;
+			sourceTree = "<group>";
+		};
+		D7D855B01CF3646B0028B92D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D7D855841CF34BFF0028B92D /* ViewController.h */,
+				D7D855851CF34BFF0028B92D /* ViewController.m */,
+				D7D855A51CF3531A0028B92D /* StationInfoController.h */,
+				D7D855A61CF3531A0028B92D /* StationInfoController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7D855A41CF34C1D0028B92D /* metroline.plist in Resources */,
 				D7D8558E1CF34BFF0028B92D /* LaunchScreen.storyboard in Resources */,
 				D7D8558B1CF34BFF0028B92D /* Assets.xcassets in Resources */,
 				D7D855891CF34BFF0028B92D /* Main.storyboard in Resources */,
@@ -211,8 +248,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7D855A71CF3531A0028B92D /* StationInfoController.m in Sources */,
 				D7D855861CF34BFF0028B92D /* ViewController.m in Sources */,
+				D7D855AA1CF359290028B92D /* StationInfoDataSource.m in Sources */,
 				D7D855831CF34BFF0028B92D /* AppDelegate.m in Sources */,
+				D7D855AD1CF3594A0028B92D /* MetroLineInfoDataSource.m in Sources */,
 				D7D855801CF34BFF0028B92D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

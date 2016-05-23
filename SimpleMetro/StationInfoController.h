@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  StationInfoController.h
 //  SimpleMetro
 //
 //  Created by Youngrocky on 16/5/23.
@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UITableViewController
+@interface StationInfoController : UITableViewController
 
-
+@property (nonatomic ,strong) NSDictionary * stationInfo;
 @end
-
