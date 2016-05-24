@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LeftMenuSectionHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMN-Bd-Phh">
+                    <rect key="frame" x="15" y="569" width="43" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="5iv-Cq-tht"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VLk-wx-V69">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="2"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="0XV-9C-tHH"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="VLk-wx-V69" secondAttribute="trailing" id="E3l-1U-pHf"/>
+                <constraint firstItem="VLk-wx-V69" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="JY1-Uk-ang"/>
+                <constraint firstItem="wMN-Bd-Phh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="Jdo-zr-77i"/>
+                <constraint firstAttribute="bottom" secondItem="wMN-Bd-Phh" secondAttribute="bottom" constant="10" id="Ysj-Rs-ndb"/>
+                <constraint firstAttribute="bottom" secondItem="VLk-wx-V69" secondAttribute="bottom" id="hml-QD-txv"/>
+                <constraint firstItem="VLk-wx-V69" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qRa-YI-J8S"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wMN-Bd-Phh" secondAttribute="trailing" constant="30" id="t32-Tz-dcn"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="hml-QD-txv"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="headerBackgroundImageView" destination="VLk-wx-V69" id="Q2I-Tg-ca2"/>
+                <outlet property="headerTitleLabel" destination="wMN-Bd-Phh" id="Lap-Mf-SgN"/>
+            </connections>
+            <point key="canvasLocation" x="340" y="291"/>
+        </view>
+    </objects>
+</document>

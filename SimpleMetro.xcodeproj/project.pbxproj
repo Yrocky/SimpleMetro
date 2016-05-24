@@ -18,6 +18,46 @@
 		D7D855A71CF3531A0028B92D /* StationInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D855A61CF3531A0028B92D /* StationInfoController.m */; };
 		D7D855AA1CF359290028B92D /* StationInfoDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D855A91CF359290028B92D /* StationInfoDataSource.m */; };
 		D7D855AD1CF3594A0028B92D /* MetroLineInfoDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D855AC1CF3594A0028B92D /* MetroLineInfoDataSource.m */; };
+		D7D855DF1CF36FF80028B92D /* DropListView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D855D51CF36FF80028B92D /* DropListView.m */; };
+		D7D855E01CF36FF80028B92D /* HLLSpotlight.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D855D81CF36FF80028B92D /* HLLSpotlight.m */; };
+		D7D855E11CF36FF80028B92D /* HLLSpotlightView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D855DA1CF36FF80028B92D /* HLLSpotlightView.m */; };
+		D7D855E21CF36FF80028B92D /* HLLSpotlightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D855DC1CF36FF80028B92D /* HLLSpotlightViewController.m */; };
+		D7D855E31CF36FF80028B92D /* HLLTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D855DE1CF36FF80028B92D /* HLLTransition.m */; };
+		D7D855E61CF370D40028B92D /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D855E51CF370D40028B92D /* GuideViewController.m */; };
+		D7D855EF1CF3F0C50028B92D /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D855EA1CF3F0C50028B92D /* RECommonFunctions.m */; };
+		D7D855F01CF3F0C50028B92D /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D855EC1CF3F0C50028B92D /* RESideMenu.m */; };
+		D7D855F11CF3F0C50028B92D /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D855EE1CF3F0C50028B92D /* UIViewController+RESideMenu.m */; };
+		D7D855F41CF3F3690028B92D /* AboutMetroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D855F31CF3F3690028B92D /* AboutMetroViewController.m */; };
+		D7D855F71CF3F3870028B92D /* AboutMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D855F61CF3F3870028B92D /* AboutMeViewController.m */; };
+		D7D855FD1CF3F4B10028B92D /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D855FC1CF3F4B10028B92D /* LeftMenuViewController.m */; };
+		D7D856081CF3F6450028B92D /* UIColor+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D856011CF3F6450028B92D /* UIColor+Common.m */; };
+		D7D856091CF3F6450028B92D /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D856031CF3F6450028B92D /* UIImage+Tint.m */; };
+		D7D8560A1CF3F6450028B92D /* UITableView+Line.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D856051CF3F6450028B92D /* UITableView+Line.m */; };
+		D7D8560B1CF3F6450028B92D /* UIView+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D856071CF3F6450028B92D /* UIView+Common.m */; };
+		D7D8560F1CF3F6740028B92D /* StoryBoardUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D8560E1CF3F6740028B92D /* StoryBoardUtilities.m */; };
+		D7D856121CF4004E0028B92D /* LeftMenuDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D856111CF4004E0028B92D /* LeftMenuDataSource.m */; };
+		D7D8562D1CF4342C0028B92D /* FAKFontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D856191CF4342C0028B92D /* FAKFontAwesome.m */; };
+		D7D8562E1CF4342C0028B92D /* FAKFoundationIcons.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D8561B1CF4342C0028B92D /* FAKFoundationIcons.m */; };
+		D7D8562F1CF4342C0028B92D /* FAKIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D8561D1CF4342C0028B92D /* FAKIcon.m */; };
+		D7D856301CF4342C0028B92D /* FAKIonIcons.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D8561F1CF4342C0028B92D /* FAKIonIcons.m */; };
+		D7D856311CF4342C0028B92D /* FAKMaterialIcons.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D856211CF4342C0028B92D /* FAKMaterialIcons.m */; };
+		D7D856321CF4342C0028B92D /* FAKOcticons.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D856231CF4342C0028B92D /* FAKOcticons.m */; };
+		D7D856331CF4342C0028B92D /* FAKZocial.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D856251CF4342C0028B92D /* FAKZocial.m */; };
+		D7D856341CF4342C0028B92D /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = D7D856261CF4342C0028B92D /* FontAwesome.otf */; };
+		D7D856351CF4342C0028B92D /* foundation-icons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7D856281CF4342C0028B92D /* foundation-icons.ttf */; };
+		D7D856361CF4342C0028B92D /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7D856291CF4342C0028B92D /* ionicons.ttf */; };
+		D7D856371CF4342C0028B92D /* Material-Design-Iconic-Font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7D8562A1CF4342C0028B92D /* Material-Design-Iconic-Font.ttf */; };
+		D7D856381CF4342C0028B92D /* octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7D8562B1CF4342C0028B92D /* octicons.ttf */; };
+		D7D856391CF4342C0028B92D /* zocial-regular-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7D8562C1CF4342C0028B92D /* zocial-regular-webfont.ttf */; };
+		D7D8563C1CF43BDA0028B92D /* LeftMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D8563B1CF43BDA0028B92D /* LeftMenuCell.m */; };
+		D7D8563F1CF43DA20028B92D /* LeftMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7D8563E1CF43DA20028B92D /* LeftMenuCell.xib */; };
+		D7D856441CF44C990028B92D /* LeftMenuSelectedBackgroundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7D856431CF44C990028B92D /* LeftMenuSelectedBackgroundView.xib */; };
+		D7D856471CF455080028B92D /* UIImage+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D856461CF455080028B92D /* UIImage+Common.m */; };
+		D7D8564A1CF45ACC0028B92D /* LeftMenuSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D856491CF45ACC0028B92D /* LeftMenuSectionHeaderView.m */; };
+		D7D8564C1CF45B1E0028B92D /* LeftMenuSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7D8564B1CF45B1E0028B92D /* LeftMenuSectionHeaderView.xib */; };
+		D7D856501CF4A9B90028B92D /* LineStationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D8564E1CF4A9B90028B92D /* LineStationCell.m */; };
+		D7D856511CF4A9B90028B92D /* LineStationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7D8564F1CF4A9B90028B92D /* LineStationCell.xib */; };
+		D7D856541CF4C4F70028B92D /* OpenSourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D856531CF4C4F70028B92D /* OpenSourceViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +92,77 @@
 		D7D855AB1CF3594A0028B92D /* MetroLineInfoDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetroLineInfoDataSource.h; sourceTree = "<group>"; };
 		D7D855AC1CF3594A0028B92D /* MetroLineInfoDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetroLineInfoDataSource.m; sourceTree = "<group>"; };
 		D7D855AE1CF359670028B92D /* DataSourceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSourceProtocol.h; sourceTree = "<group>"; };
+		D7D855D41CF36FF80028B92D /* DropListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropListView.h; sourceTree = "<group>"; };
+		D7D855D51CF36FF80028B92D /* DropListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropListView.m; sourceTree = "<group>"; };
+		D7D855D71CF36FF80028B92D /* HLLSpotlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLSpotlight.h; sourceTree = "<group>"; };
+		D7D855D81CF36FF80028B92D /* HLLSpotlight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLSpotlight.m; sourceTree = "<group>"; };
+		D7D855D91CF36FF80028B92D /* HLLSpotlightView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLSpotlightView.h; sourceTree = "<group>"; };
+		D7D855DA1CF36FF80028B92D /* HLLSpotlightView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLSpotlightView.m; sourceTree = "<group>"; };
+		D7D855DB1CF36FF80028B92D /* HLLSpotlightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLSpotlightViewController.h; sourceTree = "<group>"; };
+		D7D855DC1CF36FF80028B92D /* HLLSpotlightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLSpotlightViewController.m; sourceTree = "<group>"; };
+		D7D855DD1CF36FF80028B92D /* HLLTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLTransition.h; sourceTree = "<group>"; };
+		D7D855DE1CF36FF80028B92D /* HLLTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLTransition.m; sourceTree = "<group>"; };
+		D7D855E41CF370D40028B92D /* GuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideViewController.h; sourceTree = "<group>"; };
+		D7D855E51CF370D40028B92D /* GuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideViewController.m; sourceTree = "<group>"; };
+		D7D855E91CF3F0C50028B92D /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
+		D7D855EA1CF3F0C50028B92D /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
+		D7D855EB1CF3F0C50028B92D /* RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESideMenu.h; sourceTree = "<group>"; };
+		D7D855EC1CF3F0C50028B92D /* RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESideMenu.m; sourceTree = "<group>"; };
+		D7D855ED1CF3F0C50028B92D /* UIViewController+RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RESideMenu.h"; sourceTree = "<group>"; };
+		D7D855EE1CF3F0C50028B92D /* UIViewController+RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RESideMenu.m"; sourceTree = "<group>"; };
+		D7D855F21CF3F3690028B92D /* AboutMetroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutMetroViewController.h; sourceTree = "<group>"; };
+		D7D855F31CF3F3690028B92D /* AboutMetroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutMetroViewController.m; sourceTree = "<group>"; };
+		D7D855F51CF3F3870028B92D /* AboutMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutMeViewController.h; sourceTree = "<group>"; };
+		D7D855F61CF3F3870028B92D /* AboutMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutMeViewController.m; sourceTree = "<group>"; };
+		D7D855FB1CF3F4B10028B92D /* LeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuViewController.h; sourceTree = "<group>"; };
+		D7D855FC1CF3F4B10028B92D /* LeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuViewController.m; sourceTree = "<group>"; };
+		D7D856001CF3F6450028B92D /* UIColor+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Common.h"; sourceTree = "<group>"; };
+		D7D856011CF3F6450028B92D /* UIColor+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Common.m"; sourceTree = "<group>"; };
+		D7D856021CF3F6450028B92D /* UIImage+Tint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tint.h"; sourceTree = "<group>"; };
+		D7D856031CF3F6450028B92D /* UIImage+Tint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tint.m"; sourceTree = "<group>"; };
+		D7D856041CF3F6450028B92D /* UITableView+Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Line.h"; sourceTree = "<group>"; };
+		D7D856051CF3F6450028B92D /* UITableView+Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Line.m"; sourceTree = "<group>"; };
+		D7D856061CF3F6450028B92D /* UIView+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Common.h"; sourceTree = "<group>"; };
+		D7D856071CF3F6450028B92D /* UIView+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Common.m"; sourceTree = "<group>"; };
+		D7D8560D1CF3F6740028B92D /* StoryBoardUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryBoardUtilities.h; sourceTree = "<group>"; };
+		D7D8560E1CF3F6740028B92D /* StoryBoardUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryBoardUtilities.m; sourceTree = "<group>"; };
+		D7D856101CF4004E0028B92D /* LeftMenuDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuDataSource.h; sourceTree = "<group>"; };
+		D7D856111CF4004E0028B92D /* LeftMenuDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuDataSource.m; sourceTree = "<group>"; };
+		D7D856181CF4342C0028B92D /* FAKFontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAKFontAwesome.h; sourceTree = "<group>"; };
+		D7D856191CF4342C0028B92D /* FAKFontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAKFontAwesome.m; sourceTree = "<group>"; };
+		D7D8561A1CF4342C0028B92D /* FAKFoundationIcons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAKFoundationIcons.h; sourceTree = "<group>"; };
+		D7D8561B1CF4342C0028B92D /* FAKFoundationIcons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAKFoundationIcons.m; sourceTree = "<group>"; };
+		D7D8561C1CF4342C0028B92D /* FAKIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAKIcon.h; sourceTree = "<group>"; };
+		D7D8561D1CF4342C0028B92D /* FAKIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAKIcon.m; sourceTree = "<group>"; };
+		D7D8561E1CF4342C0028B92D /* FAKIonIcons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAKIonIcons.h; sourceTree = "<group>"; };
+		D7D8561F1CF4342C0028B92D /* FAKIonIcons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAKIonIcons.m; sourceTree = "<group>"; };
+		D7D856201CF4342C0028B92D /* FAKMaterialIcons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAKMaterialIcons.h; sourceTree = "<group>"; };
+		D7D856211CF4342C0028B92D /* FAKMaterialIcons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAKMaterialIcons.m; sourceTree = "<group>"; };
+		D7D856221CF4342C0028B92D /* FAKOcticons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAKOcticons.h; sourceTree = "<group>"; };
+		D7D856231CF4342C0028B92D /* FAKOcticons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAKOcticons.m; sourceTree = "<group>"; };
+		D7D856241CF4342C0028B92D /* FAKZocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAKZocial.h; sourceTree = "<group>"; };
+		D7D856251CF4342C0028B92D /* FAKZocial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAKZocial.m; sourceTree = "<group>"; };
+		D7D856261CF4342C0028B92D /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
+		D7D856271CF4342C0028B92D /* FontAwesomeKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontAwesomeKit.h; sourceTree = "<group>"; };
+		D7D856281CF4342C0028B92D /* foundation-icons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "foundation-icons.ttf"; sourceTree = "<group>"; };
+		D7D856291CF4342C0028B92D /* ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ionicons.ttf; sourceTree = "<group>"; };
+		D7D8562A1CF4342C0028B92D /* Material-Design-Iconic-Font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Material-Design-Iconic-Font.ttf"; sourceTree = "<group>"; };
+		D7D8562B1CF4342C0028B92D /* octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = octicons.ttf; sourceTree = "<group>"; };
+		D7D8562C1CF4342C0028B92D /* zocial-regular-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "zocial-regular-webfont.ttf"; sourceTree = "<group>"; };
+		D7D8563A1CF43BDA0028B92D /* LeftMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuCell.h; sourceTree = "<group>"; };
+		D7D8563B1CF43BDA0028B92D /* LeftMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuCell.m; sourceTree = "<group>"; };
+		D7D8563E1CF43DA20028B92D /* LeftMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftMenuCell.xib; sourceTree = "<group>"; };
+		D7D856431CF44C990028B92D /* LeftMenuSelectedBackgroundView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftMenuSelectedBackgroundView.xib; sourceTree = "<group>"; };
+		D7D856451CF455080028B92D /* UIImage+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Common.h"; sourceTree = "<group>"; };
+		D7D856461CF455080028B92D /* UIImage+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Common.m"; sourceTree = "<group>"; };
+		D7D856481CF45ACC0028B92D /* LeftMenuSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuSectionHeaderView.h; sourceTree = "<group>"; };
+		D7D856491CF45ACC0028B92D /* LeftMenuSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuSectionHeaderView.m; sourceTree = "<group>"; };
+		D7D8564B1CF45B1E0028B92D /* LeftMenuSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftMenuSectionHeaderView.xib; sourceTree = "<group>"; };
+		D7D8564D1CF4A9B90028B92D /* LineStationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineStationCell.h; sourceTree = "<group>"; };
+		D7D8564E1CF4A9B90028B92D /* LineStationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineStationCell.m; sourceTree = "<group>"; };
+		D7D8564F1CF4A9B90028B92D /* LineStationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LineStationCell.xib; sourceTree = "<group>"; };
+		D7D856521CF4C4F70028B92D /* OpenSourceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenSourceViewController.h; sourceTree = "<group>"; };
+		D7D856531CF4C4F70028B92D /* OpenSourceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenSourceViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +207,11 @@
 				D7D855811CF34BFF0028B92D /* AppDelegate.h */,
 				D7D855821CF34BFF0028B92D /* AppDelegate.m */,
 				D7D855B01CF3646B0028B92D /* Controller */,
+				D7D8563D1CF43BE20028B92D /* View */,
 				D7D855AF1CF364600028B92D /* DataSource */,
+				D7D855D21CF36FF80028B92D /* CustomUI */,
+				D7D855FE1CF3F6450028B92D /* Utilities */,
+				D7D855E71CF3F0C50028B92D /* Thrid */,
 				D7D855A31CF34C1D0028B92D /* metroline.plist */,
 				D7D855871CF34BFF0028B92D /* Main.storyboard */,
 				D7D8558A1CF34BFF0028B92D /* Assets.xcassets */,
@@ -127,11 +242,13 @@
 		D7D855AF1CF364600028B92D /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				D7D855AE1CF359670028B92D /* DataSourceProtocol.h */,
 				D7D855AB1CF3594A0028B92D /* MetroLineInfoDataSource.h */,
 				D7D855AC1CF3594A0028B92D /* MetroLineInfoDataSource.m */,
 				D7D855A81CF359290028B92D /* StationInfoDataSource.h */,
 				D7D855A91CF359290028B92D /* StationInfoDataSource.m */,
-				D7D855AE1CF359670028B92D /* DataSourceProtocol.h */,
+				D7D856101CF4004E0028B92D /* LeftMenuDataSource.h */,
+				D7D856111CF4004E0028B92D /* LeftMenuDataSource.m */,
 			);
 			name = DataSource;
 			sourceTree = "<group>";
@@ -141,10 +258,155 @@
 			children = (
 				D7D855841CF34BFF0028B92D /* ViewController.h */,
 				D7D855851CF34BFF0028B92D /* ViewController.m */,
+				D7D855FB1CF3F4B10028B92D /* LeftMenuViewController.h */,
+				D7D855FC1CF3F4B10028B92D /* LeftMenuViewController.m */,
 				D7D855A51CF3531A0028B92D /* StationInfoController.h */,
 				D7D855A61CF3531A0028B92D /* StationInfoController.m */,
+				D7D855E41CF370D40028B92D /* GuideViewController.h */,
+				D7D855E51CF370D40028B92D /* GuideViewController.m */,
+				D7D855F21CF3F3690028B92D /* AboutMetroViewController.h */,
+				D7D855F31CF3F3690028B92D /* AboutMetroViewController.m */,
+				D7D856521CF4C4F70028B92D /* OpenSourceViewController.h */,
+				D7D856531CF4C4F70028B92D /* OpenSourceViewController.m */,
+				D7D855F51CF3F3870028B92D /* AboutMeViewController.h */,
+				D7D855F61CF3F3870028B92D /* AboutMeViewController.m */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		D7D855D21CF36FF80028B92D /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				D7D855D31CF36FF80028B92D /* DropListView */,
+				D7D855D61CF36FF80028B92D /* Spotligh */,
+			);
+			path = CustomUI;
+			sourceTree = "<group>";
+		};
+		D7D855D31CF36FF80028B92D /* DropListView */ = {
+			isa = PBXGroup;
+			children = (
+				D7D855D41CF36FF80028B92D /* DropListView.h */,
+				D7D855D51CF36FF80028B92D /* DropListView.m */,
+			);
+			path = DropListView;
+			sourceTree = "<group>";
+		};
+		D7D855D61CF36FF80028B92D /* Spotligh */ = {
+			isa = PBXGroup;
+			children = (
+				D7D855D71CF36FF80028B92D /* HLLSpotlight.h */,
+				D7D855D81CF36FF80028B92D /* HLLSpotlight.m */,
+				D7D855D91CF36FF80028B92D /* HLLSpotlightView.h */,
+				D7D855DA1CF36FF80028B92D /* HLLSpotlightView.m */,
+				D7D855DB1CF36FF80028B92D /* HLLSpotlightViewController.h */,
+				D7D855DC1CF36FF80028B92D /* HLLSpotlightViewController.m */,
+				D7D855DD1CF36FF80028B92D /* HLLTransition.h */,
+				D7D855DE1CF36FF80028B92D /* HLLTransition.m */,
+			);
+			path = Spotligh;
+			sourceTree = "<group>";
+		};
+		D7D855E71CF3F0C50028B92D /* Thrid */ = {
+			isa = PBXGroup;
+			children = (
+				D7D856171CF4342C0028B92D /* FontAwesomeKit */,
+				D7D855E81CF3F0C50028B92D /* RESideMenu */,
+			);
+			path = Thrid;
+			sourceTree = "<group>";
+		};
+		D7D855E81CF3F0C50028B92D /* RESideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				D7D855E91CF3F0C50028B92D /* RECommonFunctions.h */,
+				D7D855EA1CF3F0C50028B92D /* RECommonFunctions.m */,
+				D7D855EB1CF3F0C50028B92D /* RESideMenu.h */,
+				D7D855EC1CF3F0C50028B92D /* RESideMenu.m */,
+				D7D855ED1CF3F0C50028B92D /* UIViewController+RESideMenu.h */,
+				D7D855EE1CF3F0C50028B92D /* UIViewController+RESideMenu.m */,
+			);
+			path = RESideMenu;
+			sourceTree = "<group>";
+		};
+		D7D855FE1CF3F6450028B92D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D7D8560C1CF3F6670028B92D /* Utils */,
+				D7D855FF1CF3F6450028B92D /* Category */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		D7D855FF1CF3F6450028B92D /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				D7D856451CF455080028B92D /* UIImage+Common.h */,
+				D7D856461CF455080028B92D /* UIImage+Common.m */,
+				D7D856001CF3F6450028B92D /* UIColor+Common.h */,
+				D7D856011CF3F6450028B92D /* UIColor+Common.m */,
+				D7D856021CF3F6450028B92D /* UIImage+Tint.h */,
+				D7D856031CF3F6450028B92D /* UIImage+Tint.m */,
+				D7D856041CF3F6450028B92D /* UITableView+Line.h */,
+				D7D856051CF3F6450028B92D /* UITableView+Line.m */,
+				D7D856061CF3F6450028B92D /* UIView+Common.h */,
+				D7D856071CF3F6450028B92D /* UIView+Common.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		D7D8560C1CF3F6670028B92D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D7D8560D1CF3F6740028B92D /* StoryBoardUtilities.h */,
+				D7D8560E1CF3F6740028B92D /* StoryBoardUtilities.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D7D856171CF4342C0028B92D /* FontAwesomeKit */ = {
+			isa = PBXGroup;
+			children = (
+				D7D856181CF4342C0028B92D /* FAKFontAwesome.h */,
+				D7D856191CF4342C0028B92D /* FAKFontAwesome.m */,
+				D7D8561A1CF4342C0028B92D /* FAKFoundationIcons.h */,
+				D7D8561B1CF4342C0028B92D /* FAKFoundationIcons.m */,
+				D7D8561C1CF4342C0028B92D /* FAKIcon.h */,
+				D7D8561D1CF4342C0028B92D /* FAKIcon.m */,
+				D7D8561E1CF4342C0028B92D /* FAKIonIcons.h */,
+				D7D8561F1CF4342C0028B92D /* FAKIonIcons.m */,
+				D7D856201CF4342C0028B92D /* FAKMaterialIcons.h */,
+				D7D856211CF4342C0028B92D /* FAKMaterialIcons.m */,
+				D7D856221CF4342C0028B92D /* FAKOcticons.h */,
+				D7D856231CF4342C0028B92D /* FAKOcticons.m */,
+				D7D856241CF4342C0028B92D /* FAKZocial.h */,
+				D7D856251CF4342C0028B92D /* FAKZocial.m */,
+				D7D856261CF4342C0028B92D /* FontAwesome.otf */,
+				D7D856271CF4342C0028B92D /* FontAwesomeKit.h */,
+				D7D856281CF4342C0028B92D /* foundation-icons.ttf */,
+				D7D856291CF4342C0028B92D /* ionicons.ttf */,
+				D7D8562A1CF4342C0028B92D /* Material-Design-Iconic-Font.ttf */,
+				D7D8562B1CF4342C0028B92D /* octicons.ttf */,
+				D7D8562C1CF4342C0028B92D /* zocial-regular-webfont.ttf */,
+			);
+			path = FontAwesomeKit;
+			sourceTree = "<group>";
+		};
+		D7D8563D1CF43BE20028B92D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D7D8564D1CF4A9B90028B92D /* LineStationCell.h */,
+				D7D8564E1CF4A9B90028B92D /* LineStationCell.m */,
+				D7D8564F1CF4A9B90028B92D /* LineStationCell.xib */,
+				D7D8563A1CF43BDA0028B92D /* LeftMenuCell.h */,
+				D7D8563B1CF43BDA0028B92D /* LeftMenuCell.m */,
+				D7D8563E1CF43DA20028B92D /* LeftMenuCell.xib */,
+				D7D856431CF44C990028B92D /* LeftMenuSelectedBackgroundView.xib */,
+				D7D856481CF45ACC0028B92D /* LeftMenuSectionHeaderView.h */,
+				D7D856491CF45ACC0028B92D /* LeftMenuSectionHeaderView.m */,
+				D7D8564B1CF45B1E0028B92D /* LeftMenuSectionHeaderView.xib */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,10 +489,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7D8563F1CF43DA20028B92D /* LeftMenuCell.xib in Resources */,
 				D7D855A41CF34C1D0028B92D /* metroline.plist in Resources */,
+				D7D856511CF4A9B90028B92D /* LineStationCell.xib in Resources */,
+				D7D856341CF4342C0028B92D /* FontAwesome.otf in Resources */,
 				D7D8558E1CF34BFF0028B92D /* LaunchScreen.storyboard in Resources */,
 				D7D8558B1CF34BFF0028B92D /* Assets.xcassets in Resources */,
+				D7D856361CF4342C0028B92D /* ionicons.ttf in Resources */,
+				D7D856351CF4342C0028B92D /* foundation-icons.ttf in Resources */,
+				D7D856441CF44C990028B92D /* LeftMenuSelectedBackgroundView.xib in Resources */,
+				D7D8564C1CF45B1E0028B92D /* LeftMenuSectionHeaderView.xib in Resources */,
 				D7D855891CF34BFF0028B92D /* Main.storyboard in Resources */,
+				D7D856391CF4342C0028B92D /* zocial-regular-webfont.ttf in Resources */,
+				D7D856381CF4342C0028B92D /* octicons.ttf in Resources */,
+				D7D856371CF4342C0028B92D /* Material-Design-Iconic-Font.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,9 +522,39 @@
 			files = (
 				D7D855A71CF3531A0028B92D /* StationInfoController.m in Sources */,
 				D7D855861CF34BFF0028B92D /* ViewController.m in Sources */,
+				D7D855F41CF3F3690028B92D /* AboutMetroViewController.m in Sources */,
+				D7D8560A1CF3F6450028B92D /* UITableView+Line.m in Sources */,
+				D7D856081CF3F6450028B92D /* UIColor+Common.m in Sources */,
+				D7D855F71CF3F3870028B92D /* AboutMeViewController.m in Sources */,
 				D7D855AA1CF359290028B92D /* StationInfoDataSource.m in Sources */,
+				D7D856541CF4C4F70028B92D /* OpenSourceViewController.m in Sources */,
+				D7D855DF1CF36FF80028B92D /* DropListView.m in Sources */,
+				D7D8562F1CF4342C0028B92D /* FAKIcon.m in Sources */,
+				D7D8563C1CF43BDA0028B92D /* LeftMenuCell.m in Sources */,
+				D7D855E21CF36FF80028B92D /* HLLSpotlightViewController.m in Sources */,
+				D7D855E01CF36FF80028B92D /* HLLSpotlight.m in Sources */,
+				D7D8562E1CF4342C0028B92D /* FAKFoundationIcons.m in Sources */,
 				D7D855831CF34BFF0028B92D /* AppDelegate.m in Sources */,
+				D7D855FD1CF3F4B10028B92D /* LeftMenuViewController.m in Sources */,
+				D7D856331CF4342C0028B92D /* FAKZocial.m in Sources */,
+				D7D856091CF3F6450028B92D /* UIImage+Tint.m in Sources */,
+				D7D855EF1CF3F0C50028B92D /* RECommonFunctions.m in Sources */,
+				D7D856471CF455080028B92D /* UIImage+Common.m in Sources */,
+				D7D855E11CF36FF80028B92D /* HLLSpotlightView.m in Sources */,
+				D7D855F11CF3F0C50028B92D /* UIViewController+RESideMenu.m in Sources */,
+				D7D855E31CF36FF80028B92D /* HLLTransition.m in Sources */,
+				D7D8560F1CF3F6740028B92D /* StoryBoardUtilities.m in Sources */,
+				D7D856311CF4342C0028B92D /* FAKMaterialIcons.m in Sources */,
+				D7D856301CF4342C0028B92D /* FAKIonIcons.m in Sources */,
+				D7D856121CF4004E0028B92D /* LeftMenuDataSource.m in Sources */,
 				D7D855AD1CF3594A0028B92D /* MetroLineInfoDataSource.m in Sources */,
+				D7D8560B1CF3F6450028B92D /* UIView+Common.m in Sources */,
+				D7D855E61CF370D40028B92D /* GuideViewController.m in Sources */,
+				D7D8564A1CF45ACC0028B92D /* LeftMenuSectionHeaderView.m in Sources */,
+				D7D856321CF4342C0028B92D /* FAKOcticons.m in Sources */,
+				D7D856501CF4A9B90028B92D /* LineStationCell.m in Sources */,
+				D7D855F01CF3F0C50028B92D /* RESideMenu.m in Sources */,
+				D7D8562D1CF4342C0028B92D /* FAKFontAwesome.m in Sources */,
 				D7D855801CF34BFF0028B92D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,7 +634,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -371,7 +673,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

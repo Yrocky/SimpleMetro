@@ -23,6 +23,8 @@
 
 @optional
 
+- (UINib *) nib;
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section;
 
 @end

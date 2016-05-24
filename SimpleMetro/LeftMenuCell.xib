@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="171" id="NYM-eV-oJx" customClass="LeftMenuCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="171"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NYM-eV-oJx" id="CXt-ME-YMk">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="170.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JaT-sM-CtP">
+                        <rect key="frame" x="65" y="74.5" width="40.5" height="22.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="2" id="rfu-Gk-DaI"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="16"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wIz-td-Po9">
+                        <rect key="frame" x="10" y="66" width="40" height="40"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="wIz-td-Po9" secondAttribute="height" multiplier="1:1" id="B2z-UB-cKB"/>
+                            <constraint firstAttribute="width" constant="40" id="eVs-7c-FF1"/>
+                            <constraint firstAttribute="height" constant="40" id="f6d-YM-blQ"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="JaT-sM-CtP" firstAttribute="leading" secondItem="wIz-td-Po9" secondAttribute="trailing" constant="44" id="26R-RU-O8u"/>
+                    <constraint firstItem="JaT-sM-CtP" firstAttribute="leading" secondItem="wIz-td-Po9" secondAttribute="trailing" constant="15" id="5oh-Nh-Lx8"/>
+                    <constraint firstItem="wIz-td-Po9" firstAttribute="leading" secondItem="CXt-ME-YMk" secondAttribute="leading" constant="10" id="71i-dI-Zxs"/>
+                    <constraint firstItem="JaT-sM-CtP" firstAttribute="centerY" secondItem="wIz-td-Po9" secondAttribute="centerY" id="TJt-nv-5ss"/>
+                    <constraint firstItem="wIz-td-Po9" firstAttribute="centerY" secondItem="CXt-ME-YMk" secondAttribute="centerY" id="ocQ-1d-8hE"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="26R-RU-O8u"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="leftMenuImageView" destination="wIz-td-Po9" id="Vqe-WR-iH6"/>
+                <outlet property="leftMenuTitleLabel" destination="JaT-sM-CtP" id="Lqc-ja-5cv"/>
+            </connections>
+            <point key="canvasLocation" x="314" y="579.5"/>
+        </tableViewCell>
+    </objects>
+</document>

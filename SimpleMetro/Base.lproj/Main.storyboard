@@ -8,8 +8,9 @@
         <!--Navigation Controller-->
         <scene sceneID="iif-HO-eNE">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8RH-w1-GGs" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="metroNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="8RH-w1-GGs" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5fU-Sn-neN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -53,6 +54,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btj-oL-Lc6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1045" y="354"/>
+        </scene>
+        <!--Left Menu View Controller-->
+        <scene sceneID="uek-zB-iP2">
+            <objects>
+                <viewController storyboardIdentifier="LeftMenuViewController" id="LAs-cA-9Z3" customClass="LeftMenuViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G0u-ay-vU7"/>
+                        <viewControllerLayoutGuide type="bottom" id="bSj-dX-gX7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8U3-c2-Knh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="121" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="tBh-6U-zQh">
+                                <rect key="frame" x="0.0" y="80" width="600" height="520"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="delegate" destination="LAs-cA-9Z3" id="b9T-TT-0Vi"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lO-0g-9fl">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
+                                <color key="backgroundColor" red="0.2196078431372549" green="0.25098039215686274" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="diS-sZ-19h"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="tBh-6U-zQh" secondAttribute="trailing" id="0Qt-Je-Okq"/>
+                            <constraint firstItem="bSj-dX-gX7" firstAttribute="top" secondItem="tBh-6U-zQh" secondAttribute="bottom" id="GdH-LM-I2X"/>
+                            <constraint firstItem="tBh-6U-zQh" firstAttribute="top" secondItem="G0u-ay-vU7" secondAttribute="bottom" id="HzX-fv-HeF"/>
+                            <constraint firstAttribute="trailing" secondItem="4lO-0g-9fl" secondAttribute="trailing" id="JMY-Vo-TQW"/>
+                            <constraint firstItem="tBh-6U-zQh" firstAttribute="leading" secondItem="8U3-c2-Knh" secondAttribute="leading" id="SAF-eW-pmo"/>
+                            <constraint firstItem="tBh-6U-zQh" firstAttribute="leading" secondItem="8U3-c2-Knh" secondAttribute="leading" id="W00-II-XE7"/>
+                            <constraint firstItem="tBh-6U-zQh" firstAttribute="top" secondItem="G0u-ay-vU7" secondAttribute="bottom" id="WcA-li-N5C"/>
+                            <constraint firstItem="bSj-dX-gX7" firstAttribute="top" secondItem="tBh-6U-zQh" secondAttribute="bottom" id="Yki-aj-EDV"/>
+                            <constraint firstItem="tBh-6U-zQh" firstAttribute="top" secondItem="4lO-0g-9fl" secondAttribute="bottom" id="nVE-I9-amr"/>
+                            <constraint firstAttribute="trailing" secondItem="tBh-6U-zQh" secondAttribute="trailing" id="pdZ-18-3CF"/>
+                            <constraint firstItem="4lO-0g-9fl" firstAttribute="leading" secondItem="8U3-c2-Knh" secondAttribute="leading" id="pjJ-OQ-yAf"/>
+                            <constraint firstItem="4lO-0g-9fl" firstAttribute="top" secondItem="G0u-ay-vU7" secondAttribute="bottom" constant="-20" id="yPB-kX-9ti"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="HzX-fv-HeF"/>
+                                <exclude reference="SAF-eW-pmo"/>
+                                <exclude reference="WcA-li-N5C"/>
+                                <exclude reference="pdZ-18-3CF"/>
+                                <exclude reference="Yki-aj-EDV"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="menuTableView" destination="tBh-6U-zQh" id="kHL-nW-Zc4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AXC-dR-wj4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="532" y="1063"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="LQA-hb-fqO">

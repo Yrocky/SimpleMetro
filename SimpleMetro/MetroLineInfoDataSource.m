@@ -8,7 +8,7 @@
 
 #import "MetroLineInfoDataSource.h"
 
-static NSString * const cellIdentifier = @"metroLineCellIdeitifier";
+static NSString * const metroLineCellIdentifier = @"metroLineCellIdentifier";
 
 @interface MetroLineInfoDataSource ()
 
@@ -65,7 +65,7 @@ static NSString * const cellIdentifier = @"metroLineCellIdeitifier";
 
 - (NSString *)cellIdentifier{
 
-    return cellIdentifier;
+    return metroLineCellIdentifier;
 }
 #pragma mark - UITableViewDataSource
 
@@ -76,13 +76,13 @@ static NSString * const cellIdentifier = @"metroLineCellIdeitifier";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:metroLineCellIdentifier
                                                              forIndexPath:indexPath];
     
     NSDictionary * lineStationInfo = [self elementForIndexPath:indexPath];
     
     NSString * stationName = lineStationInfo[@"name"];
-    
+    cell.textLabel.textColor = [UIColor redColor];
     cell.textLabel.text = stationName;
     
     return cell;
