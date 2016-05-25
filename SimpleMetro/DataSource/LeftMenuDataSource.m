@@ -8,6 +8,8 @@
 
 #import "LeftMenuDataSource.h"
 #import "LeftMenuCell.h"
+#import "StoryBoardUtilities.h"
+
 
 NSString * const kLeftMenuIconKey = @"icon";
 NSString * const kLeftMenuTitleKey = @"title";
@@ -62,13 +64,70 @@ static NSString * const leftMenuCellIdentifier = @"leftMenuCellIdentifier";
                            @[@{kLeftMenuIconKey:feedBackIcons,
                                kLeftMenuTitleKey:@"意见反馈"},
                              @{kLeftMenuIconKey:openSourceIcons,
-                               kLeftMenuTitleKey:@"开源信息"},
+                               kLeftMenuTitleKey:@"开源许可"},
                              @{kLeftMenuIconKey:aboutIcons,
                                kLeftMenuTitleKey:@"关于"}]];
     }
     return self;
 }
 
+#pragma mark - API
+- (UIViewController *) viewControllerWithIndexPath:(NSIndexPath *)indexPath{
+
+    if (indexPath.section == 0 ) {//
+        
+        switch (indexPath.row) {
+            case 0:
+            {
+                UINavigationController * metroNavigationController = (UINavigationController *)[StoryBoardUtilities viewControllerForStoryboardName:@"MetroInfo" storyBoardID:MetroNavigationControllerStoryBoardID];
+                return metroNavigationController;
+            }
+                break;
+            case 2:
+            {
+                UINavigationController * aboutNavigationController = (UINavigationController *)[StoryBoardUtilities viewControllerForStoryboardName:@"Main" storyBoardID:AboutMetroNavigationControllerStoryBoardID];
+                
+                return aboutNavigationController;
+            }
+                break;
+            case 1:
+            {
+                UINavigationController * aroundServiceNavigationController = (UINavigationController *)[StoryBoardUtilities viewControllerForStoryboardName:@"AroundService" storyBoardID:AroundServiceNavigationControllerStoryBoardID];
+                
+                return aroundServiceNavigationController;
+            }
+                break;
+            default:
+                break;
+        }
+    }else if (indexPath.section == 1){
+    
+        switch (indexPath.row) {
+            case 0:
+            {
+                return nil;
+            }
+                break;
+            case 1:
+            {
+                UINavigationController * openSourceNavigationController = (UINavigationController *)[StoryBoardUtilities viewControllerForStoryboardName:@"Main" storyBoardID:OpenSourceNavigationControllerStoryBoardID];
+                
+                return openSourceNavigationController;
+            }
+                break;
+            case 2:
+            {
+                UINavigationController * aboutMeNavigationController = (UINavigationController *)[StoryBoardUtilities viewControllerForStoryboardName:@"Main" storyBoardID:AboutMeNavigationControllerStoryBoardID];
+                
+                return aboutMeNavigationController;
+            }
+                break;
+            default:
+                break;
+        }
+    }
+    return nil;
+}
 #pragma mark - DataSourceProtocol
 //
 -(NSString *)name{

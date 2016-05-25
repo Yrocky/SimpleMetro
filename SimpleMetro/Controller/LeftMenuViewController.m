@@ -10,6 +10,7 @@
 #import "LeftMenuDataSource.h"
 #import "UIColor+Common.h"
 #import "LeftMenuSectionHeaderView.h"
+#import "RESideMenu.h"
 
 
 @interface LeftMenuViewController ()<UITableViewDelegate>
@@ -62,10 +63,13 @@
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"'");
+    NSLog(@"select");
     
-    if (indexPath.section == 1 && indexPath.row == 0) {// feedback
+    UIViewController * contentViewController = [self.dataSource viewControllerWithIndexPath:indexPath];
+    if (contentViewController != nil) {
         
+        [self.sideMenuViewController setContentViewController:contentViewController];
+        [self.sideMenuViewController hideMenuViewController];
     }
 }
 

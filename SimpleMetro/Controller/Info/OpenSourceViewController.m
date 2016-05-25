@@ -9,14 +9,26 @@
 #import "OpenSourceViewController.h"
 
 @interface OpenSourceViewController ()
+@property (weak, nonatomic) IBOutlet UIWebView *openSourceWebView;
 
 @end
 
 @implementation OpenSourceViewController
 
+- (void)awakeFromNib{
+
+    [super awakeFromNib];
+
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    NSString * path = [[NSBundle mainBundle] pathForResource:@"credits" ofType:@"html"];
+    NSString * content = [NSString stringWithContentsOfFile:path
+                                                   encoding:NSUTF8StringEncoding
+                                                      error:nil];
+    [self.openSourceWebView loadHTMLString:content baseURL:nil];
 }
 
 - (void)didReceiveMemoryWarning {

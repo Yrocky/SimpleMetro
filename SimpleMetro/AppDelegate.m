@@ -11,6 +11,7 @@
 #import "LeftMenuViewController.h"
 #import "UIColor+Common.h"
 #import "StoryBoardUtilities.h"
+#import "StoryBoardIdHeader.h"
 
 @interface AppDelegate ()
 
@@ -39,12 +40,11 @@
 
 - (void) setupSideMenuView{
     
-    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    UINavigationController *navigationController = (UINavigationController *)[StoryBoardUtilities viewControllerForStoryboardName:@"Main" storyBoardID:@"metroNavigationController"];
+    UINavigationController *navigationController = (UINavigationController *)[StoryBoardUtilities viewControllerForStoryboardName:@"MetroInfo" storyBoardID:MetroNavigationControllerStoryBoardID];
     
-    LeftMenuViewController *leftMenuViewController = (LeftMenuViewController *)[StoryBoardUtilities viewControllerForStoryboardName:@"Main" class:@"LeftMenuViewController"];
+    LeftMenuViewController *leftMenuViewController = (LeftMenuViewController *)[StoryBoardUtilities viewControllerForStoryboardName:@"Main" class:LeftMenuViewControllerStoryBoardID];
     [leftMenuViewController selectedLeftMenuAtIndex:0];
     
     RESideMenu *sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:navigationController

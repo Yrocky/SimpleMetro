@@ -11,69 +11,84 @@
 #import "MetroLineInfoDataSource.h"
 #import "DropListView.h"
 #import "GuideViewController.h"
-#import "FAKMaterialIcons.h"
-#import "FAKFontAwesome.h"
-#import "UIColor+Common.h"
 
 @interface ViewController ()<UITableViewDelegate,DropListDelegate>
 
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic ,strong) UIButton * titleButton;
+
 @property (nonatomic ,strong) MetroLineInfoDataSource * dataSource;
-@property (nonatomic ,strong) NSMutableArray * lineStations;
+
 @end
 
 @implementation ViewController
 
-- (void)awakeFromNib{
-
-    [super awakeFromNib];
+- (void)viewDidLoad {
     
+    [super viewDidLoad];
+
+//    self.title = self.dataSource.name;
+    
+    //
     _dataSource = [[MetroLineInfoDataSource alloc] init];
     self.dataSource.tableView = self.tableView;
     
-    _lineStations = [NSMutableArray array];
-    
+    //
     self.tableView.rowHeight = 50.0f;
     self.tableView.tableFooterView = [UIView new];
     self.tableView.backgroundView = nil;
     self.tableView.backgroundColor = [UIColor lightGrayColor];
     self.tableView.dataSource = self.dataSource;
-    [self.tableView registerClass:[self.dataSource cellClass] forCellReuseIdentifier:[self.dataSource cellIdentifier]];
-    
-    self.title = self.dataSource.name;
-    
-    // left barButton
-    FAKFontAwesome *cogIcon = [FAKFontAwesome barsIconWithSize:25];
-    [cogIcon addAttribute:NSForegroundColorAttributeName value:[UIColor customHighBlueColor]];
-    UIImage *leftImage = [cogIcon imageWithSize:CGSizeMake(30, 30)];
-    UIBarButtonItem * leftBarButton = [[UIBarButtonItem alloc] initWithImage:leftImage
-
-                                                                       style:UIBarButtonItemStylePlain
-                                                                      target:self
-                                                                      action:@selector(leftBarButtonHandle:)];
-    self.navigationItem.leftBarButtonItem = leftBarButton;
-}
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    [self.tableView registerClass:[self.dataSource cellClass]
+           forCellReuseIdentifier:[self.dataSource cellIdentifier]];
     
     [self.dataSource queryMetroLineInfoWithLineNumber:1];
+    
+    //
+    _titleButton = [[UIButton alloc] init];
+    [_titleButton setTitleColor:[UIColor customLightBlueColor] forState:UIControlStateNormal];
+    [_titleButton setTitle:self.dataSource.name forState:UIControlStateNormal];
+    [_titleButton addTarget:self action:@selector(titleButtonHandle:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.titleView = self.titleButton;
 }
 
-- (void) leftBarButtonHandle:(UIBarButtonItem *)sende{
-    NSLog(@"++++");
-}
+
 - (UIStatusBarStyle)preferredStatusBarStyle{
 
     return UIStatusBarStyleLightContent;
 }
+
+#pragma mark - Action
+
+- (void) titleButtonHandle:(UIButton *)button{
+
+    DropListView * dropListView = [[DropListView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.width, self.tableView.height)];
+    [dropListView setupDropListData:@[@"一号线",@"二号线",@"三号线",@"四号线",@"五号线",@"六号线"]];
+    dropListView.delegate = self;
+    self.tableView.scrollEnabled = NO;
+    self.titleButton.enabled = NO;
+    [self.view addSubview:dropListView];
+    
+    [dropListView showDropListView];
+    
+}
+
 #pragma mark - DropListDelegate
 
 // 传递的indexPath有可能是nil，需要判断才可以使用
 - (void) dropListView:(DropListView *)dropList didSelectedItemAtIndexPath:(NSIndexPath *)indexPath{
 
     self.tableView.scrollEnabled = YES;
-    NSLog(@"%@",dropList.datas[indexPath.row]);
+    self.titleButton.enabled = YES;
     
+    if (indexPath) {
+        
+        NSString * select = [NSString stringWithFormat:@"%@",dropList.datas[indexPath.row]];
+        NSLog(@"%@",select);
+        
+        [self.titleButton setTitle:select forState:UIControlStateNormal];
+        [self.dataSource queryMetroLineInfoWithLineNumber:indexPath.row];
+    }
     NSLog(@"indexPath:%@",indexPath);
 }
 #pragma mark - UITableViewDelegate
@@ -86,14 +101,6 @@
     [self.navigationController presentViewController:guide animated:YES completion:nil];
     
     return;
-    DropListView * dropListView = [[DropListView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.width, self.tableView.height)];
-    [dropListView setupDropListData:@[@"一号线",@"二号线",@"三号线",@"四号线",@"五号线",@"六号线"]];
-    dropListView.delegate = self;
-    self.tableView.scrollEnabled = NO;
-    [self.view addSubview:dropListView];
-    [dropListView showDropListView];
-    
-    
     
     NSDictionary * lineStationInfo = [self.dataSource elementForIndexPath:indexPath];
 //    [self performSegueWithIdentifier:@"stationInfo" sender:lineStationInfo];

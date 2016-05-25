@@ -8,8 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "DataSourceProtocol.h"
+#import "StoryBoardUtilities.h"
+#import "StoryBoardIdHeader.h"
 
 
 @interface LeftMenuDataSource : NSObject<UITableViewDataSource,DataSourceProtocol>
 
+- (UIViewController *) viewControllerWithIndexPath:(NSIndexPath *)indexPath;
 @end

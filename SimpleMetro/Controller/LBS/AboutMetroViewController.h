@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface AboutMetroViewController : UIViewController
+@interface AboutMetroViewController : BaseViewController
 
 @end

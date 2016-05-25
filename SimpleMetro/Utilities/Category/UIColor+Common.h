@@ -78,4 +78,14 @@
 + (UIColor *) customLightBlueColor;
 
 + (UIColor *) customHighBlueColor;
+
+#pragma mark - Line Color
+
++ (UIColor *) line_OneColor;
++ (UIColor *) line_TwoColor;
++ (UIColor *) line_ThreeColor;
++ (UIColor *) line_FourColor;
++ (UIColor *) line_FiveColor;
++ (UIColor *) line_SixColor;
+
 @end

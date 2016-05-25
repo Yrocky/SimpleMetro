@@ -200,19 +200,19 @@
 }
 
 + (UIColor *) customBlurColor{
-    return [UIColor colorWithHexString:@"0AB4FA"];
+    return [UIColor colorWithHexString:@"5D94AA"];
 }
 
 + (UIColor *) customGrayColor{
-    return [UIColor colorWithHexString:@"474D63"];
+    return [UIColor colorWithHexString:@"4A5063"];
 }
 
 + (UIColor *) customHighGrayColor{
-    return [UIColor colorWithHexString:@"384052"];
+    return [UIColor colorWithHexString:@"394152"];
 }
 
 + (UIColor *) customWhiteColor{
-    return [UIColor colorWithHexString:@"E6E8F0"];
+    return [UIColor colorWithHexString:@"EFF1F4"];
 }
 
 + (UIColor *) customLightBlueColor{
@@ -221,6 +221,32 @@
 
 + (UIColor *) customHighBlueColor{
     return [UIColor colorWithHexString:@"C4D2DB"];
+}
+
+#pragma mark - Line Color
+
++ (UIColor *) line_OneColor{
+    return [UIColor colorWithHexString:@"BA0812"];
+}
+
++ (UIColor *) line_TwoColor{
+    return [UIColor colorWithHexString:@"F9BF2C"];
+}
+
++ (UIColor *) line_ThreeColor{
+    return [UIColor colorWithHexString:@"0A660C"];
+}
+
++ (UIColor *) line_FourColor{
+    return [UIColor colorWithHexString:@"1EB0F0"];
+}
+
++ (UIColor *) line_FiveColor{
+    return [UIColor colorWithHexString:@"6F36A1"];
+}
+
++ (UIColor *) line_SixColor{
+    return [UIColor colorWithHexString:@"29FA2F"];
 }
 
 @end
