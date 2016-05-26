@@ -107,7 +107,7 @@
     
     actionSheetView.attributeColor = [MetroLineStationInfoHelper lineColorArray];
     
-    [actionSheetView showBlurActionSheetWithTitles:[MetroLineStationInfoHelper lineNameArray] handle:^(NSString * title, NSInteger index) {
+    [actionSheetView showBlurActionSheetWithTitles:[MetroLineStationInfoHelper lineNameArray] withContainerView:self.navigationController.view handle:^(NSString * title, NSInteger index) {
         
         NSLog(@"BlurActionSheetView did selected index:%ld",(long)index);
         

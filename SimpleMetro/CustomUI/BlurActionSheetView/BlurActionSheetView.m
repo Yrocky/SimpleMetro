@@ -162,6 +162,11 @@ static NSString * const CellIdentifier = @"blurActionSheetCellIdentifier";
                          self.backgroundView.alpha = 0.0f;
                      }
                      completion:^(BOOL finished) {
+                         
+                         self.backgroundView = nil;
+                         
+                         self.tableView = nil;
+                         
                          [self removeFromSuperview];
     } ];
 }
