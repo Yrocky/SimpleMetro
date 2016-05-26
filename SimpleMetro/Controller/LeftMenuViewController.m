@@ -63,7 +63,7 @@
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"select");
+    NSLog(@"left menu select");
     
     UIViewController * contentViewController = [self.dataSource viewControllerWithIndexPath:indexPath];
     if (contentViewController != nil) {

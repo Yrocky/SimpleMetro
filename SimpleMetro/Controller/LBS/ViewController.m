@@ -8,9 +8,9 @@
 
 #import "ViewController.h"
 #import "StationInfoController.h"
+#import "GuideViewController.h"
 #import "MetroLineInfoDataSource.h"
 #import "DropListView.h"
-#import "GuideViewController.h"
 #import "BlurActionSheetView.h"
 #import "HLLPullToRefreshView.h"
 #import "MetroLineStationInfoHelper.h"
@@ -31,8 +31,6 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-
-//    self.title = self.dataSource.name;
     
     self.view.backgroundColor = [UIColor clearColor];
     

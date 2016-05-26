@@ -289,10 +289,26 @@
             self.contentViewContainer.transform = CGAffineTransformIdentity;
         }
         
+        BOOL interfaceOrientationIsLandscape = UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation]);
+                                                                                 
         if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1) {
-            self.contentViewContainer.center = CGPointMake((UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation]) ? self.contentViewInLandscapeOffsetCenterX + CGRectGetWidth(self.view.frame) : self.contentViewInPortraitOffsetCenterX + CGRectGetWidth(self.view.frame)), self.contentViewContainer.center.y);
+            
+            CGFloat x = interfaceOrientationIsLandscape ?
+            self.contentViewInLandscapeOffsetCenterX + CGRectGetWidth(self.view.frame) :
+            self.contentViewInPortraitOffsetCenterX + CGRectGetWidth(self.view.frame);
+            
+            CGFloat y = self.contentViewContainer.center.y;
+            
+            self.contentViewContainer.center = CGPointMake(x, y);
         } else {
-            self.contentViewContainer.center = CGPointMake((UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation]) ? self.contentViewInLandscapeOffsetCenterX + CGRectGetHeight(self.view.frame) : self.contentViewInPortraitOffsetCenterX + CGRectGetWidth(self.view.frame)), self.contentViewContainer.center.y);
+            
+            CGFloat x = interfaceOrientationIsLandscape ?
+            self.contentViewInLandscapeOffsetCenterX + CGRectGetHeight(self.view.frame) :
+            self.contentViewInPortraitOffsetCenterX + CGRectGetWidth(self.view.frame);
+            
+            CGFloat y = self.contentViewContainer.center.y;
+            
+            self.contentViewContainer.center = CGPointMake(x, y);
         }
 
         self.menuViewContainer.alpha = !self.fadeMenuView ?: 1.0f;
@@ -648,11 +664,19 @@
         if (contentViewScale > 1) {
             CGFloat oppositeScale = (1 - (contentViewScale - 1));
             self.contentViewContainer.transform = CGAffineTransformMakeScale(oppositeScale, oppositeScale);
-            self.contentViewContainer.transform = CGAffineTransformTranslate(self.contentViewContainer.transform, point.x, 0);
         } else {
             self.contentViewContainer.transform = CGAffineTransformMakeScale(contentViewScale, contentViewScale);
-            self.contentViewContainer.transform = CGAffineTransformTranslate(self.contentViewContainer.transform, point.x, 0);
         }
+        
+        /*
+        CGFloat MaxX = (point.x > self.view.center.x + self.contentViewInPortraitOffsetCenterX)?
+                       self.view.center.x + self.contentViewInPortraitOffsetCenterX :
+                       point.x;
+        BOOL freez = self.contentViewContainer.frame.origin.x >= self.view.center.x + self.contentViewInPortraitOffsetCenterX;
+//        NSLog(@"%d",freez);
+        NSLog(@"%@",NSStringFromCGRect(self.contentViewController.view.frame));
+        */
+        self.contentViewContainer.transform = CGAffineTransformTranslate(self.contentViewContainer.transform, point.x, 0);
         
         self.leftMenuViewController.view.hidden = self.contentViewContainer.frame.origin.x < 0;
         self.rightMenuViewController.view.hidden = self.contentViewContainer.frame.origin.x > 0;

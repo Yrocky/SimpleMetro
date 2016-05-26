@@ -62,7 +62,6 @@
     UINavigationController *navigationController = (UINavigationController *)[StoryBoardUtilities viewControllerForStoryboardName:@"MetroInfo" storyBoardID:MetroNavigationControllerStoryBoardID];
     
     LeftMenuViewController *leftMenuViewController = (LeftMenuViewController *)[StoryBoardUtilities viewControllerForStoryboardName:@"Main" class:LeftMenuViewControllerStoryBoardID];
-    [leftMenuViewController selectedLeftMenuAtIndex:0];
     
     RESideMenu *sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:navigationController
                                                                     leftMenuViewController:leftMenuViewController
@@ -73,12 +72,15 @@
     sideMenuViewController.fadeMenuView = NO;
     sideMenuViewController.parallaxEnabled = NO;
     sideMenuViewController.contentViewScaleValue = 1.0f;
+    sideMenuViewController.contentViewInPortraitOffsetCenterX = -30.0f;
     sideMenuViewController.contentViewShadowColor = [UIColor lightGrayColor];
     sideMenuViewController.contentViewShadowOffset = CGSizeMake(0, 0);
     sideMenuViewController.contentViewShadowOpacity = 0.6;
     sideMenuViewController.contentViewShadowRadius = 12;
 //    sideMenuViewController.contentViewShadowEnabled = YES;
     self.window.rootViewController = sideMenuViewController;
+    
+    [leftMenuViewController selectedLeftMenuAtIndex:0];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

@@ -6,6 +6,8 @@
 //  Copyright © 2016年 Rocky Young. All rights reserved.
 //
 
+#warning 这个类有一个bug:延迟释放。待解决
+
 #import <UIKit/UIKit.h>
 
 typedef void(^HandleBlock)(id content ,NSInteger index);
