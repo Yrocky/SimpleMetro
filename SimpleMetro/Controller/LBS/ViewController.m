@@ -193,8 +193,10 @@
 //    return;
     
     id stationInfo = [self.dataSource elementForIndexPath:indexPath];
-    
-    [self performSegueWithIdentifier:StationInfoSegueIdentifier sender:stationInfo];
+    BOOL open = [[stationInfo objectForKey:@"open"]boolValue];
+    if (open) {
+        [self performSegueWithIdentifier:StationInfoSegueIdentifier sender:stationInfo];
+    }
 }
 
 #pragma mark - Navigation
