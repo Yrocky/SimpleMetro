@@ -29,6 +29,8 @@
     switch (self.count) {
         case 0:
             self.spotlight = [[HLLSpotlight alloc] initSpotlightForRounedRectWithCenter:CGPointMake(self.view.width/2, 42) andSize:CGSizeMake(120, 40) andRadius:6];
+            [self.spotlightView appearWithSpotlight:self.spotlight
+                                           duration:0.25];
             break;
         case 1:{
         
@@ -40,7 +42,7 @@
         }
             break;
         case 2:{
-            HLLSpotlight * spotlight = [[HLLSpotlight alloc] initSpotlightForRounedRectWithCenter:CGPointMake(self.view.width/2, 64 + 2.5 * 50) andSize:CGSizeMake(self.view.width - 20, 45) andRadius:6];
+            HLLSpotlight * spotlight = [[HLLSpotlight alloc] initSpotlightForRounedRectWithCenter:CGPointMake(self.view.width/2, 64 + 2.5 * 55) andSize:CGSizeMake(self.view.width - 8, 56) andRadius:6];
             
             [self.spotlightView moveToSpotlight:spotlight
                                        duration:.25

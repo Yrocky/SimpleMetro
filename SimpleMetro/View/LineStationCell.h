@@ -10,4 +10,5 @@
 
 @interface LineStationCell : UITableViewCell
 
+- (void) configureStationCellWithInfo:(NSDictionary *)stationInfo;
 @end

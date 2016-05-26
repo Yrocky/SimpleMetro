@@ -200,7 +200,7 @@
 }
 
 + (UIColor *) customBlurColor{
-    return [UIColor colorWithHexString:@"5D94AA"];
+    return [UIColor colorWithHexString:@"0AB4FA"];
 }
 
 + (UIColor *) customGrayColor{

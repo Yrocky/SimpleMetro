@@ -10,8 +10,8 @@ body{
 .wrapper{
 
 	margin: 0 auto;	
-	padding-left: 3%;
-	padding-right: 3%;
+	padding-left: 5%;
+	padding-right: 5%;
 	padding-bottom: 40px;
 }
 
@@ -20,7 +20,7 @@ h1, .title{
 }
 
 .shadow-title{
-	font-size: 17px;
+	font-size: 37px;
 	color: #C4D2DB;
 }
 

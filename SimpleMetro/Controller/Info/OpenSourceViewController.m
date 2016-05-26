@@ -24,6 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.title = @"开源许可";
+    
     NSString * path = [[NSBundle mainBundle] pathForResource:@"credits" ofType:@"html"];
     NSString * content = [NSString stringWithContentsOfFile:path
                                                    encoding:NSUTF8StringEncoding

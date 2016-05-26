@@ -19,6 +19,7 @@
 
 @implementation AppDelegate
 
+// baidu-map-SDK-key:vvhjlAaSHL55EQ80jG49tjlM64bDix2l
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     

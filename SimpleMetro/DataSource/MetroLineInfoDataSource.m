@@ -7,6 +7,7 @@
 //
 
 #import "MetroLineInfoDataSource.h"
+#import "LineStationCell.h"
 
 static NSString * const metroLineCellIdentifier = @"metroLineCellIdentifier";
 
@@ -60,9 +61,13 @@ static NSString * const metroLineCellIdentifier = @"metroLineCellIdentifier";
 
 - (Class)cellClass{
  
-    return [UITableViewCell class];
+    return [LineStationCell class];
 }
 
+- (UINib *)nib{
+
+    return [UINib nibWithNibName:@"LineStationCell" bundle:nil];
+}
 - (NSString *)cellIdentifier{
 
     return metroLineCellIdentifier;
@@ -76,14 +81,13 @@ static NSString * const metroLineCellIdentifier = @"metroLineCellIdentifier";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:metroLineCellIdentifier
+    LineStationCell * cell = [tableView dequeueReusableCellWithIdentifier:metroLineCellIdentifier
                                                              forIndexPath:indexPath];
     
-    NSDictionary * lineStationInfo = [self elementForIndexPath:indexPath];
     
-    NSString * stationName = lineStationInfo[@"name"];
-    cell.textLabel.textColor = [UIColor redColor];
-    cell.textLabel.text = stationName;
+    NSDictionary * lineStationInfo = [self elementForIndexPath:indexPath];
+
+    [cell configureStationCellWithInfo:lineStationInfo];
     
     return cell;
 }
@@ -98,11 +102,15 @@ static NSString * const metroLineCellIdentifier = @"metroLineCellIdentifier";
     
     NSMutableArray * queryLineStations = [NSMutableArray array];
     
+//    NSLog(@"lineName:%@",lineName);
+    
     for (NSDictionary * lineStation in self.metroLinesInfo) {
         
         if ([lineStation[@"line"] isEqualToString:lineName]) {
             
             [queryLineStations addObject:lineStation];
+            
+//            NSLog(@"line(%@)---%@",lineStation[@"line"],lineStation[@"name"]);
         }
     }
     

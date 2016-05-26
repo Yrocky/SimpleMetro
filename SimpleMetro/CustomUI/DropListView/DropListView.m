@@ -8,6 +8,7 @@
 
 #import "DropListView.h"
 #import "UITableView+Line.h"
+#import "UIColor+Common.h"
 
 
 #define kAnimationDuration 0.5f
@@ -53,7 +54,7 @@ static NSString * const dropListCellReuseIdentifier = @"dropListReuseIdentifier"
     
     // use background View展示透明效果
     _backgroundView = [[UIView alloc] initWithFrame:self.bounds];
-    _backgroundView.backgroundColor = [UIColor colorWithWhite:0.2 alpha:0];
+    _backgroundView.backgroundColor = [UIColor colorWithWhite:0.7 alpha:0];
     [_backgroundView addGestureRecognizer:tapGestureRecognizer];
     
     // visual effect view
@@ -70,6 +71,7 @@ static NSString * const dropListCellReuseIdentifier = @"dropListReuseIdentifier"
     _dropListTableView.delegate = self;
     _dropListTableView.dataSource = self;
     _dropListTableView.scrollEnabled = NO;
+    _dropListTableView.cellLineColor = [UIColor customHightWhiteColor];
     _dropListTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _dropListTableView.tableFooterView = [UIView new];
     _dropListTableView.backgroundColor = [UIColor clearColor];
@@ -81,11 +83,23 @@ static NSString * const dropListCellReuseIdentifier = @"dropListReuseIdentifier"
 
 #pragma mark - Method
 
+- (NSAttributedString *) changeNormalTextToAttribute:(NSString *)normalText atIndexPath:(NSIndexPath *)indexPath{
+    
+    UIColor * attributeColor = self.attributeColor[indexPath.row];
+    NSMutableAttributedString * attributeString = [[NSMutableAttributedString alloc] initWithString:normalText];
+    [attributeString addAttributes:@{NSForegroundColorAttributeName:attributeColor} range:NSMakeRange(0, 1)];
+    
+    return attributeString;
+}
+
 - (void) valueWithIndexPath:(NSIndexPath *)indexPath{
     
-    if (self.delegate && [self.delegate respondsToSelector:@selector(dropListView:didSelectedItemAtIndexPath:)]) {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(dropListView:didSelectedItemAtIndexPath:withText:)]) {
         
-        [self.delegate dropListView:self didSelectedItemAtIndexPath:indexPath];
+        NSString * contect = self.datas[indexPath.row];
+        [self.delegate dropListView:self
+         didSelectedItemAtIndexPath:indexPath
+                           withText:[contect substringWithRange:NSMakeRange(contect.length - 3, 3)]];
         
     }else if(self.selectedHandle){
         
@@ -104,7 +118,7 @@ static NSString * const dropListCellReuseIdentifier = @"dropListReuseIdentifier"
 //    self.dropListTableView.layer.transform = CATransform3DMakeTranslation(0, -CGRectGetHeight(self.bounds), 0);
     self.backgroundView.alpha = 0.;
     [UIView animateWithDuration:kAnimationDuration animations:^{
-    self.backgroundView.alpha = 1.;
+        self.backgroundView.alpha = 1.;
 //        self.dropListTableView.layer.transform = CATransform3DMakeTranslation(0, 0, 0);
 //        self.dropListTableView.layer.transform = CATransform3DIdentity;
     }];
@@ -112,19 +126,39 @@ static NSString * const dropListCellReuseIdentifier = @"dropListReuseIdentifier"
 
 - (void) hidenAnimation{
     
-    [UIView animateWithDuration:kAnimationDuration delay:kAnimationDelay
-                        options:UIViewAnimationOptionCurveEaseOut
-                     animations:^{
-        self.dropListTableView.layer.transform = CATransform3DTranslate(self.dropListTableView.layer.transform,0, -CGRectGetHeight(self.bounds), 0);
-    } completion:^(BOOL finished) {
-//        self.dropListTableView.layer.transform = CATransform3DIdentity;
-        [self removeFromSuperview];
-    }];
+    __block NSTimeInterval  animationDuration = 0.0f;
     
-    [UIView animateWithDuration:0.2 + kAnimationDuration animations:^{
+    for (NSIndexPath * indexPath in self.showSet) {
         
-        self.backgroundView.alpha = 0.0f;
-    }];
+        UITableViewCell * cell = [self.dropListTableView cellForRowAtIndexPath:indexPath];
+        
+        NSTimeInterval delayTime = 0.3 + sqrt(indexPath.row) * 0.09;
+        cell.alpha = 1.;
+        NSLog(@"+++++++ begin");
+        [UIView animateWithDuration:0.5 delay:delayTime
+             usingSpringWithDamping:1.0
+              initialSpringVelocity:0.1
+                            options:UIViewAnimationOptionCurveEaseOut
+                         animations:^{
+//                             cell.layer.transform = CATransform3DIdentity;
+                             cell.layer.transform = CATransform3DTranslate(cell.layer.transform, 0, -400 ,0);
+                             cell.alpha = .0f;
+                         } completion:^(BOOL finish){
+                             animationDuration += (delayTime + 0.);
+                             NSLog(@"finish ++++++++++%f",animationDuration);
+                         }];
+    }
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.7 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [UIView animateWithDuration:0.3
+                         animations:^{
+            self.backgroundView.alpha = .0f;
+        } completion:^(BOOL finished) {
+            [self removeFromSuperview];
+        }];
+    });
+    
 };
 #pragma mark - API
 
@@ -140,11 +174,12 @@ static NSString * const dropListCellReuseIdentifier = @"dropListReuseIdentifier"
     tableViewFrame.size.height = datas.count * self.dropListTableView.rowHeight;
     self.dropListTableView.frame = tableViewFrame;
     
-    [self.dropListTableView reloadData];
 }
 
 - (void) showDropListView{
-    
+
+    [self.dropListTableView reloadData];
+
     [self showAnimation];
 };
 
@@ -167,9 +202,9 @@ static NSString * const dropListCellReuseIdentifier = @"dropListReuseIdentifier"
         cell.backgroundColor = [UIColor clearColor];
         cell.selectedBackgroundView = [UIView new];
         cell.backgroundView = nil;
-        
+
         UILabel * dropListTitleLabel = [[UILabel alloc] init];
-        dropListTitleLabel.textColor = [UIColor whiteColor];
+        dropListTitleLabel.textColor = [UIColor customLightBlueColor];
         dropListTitleLabel.font = [UIFont systemFontOfSize:16];
         dropListTitleLabel.backgroundColor = [UIColor clearColor];
         dropListTitleLabel.textAlignment = NSTextAlignmentCenter;
@@ -199,11 +234,8 @@ static NSString * const dropListCellReuseIdentifier = @"dropListReuseIdentifier"
     NSString * title = self.datas[indexPath.row];
     
     UILabel * dropListTitleLabel = (UILabel *)[cell.contentView viewWithTag:10001];
-    dropListTitleLabel.text = [NSString stringWithFormat:@"%@",title ? title : @" "];
-    
-//    cell.backgroundColor = [UIColor orangeColor];
-    
-//    cell.contentView.backgroundColor = [UIColor whiteColor];
+    dropListTitleLabel.attributedText = [self changeNormalTextToAttribute:title
+                                                              atIndexPath:indexPath];
     
     [tableView addLineforPlainCell:cell
                  forRowAtIndexPath:indexPath

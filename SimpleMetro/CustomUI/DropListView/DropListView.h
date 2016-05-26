@@ -17,7 +17,7 @@ typedef void(^DropListBlockSelectedHandle)(NSIndexPath *selectedIndexPath);
 
 @optional
 // 传递的indexPath有可能是nil，需要判断才可以使用
-- (void) dropListView:(DropListView *)dropList didSelectedItemAtIndexPath:(NSIndexPath *)indexPath;
+- (void) dropListView:(DropListView *)dropList didSelectedItemAtIndexPath:(NSIndexPath *)indexPath withText:(NSString *)text;
 @end
 
 @interface DropListView : UIView
@@ -29,6 +29,9 @@ typedef void(^DropListBlockSelectedHandle)(NSIndexPath *selectedIndexPath);
 
 // block,block中传递的indexPath有可能是nil，需要判断才可以使用
 @property (nonatomic ,copy) DropListBlockSelectedHandle selectedHandle;
+
+// 
+@property (nonatomic ,strong) NSArray * attributeColor;
 
 - (void) setupDropListData:(NSArray *)datas;
 

@@ -117,7 +117,7 @@ static NSString * const leftMenuCellIdentifier = @"leftMenuCellIdentifier";
                 break;
             case 2:
             {
-                UINavigationController * aboutMeNavigationController = (UINavigationController *)[StoryBoardUtilities viewControllerForStoryboardName:@"Main" storyBoardID:AboutMeNavigationControllerStoryBoardID];
+                UINavigationController * aboutMeNavigationController = (UINavigationController *)[StoryBoardUtilities viewControllerForStoryboardName:@"Main" storyBoardID:AboutMeViewControllerStoryBoardID];
                 
                 return aboutMeNavigationController;
             }

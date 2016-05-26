@@ -43,7 +43,8 @@
     self.maskLayer.frame = self.bounds;
 }
 
-#pragma mark - function
+#pragma mark - API
+
 - (void) appearWithSpotlight:(HLLSpotlight *)spotlight duration:(NSTimeInterval)duration{
     if (!spotlight) {
         spotlight = self.spotlight;

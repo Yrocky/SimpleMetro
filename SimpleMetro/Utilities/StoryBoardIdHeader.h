@@ -16,7 +16,7 @@ static NSString *const AroundServiceNavigationControllerStoryBoardID = @"AroundS
 static NSString *const AboutMetroNavigationControllerStoryBoardID = @"AboutMetroNavigationController";
 
 static NSString *const OpenSourceNavigationControllerStoryBoardID = @"OpenSourceNavigationController";
-static NSString *const AboutMeNavigationControllerStoryBoardID = @"AboutMeNavigationController";
+static NSString *const AboutMeViewControllerStoryBoardID = @"AboutMeViewController";
 
 
 #endif /* StoryBoardIdHeader_h */

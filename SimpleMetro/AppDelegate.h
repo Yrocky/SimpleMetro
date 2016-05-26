@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "RESideMenu.h"
+//#import "BMKMapManager.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate,RESideMenuDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
+//@property (nonatomic ,strong) BMKMapManager* mapManager;
 @end
 

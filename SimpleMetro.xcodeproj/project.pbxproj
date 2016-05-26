@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D77DCA3E1CF6933C002249CC /* BlurActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = D77DCA3D1CF6933C002249CC /* BlurActionSheetView.m */; };
+		D77DCA421CF6E0AD002249CC /* HLLPullToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = D77DCA411CF6E0AD002249CC /* HLLPullToRefreshView.m */; };
+		D77DCA481CF6E9DD002249CC /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77DCA441CF6E9DD002249CC /* BaiduMapAPI_Base.framework */; };
+		D77DCA491CF6E9DD002249CC /* BaiduMapAPI_Cloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77DCA451CF6E9DD002249CC /* BaiduMapAPI_Cloud.framework */; };
+		D77DCA4A1CF6E9DD002249CC /* BaiduMapAPI_Location.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77DCA461CF6E9DD002249CC /* BaiduMapAPI_Location.framework */; };
+		D77DCA4B1CF6E9DD002249CC /* BaiduMapAPI_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77DCA471CF6E9DD002249CC /* BaiduMapAPI_Search.framework */; };
+		D77DCA4D1CF6EA7F002249CC /* BaiduMapAPI_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77DCA4C1CF6EA7F002249CC /* BaiduMapAPI_Map.framework */; };
 		D7D855801CF34BFF0028B92D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D8557F1CF34BFF0028B92D /* main.m */; };
 		D7D855831CF34BFF0028B92D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D855821CF34BFF0028B92D /* AppDelegate.m */; };
 		D7D855891CF34BFF0028B92D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D855871CF34BFF0028B92D /* Main.storyboard */; };
@@ -42,7 +49,6 @@
 		D7D856471CF455080028B92D /* UIImage+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D856461CF455080028B92D /* UIImage+Common.m */; };
 		D7D8565E1CF545B60028B92D /* AroundService.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D8565C1CF545B60028B92D /* AroundService.storyboard */; };
 		D7D856601CF546CA0028B92D /* MetroInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D8565F1CF546CA0028B92D /* MetroInfo.storyboard */; };
-		D7D856771CF56E6B0028B92D /* LeftMenuDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D856671CF56E6B0028B92D /* LeftMenuDataSource.m */; };
 		D7D856781CF56E6B0028B92D /* MetroLineInfoDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D856691CF56E6B0028B92D /* MetroLineInfoDataSource.m */; };
 		D7D856791CF56E6B0028B92D /* StationInfoDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D8566B1CF56E6B0028B92D /* StationInfoDataSource.m */; };
 		D7D8567A1CF56E6B0028B92D /* LeftMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D8566E1CF56E6B0028B92D /* LeftMenuCell.m */; };
@@ -74,6 +80,7 @@
 		D7D856BB1CF59EC00028B92D /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D7D856BA1CF59EC00028B92D /* libsqlite3.0.tbd */; };
 		D7D856BD1CF59ED20028B92D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7D856BC1CF59ED20028B92D /* CoreGraphics.framework */; };
 		D7D856BF1CF59EE00028B92D /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D7D856BE1CF59EE00028B92D /* libstdc++.6.0.9.tbd */; };
+		D7D856C21CF59F490028B92D /* LeftMenuDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D856C11CF59F490028B92D /* LeftMenuDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +94,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D77DCA3C1CF6933C002249CC /* BlurActionSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlurActionSheetView.h; sourceTree = "<group>"; };
+		D77DCA3D1CF6933C002249CC /* BlurActionSheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlurActionSheetView.m; sourceTree = "<group>"; };
+		D77DCA401CF6E0AD002249CC /* HLLPullToRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLPullToRefreshView.h; sourceTree = "<group>"; };
+		D77DCA411CF6E0AD002249CC /* HLLPullToRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLPullToRefreshView.m; sourceTree = "<group>"; };
+		D77DCA441CF6E9DD002249CC /* BaiduMapAPI_Base.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Base.framework; sourceTree = "<group>"; };
+		D77DCA451CF6E9DD002249CC /* BaiduMapAPI_Cloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Cloud.framework; sourceTree = "<group>"; };
+		D77DCA461CF6E9DD002249CC /* BaiduMapAPI_Location.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Location.framework; sourceTree = "<group>"; };
+		D77DCA471CF6E9DD002249CC /* BaiduMapAPI_Search.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Search.framework; sourceTree = "<group>"; };
+		D77DCA4C1CF6EA7F002249CC /* BaiduMapAPI_Map.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Map.framework; sourceTree = "<group>"; };
 		D7D8557B1CF34BFF0028B92D /* SimpleMetro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleMetro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7D8557F1CF34BFF0028B92D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D7D855811CF34BFF0028B92D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -152,7 +168,6 @@
 		D7D8565F1CF546CA0028B92D /* MetroInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MetroInfo.storyboard; sourceTree = "<group>"; };
 		D7D856651CF56E6B0028B92D /* DataSourceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSourceProtocol.h; sourceTree = "<group>"; };
 		D7D856661CF56E6B0028B92D /* LeftMenuDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuDataSource.h; sourceTree = "<group>"; };
-		D7D856671CF56E6B0028B92D /* LeftMenuDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuDataSource.m; sourceTree = "<group>"; };
 		D7D856681CF56E6B0028B92D /* MetroLineInfoDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetroLineInfoDataSource.h; sourceTree = "<group>"; };
 		D7D856691CF56E6B0028B92D /* MetroLineInfoDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetroLineInfoDataSource.m; sourceTree = "<group>"; };
 		D7D8566A1CF56E6B0028B92D /* StationInfoDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationInfoDataSource.h; sourceTree = "<group>"; };
@@ -198,6 +213,7 @@
 		D7D856BA1CF59EC00028B92D /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		D7D856BC1CF59ED20028B92D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D7D856BE1CF59EE00028B92D /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		D7D856C11CF59F490028B92D /* LeftMenuDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,14 +222,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7D856BF1CF59EE00028B92D /* libstdc++.6.0.9.tbd in Frameworks */,
+				D77DCA4D1CF6EA7F002249CC /* BaiduMapAPI_Map.framework in Frameworks */,
 				D7D856BD1CF59ED20028B92D /* CoreGraphics.framework in Frameworks */,
 				D7D856BB1CF59EC00028B92D /* libsqlite3.0.tbd in Frameworks */,
 				D7D856B91CF59EB50028B92D /* Security.framework in Frameworks */,
 				D7D856B71CF59EAF0028B92D /* CoreTelephony.framework in Frameworks */,
+				D77DCA481CF6E9DD002249CC /* BaiduMapAPI_Base.framework in Frameworks */,
 				D7D856B51CF59EA50028B92D /* SystemConfiguration.framework in Frameworks */,
+				D77DCA4A1CF6E9DD002249CC /* BaiduMapAPI_Location.framework in Frameworks */,
+				D77DCA4B1CF6E9DD002249CC /* BaiduMapAPI_Search.framework in Frameworks */,
 				D7D856B31CF59E980028B92D /* OpenGLES.framework in Frameworks */,
 				D7D856B11CF59E910028B92D /* QuartzCore.framework in Frameworks */,
 				D7D856AF1CF59E690028B92D /* CoreLocation.framework in Frameworks */,
+				D77DCA491CF6E9DD002249CC /* BaiduMapAPI_Cloud.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +248,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D77DCA3B1CF6933C002249CC /* BlurActionSheetView */ = {
+			isa = PBXGroup;
+			children = (
+				D77DCA3C1CF6933C002249CC /* BlurActionSheetView.h */,
+				D77DCA3D1CF6933C002249CC /* BlurActionSheetView.m */,
+			);
+			path = BlurActionSheetView;
+			sourceTree = "<group>";
+		};
+		D77DCA3F1CF6E0AD002249CC /* PullToRefreshView */ = {
+			isa = PBXGroup;
+			children = (
+				D77DCA401CF6E0AD002249CC /* HLLPullToRefreshView.h */,
+				D77DCA411CF6E0AD002249CC /* HLLPullToRefreshView.m */,
+			);
+			path = PullToRefreshView;
+			sourceTree = "<group>";
+		};
+		D77DCA431CF6E9DD002249CC /* Baidu SDK */ = {
+			isa = PBXGroup;
+			children = (
+				D77DCA4C1CF6EA7F002249CC /* BaiduMapAPI_Map.framework */,
+				D77DCA441CF6E9DD002249CC /* BaiduMapAPI_Base.framework */,
+				D77DCA451CF6E9DD002249CC /* BaiduMapAPI_Cloud.framework */,
+				D77DCA461CF6E9DD002249CC /* BaiduMapAPI_Location.framework */,
+				D77DCA471CF6E9DD002249CC /* BaiduMapAPI_Search.framework */,
+			);
+			path = "Baidu SDK";
+			sourceTree = "<group>";
+		};
 		D7D855721CF34BFF0028B92D = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +340,8 @@
 		D7D855D21CF36FF80028B92D /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
+				D77DCA3F1CF6E0AD002249CC /* PullToRefreshView */,
+				D77DCA3B1CF6933C002249CC /* BlurActionSheetView */,
 				D7D855D31CF36FF80028B92D /* DropListView */,
 				D7D855D61CF36FF80028B92D /* Spotligh */,
 			);
@@ -322,6 +375,7 @@
 		D7D855E71CF3F0C50028B92D /* Thrid */ = {
 			isa = PBXGroup;
 			children = (
+				D77DCA431CF6E9DD002249CC /* Baidu SDK */,
 				D7D856171CF4342C0028B92D /* FontAwesomeKit */,
 				D7D855E81CF3F0C50028B92D /* RESideMenu */,
 			);
@@ -410,7 +464,7 @@
 			children = (
 				D7D856651CF56E6B0028B92D /* DataSourceProtocol.h */,
 				D7D856661CF56E6B0028B92D /* LeftMenuDataSource.h */,
-				D7D856671CF56E6B0028B92D /* LeftMenuDataSource.m */,
+				D7D856C11CF59F490028B92D /* LeftMenuDataSource.m */,
 				D7D856681CF56E6B0028B92D /* MetroLineInfoDataSource.h */,
 				D7D856691CF56E6B0028B92D /* MetroLineInfoDataSource.m */,
 				D7D8566A1CF56E6B0028B92D /* StationInfoDataSource.h */,
@@ -425,13 +479,13 @@
 				D7D8566D1CF56E6B0028B92D /* LeftMenuCell.h */,
 				D7D8566E1CF56E6B0028B92D /* LeftMenuCell.m */,
 				D7D8566F1CF56E6B0028B92D /* LeftMenuCell.xib */,
+				D7D856741CF56E6B0028B92D /* LineStationCell.h */,
+				D7D856751CF56E6B0028B92D /* LineStationCell.m */,
+				D7D856761CF56E6B0028B92D /* LineStationCell.xib */,
 				D7D856701CF56E6B0028B92D /* LeftMenuSectionHeaderView.h */,
 				D7D856711CF56E6B0028B92D /* LeftMenuSectionHeaderView.m */,
 				D7D856721CF56E6B0028B92D /* LeftMenuSectionHeaderView.xib */,
 				D7D856731CF56E6B0028B92D /* LeftMenuSelectedBackgroundView.xib */,
-				D7D856741CF56E6B0028B92D /* LineStationCell.h */,
-				D7D856751CF56E6B0028B92D /* LineStationCell.m */,
-				D7D856761CF56E6B0028B92D /* LineStationCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -444,8 +498,8 @@
 				D7D856951CF56EE60028B92D /* LeftMenuViewController.h */,
 				D7D856961CF56EE60028B92D /* LeftMenuViewController.m */,
 				D7D856841CF56EE60028B92D /* Guide */,
-				D7D856871CF56EE60028B92D /* Info */,
 				D7D8568C1CF56EE60028B92D /* LBS */,
+				D7D856871CF56EE60028B92D /* Info */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -639,8 +693,8 @@
 				D7D8567C1CF56E6B0028B92D /* LeftMenuSectionHeaderView.m in Sources */,
 				D7D8569A1CF56EE60028B92D /* OpenSourceViewController.m in Sources */,
 				D7D856971CF56EE60028B92D /* BaseViewController.m in Sources */,
+				D7D856C21CF59F490028B92D /* LeftMenuDataSource.m in Sources */,
 				D7D8567A1CF56E6B0028B92D /* LeftMenuCell.m in Sources */,
-				D7D856771CF56E6B0028B92D /* LeftMenuDataSource.m in Sources */,
 				D7D8560A1CF3F6450028B92D /* UITableView+Line.m in Sources */,
 				D7D8569B1CF56EE60028B92D /* AboutMetroViewController.m in Sources */,
 				D7D856081CF3F6450028B92D /* UIColor+Common.m in Sources */,
@@ -657,11 +711,13 @@
 				D7D8569F1CF56EE60028B92D /* LeftMenuViewController.m in Sources */,
 				D7D8569E1CF56EE60028B92D /* ViewController.m in Sources */,
 				D7D855E11CF36FF80028B92D /* HLLSpotlightView.m in Sources */,
+				D77DCA3E1CF6933C002249CC /* BlurActionSheetView.m in Sources */,
 				D7D855F11CF3F0C50028B92D /* UIViewController+RESideMenu.m in Sources */,
 				D7D855E31CF36FF80028B92D /* HLLTransition.m in Sources */,
 				D7D8560F1CF3F6740028B92D /* StoryBoardUtilities.m in Sources */,
 				D7D856311CF4342C0028B92D /* FAKMaterialIcons.m in Sources */,
 				D7D856301CF4342C0028B92D /* FAKIonIcons.m in Sources */,
+				D77DCA421CF6E0AD002249CC /* HLLPullToRefreshView.m in Sources */,
 				D7D8560B1CF3F6450028B92D /* UIView+Common.m in Sources */,
 				D7D8567F1CF56E6B0028B92D /* LineStationCell.m in Sources */,
 				D7D856781CF56E6B0028B92D /* MetroLineInfoDataSource.m in Sources */,
@@ -811,8 +867,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SimpleMetro/Thrid/Baidu",
+					SDK,
+				);
 				INFOPLIST_FILE = SimpleMetro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = HLL.SimpleMetro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -822,8 +884,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SimpleMetro/Thrid/Baidu",
+					SDK,
+				);
 				INFOPLIST_FILE = SimpleMetro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = HLL.SimpleMetro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -870,6 +938,7 @@
 				D7D8559F1CF34BFF0028B92D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D7D855A01CF34BFF0028B92D /* Build configuration list for PBXNativeTarget "SimpleMetroUITests" */ = {
 			isa = XCConfigurationList;
@@ -878,6 +947,7 @@
 				D7D855A21CF34BFF0028B92D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
