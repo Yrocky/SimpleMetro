@@ -7,8 +7,12 @@
 //
 
 #import "StationInfoController.h"
+#import "LineStationBaseInfoView.h"
+
 
 @interface StationInfoController ()
+
+@property (weak, nonatomic) IBOutlet LineStationBaseInfoView *lineStateBaseInfoView;
 
 @end
 
@@ -17,7 +21,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"stationInfo:%@",_stationInfo);
+//    NSLog(@"stationInfo:%@",_stationInfo);
+    
+    [self.lineStateBaseInfoView configureLineStationBaseInfo:self.stationInfo];
 }
 
 
