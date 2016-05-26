@@ -875,7 +875,7 @@
 				INFOPLIST_FILE = SimpleMetro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = HLL.SimpleMetro;
+				PRODUCT_BUNDLE_IDENTIFIER = com.metroservice.hll;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -892,7 +892,7 @@
 				INFOPLIST_FILE = SimpleMetro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = HLL.SimpleMetro;
+				PRODUCT_BUNDLE_IDENTIFIER = com.metroservice.hll;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -26,6 +26,13 @@
     self.navigationItem.leftBarButtonItem = leftBarButton;
 }
 
+#pragma mark - Method
+
+- (void) setDisplayTitle:(NSString *)title{
+
+    self.navigationItem.title = [NSString stringWithFormat:@"%@",title];
+}
+
 #pragma mark - Action Handle
 
 - (void) leftBarButtonHandle:(UIBarButtonItem *)sende{

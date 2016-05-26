@@ -14,4 +14,5 @@
 
 @interface BaseViewController : UIViewController
 
+- (void) setDisplayTitle:(NSString *)title;
 @end

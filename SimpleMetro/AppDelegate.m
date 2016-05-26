@@ -13,7 +13,7 @@
 #import "StoryBoardUtilities.h"
 #import "StoryBoardIdHeader.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<BMKGeneralDelegate>
 
 @end
 
@@ -23,11 +23,27 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    [self addBaiduMapSDK];
+    
     [self setupNavigationBar];
     
     [self setupSideMenuView];
     
     return YES;
+}
+
+#pragma mark - App Configure
+
+- (void) addBaiduMapSDK{
+    
+    _mapManager = [[BMKMapManager alloc]init];
+
+    BOOL ret = [_mapManager start:@"vvhjlAaSHL55EQ80jG49tjlM64bDix2l"
+                  generalDelegate:self];
+    if (!ret) {
+        NSLog(@"manager start failed!");
+    }
+    
 }
 
 - (void) setupNavigationBar{
@@ -72,22 +88,51 @@
 
 - (void)sideMenu:(RESideMenu *)sideMenu willShowMenuViewController:(UIViewController *)menuViewController
 {
-    NSLog(@"willShowMenuViewController: %@", NSStringFromClass([menuViewController class]));
+//    NSLog(@"willShowMenuViewController: %@", NSStringFromClass([menuViewController class]));
 }
 
 - (void)sideMenu:(RESideMenu *)sideMenu didShowMenuViewController:(UIViewController *)menuViewController
 {
-    NSLog(@"didShowMenuViewController: %@", NSStringFromClass([menuViewController class]));
+//    NSLog(@"didShowMenuViewController: %@", NSStringFromClass([menuViewController class]));
 }
 
 - (void)sideMenu:(RESideMenu *)sideMenu willHideMenuViewController:(UIViewController *)menuViewController
 {
-    NSLog(@"willHideMenuViewController: %@", NSStringFromClass([menuViewController class]));
+//    NSLog(@"willHideMenuViewController: %@", NSStringFromClass([menuViewController class]));
 }
 
 - (void)sideMenu:(RESideMenu *)sideMenu didHideMenuViewController:(UIViewController *)menuViewController
 {
-    NSLog(@"didHideMenuViewController: %@", NSStringFromClass([menuViewController class]));
+//    NSLog(@"didHideMenuViewController: %@", NSStringFromClass([menuViewController class]));
 }
 
+#pragma mark - BMKGeneralDelegate
+
+/**
+ *返回网络错误
+ *@param iError 错误号
+ */
+- (void)onGetNetworkState:(int)iError{
+
+    if (0 == iError) {
+        NSLog(@"联网成功");
+    }
+    else{
+        NSLog(@"onGetNetworkState %d",iError);
+    }
+}
+
+/**
+ *返回授权验证错误
+ *@param iError 错误号 : 为0时验证通过，具体参加BMKPermissionCheckResultCode
+ */
+- (void)onGetPermissionState:(int)iError{
+
+    if (0 == iError) {
+        NSLog(@"授权成功");
+    }
+    else {
+        NSLog(@"onGetPermissionState %d",iError);
+    }
+}
 @end

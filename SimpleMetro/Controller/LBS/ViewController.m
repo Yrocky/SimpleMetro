@@ -35,6 +35,18 @@
     
     self.view.backgroundColor = [UIColor clearColor];
     
+    [self addTableView];
+    
+    // title button
+    _titleButton = [[UIButton alloc] init];
+    [_titleButton setTitleColor:[UIColor customLightBlueColor] forState:UIControlStateNormal];
+    [_titleButton setTitle:self.dataSource.name forState:UIControlStateNormal];
+    [_titleButton addTarget:self action:@selector(titleButtonHandle:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.titleView = self.titleButton;
+}
+
+- (void) addTableView{
+    
     // dataSource
     _dataSource = [[MetroLineInfoDataSource alloc] init];
     self.dataSource.tableView = self.tableView;
@@ -47,8 +59,6 @@
     self.tableView.backgroundColor = [UIColor customHightWhiteColor];
     self.tableView.dataSource = self.dataSource;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-//    [self.tableView registerClass:[self.dataSource cellClass]
-//           forCellReuseIdentifier:[self.dataSource cellIdentifier]];
     [self.tableView registerNib:[self.dataSource nib]
          forCellReuseIdentifier:[self.dataSource cellIdentifier]];
     
@@ -62,15 +72,7 @@
     _pullToRefreshView.refreshInfoColor = [UIColor customWhiteColor];
     _pullToRefreshView.backgroundColor = [UIColor clearColor];
     [self.tableView addSubview:_pullToRefreshView];
-    
-    // title button
-    _titleButton = [[UIButton alloc] init];
-    [_titleButton setTitleColor:[UIColor customLightBlueColor] forState:UIControlStateNormal];
-    [_titleButton setTitle:self.dataSource.name forState:UIControlStateNormal];
-    [_titleButton addTarget:self action:@selector(titleButtonHandle:) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.titleView = self.titleButton;
 }
-
 
 - (UIStatusBarStyle)preferredStatusBarStyle{
 
@@ -97,6 +99,7 @@
         [self.dataSource queryMetroLineInfoWithLineNumber:index + 1];
     }];
     return;
+    
     DropListView * dropListView = [[DropListView alloc] initWithFrame:CGRectMake(0, 64, self.tableView.width, self.tableView.height)];
     [dropListView setupDropListData:@[@"●   郑州轨道交通一号线",
                                       @"●   郑州轨道交通二号线",
@@ -139,15 +142,10 @@
 }
 #pragma mark - UITableViewDelegate
 
-//- (CGFloat) tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-//
-//    return .1f;
-//}
-//
-//- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-//
-//    return .1f;
-//}
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    
+        NSLog(@"end dragging---");
+}
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
