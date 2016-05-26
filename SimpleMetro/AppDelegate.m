@@ -13,7 +13,7 @@
 #import "StoryBoardUtilities.h"
 #import "StoryBoardIdHeader.h"
 
-@interface AppDelegate ()/*<BMKGeneralDelegate>*/
+@interface AppDelegate ()<BMKGeneralDelegate>
 
 @end
 
@@ -36,14 +36,13 @@
 
 - (void) addBaiduMapSDK{
     
-//    _mapManager = [[BMKMapManager alloc]init];
-//
-//    BOOL ret = [_mapManager start:@"vvhjlAaSHL55EQ80jG49tjlM64bDix2l"
-//                  generalDelegate:self];
-//    if (!ret) {
-//        NSLog(@"manager start failed!");
-//    }
-    
+    _mapManager = [[BMKMapManager alloc]init];
+
+    BOOL ret = [_mapManager start:@"vvhjlAaSHL55EQ80jG49tjlM64bDix2l"
+                  generalDelegate:self];
+    if (!ret) {
+        NSLog(@"manager start failed!");
+    }
 }
 
 - (void) setupNavigationBar{
