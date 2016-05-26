@@ -14,6 +14,8 @@
 		D77DCA4A1CF6E9DD002249CC /* BaiduMapAPI_Location.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77DCA461CF6E9DD002249CC /* BaiduMapAPI_Location.framework */; };
 		D77DCA4B1CF6E9DD002249CC /* BaiduMapAPI_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77DCA471CF6E9DD002249CC /* BaiduMapAPI_Search.framework */; };
 		D77DCA4D1CF6EA7F002249CC /* BaiduMapAPI_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77DCA4C1CF6EA7F002249CC /* BaiduMapAPI_Map.framework */; };
+		D77DCA511CF73E6D002249CC /* MetroLineStationInfoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D77DCA501CF73E6D002249CC /* MetroLineStationInfoHelper.m */; };
+		D77DCA541CF7443F002249CC /* BlurEffectView.m in Sources */ = {isa = PBXBuildFile; fileRef = D77DCA531CF7443F002249CC /* BlurEffectView.m */; };
 		D7D855801CF34BFF0028B92D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D8557F1CF34BFF0028B92D /* main.m */; };
 		D7D855831CF34BFF0028B92D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D855821CF34BFF0028B92D /* AppDelegate.m */; };
 		D7D855891CF34BFF0028B92D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D855871CF34BFF0028B92D /* Main.storyboard */; };
@@ -103,6 +105,10 @@
 		D77DCA461CF6E9DD002249CC /* BaiduMapAPI_Location.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Location.framework; sourceTree = "<group>"; };
 		D77DCA471CF6E9DD002249CC /* BaiduMapAPI_Search.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Search.framework; sourceTree = "<group>"; };
 		D77DCA4C1CF6EA7F002249CC /* BaiduMapAPI_Map.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Map.framework; sourceTree = "<group>"; };
+		D77DCA4F1CF73E6D002249CC /* MetroLineStationInfoHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetroLineStationInfoHelper.h; sourceTree = "<group>"; };
+		D77DCA501CF73E6D002249CC /* MetroLineStationInfoHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetroLineStationInfoHelper.m; sourceTree = "<group>"; };
+		D77DCA521CF7443F002249CC /* BlurEffectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlurEffectView.h; sourceTree = "<group>"; };
+		D77DCA531CF7443F002249CC /* BlurEffectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlurEffectView.m; sourceTree = "<group>"; };
 		D7D8557B1CF34BFF0028B92D /* SimpleMetro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleMetro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7D8557F1CF34BFF0028B92D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D7D855811CF34BFF0028B92D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -278,6 +284,15 @@
 			path = "Baidu SDK";
 			sourceTree = "<group>";
 		};
+		D77DCA4E1CF73E3A002249CC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D77DCA4F1CF73E6D002249CC /* MetroLineStationInfoHelper.h */,
+				D77DCA501CF73E6D002249CC /* MetroLineStationInfoHelper.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		D7D855721CF34BFF0028B92D = {
 			isa = PBXGroup;
 			children = (
@@ -306,8 +321,9 @@
 				D7D8565F1CF546CA0028B92D /* MetroInfo.storyboard */,
 				D7D8565C1CF545B60028B92D /* AroundService.storyboard */,
 				D7D856811CF56EE60028B92D /* Controller */,
-				D7D856641CF56E6B0028B92D /* DataSource */,
 				D7D8566C1CF56E6B0028B92D /* View */,
+				D77DCA4E1CF73E3A002249CC /* Model */,
+				D7D856641CF56E6B0028B92D /* DataSource */,
 				D7D855D21CF36FF80028B92D /* CustomUI */,
 				D7D855FE1CF3F6450028B92D /* Utilities */,
 				D7D855E71CF3F0C50028B92D /* Thrid */,
@@ -486,6 +502,8 @@
 				D7D856711CF56E6B0028B92D /* LeftMenuSectionHeaderView.m */,
 				D7D856721CF56E6B0028B92D /* LeftMenuSectionHeaderView.xib */,
 				D7D856731CF56E6B0028B92D /* LeftMenuSelectedBackgroundView.xib */,
+				D77DCA521CF7443F002249CC /* BlurEffectView.h */,
+				D77DCA531CF7443F002249CC /* BlurEffectView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -725,6 +743,8 @@
 				D7D856981CF56EE60028B92D /* GuideViewController.m in Sources */,
 				D7D8569C1CF56EE60028B92D /* AroundServiceViewContrller.m in Sources */,
 				D7D856791CF56E6B0028B92D /* StationInfoDataSource.m in Sources */,
+				D77DCA511CF73E6D002249CC /* MetroLineStationInfoHelper.m in Sources */,
+				D77DCA541CF7443F002249CC /* BlurEffectView.m in Sources */,
 				D7D855F01CF3F0C50028B92D /* RESideMenu.m in Sources */,
 				D7D8569D1CF56EE60028B92D /* StationInfoController.m in Sources */,
 				D7D8562D1CF4342C0028B92D /* FAKFontAwesome.m in Sources */,

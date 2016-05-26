@@ -12,11 +12,16 @@ extern NSString * const PullToRefreshNormalInfo;
 extern NSString * const PullToRefreshReleaseInfo;
 extern CGFloat const OffsetThreshold;
 
+static CGFloat ScrollViewTopMargin          = 0.0f;
+static CGFloat RefreshProportion            = 0.4;
+
 typedef void(^CompletionBlock)(BOOL finished);
 
 @interface HLLPullToRefreshView : UIView
 
-@property (nonatomic ,weak) UIScrollView * scrollView;
+@property (nonatomic ,assign) BOOL fullState;
+
+//@property (nonatomic ,weak) UIScrollView * scrollView;
 
 @property (nonatomic ,strong ,readwrite) UIColor * refreshControlColor;
 

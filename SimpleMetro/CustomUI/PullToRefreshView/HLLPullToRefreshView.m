@@ -12,12 +12,9 @@ NSString * const PullToRefreshNormalInfo    = @"下拉选取地铁线路";
 NSString * const PullToRefreshReleaseInfo   = @"松手进行选取";
 CGFloat const OffsetThreshold               = 60.0f;
 
-static CGFloat ScrollViewTopMargin          = 0.0f;
-static CGFloat RefreshProportion            = 0.4;
 
 @interface HLLPullToRefreshView ()<UIScrollViewDelegate>
 
-@property (nonatomic ,assign) BOOL fullState;
 @property (nonatomic ,copy) CompletionBlock completion;
 
 @property (nonatomic ,strong) CAShapeLayer * refreshLayer;
@@ -107,12 +104,6 @@ static CGFloat RefreshProportion            = 0.4;
     [self addSubview:_contentLabel];
 }
 
-- (void)setScrollView:(UIScrollView *)scrollView{
-
-    _scrollView = scrollView;
-    scrollView.delegate = self;
-    
-}
 #pragma mark - API
 
 - (void) refreshInfoWithOffset:(CGFloat)offset{

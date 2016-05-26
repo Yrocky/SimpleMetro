@@ -8,22 +8,20 @@
 
 #import "BlurActionSheetView.h"
 #import "UIColor+Common.h"
-
+#import "BlurEffectView.h"
 
 static CGFloat const ActionSheetCellHeight = 44.0f;
 static NSString * const CellIdentifier = @"blurActionSheetCellIdentifier";
 
 @interface BlurActionSheetView ()<UITableViewDataSource,UITableViewDelegate>
 
-@property (nonatomic ,strong ,readwrite) UIView * containerView;
-@property (nonatomic ,strong ,readwrite) NSArray * titles;
-@property (nonatomic ,copy) HandleBlock handle;
+@property (nonatomic ,strong ,readwrite) UIView     * containerView;
+@property (nonatomic ,strong ,readwrite) NSArray    * titles;
+@property (nonatomic ,copy) HandleBlock               handle;
 
-@property (nonatomic ,strong) NSArray * attributeColor;
-
-@property (nonatomic ,strong) NSMutableSet * showSet;
-@property (nonatomic ,strong) UIView * backgroundView;
-@property (nonatomic ,strong) UITableView * tableView;
+@property (nonatomic ,strong) NSMutableSet          * showSet;
+@property (nonatomic ,strong) BlurEffectView        * backgroundView;
+@property (nonatomic ,strong) UITableView           * tableView;
 @end
 
 @implementation BlurActionSheetView
@@ -33,26 +31,13 @@ static NSString * const CellIdentifier = @"blurActionSheetCellIdentifier";
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
-        _attributeColor =  @[[UIColor line_OneColor],
-                             [UIColor line_TwoColor],
-                             [UIColor line_ThreeColor],
-                             [UIColor line_FourColor],
-                             [UIColor line_FiveColor],
-                             [UIColor line_SixColor]];
 
         // alloc MutableSet
         _showSet = [NSMutableSet set];
         
         // backgroundView
-        _backgroundView = [[UIView alloc] init];
-        _backgroundView.backgroundColor = [UIColor colorWithWhite:0.5 alpha:0];
+        _backgroundView = [[BlurEffectView alloc] initWithFrame:frame];
         [self addSubview:_backgroundView];
-        
-        // visual effect view
-        UIVisualEffectView * blurView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
-        blurView.frame = [UIScreen mainScreen].bounds;
-        [_backgroundView addSubview:blurView];
         
         // tableView
         _tableView = [[UITableView alloc] init];
@@ -91,7 +76,6 @@ static NSString * const CellIdentifier = @"blurActionSheetCellIdentifier";
     frame.size.height = maxHeight;
     frame.origin.y = CGRectGetHeight(self.bounds) - CGRectGetHeight(frame);
     
-    self.backgroundView.frame = self.bounds;
     self.tableView.frame = frame;
 }
 #pragma mark - API
@@ -108,12 +92,12 @@ static NSString * const CellIdentifier = @"blurActionSheetCellIdentifier";
                      withContainerView:(UIView *)containerView
                                 handle:(HandleBlock)handle{
 
-    BlurActionSheetView * blurActionSheetView = [[BlurActionSheetView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    blurActionSheetView.titles = titles;
-    blurActionSheetView.containerView = containerView;
-    blurActionSheetView.handle = handle;
+    self.frame = [UIScreen mainScreen].bounds;
+    self.titles = titles;
+    self.containerView = containerView;
+    self.handle = handle;
     
-    [blurActionSheetView show];
+    [self show];
 }
 
 #pragma mark - Private Method
@@ -154,37 +138,41 @@ static NSString * const CellIdentifier = @"blurActionSheetCellIdentifier";
             CGFloat underLineWidth = (count - index) * minOffset;
             CGFloat height = self.tableView.frame.size.height;
             
-            [UIView animateWithDuration:0.7 delay:0
+            [UIView animateWithDuration:1.0 delay:0
                                 options:UIViewAnimationOptionCurveEaseOut
                              animations:^{
                                  cell.underLineView.frame = CGRectMake((cellWidth - underLineWidth)/2, 0, underLineWidth, 1/[UIScreen mainScreen].scale);
                              } completion:nil];
             
-            [UIView animateWithDuration:0.7 delay:0.2
+            [UIView animateWithDuration:1.0 delay:0.2
                                 options:UIViewAnimationOptionCurveEaseOut
                              animations:^{
                                  
                                  cell.layer.transform = CATransform3DTranslate(cell.layer.transform, 0, height * 2, 0);
                              } completion:^(BOOL finish){
                              
-                                 [self removeFromSuperview];
                              }];
         }
     }
     
-    [UIView animateWithDuration:0.9 animations:^{
-        
-        self.backgroundView.alpha = 0.0f;
-    }];
-}
+    [UIView animateWithDuration:1.0 delay:0.2
+                        options:UIViewAnimationOptionCurveEaseOut
+                     animations:^{
 
-#pragma mark - Method
+                         self.backgroundView.alpha = 0.0f;
+                     }
+                     completion:^(BOOL finished) {
+                         [self removeFromSuperview];
+    } ];
+}
 
 - (NSAttributedString *) changeNormalTextToAttribute:(NSString *)normalText atIndexPath:(NSIndexPath *)indexPath{
     
     UIColor * attributeColor = self.attributeColor[indexPath.row];
+    
     NSMutableAttributedString * attributeString = [[NSMutableAttributedString alloc] initWithString:normalText];
-    [attributeString addAttributes:@{NSForegroundColorAttributeName:attributeColor} range:NSMakeRange(0, 2)];
+    
+    [attributeString addAttributes:@{NSForegroundColorAttributeName:attributeColor} range:NSMakeRange(0, 1)];
     
     return attributeString;
 }
@@ -201,12 +189,10 @@ static NSString * const CellIdentifier = @"blurActionSheetCellIdentifier";
     
     cell.underLineView.hidden = indexPath.row == 0;
 
-//    cell.textLabel.textColor = [UIColor whiteColor];
-    cell.textLabel.textAlignment = NSTextAlignmentCenter;
-    
     NSString * title = self.titles[indexPath.row];
-    cell.textLabel.attributedText = [self changeNormalTextToAttribute:title
-                                                          atIndexPath:indexPath];
+    
+    cell.contentLabel.attributedText = [self changeNormalTextToAttribute:title
+                                                             atIndexPath:indexPath];
     
     return cell;
 }
@@ -259,6 +245,10 @@ static NSString * const CellIdentifier = @"blurActionSheetCellIdentifier";
     }
 }
 
+- (void)dealloc
+{
+    NSLog(@"Blur action sheet view did dealloc.");
+}
 @end
 
 
@@ -280,6 +270,14 @@ static NSString * const CellIdentifier = @"blurActionSheetCellIdentifier";
         self.backgroundColor = [UIColor clearColor];
         self.selectedBackgroundView = [UIView new];
         
+        _contentLabel = [[UILabel alloc] init];
+        _contentLabel.textAlignment = NSTextAlignmentCenter;
+        _contentLabel.font = [UIFont systemFontOfSize:16];
+        _contentLabel.textColor = [UIColor whiteColor];
+        _contentLabel.backgroundColor = [UIColor clearColor];
+        [self.contentView addSubview:_contentLabel];
+        
+        
         _underLineView = [[UIView alloc] init];
         _underLineView.backgroundColor = self.underLineColor;
         [self.contentView addSubview:_underLineView];
@@ -292,9 +290,11 @@ static NSString * const CellIdentifier = @"blurActionSheetCellIdentifier";
     
     [super layoutSubviews];
     
-    CGFloat width = self.bounds.size.width;
+    CGFloat width = self.contentView.bounds.size.width;
     CGFloat margin = 20;
     CGFloat height = 1 / [UIScreen mainScreen].scale;
+    
+    self.contentLabel.frame = CGRectMake(0, 0, width, CGRectGetHeight(self.contentView.bounds));
     
     if (self.underLineView.frame.size.height != height){
         

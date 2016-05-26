@@ -9,7 +9,7 @@
 #import "DropListView.h"
 #import "UITableView+Line.h"
 #import "UIColor+Common.h"
-
+#import "BlurEffectView.h"
 
 #define kAnimationDuration 0.5f
 #define kAnimationDelay 0.2f
@@ -25,7 +25,7 @@ static NSString * const dropListCellReuseIdentifier = @"dropListReuseIdentifier"
 
 @property (nonatomic ,strong ,readwrite) NSArray * datas;
 
-@property (nonatomic ,strong) UIView * backgroundView;
+@property (nonatomic ,strong) BlurEffectView * backgroundView;
 
 @property (nonatomic ,strong) UITableView * dropListTableView;
 
@@ -53,17 +53,11 @@ static NSString * const dropListCellReuseIdentifier = @"dropListReuseIdentifier"
     tapGestureRecognizer.numberOfTapsRequired = 1;
     
     // use background View展示透明效果
-    _backgroundView = [[UIView alloc] initWithFrame:self.bounds];
-    _backgroundView.backgroundColor = [UIColor colorWithWhite:0.7 alpha:0];
+    _backgroundView = [[BlurEffectView alloc] initWithFrame:self.bounds];
     [_backgroundView addGestureRecognizer:tapGestureRecognizer];
     
-    // visual effect view
-    UIVisualEffectView * blurView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
-    blurView.frame = [UIScreen mainScreen].bounds;
-    [_backgroundView addSubview:blurView];
-    
-    
     [self addSubview:_backgroundView];
+    
     
     // tableView
     _dropListTableView = [[UITableView alloc] initWithFrame:self.bounds
@@ -115,12 +109,11 @@ static NSString * const dropListCellReuseIdentifier = @"dropListReuseIdentifier"
 
 - (void) showAnimation{
     
-//    self.dropListTableView.layer.transform = CATransform3DMakeTranslation(0, -CGRectGetHeight(self.bounds), 0);
     self.backgroundView.alpha = 0.;
+    
     [UIView animateWithDuration:kAnimationDuration animations:^{
+
         self.backgroundView.alpha = 1.;
-//        self.dropListTableView.layer.transform = CATransform3DMakeTranslation(0, 0, 0);
-//        self.dropListTableView.layer.transform = CATransform3DIdentity;
     }];
 };
 
@@ -133,19 +126,21 @@ static NSString * const dropListCellReuseIdentifier = @"dropListReuseIdentifier"
         UITableViewCell * cell = [self.dropListTableView cellForRowAtIndexPath:indexPath];
         
         NSTimeInterval delayTime = 0.3 + sqrt(indexPath.row) * 0.09;
+        
         cell.alpha = 1.;
-        NSLog(@"+++++++ begin");
+        
         [UIView animateWithDuration:0.5 delay:delayTime
              usingSpringWithDamping:1.0
               initialSpringVelocity:0.1
                             options:UIViewAnimationOptionCurveEaseOut
                          animations:^{
-//                             cell.layer.transform = CATransform3DIdentity;
+
                              cell.layer.transform = CATransform3DTranslate(cell.layer.transform, 0, -400 ,0);
+                             
                              cell.alpha = .0f;
                          } completion:^(BOOL finish){
+                             
                              animationDuration += (delayTime + 0.);
-                             NSLog(@"finish ++++++++++%f",animationDuration);
                          }];
     }
     
@@ -153,9 +148,13 @@ static NSString * const dropListCellReuseIdentifier = @"dropListReuseIdentifier"
         
         [UIView animateWithDuration:0.3
                          animations:^{
+                             
             self.backgroundView.alpha = .0f;
+                             
         } completion:^(BOOL finished) {
+            
             [self removeFromSuperview];
+            
         }];
     });
     
@@ -171,9 +170,10 @@ static NSString * const dropListCellReuseIdentifier = @"dropListReuseIdentifier"
     
     // update frame
     CGRect tableViewFrame = self.dropListTableView.frame;
-    tableViewFrame.size.height = datas.count * self.dropListTableView.rowHeight;
-    self.dropListTableView.frame = tableViewFrame;
     
+    tableViewFrame.size.height = datas.count * self.dropListTableView.rowHeight;
+    
+    self.dropListTableView.frame = tableViewFrame;
 }
 
 - (void) showDropListView{

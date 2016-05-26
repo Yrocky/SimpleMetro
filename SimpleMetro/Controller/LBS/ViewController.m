@@ -13,6 +13,7 @@
 #import "GuideViewController.h"
 #import "BlurActionSheetView.h"
 #import "HLLPullToRefreshView.h"
+#import "MetroLineStationInfoHelper.h"
 
 @interface ViewController ()<UITableViewDelegate,DropListDelegate>
 
@@ -67,7 +68,6 @@
     // pull to refresh view
     CGFloat pullToRefreshHeight = 40.0f;
     _pullToRefreshView = [[HLLPullToRefreshView alloc] initWithFrame:CGRectMake(0, -pullToRefreshHeight, CGRectGetWidth(self.view.bounds), pullToRefreshHeight)];
-    _pullToRefreshView.scrollView = self.tableView;
     _pullToRefreshView.refreshControlColor = [UIColor customBlurColor];
     _pullToRefreshView.refreshInfoColor = [UIColor customWhiteColor];
     _pullToRefreshView.backgroundColor = [UIColor clearColor];
@@ -79,73 +79,105 @@
     return UIStatusBarStyleLightContent;
 }
 
-#pragma mark - Action
+#pragma mark - ActionSheet
 
-- (void) titleButtonHandle:(UIButton *)button{
+- (void) showTopActionSheet{
+    
+    CGRect frame = CGRectMake(0, 64, self.tableView.width, self.tableView.height);
+    
+    DropListView * dropListView = [[DropListView alloc] initWithFrame:frame];
+    
+    [dropListView setupDropListData:[MetroLineStationInfoHelper lineNameArray]];
+    
+    dropListView.attributeColor = [MetroLineStationInfoHelper lineColorArray];
+    
+    dropListView.delegate = self;
+    
+    [self.navigationController.view addSubview:dropListView];
+    
+    self.titleButton.enabled = NO;
+    
+    [dropListView showDropListView];
 
-    NSArray * datas = @[@"●   郑州轨道交通一号线",
-                        @"●   郑州轨道交通二号线",
-                        @"●   郑州轨道交通三号线",
-                        @"●   郑州轨道交通四号线",
-                        @"●   郑州轨道交通五号线",
-                        @"●   郑州轨道交通六号线"];
+}
+
+- (void) showBottomActionSheet{
     
     BlurActionSheetView * actionSheetView= [[BlurActionSheetView alloc] init];
-    [actionSheetView showBlurActionSheetWithTitles:datas handle:^(NSString * title, NSInteger index) {
+    
+    actionSheetView.attributeColor = [MetroLineStationInfoHelper lineColorArray];
+    
+    [actionSheetView showBlurActionSheetWithTitles:[MetroLineStationInfoHelper lineNameArray] handle:^(NSString * title, NSInteger index) {
         
-        NSLog(@"index:%ld",(long)index);
+        NSLog(@"BlurActionSheetView did selected index:%ld",(long)index);
         
         [self.titleButton setTitle:title forState:UIControlStateNormal];
         [self.dataSource queryMetroLineInfoWithLineNumber:index + 1];
     }];
-    return;
+}
+#pragma mark - Action
+
+- (void) titleButtonHandle:(UIButton *)button{
     
-    DropListView * dropListView = [[DropListView alloc] initWithFrame:CGRectMake(0, 64, self.tableView.width, self.tableView.height)];
-    [dropListView setupDropListData:@[@"●   郑州轨道交通一号线",
-                                      @"●   郑州轨道交通二号线",
-                                      @"●   郑州轨道交通三号线",
-                                      @"●   郑州轨道交通四号线",
-                                      @"●   郑州轨道交通五号线",
-                                      @"●   郑州轨道交通六号线"]];
-    dropListView.attributeColor = @[[UIColor line_OneColor],
-                                    [UIColor line_TwoColor],
-                                    [UIColor line_ThreeColor],
-                                    [UIColor line_FourColor],
-                                    [UIColor line_FiveColor],
-                                    [UIColor line_SixColor]
-                                    ];
-    dropListView.delegate = self;
-    self.tableView.scrollEnabled = NO;
-    self.titleButton.enabled = NO;
-    [self.navigationController.view addSubview:dropListView];
-    
-    [dropListView showDropListView];
-    
+    [self showTopActionSheet];
 }
 
 #pragma mark - DropListDelegate
 
 // 传递的indexPath有可能是nil，需要判断才可以使用
-- (void) dropListView:(DropListView *)dropList didSelectedItemAtIndexPath:(NSIndexPath *)indexPath withText:(NSString *)text{
+- (void) dropListView:(DropListView *)dropListView didSelectedItemAtIndexPath:(NSIndexPath *)indexPath withText:(NSString *)text{
 
-    self.tableView.scrollEnabled = YES;
     self.titleButton.enabled = YES;
     
     if (indexPath) {
         
-        NSLog(@"%@",text);
+        NSLog(@"dropListView did selected:%@",text);
         
         [self.titleButton setTitle:text forState:UIControlStateNormal];
         [self.dataSource queryMetroLineInfoWithLineNumber:indexPath.row + 1];
     }
-    NSLog(@"indexPath:%@",indexPath);
 }
-#pragma mark - UITableViewDelegate
+
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    CGFloat contentOffsetY = scrollView.contentOffset.y;
+    
+    if (contentOffsetY < ScrollViewTopMargin) {
+        
+        [self.pullToRefreshView refreshInfoWithOffset:ScrollViewTopMargin - contentOffsetY];
+    }
+}
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    
+    self.pullToRefreshView.fullState = NO;
+}
+
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
+    
+    CGFloat contentOffsetY = scrollView.contentOffset.y;
+    
+    CGFloat margin = ScrollViewTopMargin - contentOffsetY;
+    
+    if (velocity.y <= 0 && margin > OffsetThreshold) {
+
+        self.pullToRefreshView.fullState = YES;
+    }
+}
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     
         NSLog(@"end dragging---");
+    if (self.pullToRefreshView.fullState) {
+        
+        [self showBottomActionSheet];
+    }
 }
+
+#pragma mark - UITableViewDelegate
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

@@ -15,6 +15,8 @@ typedef void(^HandleBlock)(id content ,NSInteger index);
 @property (nonatomic ,strong ,readonly) NSArray * titles;
 @property (nonatomic ,strong ,readonly) UIView * containerView;
 
+@property (nonatomic ,strong) NSArray * attributeColor;
+
 - (void) showBlurActionSheetWithTitles:(NSArray *)titles
                                 handle:(HandleBlock)handle;
 
@@ -25,6 +27,8 @@ typedef void(^HandleBlock)(id content ,NSInteger index);
 @end
 
 @interface BlurActionSheetCell : UITableViewCell
+
+@property (nonatomic ,strong) UILabel * contentLabel;
 
 @property (nonatomic ,strong) UIView * underLineView;
 
