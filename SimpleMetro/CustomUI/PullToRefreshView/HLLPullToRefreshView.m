@@ -86,7 +86,7 @@ CGFloat const OffsetThreshold               = 60.0f;
     // Animation
     _strokeAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
     _strokeAnimation.duration = 1.0;
-    _strokeAnimation.delegate = self;
+//    _strokeAnimation.delegate = self;
     _strokeAnimation.fillMode = kCAFillModeForwards;
     _strokeAnimation.removedOnCompletion = NO;
     _strokeAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];

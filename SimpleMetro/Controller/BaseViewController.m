@@ -24,6 +24,8 @@
                                                                       target:self
                                                                       action:@selector(leftBarButtonHandle:)];
     self.navigationItem.leftBarButtonItem = leftBarButton;
+    
+    self.view.backgroundColor = [UIColor customHightWhiteColor];
 }
 
 #pragma mark - Method

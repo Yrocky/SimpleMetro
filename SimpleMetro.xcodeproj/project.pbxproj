@@ -16,6 +16,8 @@
 		D77DCA4D1CF6EA7F002249CC /* BaiduMapAPI_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77DCA4C1CF6EA7F002249CC /* BaiduMapAPI_Map.framework */; };
 		D77DCA511CF73E6D002249CC /* MetroLineStationInfoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D77DCA501CF73E6D002249CC /* MetroLineStationInfoHelper.m */; };
 		D77DCA541CF7443F002249CC /* BlurEffectView.m in Sources */ = {isa = PBXBuildFile; fileRef = D77DCA531CF7443F002249CC /* BlurEffectView.m */; };
+		D77DCA571CF75966002249CC /* LineStationBaseInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = D77DCA561CF75966002249CC /* LineStationBaseInfoView.m */; };
+		D77DCA5A1CF75B73002249CC /* LineStationsCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D77DCA591CF75B73002249CC /* LineStationsCollectionView.m */; };
 		D7D855801CF34BFF0028B92D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D8557F1CF34BFF0028B92D /* main.m */; };
 		D7D855831CF34BFF0028B92D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D855821CF34BFF0028B92D /* AppDelegate.m */; };
 		D7D855891CF34BFF0028B92D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D855871CF34BFF0028B92D /* Main.storyboard */; };
@@ -109,6 +111,10 @@
 		D77DCA501CF73E6D002249CC /* MetroLineStationInfoHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetroLineStationInfoHelper.m; sourceTree = "<group>"; };
 		D77DCA521CF7443F002249CC /* BlurEffectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlurEffectView.h; sourceTree = "<group>"; };
 		D77DCA531CF7443F002249CC /* BlurEffectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlurEffectView.m; sourceTree = "<group>"; };
+		D77DCA551CF75966002249CC /* LineStationBaseInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineStationBaseInfoView.h; sourceTree = "<group>"; };
+		D77DCA561CF75966002249CC /* LineStationBaseInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineStationBaseInfoView.m; sourceTree = "<group>"; };
+		D77DCA581CF75B73002249CC /* LineStationsCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineStationsCollectionView.h; sourceTree = "<group>"; };
+		D77DCA591CF75B73002249CC /* LineStationsCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineStationsCollectionView.m; sourceTree = "<group>"; };
 		D7D8557B1CF34BFF0028B92D /* SimpleMetro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleMetro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7D8557F1CF34BFF0028B92D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D7D855811CF34BFF0028B92D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -504,6 +510,10 @@
 				D7D856731CF56E6B0028B92D /* LeftMenuSelectedBackgroundView.xib */,
 				D77DCA521CF7443F002249CC /* BlurEffectView.h */,
 				D77DCA531CF7443F002249CC /* BlurEffectView.m */,
+				D77DCA551CF75966002249CC /* LineStationBaseInfoView.h */,
+				D77DCA561CF75966002249CC /* LineStationBaseInfoView.m */,
+				D77DCA581CF75B73002249CC /* LineStationsCollectionView.h */,
+				D77DCA591CF75B73002249CC /* LineStationsCollectionView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -547,12 +557,12 @@
 			children = (
 				D7D856931CF56EE60028B92D /* ViewController.h */,
 				D7D856941CF56EE60028B92D /* ViewController.m */,
+				D7D856911CF56EE60028B92D /* StationInfoController.h */,
+				D7D856921CF56EE60028B92D /* StationInfoController.m */,
 				D7D8568D1CF56EE60028B92D /* AboutMetroViewController.h */,
 				D7D8568E1CF56EE60028B92D /* AboutMetroViewController.m */,
 				D7D8568F1CF56EE60028B92D /* AroundServiceViewContrller.h */,
 				D7D856901CF56EE60028B92D /* AroundServiceViewContrller.m */,
-				D7D856911CF56EE60028B92D /* StationInfoController.h */,
-				D7D856921CF56EE60028B92D /* StationInfoController.m */,
 			);
 			path = LBS;
 			sourceTree = "<group>";
@@ -726,6 +736,7 @@
 				D7D856091CF3F6450028B92D /* UIImage+Tint.m in Sources */,
 				D7D855EF1CF3F0C50028B92D /* RECommonFunctions.m in Sources */,
 				D7D856471CF455080028B92D /* UIImage+Common.m in Sources */,
+				D77DCA571CF75966002249CC /* LineStationBaseInfoView.m in Sources */,
 				D7D8569F1CF56EE60028B92D /* LeftMenuViewController.m in Sources */,
 				D7D8569E1CF56EE60028B92D /* ViewController.m in Sources */,
 				D7D855E11CF36FF80028B92D /* HLLSpotlightView.m in Sources */,
@@ -750,6 +761,7 @@
 				D7D8562D1CF4342C0028B92D /* FAKFontAwesome.m in Sources */,
 				D7D856991CF56EE60028B92D /* AboutMeViewController.m in Sources */,
 				D7D855801CF34BFF0028B92D /* main.m in Sources */,
+				D77DCA5A1CF75B73002249CC /* LineStationsCollectionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

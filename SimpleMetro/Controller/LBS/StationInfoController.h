@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface StationInfoController : UITableViewController
+static NSString * const StationInfoSegueIdentifier = @"stationInfo";
 
-@property (nonatomic ,strong) NSDictionary * stationInfo;
+@interface StationInfoController : BaseViewController
+
+@property (nonatomic ,strong) id stationInfo;
 @end

@@ -44,6 +44,11 @@
     self.navigationItem.titleView = self.titleButton;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
 - (void) addTableView{
     
     // dataSource
@@ -179,25 +184,29 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     NSLog(@"selected -station -line");
-    GuideViewController * guide = [[GuideViewController alloc] init];
-    [self.navigationController presentViewController:guide animated:YES completion:nil];
     
-    return;
+//    GuideViewController * guide = [[GuideViewController alloc] init];
+//    [self.navigationController presentViewController:guide animated:YES completion:nil];
+//    
+//    return;
     
-    NSDictionary * lineStationInfo = [self.dataSource elementForIndexPath:indexPath];
-    [self performSegueWithIdentifier:@"stationInfo" sender:lineStationInfo];
+    id stationInfo = [self.dataSource elementForIndexPath:indexPath];
+    
+    [self performSegueWithIdentifier:StationInfoSegueIdentifier sender:stationInfo];
 }
 
 #pragma mark - Navigation
 
  // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)stationInfo {
  
-    if ([segue.identifier isEqualToString:@"stationInfo"]) {
+    if ([segue.identifier isEqualToString:StationInfoSegueIdentifier]) {
         
-        StationInfoController * stationInfo = (StationInfoController *)segue.destinationViewController;
-//        stationInfo.stationInfo = (NSDictionary *)sender;
+        StationInfoController * stationInfoViewController = (StationInfoController *)segue.destinationViewController;
+        
+        stationInfoViewController.stationInfo = stationInfo;
     }
 }
  

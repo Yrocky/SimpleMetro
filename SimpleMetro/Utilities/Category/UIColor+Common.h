@@ -65,18 +65,27 @@
 
 #pragma mark - Custom Color
 
+/**
+ *  右箭头颜色
+ */
 + (UIColor *) customHightWhiteColor;
 
 + (UIColor *) customBlurColor;
 
 + (UIColor *) customGrayColor;
 
+/**
+ *  导航栏
+ */
 + (UIColor *) customHighGrayColor;
 
 + (UIColor *) customWhiteColor;
 
 + (UIColor *) customLightBlueColor;
 
+/**
+ *  导航栏的文字
+ */
 + (UIColor *) customHighBlueColor;
 
 #pragma mark - Line Color
