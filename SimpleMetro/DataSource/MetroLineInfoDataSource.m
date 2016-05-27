@@ -102,7 +102,7 @@ static NSString * const metroLineCellIdentifier = @"metroLineCellIdentifier";
     
     NSMutableArray * queryLineStations = [NSMutableArray array];
     
-//    NSLog(@"lineName:%@",lineName);
+//    LOG_DEBUG(@"lineName:%@",lineName);
     
     for (NSDictionary * lineStation in self.metroLinesInfo) {
         
@@ -110,7 +110,7 @@ static NSString * const metroLineCellIdentifier = @"metroLineCellIdentifier";
             
             [queryLineStations addObject:lineStation];
             
-//            NSLog(@"line(%@)---%@",lineStation[@"line"],lineStation[@"name"]);
+//            LOG_DEBUG(@"line(%@)---%@",lineStation[@"line"],lineStation[@"name"]);
         }
     }
     

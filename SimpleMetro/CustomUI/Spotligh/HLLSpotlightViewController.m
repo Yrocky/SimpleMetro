@@ -97,7 +97,7 @@
 
 - (void)dealloc{
 
-    NSLog(@"Spolight Controller Did Dealloc.");
+    LOG_DEBUG(@"Spolight Controller Did Dealloc.");
 }
 #pragma mark - Action
 - (void) _spotlightTapGesture:(UITapGestureRecognizer *)tapRecognizer{

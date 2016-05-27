@@ -103,6 +103,8 @@
 		D70C3E9B1CF76C4700B7BAB5 /* BaiduMapAPI_Location.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Location.framework; sourceTree = "<group>"; };
 		D70C3E9C1CF76C4700B7BAB5 /* BaiduMapAPI_Map.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Map.framework; sourceTree = "<group>"; };
 		D70C3E9D1CF76C4700B7BAB5 /* BaiduMapAPI_Search.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Search.framework; sourceTree = "<group>"; };
+		D70C3EDB1CF7F58700B7BAB5 /* LogDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogDefine.h; sourceTree = "<group>"; };
+		D70C3EDC1CF7F63600B7BAB5 /* SimpleMetro.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleMetro.pch; sourceTree = "<group>"; };
 		D77DCA3C1CF6933C002249CC /* BlurActionSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlurActionSheetView.h; sourceTree = "<group>"; };
 		D77DCA3D1CF6933C002249CC /* BlurActionSheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlurActionSheetView.m; sourceTree = "<group>"; };
 		D77DCA401CF6E0AD002249CC /* HLLPullToRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLPullToRefreshView.h; sourceTree = "<group>"; };
@@ -272,6 +274,14 @@
 			path = BaiduSDK;
 			sourceTree = "<group>";
 		};
+		D70C3EDA1CF7F56D00B7BAB5 /* Define */ = {
+			isa = PBXGroup;
+			children = (
+				D70C3EDB1CF7F58700B7BAB5 /* LogDefine.h */,
+			);
+			path = Define;
+			sourceTree = "<group>";
+		};
 		D77DCA3B1CF6933C002249CC /* BlurActionSheetView */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,9 +344,11 @@
 				D7D855FE1CF3F6450028B92D /* Utilities */,
 				D7D855E71CF3F0C50028B92D /* Thrid */,
 				D7D856A01CF56F590028B92D /* Source */,
+				D70C3EDA1CF7F56D00B7BAB5 /* Define */,
 				D7D8558A1CF34BFF0028B92D /* Assets.xcassets */,
 				D7D8558C1CF34BFF0028B92D /* LaunchScreen.storyboard */,
 				D7D8558F1CF34BFF0028B92D /* Info.plist */,
+				D70C3EDC1CF7F63600B7BAB5 /* SimpleMetro.pch */,
 				D7D8557E1CF34BFF0028B92D /* Supporting Files */,
 			);
 			path = SimpleMetro;
@@ -905,6 +917,8 @@
 					SDK,
 					"$(PROJECT_DIR)/SimpleMetro/Thrid/BaiduSDK",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SimpleMetro/SimpleMetro.pch";
 				INFOPLIST_FILE = SimpleMetro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
@@ -923,6 +937,8 @@
 					SDK,
 					"$(PROJECT_DIR)/SimpleMetro/Thrid/BaiduSDK",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SimpleMetro/SimpleMetro.pch";
 				INFOPLIST_FILE = SimpleMetro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";

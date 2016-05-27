@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    NSLog(@"stationInfo:%@",_stationInfo);
+//    LOG_DEBUG(@"stationInfo:%@",_stationInfo);
     
     [self.lineStateBaseInfoView configureLineStationBaseInfo:self.stationInfo];
 }

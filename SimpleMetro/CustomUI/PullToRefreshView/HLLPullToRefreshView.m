@@ -13,7 +13,7 @@ NSString * const PullToRefreshReleaseInfo   = @"松手进行选取";
 CGFloat const OffsetThreshold               = 60.0f;
 
 
-@interface HLLPullToRefreshView ()<UIScrollViewDelegate>
+@interface HLLPullToRefreshView ()
 
 @property (nonatomic ,copy) CompletionBlock completion;
 
@@ -108,11 +108,11 @@ CGFloat const OffsetThreshold               = 60.0f;
 
 - (void) refreshInfoWithOffset:(CGFloat)offset{
     
-//    NSLog(@"%f",offset);
+//    LOG_DEBUG(@"%f",offset);
     
     CGFloat process = offset / OffsetThreshold;
     
-//    NSLog(@"process:%f",process);
+//    LOG_DEBUG(@"process:%f",process);
     
     if (process >= 1) {
         
@@ -149,51 +149,16 @@ CGFloat const OffsetThreshold               = 60.0f;
 
 - (void)animationDidStart:(CAAnimation *)anim{
 
-    NSLog(@"start");
+    LOG_DEBUG(@"start");
 }
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
 
-    NSLog(@"finish");
+    LOG_DEBUG(@"finish");
     
     if (self.completion) {
         self.completion(YES);
     }
-}
-
-#pragma mark - UIScrollViewDelegate
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    
-    CGFloat contentOffsetY = scrollView.contentOffset.y;
-    
-//    NSLog(@"%f",contentOffsetY);
-    
-    if (contentOffsetY < ScrollViewTopMargin) {
-        
-        [self refreshInfoWithOffset:ScrollViewTopMargin - contentOffsetY];
-    }
-}
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    
-    self.fullState = NO;
-}
-
-- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
-    
-    CGFloat contentOffsetY = scrollView.contentOffset.y;
-    
-    CGFloat margin = ScrollViewTopMargin - contentOffsetY;
-
-    if (velocity.y <= 0 && margin > OffsetThreshold) {
-//        NSLog(@"可以圆满");
-        self.fullState = YES;
-    }
-}
-
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-    
-//    NSLog(@"end dragging---");
 }
 
 @end

@@ -38,7 +38,7 @@
 #pragma mark - Action Handle
 
 - (void) leftBarButtonHandle:(UIBarButtonItem *)sende{
-    NSLog(@"++++");
+    LOG_DEBUG(@"++++");
     [self.sideMenuViewController presentLeftMenuViewController];
 
 }

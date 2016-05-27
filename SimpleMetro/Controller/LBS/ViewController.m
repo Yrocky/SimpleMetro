@@ -112,7 +112,7 @@
     
     [actionSheetView showBlurActionSheetWithTitles:[MetroLineStationInfoHelper lineNameArray] withContainerView:self.navigationController.view handle:^(NSString * title, NSInteger index) {
         
-        NSLog(@"BlurActionSheetView did selected index:%ld",(long)index);
+        LOG_DEBUG(@"BlurActionSheetView did selected index:%ld",(long)index);
         
         [self.titleButton setTitle:title forState:UIControlStateNormal];
         [self.dataSource queryMetroLineInfoWithLineNumber:index + 1];
@@ -134,7 +134,7 @@
     
     if (indexPath) {
         
-        NSLog(@"dropListView did selected:%@",text);
+        LOG_DEBUG(@"dropListView did selected:%@",text);
         
         [self.titleButton setTitle:text forState:UIControlStateNormal];
         [self.dataSource queryMetroLineInfoWithLineNumber:indexPath.row + 1];
@@ -172,7 +172,7 @@
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     
-        NSLog(@"end dragging---");
+        LOG_DEBUG(@"end dragging---");
     if (self.pullToRefreshView.fullState) {
         
         [self showBottomActionSheet];
@@ -185,7 +185,7 @@
 
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    NSLog(@"selected -station -line");
+    LOG_DEBUG(@"selected -station -line");
     
 //    GuideViewController * guide = [[GuideViewController alloc] init];
 //    [self.navigationController presentViewController:guide animated:YES completion:nil];

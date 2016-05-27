@@ -68,7 +68,7 @@
 
 - (void) spotlightViewControllerDidTap:(HLLSpotlightViewController *)spotlightViewController{
     
-    NSLog(@"tap");
+    LOG_DEBUG(@"tap");
     [self next:YES];
 }
 

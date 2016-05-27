@@ -41,7 +41,7 @@
     BOOL ret = [_mapManager start:@"vvhjlAaSHL55EQ80jG49tjlM64bDix2l"
                   generalDelegate:self];
     if (!ret) {
-        NSLog(@"manager start failed!");
+        LOG_DEBUG(@"manager start failed!");
     }
 }
 
@@ -89,22 +89,22 @@
 
 - (void)sideMenu:(RESideMenu *)sideMenu willShowMenuViewController:(UIViewController *)menuViewController
 {
-//    NSLog(@"willShowMenuViewController: %@", NSStringFromClass([menuViewController class]));
+//    LOG_DEBUG(@"willShowMenuViewController: %@", NSStringFromClass([menuViewController class]));
 }
 
 - (void)sideMenu:(RESideMenu *)sideMenu didShowMenuViewController:(UIViewController *)menuViewController
 {
-//    NSLog(@"didShowMenuViewController: %@", NSStringFromClass([menuViewController class]));
+//    LOG_DEBUG(@"didShowMenuViewController: %@", NSStringFromClass([menuViewController class]));
 }
 
 - (void)sideMenu:(RESideMenu *)sideMenu willHideMenuViewController:(UIViewController *)menuViewController
 {
-//    NSLog(@"willHideMenuViewController: %@", NSStringFromClass([menuViewController class]));
+//    LOG_DEBUG(@"willHideMenuViewController: %@", NSStringFromClass([menuViewController class]));
 }
 
 - (void)sideMenu:(RESideMenu *)sideMenu didHideMenuViewController:(UIViewController *)menuViewController
 {
-//    NSLog(@"didHideMenuViewController: %@", NSStringFromClass([menuViewController class]));
+//    LOG_DEBUG(@"didHideMenuViewController: %@", NSStringFromClass([menuViewController class]));
 }
 
 #pragma mark - BMKGeneralDelegate
@@ -116,10 +116,10 @@
 - (void)onGetNetworkState:(int)iError{
 
     if (0 == iError) {
-        NSLog(@"联网成功");
+        LOG_DEBUG(@"联网成功");
     }
     else{
-        NSLog(@"onGetNetworkState %d",iError);
+        LOG_DEBUG(@"onGetNetworkState %d",iError);
     }
 }
 
@@ -130,10 +130,10 @@
 - (void)onGetPermissionState:(int)iError{
 
     if (0 == iError) {
-        NSLog(@"授权成功");
+        LOG_DEBUG(@"授权成功");
     }
     else {
-        NSLog(@"onGetPermissionState %d",iError);
+        LOG_DEBUG(@"onGetPermissionState %d",iError);
     }
 }
 @end
