@@ -18,8 +18,11 @@
 // 搜索半径，默认为3000
 @property (nonatomic ,assign) int searchRadius;
 
-// 搜索地铁站周围的公交信息
+// 搜索地铁站周围的公交信息，根据地铁站点
 - (void) searchMetroStationAroundBusInfoWithMetroStation:(BMKBusStation *)metroStation;
+
+// 搜索地铁站附近的公交信息，根据经纬度
+- (void) searchMetroStationAroundBusInfoWithLocation:(CLLocationCoordinate2D)location;
 
 - (void) searchMetroStationAroundBusInfoResult:(SubwayAroundSearchResultBlock)searchResultBlock
                              handleSearchError:(SearchError)searchError;

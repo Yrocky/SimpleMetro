@@ -30,6 +30,11 @@
 		D78C6A4E1CF9C18A00CAF770 /* LineStationsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6A4C1CF9C18A00CAF770 /* LineStationsViewCell.m */; };
 		D78C6A4F1CF9C18A00CAF770 /* LineStationsViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D78C6A4D1CF9C18A00CAF770 /* LineStationsViewCell.xib */; };
 		D78C6A521CF9D33000CAF770 /* LineStationsSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6A511CF9D33000CAF770 /* LineStationsSectionHeaderView.m */; };
+		D78C6A581CF9E91E00CAF770 /* MetroStationEntranceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6A561CF9E91E00CAF770 /* MetroStationEntranceCell.m */; };
+		D78C6A591CF9E91E00CAF770 /* MetroStationEntranceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D78C6A571CF9E91E00CAF770 /* MetroStationEntranceCell.xib */; };
+		D78C6A5D1CF9E93800CAF770 /* MetroStationAroundBusStationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6A5B1CF9E93800CAF770 /* MetroStationAroundBusStationCell.m */; };
+		D78C6A5E1CF9E93800CAF770 /* MetroStationAroundBusStationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D78C6A5C1CF9E93800CAF770 /* MetroStationAroundBusStationCell.xib */; };
+		D78C6A611CF9F18C00CAF770 /* NSString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6A601CF9F18C00CAF770 /* NSString+Size.m */; };
 		D7D855801CF34BFF0028B92D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D8557F1CF34BFF0028B92D /* main.m */; };
 		D7D855831CF34BFF0028B92D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D855821CF34BFF0028B92D /* AppDelegate.m */; };
 		D7D855891CF34BFF0028B92D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D855871CF34BFF0028B92D /* Main.storyboard */; };
@@ -151,6 +156,15 @@
 		D78C6A4D1CF9C18A00CAF770 /* LineStationsViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LineStationsViewCell.xib; sourceTree = "<group>"; };
 		D78C6A501CF9D33000CAF770 /* LineStationsSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineStationsSectionHeaderView.h; sourceTree = "<group>"; };
 		D78C6A511CF9D33000CAF770 /* LineStationsSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineStationsSectionHeaderView.m; sourceTree = "<group>"; };
+		D78C6A551CF9E91E00CAF770 /* MetroStationEntranceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetroStationEntranceCell.h; sourceTree = "<group>"; };
+		D78C6A561CF9E91E00CAF770 /* MetroStationEntranceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetroStationEntranceCell.m; sourceTree = "<group>"; };
+		D78C6A571CF9E91E00CAF770 /* MetroStationEntranceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MetroStationEntranceCell.xib; sourceTree = "<group>"; };
+		D78C6A5A1CF9E93800CAF770 /* MetroStationAroundBusStationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetroStationAroundBusStationCell.h; sourceTree = "<group>"; };
+		D78C6A5B1CF9E93800CAF770 /* MetroStationAroundBusStationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetroStationAroundBusStationCell.m; sourceTree = "<group>"; };
+		D78C6A5C1CF9E93800CAF770 /* MetroStationAroundBusStationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MetroStationAroundBusStationCell.xib; sourceTree = "<group>"; };
+		D78C6A5F1CF9F18C00CAF770 /* NSString+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Size.h"; sourceTree = "<group>"; };
+		D78C6A601CF9F18C00CAF770 /* NSString+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Size.m"; sourceTree = "<group>"; };
+		D78C6A631CF9FFC600CAF770 /* HLL_NotificationDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLL_NotificationDefine.h; sourceTree = "<group>"; };
 		D7D8557B1CF34BFF0028B92D /* SimpleMetro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleMetro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7D8557F1CF34BFF0028B92D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D7D855811CF34BFF0028B92D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -312,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				D70C3EDB1CF7F58700B7BAB5 /* LogDefine.h */,
+				D78C6A631CF9FFC600CAF770 /* HLL_NotificationDefine.h */,
 			);
 			path = Define;
 			sourceTree = "<group>";
@@ -391,6 +406,12 @@
 				D78C6A3F1CF99CA900CAF770 /* LineStationsCell.h */,
 				D78C6A401CF99CA900CAF770 /* LineStationsCell.m */,
 				D78C6A411CF99CA900CAF770 /* LineStationsCell.xib */,
+				D78C6A551CF9E91E00CAF770 /* MetroStationEntranceCell.h */,
+				D78C6A561CF9E91E00CAF770 /* MetroStationEntranceCell.m */,
+				D78C6A571CF9E91E00CAF770 /* MetroStationEntranceCell.xib */,
+				D78C6A5A1CF9E93800CAF770 /* MetroStationAroundBusStationCell.h */,
+				D78C6A5B1CF9E93800CAF770 /* MetroStationAroundBusStationCell.m */,
+				D78C6A5C1CF9E93800CAF770 /* MetroStationAroundBusStationCell.xib */,
 			);
 			name = collectionViewCell;
 			sourceTree = "<group>";
@@ -539,6 +560,8 @@
 				D7D856051CF3F6450028B92D /* UITableView+Line.m */,
 				D7D856061CF3F6450028B92D /* UIView+Common.h */,
 				D7D856071CF3F6450028B92D /* UIView+Common.m */,
+				D78C6A5F1CF9F18C00CAF770 /* NSString+Size.h */,
+				D78C6A601CF9F18C00CAF770 /* NSString+Size.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -784,6 +807,8 @@
 			files = (
 				D7D856AD1CF57A410028B92D /* metroline.plist in Resources */,
 				D78C6A4F1CF9C18A00CAF770 /* LineStationsViewCell.xib in Resources */,
+				D78C6A591CF9E91E00CAF770 /* MetroStationEntranceCell.xib in Resources */,
+				D78C6A5E1CF9E93800CAF770 /* MetroStationAroundBusStationCell.xib in Resources */,
 				D7D856341CF4342C0028B92D /* FontAwesome.otf in Resources */,
 				D7D8558E1CF34BFF0028B92D /* LaunchScreen.storyboard in Resources */,
 				D7D856A91CF56F590028B92D /* credits.html in Resources */,
@@ -853,6 +878,7 @@
 				D77DCA3E1CF6933C002249CC /* BlurActionSheetView.m in Sources */,
 				D7D855F11CF3F0C50028B92D /* UIViewController+RESideMenu.m in Sources */,
 				D7D855E31CF36FF80028B92D /* HLLTransition.m in Sources */,
+				D78C6A611CF9F18C00CAF770 /* NSString+Size.m in Sources */,
 				D70C3EF31CF98A2300B7BAB5 /* BaiduSDKMetroStationAroundBusLineSearch.m in Sources */,
 				D7D8560F1CF3F6740028B92D /* StoryBoardUtilities.m in Sources */,
 				D7D856311CF4342C0028B92D /* FAKMaterialIcons.m in Sources */,
@@ -869,10 +895,12 @@
 				D7D856791CF56E6B0028B92D /* StationInfoDataSource.m in Sources */,
 				D77DCA511CF73E6D002249CC /* MetroLineStationInfoHelper.m in Sources */,
 				D77DCA541CF7443F002249CC /* BlurEffectView.m in Sources */,
+				D78C6A581CF9E91E00CAF770 /* MetroStationEntranceCell.m in Sources */,
 				D7D855F01CF3F0C50028B92D /* RESideMenu.m in Sources */,
 				D7D8569D1CF56EE60028B92D /* StationInfoController.m in Sources */,
 				D7D8562D1CF4342C0028B92D /* FAKFontAwesome.m in Sources */,
 				D7D856991CF56EE60028B92D /* AboutMeViewController.m in Sources */,
+				D78C6A5D1CF9E93800CAF770 /* MetroStationAroundBusStationCell.m in Sources */,
 				D7D855801CF34BFF0028B92D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

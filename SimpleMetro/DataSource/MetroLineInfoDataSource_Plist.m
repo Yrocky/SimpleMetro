@@ -14,9 +14,10 @@
 @property (nonatomic ,strong ,readwrite) NSDictionary * metroLineData;
 
 @property (nonatomic ,assign) NSInteger lineNumber;
+
 @property (nonatomic ,strong) NSArray * metroLinesInfo;
 
-@property (nonatomic ,strong) NSMutableArray * currentMetroLineInfo;
+@property (nonatomic ,strong ,readwrite) NSMutableArray * currentMetroLineInfo;
 @end
 @implementation MetroLineInfoDataSource_Plist
 

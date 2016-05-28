@@ -43,7 +43,24 @@ typedef NS_ENUM(NSInteger ,LineState) {
 
 @implementation LineStationBaseInfoView
 
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        
+        LOG_DEBUG(@"LineStationBaseInfoView add notification:%@",HLL_SelectedMetroStationNotification);
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(acceptSelectedMetroStationNotification:) name:HLL_SelectedMetroStationNotification object:nil];
+    }
+    return self;
+}
 
+- (void)dealloc{
+
+    LOG_DEBUG(@"LineStationBaseInfoView did dealloc...");
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 -(void)awakeFromNib{
 
     [super awakeFromNib];
@@ -82,8 +99,6 @@ typedef NS_ENUM(NSInteger ,LineState) {
     self.lastSubwayTimeLabel.textColor  = [UIColor customHightWhiteColor];
 }
 
-#pragma mark - Private
-
 - (void) configureStationInfoWithLineState:(LineState)lineState{
     
     if (self.lineState == LineStateFromTo) {
@@ -111,6 +126,18 @@ typedef NS_ENUM(NSInteger ,LineState) {
         self.lastStationLabel.text      = @"西流湖站";
     }
 }
+
+#pragma mark - Notification
+
+- (void) acceptSelectedMetroStationNotification:(NSNotification *)notification{
+    
+    LOG_DEBUG(@"LineStationBaseInfoView accept notification:%@",notification.name);
+
+    NSDictionary * stationInfo = notification.object;
+    
+    [self configureLineStationBaseInfo:stationInfo];
+    
+}
 #pragma mark - Action
 
 - (IBAction)swap:(id)sender{
@@ -136,6 +163,11 @@ typedef NS_ENUM(NSInteger ,LineState) {
 - (void) configureLineStationBaseInfo:(id)stationInfo{
 
     NSDictionary * dictionary       = (NSDictionary *)stationInfo;
+    
+    if (self.stationInfoDictionary == dictionary) {
+        // 相同的数据不替换
+        return;
+    }
     _stationInfoDictionary          = dictionary;
     
     NSString * stationName          = dictionary[@"name"];

@@ -159,12 +159,19 @@
 //    GuideViewController * guide = [[GuideViewController alloc] init];
 //    [self.navigationController presentViewController:guide animated:YES completion:nil];
 //    
-//    return;
-    
+// return;
+   
     id stationInfo = [self.dataSource_plist elementForIndexPath:indexPath];
+    
     BOOL open = [[stationInfo objectForKey:@"open"]boolValue];
     if (open) {
-        [self performSegueWithIdentifier:StationInfoSegueIdentifier sender:stationInfo];
+        
+        id metroLineInfo = self.dataSource_plist.currentMetroLineInfo;
+        
+        id notificationInfo = @{@"SelectedStationIndexKey":indexPath,
+                                @"MetroLineInfoKey":metroLineInfo};
+        
+        [self performSegueWithIdentifier:StationInfoSegueIdentifier sender:notificationInfo];
     }
 }
 

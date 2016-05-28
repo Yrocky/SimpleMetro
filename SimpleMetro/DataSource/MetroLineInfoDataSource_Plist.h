@@ -15,6 +15,8 @@
 
 @property (nonatomic ,strong ,readonly) NSDictionary * metroLineData;
 
+@property (nonatomic ,strong ,readonly) NSMutableArray * currentMetroLineInfo;
+
 - (void) swapFirstStationToLastStation;
 
 - (NSArray <NSDictionary *>*) queryMetroLineInfoWithLineNumber:(NSInteger)lineNumber;

@@ -9,19 +9,44 @@
 #import "LineStationsViewCell.h"
 #import "LineStationsCell.h"
 
+@interface LineStationsViewCell ()
+
+@property (nonatomic ,strong) NSArray * metroStationInfo;
+
+@end
+
 @implementation LineStationsViewCell
 
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        
+        LOG_DEBUG(@"LineStationsViewCell add nofitication");
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(acceptShowDetailMetroStationInfonNotification:) name:HLL_ShowDetailMetroStationInfonNotification object:nil];
+        
+    }
+    return self;
+}
 
-+ (UINib *) nib{
-
-    return [UINib nibWithNibName:@"LineStationsViewCell" bundle:nil];
+- (void)dealloc
+{
+    LOG_DEBUG(@"LineStationsViewCell did dealloc...");
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
     
     [self setCollectionViewDataSourceDelegate:self];
+}
+
+#pragma mark - API
+
++ (UINib *) nib{
+
+    return [UINib nibWithNibName:@"LineStationsViewCell" bundle:nil];
 }
 
 
@@ -37,19 +62,49 @@
 }
 
 
+#pragma mark - Notification
+
+- (void) acceptShowDetailMetroStationInfonNotification:(NSNotification *)notification{
+    
+    LOG_DEBUG(@"LineStationsViewCell did accept notification:%@",notification.name);
+    
+    if (self.metroStationInfo && self.metroStationInfo.count > 0) {
+        
+//        NSAssert(NO, @"Cant be here...");
+    }else{
+        
+        NSArray * metroLineInfo = [notification.object objectForKey:@"MetroLineInfoKey"];
+        
+        _metroStationInfo = [NSArray arrayWithArray:metroLineInfo];
+        
+        [self.collectionView reloadData];
+        
+        NSIndexPath * selectedIndexPath = [notification.object objectForKey:@"SelectedStationIndexKey"];
+        
+        [self.collectionView selectItemAtIndexPath:selectedIndexPath
+                                          animated:YES
+                                    scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
+        
+        LOG_DEBUG(@"post notification name:<HLL_SelectedMetroStationNotification>");
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:HLL_SelectedMetroStationNotification object:self.metroStationInfo[selectedIndexPath.row]];
+    }
+}
+
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section;
 {
-    return 20;
-//    return [self.similarMoviesDataSource count];
+    return [self.metroStationInfo count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 {
     LineStationsCell * cell = (LineStationsCell*)[collectionView dequeueReusableCellWithReuseIdentifier:[LineStationsCell cellIdentifier] forIndexPath:indexPath];
 
-    [cell configureCellWithData:nil];
+    NSDictionary * stationInfo = self.metroStationInfo[indexPath.item];
+    
+    [cell configureCellWithData:stationInfo];
 
     return cell;
 }
@@ -58,21 +113,23 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
 {
-
-    NSLog(@"选择站点");
-
     if ([collectionView isEqual:self.collectionView]) {
 
+        UICollectionViewCell * cell = [collectionView cellForItemAtIndexPath:indexPath];
+        
+        if (cell.selected == YES) {
+            
+            return;
+        }
+        
+        LOG_DEBUG(@"post notification name:<HLL_SelectedMetroStationNotification>");
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:HLL_SelectedMetroStationNotification object:self.metroStationInfo[indexPath.row]];
+        
         [collectionView scrollToItemAtIndexPath:indexPath
                                atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
                                        animated:YES];
     }
-}
-
-- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
-
-    NSLog(@"不选中某点");
-
 }
 
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath{

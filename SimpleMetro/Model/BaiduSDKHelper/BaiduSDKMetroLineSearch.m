@@ -72,12 +72,12 @@
                                                   code:errorCode
                                               userInfo:userInfo];
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        
+//    dispatch_async(dispatch_get_main_queue(), ^{
+    
         if (self.searchError) {
             self.searchError(error);
         }
-    });
+//    });
 }
 // 获得搜索结果中的“地铁线路”数组
 - (void) filterMetroInfoWithSearchResult:(BMKPoiResult*)poiResult{

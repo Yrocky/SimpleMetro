@@ -36,14 +36,14 @@
 }
 #pragma mark - API
 
++ (UINib *) nib{
+    
+    return [UINib nibWithNibName:@"LineStationsCell" bundle:nil];
+}
+
 + (instancetype) loadWithNib{
 
     return [[[NSBundle mainBundle] loadNibNamed:@"LineStationsCell" owner:self options:nil] firstObject];
-}
-
-+ (UINib *) nib{
-
-    return [UINib nibWithNibName:@"LineStationsCell" bundle:nil];
 }
 
 + (NSString *) cellIdentifier{
@@ -51,8 +51,16 @@
     return @"LineStationsCell";
 }
 
-- (void) configureCellWithData:(id)data{
+- (void) configureCellWithData:(NSDictionary *)data{
 
+    NSString * stationName = [data objectForKey:@"name"];
+    
+//    name = @"市体育中心站";
+    if (stationName.length > 6) {
+        stationName = [stationName substringToIndex:stationName.length - 1];
+    }
+    
+    self.stationNameLabel.text = [NSString stringWithFormat:@"%@",stationName];
     
 }
 

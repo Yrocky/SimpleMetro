@@ -104,6 +104,24 @@
     }
 }
 
+- (void) searchMetroStationAroundBusInfoWithLocation:(CLLocationCoordinate2D)location{
+
+    [self configureDelegate];
+    
+    //发起检索
+    BMKNearbySearchOption *option = [[BMKNearbySearchOption alloc]init];
+    option.pageCapacity = self.resultCapacity;
+    option.radius = self.searchRadius;
+    option.location = location;
+    option.keyword = @"公交线路";
+    
+    BOOL flag = [self.poiSearcher poiSearchNearBy:option];
+    if(!flag){
+        
+        [self buildErrorInfoWithErrorCode:ErrorCodeForSearchFaild
+                     localizedDescription:@"周边检索发送失败"];
+    }
+}
 - (void) searchMetroStationAroundBusInfoResult:(SubwayAroundSearchResultBlock)searchResultBlock
                              handleSearchError:(SearchError)searchError{
     
