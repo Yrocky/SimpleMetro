@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "DataSourceProtocol.h"
 
-
-@interface MetroLineInfoDataSource : NSObject<UITableViewDataSource,DataSourceProtocol>
+@interface MetroLineInfoDataSource_Plist : NSObject<DataSourceProtocol>
 
 @property (nonatomic ,weak) UITableView * tableView;
 
+@property (nonatomic ,strong ,readonly) NSDictionary * metroLineData;
+
+- (void) swapFirstStationToLastStation;
 
 - (NSArray <NSDictionary *>*) queryMetroLineInfoWithLineNumber:(NSInteger)lineNumber;
 @end

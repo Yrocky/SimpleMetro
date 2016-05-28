@@ -11,8 +11,7 @@
 #import "StoryBoardUtilities.h"
 #import "StoryBoardIdHeader.h"
 
-
-@interface LeftMenuDataSource : NSObject<UITableViewDataSource,DataSourceProtocol>
+@interface LeftMenuDataSource : NSObject<DataSourceProtocol>
 
 - (UIViewController *) viewControllerWithIndexPath:(NSIndexPath *)indexPath;
 @end

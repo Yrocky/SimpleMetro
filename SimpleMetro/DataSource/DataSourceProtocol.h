@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@protocol DataSourceProtocol <NSObject>
+@protocol DataSourceProtocol <NSObject,UITableViewDataSource>
 
 @required
 

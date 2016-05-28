@@ -10,7 +10,7 @@
 
 NSString * const PullToRefreshNormalInfo    = @"下拉选取地铁线路";
 NSString * const PullToRefreshReleaseInfo   = @"松手进行选取";
-CGFloat const OffsetThreshold               = 60.0f;
+CGFloat const OffsetThreshold               = 80.0f;
 
 
 @interface HLLPullToRefreshView ()

@@ -7,7 +7,6 @@
 //
 
 #import "LineStationBaseInfoView.h"
-#import "UIColor+Common.h"
 #import "FAKFontAwesome.h"
 
 typedef NS_ENUM(NSInteger ,LineState) {
@@ -141,6 +140,10 @@ typedef NS_ENUM(NSInteger ,LineState) {
     NSLog(@"%@",dictionary);
     
     NSString * stationName          = dictionary[@"name"];
+    if (stationName.length > 6) {
+        
+        stationName = [stationName substringToIndex:stationName.length - 1];
+    }
     self.stationNameLabel.text      = [NSString stringWithFormat:@"%@",stationName];
     
     [self configureStationInfoWithLineState:self.lineState];

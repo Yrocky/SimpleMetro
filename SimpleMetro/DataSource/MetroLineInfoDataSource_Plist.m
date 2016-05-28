@@ -6,19 +6,21 @@
 //  Copyright © 2016年 Rocky Young. All rights reserved.
 //
 
-#import "MetroLineInfoDataSource.h"
+#import "MetroLineInfoDataSource_Plist.h"
 #import "LineStationCell.h"
 
 static NSString * const metroLineCellIdentifier = @"metroLineCellIdentifier";
 
-@interface MetroLineInfoDataSource ()
+@interface MetroLineInfoDataSource_Plist ()
+
+@property (nonatomic ,strong ,readwrite) NSDictionary * metroLineData;
 
 @property (nonatomic ,assign) NSInteger lineNumber;
 @property (nonatomic ,strong) NSArray * metroLinesInfo;
 
 @property (nonatomic ,strong) NSMutableArray * currentMetroLineInfo;
 @end
-@implementation MetroLineInfoDataSource
+@implementation MetroLineInfoDataSource_Plist
 
 - (instancetype)init
 {
@@ -68,9 +70,26 @@ static NSString * const metroLineCellIdentifier = @"metroLineCellIdentifier";
 
     return [UINib nibWithNibName:@"LineStationCell" bundle:nil];
 }
+
 - (NSString *)cellIdentifier{
 
     return metroLineCellIdentifier;
+}
+
+#pragma mark - Method
+
+- (void) configureMetolLineData{
+    
+    NSString * const metroLineName               = @"metroLineName";
+    NSString * const metroLineFirstStationName   = @"firstStationName";
+    NSString * const metroLineLastStationName    = @"lastStationName";
+    
+    NSString * firstStationName = [[self.currentMetroLineInfo firstObject] objectForKey:@"name"];
+    NSString * lastSrationName  = [[self.currentMetroLineInfo lastObject] objectForKey:@"name"];
+    
+    self.metroLineData = @{metroLineName:self.name,
+                           metroLineFirstStationName:firstStationName,
+                           metroLineLastStationName:lastSrationName};
 }
 #pragma mark - UITableViewDataSource
 
@@ -94,6 +113,26 @@ static NSString * const metroLineCellIdentifier = @"metroLineCellIdentifier";
 
 #pragma mark - API
 
+- (void) swapFirstStationToLastStation{
+
+    NSMutableArray * tempArray = [NSMutableArray array];
+    
+    for (NSInteger index = self.currentMetroLineInfo.count - 1; index >=0; index --) {
+        
+        id metroInfo = self.currentMetroLineInfo[index];
+        
+        [tempArray addObject:metroInfo];
+    }
+    
+    [self.currentMetroLineInfo removeAllObjects];
+    
+    [self.currentMetroLineInfo addObjectsFromArray:tempArray];
+    
+    [self configureMetolLineData];
+    
+    [self.tableView reloadData];
+}
+
 - (NSArray <NSDictionary *>*) queryMetroLineInfoWithLineNumber:(NSInteger)lineNumber{
 
     _lineNumber = lineNumber;
@@ -102,15 +141,13 @@ static NSString * const metroLineCellIdentifier = @"metroLineCellIdentifier";
     
     NSMutableArray * queryLineStations = [NSMutableArray array];
     
-//    LOG_DEBUG(@"lineName:%@",lineName);
-    
     for (NSDictionary * lineStation in self.metroLinesInfo) {
         
         if ([lineStation[@"line"] isEqualToString:lineName]) {
             
             [queryLineStations addObject:lineStation];
             
-//            LOG_DEBUG(@"line(%@)---%@",lineStation[@"line"],lineStation[@"name"]);
+//            LOG_DEBUG(@"line(%@)---%@",lineStation[@"line"],lineStation);
         }
     }
     
@@ -118,7 +155,10 @@ static NSString * const metroLineCellIdentifier = @"metroLineCellIdentifier";
     
     [self.currentMetroLineInfo addObjectsFromArray:queryLineStations];
     
+    [self configureMetolLineData];
+    
     [self.tableView reloadData];
+    
     
     return queryLineStations;
 }

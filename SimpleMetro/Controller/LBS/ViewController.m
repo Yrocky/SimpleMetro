@@ -9,20 +9,22 @@
 #import "ViewController.h"
 #import "StationInfoController.h"
 #import "GuideViewController.h"
-#import "MetroLineInfoDataSource.h"
-#import "DropListView.h"
+#import "MetroLineInfoDataSource_Plist.h"
 #import "BlurActionSheetView.h"
 #import "HLLPullToRefreshView.h"
 #import "MetroLineStationInfoHelper.h"
+#import "MetroLineTitleView.h"
 
-@interface ViewController ()<UITableViewDelegate,DropListDelegate>
+
+@interface ViewController ()<UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic ,strong) UIButton * titleButton;
+
+@property (nonatomic ,strong) MetroLineTitleView * metroLineTitleView;
 
 @property (nonatomic ,strong) HLLPullToRefreshView * pullToRefreshView;
 
-@property (nonatomic ,strong) MetroLineInfoDataSource * dataSource;
+@property (nonatomic ,strong) MetroLineInfoDataSource_Plist * dataSource;
 
 @end
 
@@ -36,12 +38,20 @@
     
     [self addTableView];
     
-    // title button
-    _titleButton = [[UIButton alloc] init];
-    [_titleButton setTitleColor:[UIColor customLightBlueColor] forState:UIControlStateNormal];
-    [_titleButton setTitle:self.dataSource.name forState:UIControlStateNormal];
-    [_titleButton addTarget:self action:@selector(titleButtonHandle:) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.titleView = self.titleButton;
+    typeof(self) weakSelf = self;
+    
+    // title view
+    _metroLineTitleView = [MetroLineTitleView nib];
+    _metroLineTitleView.frame = CGRectMake(0,
+                                           0,
+                                           250,
+                                           CGRectGetHeight(self.navigationController.navigationBar.bounds));
+    [_metroLineTitleView configureMetroLineTitleViewWithData:self.dataSource.metroLineData];
+    _metroLineTitleView.tapSwapBlock = ^(){
+
+        [weakSelf.dataSource swapFirstStationToLastStation];
+    };
+    self.navigationItem.titleView = self.metroLineTitleView;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -52,7 +62,7 @@
 - (void) addTableView{
     
     // dataSource
-    _dataSource = [[MetroLineInfoDataSource alloc] init];
+    _dataSource = [[MetroLineInfoDataSource_Plist alloc] init];
     self.dataSource.tableView = self.tableView;
     
     // tableView
@@ -70,11 +80,11 @@
     
     // pull to refresh view
     CGFloat pullToRefreshHeight = 40.0f;
-    _pullToRefreshView = [[HLLPullToRefreshView alloc] initWithFrame:CGRectMake(0, -pullToRefreshHeight, CGRectGetWidth(self.view.bounds), pullToRefreshHeight)];
-    _pullToRefreshView.refreshControlColor = [UIColor customBlurColor];
-    _pullToRefreshView.refreshInfoColor = [UIColor customWhiteColor];
-    _pullToRefreshView.backgroundColor = [UIColor clearColor];
-    [self.tableView addSubview:_pullToRefreshView];
+    self.pullToRefreshView = [[HLLPullToRefreshView alloc] initWithFrame:CGRectMake(0, -pullToRefreshHeight, CGRectGetWidth(self.view.bounds), pullToRefreshHeight)];
+    self.pullToRefreshView.refreshControlColor = [UIColor customBlurColor];
+    self.pullToRefreshView.refreshInfoColor = [UIColor customWhiteColor];
+    self.pullToRefreshView.backgroundColor = [UIColor clearColor];
+    [self.tableView addSubview:self.pullToRefreshView];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle{
@@ -83,26 +93,6 @@
 }
 
 #pragma mark - ActionSheet
-
-- (void) showTopActionSheet{
-    
-    CGRect frame = CGRectMake(0, 64, self.tableView.width, self.tableView.height);
-    
-    DropListView * dropListView = [[DropListView alloc] initWithFrame:frame];
-    
-    [dropListView setupDropListData:[MetroLineStationInfoHelper lineNameArray]];
-    
-    dropListView.attributeColor = [MetroLineStationInfoHelper lineColorArray];
-    
-    dropListView.delegate = self;
-    
-    [self.navigationController.view addSubview:dropListView];
-    
-    self.titleButton.enabled = NO;
-    
-    [dropListView showDropListView];
-
-}
 
 - (void) showBottomActionSheet{
     
@@ -114,33 +104,12 @@
         
         LOG_DEBUG(@"BlurActionSheetView did selected index:%ld",(long)index);
         
-        [self.titleButton setTitle:title forState:UIControlStateNormal];
         [self.dataSource queryMetroLineInfoWithLineNumber:index + 1];
+        
+        [self.metroLineTitleView configureMetroLineTitleViewWithData:self.dataSource.metroLineData];
+
     }];
 }
-#pragma mark - Action
-
-- (void) titleButtonHandle:(UIButton *)button{
-    
-    [self showTopActionSheet];
-}
-
-#pragma mark - DropListDelegate
-
-// 传递的indexPath有可能是nil，需要判断才可以使用
-- (void) dropListView:(DropListView *)dropListView didSelectedItemAtIndexPath:(NSIndexPath *)indexPath withText:(NSString *)text{
-
-    self.titleButton.enabled = YES;
-    
-    if (indexPath) {
-        
-        LOG_DEBUG(@"dropListView did selected:%@",text);
-        
-        [self.titleButton setTitle:text forState:UIControlStateNormal];
-        [self.dataSource queryMetroLineInfoWithLineNumber:indexPath.row + 1];
-    }
-}
-
 
 #pragma mark - UIScrollViewDelegate
 

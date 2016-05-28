@@ -7,8 +7,6 @@
 //
 
 #import "MetroLineStationInfoHelper.h"
-#import "UIColor+Common.h"
-
 
 @implementation MetroLineStationInfoHelper
 

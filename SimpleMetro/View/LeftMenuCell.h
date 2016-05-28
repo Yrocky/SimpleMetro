@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "FAKFontAwesome.h"
-#import "UIColor+Common.h"
 
 extern NSString * const kLeftMenuIconKey;
 extern NSString * const kLeftMenuTitleKey;

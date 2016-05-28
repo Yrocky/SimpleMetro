@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MetroLineTitleView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="市体育中心站" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhF-Os-f29">
+                    <rect key="frame" x="0.0" y="582" width="285" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="西流湖站" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62E-SP-ioo">
+                    <rect key="frame" x="315" y="582" width="285" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zd0-nx-mtH">
+                    <rect key="frame" x="285" y="580" width="30" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="86Z-ud-BWx"/>
+                        <constraint firstAttribute="height" constant="20" id="9zW-Gm-F5J"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="一号线" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POU-4A-sHo">
+                    <rect key="frame" x="274" y="279" width="51" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="62E-SP-ioo" firstAttribute="centerY" secondItem="zd0-nx-mtH" secondAttribute="centerY" id="3Ic-ou-hpz"/>
+                <constraint firstAttribute="trailing" secondItem="62E-SP-ioo" secondAttribute="trailing" id="8ca-p8-vUQ"/>
+                <constraint firstItem="hhF-Os-f29" firstAttribute="centerY" secondItem="zd0-nx-mtH" secondAttribute="centerY" id="G4V-Y1-d1r"/>
+                <constraint firstAttribute="bottom" secondItem="zd0-nx-mtH" secondAttribute="bottom" id="GTb-RA-8kw"/>
+                <constraint firstItem="62E-SP-ioo" firstAttribute="leading" secondItem="zd0-nx-mtH" secondAttribute="trailing" id="NWH-cP-Ezs"/>
+                <constraint firstItem="POU-4A-sHo" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-10" id="Vke-SB-rsq"/>
+                <constraint firstItem="zd0-nx-mtH" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Yjv-Ck-v8z"/>
+                <constraint firstItem="hhF-Os-f29" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fY7-BT-xEK"/>
+                <constraint firstItem="POU-4A-sHo" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="jAt-OG-M4f"/>
+                <constraint firstItem="zd0-nx-mtH" firstAttribute="leading" secondItem="hhF-Os-f29" secondAttribute="trailing" id="oT3-rJ-qy7"/>
+            </constraints>
+            <connections>
+                <outlet property="firstStationLabel" destination="hhF-Os-f29" id="pcx-HX-0pN"/>
+                <outlet property="lastStationLabel" destination="62E-SP-ioo" id="Od6-Yq-MVC"/>
+                <outlet property="swapImageView" destination="zd0-nx-mtH" id="53E-XN-HXV"/>
+                <outlet property="titleLabel" destination="POU-4A-sHo" id="k9u-z2-eK9"/>
+                <outletCollection property="gestureRecognizers" destination="tAf-1e-SS3" appends="YES" id="jGX-W1-eUQ"/>
+            </connections>
+        </view>
+        <tapGestureRecognizer id="tAf-1e-SS3">
+            <connections>
+                <action selector="tapTitleViewSwapFirstToLastStation:" destination="iN0-l3-epB" id="Spg-au-dW3"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+</document>

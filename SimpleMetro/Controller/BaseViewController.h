@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIColor+Common.h"
 #import "FAKFontAwesome.h"
 #import "RESideMenu.h"
 

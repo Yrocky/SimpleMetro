@@ -7,7 +7,6 @@
 //
 
 #import "LeftMenuSectionHeaderView.h"
-#import "UIColor+Common.h"
 #import "UIImage+Common.h"
 
 @interface LeftMenuSectionHeaderView ()

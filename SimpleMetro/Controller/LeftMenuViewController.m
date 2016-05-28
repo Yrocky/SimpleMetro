@@ -8,7 +8,6 @@
 
 #import "LeftMenuViewController.h"
 #import "LeftMenuDataSource.h"
-#import "UIColor+Common.h"
 #import "LeftMenuSectionHeaderView.h"
 #import "RESideMenu.h"
 

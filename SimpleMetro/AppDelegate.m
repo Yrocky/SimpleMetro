@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "LeftMenuViewController.h"
-#import "UIColor+Common.h"
 #import "StoryBoardUtilities.h"
 #import "StoryBoardIdHeader.h"
 

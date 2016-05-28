@@ -8,8 +8,6 @@
 
 #import "LineStationCell.h"
 #import "FAKFontAwesome.h"
-#import "UIColor+Common.h"
-
 
 @interface LineStationCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *arrowImageView;
