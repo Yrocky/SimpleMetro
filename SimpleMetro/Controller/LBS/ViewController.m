@@ -9,11 +9,12 @@
 #import "ViewController.h"
 #import "StationInfoController.h"
 #import "GuideViewController.h"
-#import "MetroLineInfoDataSource_Plist.h"
 #import "BlurActionSheetView.h"
 #import "HLLPullToRefreshView.h"
 #import "MetroLineStationInfoHelper.h"
 #import "MetroLineTitleView.h"
+
+#import "MetroLineInfoDataSource_Plist.h"
 
 
 @interface ViewController ()<UITableViewDelegate>
@@ -24,7 +25,7 @@
 
 @property (nonatomic ,strong) HLLPullToRefreshView * pullToRefreshView;
 
-@property (nonatomic ,strong) MetroLineInfoDataSource_Plist * dataSource;
+@property (nonatomic ,strong) MetroLineInfoDataSource_Plist * dataSource_plist;
 
 @end
 
@@ -33,9 +34,7 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
-    self.view.backgroundColor = [UIColor clearColor];
-    
+        
     [self addTableView];
     
     typeof(self) weakSelf = self;
@@ -46,10 +45,10 @@
                                            0,
                                            250,
                                            CGRectGetHeight(self.navigationController.navigationBar.bounds));
-    [_metroLineTitleView configureMetroLineTitleViewWithData:self.dataSource.metroLineData];
+    [_metroLineTitleView configureMetroLineTitleViewWithData:self.dataSource_plist.metroLineData];
     _metroLineTitleView.tapSwapBlock = ^(){
 
-        [weakSelf.dataSource swapFirstStationToLastStation];
+        [weakSelf.dataSource_plist swapFirstStationToLastStation];
     };
     self.navigationItem.titleView = self.metroLineTitleView;
 }
@@ -62,8 +61,8 @@
 - (void) addTableView{
     
     // dataSource
-    _dataSource = [[MetroLineInfoDataSource_Plist alloc] init];
-    self.dataSource.tableView = self.tableView;
+    _dataSource_plist = [[MetroLineInfoDataSource_Plist alloc] init];
+    self.dataSource_plist.tableView = self.tableView;
     
     // tableView
     self.tableView.sectionHeaderHeight = 0.0f;
@@ -71,12 +70,13 @@
     self.tableView.tableFooterView = [UIView new];
     self.tableView.backgroundView = nil;
     self.tableView.backgroundColor = [UIColor customHightWhiteColor];
-    self.tableView.dataSource = self.dataSource;
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [self.tableView registerNib:[self.dataSource nib]
-         forCellReuseIdentifier:[self.dataSource cellIdentifier]];
+    self.tableView.dataSource = self.dataSource_plist;
+    [self.tableView registerNib:[self.dataSource_plist nib]
+         forCellReuseIdentifier:[self.dataSource_plist cellIdentifier]];
     
-    [self.dataSource queryMetroLineInfoWithLineNumber:1];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    [self.dataSource_plist queryMetroLineInfoWithLineNumber:1];
     
     // pull to refresh view
     CGFloat pullToRefreshHeight = 40.0f;
@@ -104,9 +104,9 @@
         
         LOG_DEBUG(@"BlurActionSheetView did selected index:%ld",(long)index);
         
-        [self.dataSource queryMetroLineInfoWithLineNumber:index + 1];
+        [self.dataSource_plist queryMetroLineInfoWithLineNumber:index + 1];
         
-        [self.metroLineTitleView configureMetroLineTitleViewWithData:self.dataSource.metroLineData];
+        [self.metroLineTitleView configureMetroLineTitleViewWithData:self.dataSource_plist.metroLineData];
 
     }];
 }
@@ -161,7 +161,7 @@
 //    
 //    return;
     
-    id stationInfo = [self.dataSource elementForIndexPath:indexPath];
+    id stationInfo = [self.dataSource_plist elementForIndexPath:indexPath];
     BOOL open = [[stationInfo objectForKey:@"open"]boolValue];
     if (open) {
         [self performSegueWithIdentifier:StationInfoSegueIdentifier sender:stationInfo];

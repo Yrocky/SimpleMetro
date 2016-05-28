@@ -9,8 +9,6 @@
 #import "MetroLineInfoDataSource_Plist.h"
 #import "LineStationCell.h"
 
-static NSString * const metroLineCellIdentifier = @"metroLineCellIdentifier";
-
 @interface MetroLineInfoDataSource_Plist ()
 
 @property (nonatomic ,strong ,readwrite) NSDictionary * metroLineData;
@@ -73,7 +71,7 @@ static NSString * const metroLineCellIdentifier = @"metroLineCellIdentifier";
 
 - (NSString *)cellIdentifier{
 
-    return metroLineCellIdentifier;
+    return @"metroLineCellIdentifier";
 }
 
 #pragma mark - Method
@@ -100,7 +98,7 @@ static NSString * const metroLineCellIdentifier = @"metroLineCellIdentifier";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    LineStationCell * cell = [tableView dequeueReusableCellWithIdentifier:metroLineCellIdentifier
+    LineStationCell * cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifier
                                                              forIndexPath:indexPath];
     
     

@@ -16,8 +16,8 @@
 
 @property (nonatomic ,strong) CAShapeLayer * lineLayer;
 
+// 该站是否开启，一般除了一号线开了，其他线路都没有开
 @property (nonatomic ,assign ,getter=isOpen) BOOL open;
-@property (nonatomic ,assign) BOOL canTransfer;
 
 @end
 
@@ -36,6 +36,8 @@
     
     //
     _lineLayer = [CAShapeLayer layer];
+    _lineLayer.fillColor = [UIColor clearColor].CGColor;
+    _lineLayer.lineWidth = 5/[UIScreen mainScreen].scale;
     [self.contentView.layer insertSublayer:_lineLayer atIndex:10];
 
     //
@@ -69,7 +71,7 @@
         self.arrowImageView.hidden = YES;
         self.stationNameLabel.textColor = [UIColor customHightWhiteColor];
     }
-    [self setNeedsDisplay];
+//    [self setNeedsDisplay];
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
@@ -77,8 +79,13 @@
     // Configure the view for the selected state
 }
 
-- (void)drawRect:(CGRect)rect{
+- (void)layoutSubviews{
 
+    [super layoutSubviews];
+    
+    CGRect rect = self.contentView.bounds;
+    _lineLayer.frame = rect;
+    
     CGFloat leftMargin = 25.0f;
     CGFloat ovalR = 4.0f;
     CGPoint ovalCenter = CGPointMake(leftMargin, CGRectGetHeight(rect)/2);
@@ -111,19 +118,12 @@
         
     }
     
-//    _lineLayer.frame = rect;
     if (self.isOpen) {
-        
         _lineLayer.strokeColor = [UIColor customBlurColor].CGColor;
     }else{
         _lineLayer.strokeColor = [UIColor customHightWhiteColor].CGColor;
     }
-    _lineLayer.fillColor = [UIColor clearColor].CGColor;
-    _lineLayer.lineWidth = 5/[UIScreen mainScreen].scale;
     _lineLayer.path = graphPath.CGPath;
-    
 
-//    [super drawRect:rect];
-    
 }
 @end

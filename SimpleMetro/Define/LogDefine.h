@@ -14,7 +14,7 @@
 // DEBUG模式下进行调试打印
 
 // 输出结果标记出所在类方法与行数
-#define LOG_DEBUG(fmt, ...)   NSLog((@"%s[Line: %d]™ \n" fmt), strrchr(__FUNCTION__,'['), __LINE__, ##__VA_ARGS__)
+#define LOG_DEBUG(fmt, ...)   NSLog((@"%s[Line: %d]™ \n" fmt @"\n"), strrchr(__FUNCTION__,'['), __LINE__, ##__VA_ARGS__)
 
 #else
 

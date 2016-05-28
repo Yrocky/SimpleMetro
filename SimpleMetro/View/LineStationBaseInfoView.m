@@ -137,7 +137,6 @@ typedef NS_ENUM(NSInteger ,LineState) {
 
     NSDictionary * dictionary       = (NSDictionary *)stationInfo;
     _stationInfoDictionary          = dictionary;
-    NSLog(@"%@",dictionary);
     
     NSString * stationName          = dictionary[@"name"];
     if (stationName.length > 6) {

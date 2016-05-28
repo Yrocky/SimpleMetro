@@ -10,5 +10,8 @@
 
 @interface LineStationCell : UITableViewCell
 
+// 是否可以换乘
+@property (nonatomic ,assign) BOOL canTransfer;
+
 - (void) configureStationCellWithInfo:(NSDictionary *)stationInfo;
 @end
