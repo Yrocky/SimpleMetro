@@ -195,7 +195,6 @@
 #pragma mark - Custom Color
 
 + (UIColor *) customHightWhiteColor{
-
     return [UIColor colorWithHexString:@"8A92A9"];
 }
 
@@ -203,7 +202,7 @@
     return [UIColor colorWithHexString:@"0AB4FA"];
 }
 
-+ (UIColor *) customGrayColor{
++ (UIColor *) customGrayColor{  
     return [UIColor colorWithHexString:@"4A5063"];
 }
 

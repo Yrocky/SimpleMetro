@@ -115,16 +115,9 @@
 {
     if ([collectionView isEqual:self.collectionView]) {
 
-        UICollectionViewCell * cell = [collectionView cellForItemAtIndexPath:indexPath];
-        
-        if (cell.selected == YES) {
-            
-            return;
-        }
-        
         LOG_DEBUG(@"post notification name:<HLL_SelectedMetroStationNotification>");
         
-        [[NSNotificationCenter defaultCenter] postNotificationName:HLL_SelectedMetroStationNotification object:self.metroStationInfo[indexPath.row]];
+//        [[NSNotificationCenter defaultCenter] postNotificationName:HLL_SelectedMetroStationNotification object:self.metroStationInfo[indexPath.row]];
         
         [collectionView scrollToItemAtIndexPath:indexPath
                                atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally

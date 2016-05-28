@@ -66,25 +66,37 @@
 #pragma mark - Custom Color
 
 /**
- *  右箭头颜色
+ *  右箭头颜色，以及所有控制器视图的背景颜色
  */
 + (UIColor *) customHightWhiteColor;
 
+/**
+ *  最跳的那个蓝色
+ */
 + (UIColor *) customBlurColor;
 
+/**
+ *  地铁站cell的背景颜色、侧边栏的背景颜色
+ */
 + (UIColor *) customGrayColor;
 
 /**
- *  导航栏
+ *  导航栏的背景色
  */
 + (UIColor *) customHighGrayColor;
 
+/**
+ *  侧边栏中“站点信息”、地铁站cell上站点名称
+ */
 + (UIColor *) customWhiteColor;
 
+/**
+ *  这个貌似没有用到
+ */
 + (UIColor *) customLightBlueColor;
 
 /**
- *  导航栏的文字
+ *  导航栏的文字，以及“西流湖 -> 市体育中心站”、A/B/C出口
  */
 + (UIColor *) customHighBlueColor;
 

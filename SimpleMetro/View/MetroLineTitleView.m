@@ -7,7 +7,6 @@
 //
 
 #import "MetroLineTitleView.h"
-#import "FAKFontAwesome.h"
 
 @interface MetroLineTitleView ()
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;

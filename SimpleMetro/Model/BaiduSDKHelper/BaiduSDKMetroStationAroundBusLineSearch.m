@@ -94,7 +94,7 @@
     option.pageCapacity = self.resultCapacity;
     option.radius = self.searchRadius;
     option.location = metroStation.location;
-    option.keyword = @"公交线路";
+    option.keyword = @"公交站";
     
     BOOL flag = [self.poiSearcher poiSearchNearBy:option];
     if(!flag){
@@ -113,7 +113,7 @@
     option.pageCapacity = self.resultCapacity;
     option.radius = self.searchRadius;
     option.location = location;
-    option.keyword = @"公交线路";
+    option.keyword = @"公交站";
     
     BOOL flag = [self.poiSearcher poiSearchNearBy:option];
     if(!flag){

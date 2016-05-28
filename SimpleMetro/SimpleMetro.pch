@@ -11,6 +11,7 @@
 
 #import "LogDefine.h"
 #import "UIColor+Common.h"
+#import "FAKFontAwesome.h"
 #import "HLL_NotificationDefine.h"
 
 #endif /* SimpleMetro_pch */

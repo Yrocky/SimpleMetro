@@ -7,7 +7,6 @@
 //
 
 #import "LineStationBaseInfoView.h"
-#import "FAKFontAwesome.h"
 
 typedef NS_ENUM(NSInteger ,LineState) {
 

@@ -76,9 +76,7 @@
     aroundBusStationSearch = [[BaiduSDKMetroStationAroundBusLineSearch alloc] init];
     [aroundBusStationSearch configureDelegate];
     [aroundBusStationSearch searchMetroStationAroundBusInfoResult:^(NSArray<BMKPoiInfo *> *busStations) {
-        
-        LOG_DEBUG(@"%lu",(unsigned long)busStations.count);
-        
+                
         if (self.aroundBusStationInfo && self.aroundBusStationInfo.count > 0) {
             [self.aroundBusStationInfo removeAllObjects];
         }

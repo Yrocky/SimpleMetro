@@ -7,9 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FAKFontAwesome.h"
 #import "RESideMenu.h"
-
 
 @interface BaseViewController : UIViewController
 

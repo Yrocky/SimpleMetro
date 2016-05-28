@@ -17,6 +17,7 @@
 
 @interface StationInfoController ()<UICollectionViewDelegateFlowLayout>{
 
+    // debug
     BaiduSDKMetroLineSearch * metroLineSearch;
     BaiduSDKMetroStationAroundBusLineSearch * aroundBusStationSearch;
 }
@@ -27,6 +28,7 @@
 
 @property (nonatomic ,strong) StationInfoDataSource * dataSource;
 
+@property (nonatomic ,strong) NSMutableSet * aroundStationSet;
 @end
 
 @implementation StationInfoController
@@ -36,6 +38,8 @@
     if (self) {
         
         _dataSource = [[StationInfoDataSource alloc] init];
+        
+        _aroundStationSet = [NSMutableSet set];
     }
     return self;
 }
@@ -47,6 +51,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     
 //    LOG_DEBUG(@"stationInfo:%@",_stationInfo);
@@ -122,6 +127,21 @@
 }
 
 #pragma mark - UICollectionViewDelegate
+
+
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath{
+
+    if (indexPath.item == 1) {
+        
+        if (self.aroundStationSet && ![self.aroundStationSet containsObject:indexPath]) {
+            
+            [self.aroundStationSet addObject:indexPath];
+            
+            
+        }
+        
+    }
+}
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
 {
