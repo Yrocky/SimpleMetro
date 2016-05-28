@@ -115,13 +115,19 @@
 {
     if ([collectionView isEqual:self.collectionView]) {
 
-        LOG_DEBUG(@"post notification name:<HLL_SelectedMetroStationNotification>");
-        
-//        [[NSNotificationCenter defaultCenter] postNotificationName:HLL_SelectedMetroStationNotification object:self.metroStationInfo[indexPath.row]];
-        
         [collectionView scrollToItemAtIndexPath:indexPath
                                atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
                                        animated:YES];
+        
+        LOG_DEBUG(@"post notification name:<HLL_SelectedMetroStationNotification>");
+        
+        // fix bug ，由于发通知之后接受通知的有另一个CollectionView，他会reload，但是这个类是一resuseView的形式添加到另一个CollectionView上的，所以，他一刷新，这里就有肉眼可见的卡顿。使用一个延时队列暂时修改一下吧，因为如果快速切换，还会出现卡顿。
+
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:HLL_SelectedMetroStationNotification object:self.metroStationInfo[indexPath.row]];
+        });
+        
     }
 }
 

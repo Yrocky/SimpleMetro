@@ -111,6 +111,7 @@
     [self.entranceInfo addObjectsFromArray:entranceList];
     
     [self.collectionView reloadData];
+
 }
 
 - (void) configureCollectionView{
