@@ -8,18 +8,6 @@
 
 #import "LineStationBaseInfoView.h"
 
-typedef NS_ENUM(NSInteger ,LineState) {
-
-    /**
-     *  西流湖 -> 市体育中心站
-     */
-    LineStateFromTo,
-    /**
-     *  市体育中心站 -> 西流湖
-     */
-    LineStateToFrom
-};
-
 @interface LineStationBaseInfoView ()
 
 @property (nonatomic ,strong) IBOutlet UILabel * stationNameLabel;
@@ -100,9 +88,11 @@ typedef NS_ENUM(NSInteger ,LineState) {
 
 - (void) configureStationInfoWithLineState:(LineState)lineState{
     
-    if (self.lineState == LineStateFromTo) {
+    self.lineState = lineState;
+    
+    if (lineState == LineStateFromTo) {
         
-        // 往市体育中心方向
+        // 西流湖 -> 市体育中心方向
         // 首班车发车时间
         NSString * first_run_from       = self.stationInfoDictionary[@"first_run_from"];
         // 末班车发车时间
@@ -112,9 +102,9 @@ typedef NS_ENUM(NSInteger ,LineState) {
         self.firstStationLabel.text     = @"西流湖站";
         self.lastStationLabel.text      = @"市体育中心站";
         
-    }else if (self.lineState == LineStateToFrom){
+    }else if (lineState == LineStateToFrom){
         
-        // 往西流湖方向
+        // 市体育中心方向 -> 西流湖方向
         // 首班车发车时间
         NSString * first_run_to         = self.stationInfoDictionary[@"first_run_to"];
         // 末班车发车时间
@@ -134,7 +124,7 @@ typedef NS_ENUM(NSInteger ,LineState) {
 
     NSDictionary * stationInfo = notification.object;
     
-    [self configureLineStationBaseInfo:stationInfo];
+    [self configureLineStationBaseInfo:stationInfo andFromToState:self.lineState];
     
 }
 #pragma mark - Action
@@ -159,7 +149,7 @@ typedef NS_ENUM(NSInteger ,LineState) {
 
 #pragma mark - API
 
-- (void) configureLineStationBaseInfo:(id)stationInfo{
+- (void) configureLineStationBaseInfo:(id)stationInfo andFromToState:(LineState)lineState{
 
     NSDictionary * dictionary       = (NSDictionary *)stationInfo;
     
@@ -176,13 +166,14 @@ typedef NS_ENUM(NSInteger ,LineState) {
     }
     self.stationNameLabel.text      = [NSString stringWithFormat:@"%@",stationName];
     
-    [self configureStationInfoWithLineState:self.lineState];
+    [self configureStationInfoWithLineState:lineState];
     
 }
 
 - (void) updateLineStationBaseInfo:(id)stationInfo{
 
-    [self configureLineStationBaseInfo:stationInfo];
+    [self configureLineStationBaseInfo:stationInfo
+                        andFromToState:self.lineState];
     
     [self animation];
 }

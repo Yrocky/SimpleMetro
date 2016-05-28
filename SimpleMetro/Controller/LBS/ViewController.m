@@ -27,6 +27,7 @@
 
 @property (nonatomic ,strong) MetroLineInfoDataSource_Plist * dataSource_plist;
 
+@property (nonatomic ,assign) BOOL fromTo;
 @end
 
 @implementation ViewController
@@ -36,6 +37,8 @@
     [super viewDidLoad];
         
     [self addTableView];
+    
+    _fromTo = NO;
     
     typeof(self) weakSelf = self;
     
@@ -48,6 +51,8 @@
     [_metroLineTitleView configureMetroLineTitleViewWithData:self.dataSource_plist.metroLineData];
     _metroLineTitleView.tapSwapBlock = ^(){
 
+        weakSelf.fromTo = !weakSelf.fromTo;
+        
         [weakSelf.dataSource_plist swapFirstStationToLastStation];
     };
     self.navigationItem.titleView = self.metroLineTitleView;
@@ -104,10 +109,11 @@
         
         LOG_DEBUG(@"BlurActionSheetView did selected index:%ld",(long)index);
         
+        self.fromTo = NO;
+        
         [self.dataSource_plist queryMetroLineInfoWithLineNumber:index + 1];
         
         [self.metroLineTitleView configureMetroLineTitleViewWithData:self.dataSource_plist.metroLineData];
-
     }];
 }
 
@@ -183,6 +189,15 @@
     if ([segue.identifier isEqualToString:StationInfoSegueIdentifier]) {
         
         StationInfoController * stationInfoViewController = (StationInfoController *)segue.destinationViewController;
+        
+        /**
+         ** FromTo
+         *  西流湖 -> 市体育中心站
+         *
+         ** ToFrom
+         *  市体育中心站 -> 西流湖
+         */
+        stationInfoViewController.fromTo = self.fromTo;
         
         stationInfoViewController.stationInfo = stationInfo;
     }

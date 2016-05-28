@@ -13,5 +13,8 @@ static NSString * const StationInfoSegueIdentifier = @"stationInfo";
 
 @interface StationInfoController : BaseViewController
 
+@property (nonatomic ,assign) BOOL fromTo;
+
 @property (nonatomic ,strong) id stationInfo;
+
 @end

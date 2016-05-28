@@ -8,9 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger ,LineState) {
+    
+    /**
+     *  西流湖 -> 市体育中心站
+     */
+    LineStateFromTo     = 0,
+    /**
+     *  市体育中心站 -> 西流湖
+     */
+    LineStateToFrom
+};
+
 @interface LineStationBaseInfoView : UIView
 
-- (void) configureLineStationBaseInfo:(id)stationInfo;
+
+- (void) configureLineStationBaseInfo:(id)stationInfo
+                       andFromToState:(LineState)lineState;
 
 - (void) updateLineStationBaseInfo:(id)stationInfo;
 

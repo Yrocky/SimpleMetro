@@ -59,7 +59,7 @@
     //
     NSIndexPath * selectedIndexPath = [self.stationInfo objectForKey:@"SelectedStationIndexKey"];
     NSArray * metroLineInfo = [self.stationInfo objectForKey:@"MetroLineInfoKey"];
-    [self.lineStateBaseInfoView configureLineStationBaseInfo:metroLineInfo[selectedIndexPath.row]];
+    [self.lineStateBaseInfoView configureLineStationBaseInfo:metroLineInfo[selectedIndexPath.row] andFromToState:self.fromTo];
     
     //
     [self reloadLayout];
