@@ -40,6 +40,10 @@
 		D78C6A7B1CFACCCF00CAF770 /* PMAlertController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D78C6A751CFACCCF00CAF770 /* PMAlertController.xib */; };
 		D78C6A7C1CFACCCF00CAF770 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6A781CFACCCF00CAF770 /* AFNetworkReachabilityManager.m */; };
 		D78C6A7F1CFAE01A00CAF770 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6A7E1CFAE01A00CAF770 /* UIImage+ImageEffects.m */; };
+		D78C6A871CFAFE8900CAF770 /* zhifubao.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D78C6A861CFAFE8900CAF770 /* zhifubao.jpg */; };
+		D78C6A891CFB060900CAF770 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D78C6A881CFB060900CAF770 /* StoreKit.framework */; };
+		D78C6A8B1CFB062400CAF770 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D78C6A8A1CFB062400CAF770 /* SafariServices.framework */; };
+		D78C6A8D1CFB062C00CAF770 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D78C6A8C1CFB062C00CAF770 /* MessageUI.framework */; };
 		D7D855801CF34BFF0028B92D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D8557F1CF34BFF0028B92D /* main.m */; };
 		D7D855831CF34BFF0028B92D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D855821CF34BFF0028B92D /* AppDelegate.m */; };
 		D7D855891CF34BFF0028B92D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D855871CF34BFF0028B92D /* Main.storyboard */; };
@@ -177,6 +181,10 @@
 		D78C6A781CFACCCF00CAF770 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
 		D78C6A7D1CFAE01A00CAF770 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		D78C6A7E1CFAE01A00CAF770 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		D78C6A861CFAFE8900CAF770 /* zhifubao.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = zhifubao.jpg; sourceTree = "<group>"; };
+		D78C6A881CFB060900CAF770 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		D78C6A8A1CFB062400CAF770 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		D78C6A8C1CFB062C00CAF770 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		D7D8557B1CF34BFF0028B92D /* SimpleMetro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleMetro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7D8557F1CF34BFF0028B92D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D7D855811CF34BFF0028B92D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -295,6 +303,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D78C6A8D1CFB062C00CAF770 /* MessageUI.framework in Frameworks */,
+				D78C6A8B1CFB062400CAF770 /* SafariServices.framework in Frameworks */,
+				D78C6A891CFB060900CAF770 /* StoreKit.framework in Frameworks */,
 				D70C3EA11CF76C4700B7BAB5 /* BaiduMapAPI_Map.framework in Frameworks */,
 				D7D856BF1CF59EE00028B92D /* libstdc++.6.0.9.tbd in Frameworks */,
 				D7D856BD1CF59ED20028B92D /* CoreGraphics.framework in Frameworks */,
@@ -446,6 +457,14 @@
 				D78C6A781CFACCCF00CAF770 /* AFNetworkReachabilityManager.m */,
 			);
 			path = Reachability;
+			sourceTree = "<group>";
+		};
+		D78C6A851CFAFE8900CAF770 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				D78C6A861CFAFE8900CAF770 /* zhifubao.jpg */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 		D7D855721CF34BFF0028B92D = {
@@ -731,6 +750,7 @@
 			isa = PBXGroup;
 			children = (
 				D7D856AC1CF57A410028B92D /* metroline.plist */,
+				D78C6A851CFAFE8900CAF770 /* Image */,
 				D7D856A11CF56F590028B92D /* OpenSource */,
 			);
 			path = Source;
@@ -749,6 +769,9 @@
 		D7D856C01CF59EF50028B92D /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				D78C6A8C1CFB062C00CAF770 /* MessageUI.framework */,
+				D78C6A8A1CFB062400CAF770 /* SafariServices.framework */,
+				D78C6A881CFB060900CAF770 /* StoreKit.framework */,
 				D7D856BE1CF59EE00028B92D /* libstdc++.6.0.9.tbd */,
 				D7D856BC1CF59ED20028B92D /* CoreGraphics.framework */,
 				D7D856BA1CF59EC00028B92D /* libsqlite3.0.tbd */,
@@ -859,6 +882,7 @@
 				D7D855891CF34BFF0028B92D /* Main.storyboard in Resources */,
 				D7D856391CF4342C0028B92D /* zocial-regular-webfont.ttf in Resources */,
 				D7D8565E1CF545B60028B92D /* AroundService.storyboard in Resources */,
+				D78C6A871CFAFE8900CAF770 /* zhifubao.jpg in Resources */,
 				D7D856381CF4342C0028B92D /* octicons.ttf in Resources */,
 				D7D856601CF546CA0028B92D /* MetroInfo.storyboard in Resources */,
 				D70C3EEB1CF95BD000B7BAB5 /* MetroLineTitleView.xib in Resources */,

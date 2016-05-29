@@ -47,7 +47,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BaL-rf-G7t">
-                            <rect key="frame" x="8" y="208" width="548" height="21"/>
+                            <rect key="frame" x="10" y="208" width="544" height="21"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="cg8-6J-yzj"/>
@@ -66,11 +66,11 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="Rwc-nf-sc4" firstAttribute="top" secondItem="dEl-s8-6vU" secondAttribute="top" constant="8" id="0dQ-To-LNx"/>
-                        <constraint firstItem="BaL-rf-G7t" firstAttribute="leading" secondItem="dEl-s8-6vU" secondAttribute="leading" constant="8" id="1e4-wO-qFm"/>
+                        <constraint firstItem="BaL-rf-G7t" firstAttribute="leading" secondItem="dEl-s8-6vU" secondAttribute="leading" constant="10" id="1e4-wO-qFm"/>
                         <constraint firstAttribute="width" constant="564" id="2KX-8C-U18"/>
                         <constraint firstItem="Rwc-nf-sc4" firstAttribute="leading" secondItem="dEl-s8-6vU" secondAttribute="leading" id="9Tb-Ve-DYU"/>
                         <constraint firstItem="boW-P6-B3N" firstAttribute="top" secondItem="Rwc-nf-sc4" secondAttribute="bottom" constant="10" id="CfL-8C-VDW"/>
-                        <constraint firstAttribute="trailing" secondItem="BaL-rf-G7t" secondAttribute="trailing" constant="8" id="DOm-G9-Two"/>
+                        <constraint firstAttribute="trailing" secondItem="BaL-rf-G7t" secondAttribute="trailing" constant="10" id="DOm-G9-Two"/>
                         <constraint firstAttribute="bottom" secondItem="WJc-5g-auJ" secondAttribute="bottom" id="P7Y-tt-2D9"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="PzO-yc-cQ1"/>
                         <constraint firstItem="WJc-5g-auJ" firstAttribute="leading" secondItem="dEl-s8-6vU" secondAttribute="leading" id="Qvh-W5-xGk"/>

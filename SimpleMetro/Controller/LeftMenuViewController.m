@@ -96,10 +96,10 @@
 
     [picker setSubject:@"意见反馈"];
     
-//    NSArray *toRecipients = [NSArray arrayWithObjects:FeedbackEmailAddress,nil];
-//    [picker setToRecipients:toRecipients];
+    NSArray *toRecipients = [NSArray arrayWithObjects:FeedbackEmailAddress,nil];
+    [picker setToRecipients:toRecipients];
     
-    NSAssert(NO, @"设置自己的反馈邮箱");
+//    NSAssert(NO, @"设置自己的反馈邮箱");
     
     NSString *emailBody = @"使用过程中有一些不友好的体验，比如...";
     [picker setMessageBody:emailBody isHTML:NO];

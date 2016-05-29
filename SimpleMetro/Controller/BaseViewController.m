@@ -25,9 +25,14 @@
                                                                       action:@selector(leftBarButtonHandle:)];
     self.navigationItem.leftBarButtonItem = leftBarButton;
     
+    self.view.backgroundColor = [UIColor whiteColor];
     self.view.backgroundColor = [UIColor customHightWhiteColor];
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle{
+
+    return UIStatusBarStyleLightContent;
+}
 #pragma mark - Method
 
 - (void) setDisplayTitle:(NSString *)title{
