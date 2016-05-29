@@ -62,17 +62,15 @@
     [self.lineStateBaseInfoView configureLineStationBaseInfo:metroLineInfo[selectedIndexPath.row] andFromToState:self.fromTo];
     self.lineStateBaseInfoView.showDisclaimerBlock = ^(){
     
-        PMAlertController * alertControler = [[PMAlertController alloc] initWithTitle:@"免责声明" description:@"本软件提供的列车时刻仅供参考，可能会与实际列车到达时间有所出入，具体信息以郑州轨道交通官方通知为主。" image:nil style:PMAlertControllerStyleAlert];
+        PMAlertController * alertControler = [[PMAlertController alloc] initWithTitle:@"免责声明" description:@"本软件提供的列车时刻仅供参考，可能会与实际列车到达时间有所出入，对由此照成的影响本软件开发方不负任何责任，具体信息以郑州轨道交通官方通知为主。" image:nil style:PMAlertControllerStyleAlert];
         alertControler.gravityDismissAnimation = NO;
         alertControler.addMotionEffect = YES;
 //        alertControler.alertMaskBackground.image = [[UIImage imageWithColor:[UIColor colorWithHexString:@"414B56"]] blurImageWithRadius:30];
         
-        PMAlertAction * sureAction = [[PMAlertAction alloc] initWithTitle:@"确定" style:PMAlertActionStyleDefault action:nil];
+        PMAlertAction * sureAction = [[PMAlertAction alloc] initWithTitle:@"同意" style:PMAlertActionStyleDefault action:nil];
         [alertControler addAction:sureAction];
         
-        [self presentViewController:alertControler animated:YES completion:^{
-            
-        }];
+        [self presentViewController:alertControler animated:YES completion:nil];
     };
     
     //
@@ -111,6 +109,7 @@
 
     [super viewDidAppear:animated];
     
+    // 把通知在这里发送时因为在didload的时候通知的接收方还没有初始化完成，发了也接收不到，但在这个方法内接收方已经初始化完毕，这么做会导致一些后续开发麻烦
     [[NSNotificationCenter defaultCenter] postNotificationName:HLL_ShowDetailMetroStationInfonNotification object:self.stationInfo];
     
     LOG_DEBUG(@"StationInfoController post notification:%@",HLL_ShowDetailMetroStationInfonNotification);
@@ -159,14 +158,14 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
 {
-    
+    // 后续版本做地图展示以及LBS搜索
     LOG_DEBUG(@"选择站点");
 
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSLog(@"不选中某点");
+    LOG_DEBUG(@"不选中某点");
     
 }
 
@@ -205,9 +204,11 @@
     
     if (indexPath.section == 0) {
         
-        CGFloat horizontalWidth = CGRectGetWidth(self.view.frame) - layout.minimumLineSpacing - layout.sectionInset.left - layout.sectionInset.right;
+        NSInteger itemCount = 3;
+        // 由于在iPhone6以及以下的机型使用（itemCount-1）* minimumInteritemSpacing是可以正常显示的，但是到了iPhone 6+就不行了，不知道什么原因，暂时这样取巧设置一下，希望7出来了不要再变宽了，不然这个值又魔法
+        CGFloat horizontalWidth = CGRectGetWidth(self.view.frame) - layout.minimumInteritemSpacing * (isIPhone6Plus?itemCount:(itemCount-1)) - layout.sectionInset.left - layout.sectionInset.right;
         
-        itemSize = CGSizeMake(horizontalWidth / 3, layout.itemSize.height);
+        itemSize = CGSizeMake(horizontalWidth / itemCount, layout.itemSize.height);
     }
     
     if (indexPath.section == 1) {

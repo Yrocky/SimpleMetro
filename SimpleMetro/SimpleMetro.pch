@@ -11,7 +11,7 @@
 
 #import "SimpleMetro-Swift.h"
 
-#import "LogDefine.h"
+#import "DefaineManager.h"
 
 #import "UIImage+Common.h"
 #import "UIColor+Common.h"

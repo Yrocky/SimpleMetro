@@ -22,14 +22,14 @@
     
     [super awakeFromNib];
     
-    self.contentView.backgroundColor = [UIColor clearColor];
+    self.contentView.backgroundColor            = [UIColor clearColor];
     
-    self.roundView.layer.cornerRadius = 10.0f;
-    self.roundView.layer.masksToBounds = YES;
-    self.roundView.backgroundColor = [UIColor customHighGrayColor];
+    self.roundView.layer.cornerRadius           = 10.0f;
+    self.roundView.layer.masksToBounds          = YES;
+    self.roundView.backgroundColor              = [UIColor customHighGrayColor];
     
-    self.busStationNameLabel.backgroundColor = [UIColor clearColor];
-    self.busStationNameLabel.textColor = [UIColor customBlurColor];
+    self.busStationNameLabel.backgroundColor    = [UIColor clearColor];
+    self.busStationNameLabel.textColor          = [UIColor customHighBlueColor];
 }
 
 #pragma mark - API

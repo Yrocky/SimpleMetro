@@ -850,7 +850,8 @@
            statusBarStyle = self.contentViewController.preferredStatusBarStyle;
        }
     );
-    return !statusBarStyle;
+//    return !statusBarStyle;
+    return UIStatusBarStyleLightContent;
 }
 
 - (BOOL)prefersStatusBarHidden

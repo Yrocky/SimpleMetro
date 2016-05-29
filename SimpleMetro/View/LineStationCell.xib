@@ -51,6 +51,7 @@
                 <outlet property="arrowImageView" destination="uit-gm-znu" id="dFW-eI-ccs"/>
                 <outlet property="backgroundColorView" destination="QeM-87-Iq6" id="ofz-aZ-lJF"/>
                 <outlet property="stationNameLabel" destination="MYP-kR-13A" id="4tr-IU-3F4"/>
+                <outlet property="stationNameLabelLeftConstraint" destination="YVD-vB-W67" id="ARp-dR-DEN"/>
             </connections>
             <point key="canvasLocation" x="492" y="304"/>
         </tableViewCell>

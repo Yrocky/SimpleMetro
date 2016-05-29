@@ -19,7 +19,7 @@
 
     [super viewDidLoad];
     
-    [self setDisplayTitle:@"关于地铁"];
+    [self setDisplayTitle:@"地铁公告"];
 
 }
 @end

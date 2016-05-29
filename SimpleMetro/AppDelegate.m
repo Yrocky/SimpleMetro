@@ -98,7 +98,11 @@
     sideMenuViewController.fadeMenuView = NO;
     sideMenuViewController.parallaxEnabled = NO;
     sideMenuViewController.contentViewScaleValue = 1.0f;
-    sideMenuViewController.contentViewInPortraitOffsetCenterX = -30.0f;
+    if (isLessThenIPhone6) {
+        sideMenuViewController.contentViewInPortraitOffsetCenterX = -10.0f;
+    }else{
+        sideMenuViewController.contentViewInPortraitOffsetCenterX = -30.0f;
+    }
     sideMenuViewController.contentViewShadowColor = [UIColor lightGrayColor];
     sideMenuViewController.contentViewShadowOffset = CGSizeMake(0, 0);
     sideMenuViewController.contentViewShadowOpacity = 0.6;

@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--Around Service View Contrller-->
         <scene sceneID="nD4-YM-kJ9">
             <objects>
-                <viewController id="wtO-VV-Jx8" customClass="AroundServiceViewContrller" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="wtO-VV-Jx8" customClass="AroundServiceViewContrller" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SVE-cO-PNk"/>
                         <viewControllerLayoutGuide type="bottom" id="lNN-JW-bcY"/>
@@ -16,9 +15,62 @@
                     <view key="view" contentMode="scaleToFill" id="JT8-57-ikg">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PzF-27-UCY">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yra-M7-Lun" customClass="CSStickyHeaderFlowLayout">
+                                    <size key="itemSize" width="150" height="80"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="10"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AroundServiceCellIdentifier" id="sKY-v6-KkK" customClass="AroundServiceCell">
+                                        <rect key="frame" x="10" y="0.0" width="150" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nk0-Xl-Z2o">
+                                                    <rect key="frame" x="10" y="10" width="130" height="60"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Nk0-Xl-Z2o" secondAttribute="trailing" constant="10" id="3CI-X8-tt5"/>
+                                            <constraint firstItem="Nk0-Xl-Z2o" firstAttribute="leading" secondItem="sKY-v6-KkK" secondAttribute="leading" constant="10" id="92A-2e-sRC"/>
+                                            <constraint firstItem="Nk0-Xl-Z2o" firstAttribute="top" secondItem="sKY-v6-KkK" secondAttribute="top" constant="10" id="PxZ-U8-VcP"/>
+                                            <constraint firstAttribute="bottom" secondItem="Nk0-Xl-Z2o" secondAttribute="bottom" constant="10" id="t5d-Ho-wnt"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="serviceNameLabel" destination="Nk0-Xl-Z2o" id="IUr-9y-g1U"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="wtO-VV-Jx8" id="GU7-8a-lVU"/>
+                                    <outlet property="delegate" destination="wtO-VV-Jx8" id="gkE-Hs-eZP"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PzF-27-UCY" firstAttribute="top" secondItem="SVE-cO-PNk" secondAttribute="bottom" id="C6A-fB-bNj"/>
+                            <constraint firstAttribute="trailing" secondItem="PzF-27-UCY" secondAttribute="trailing" id="Joy-JD-XwH"/>
+                            <constraint firstItem="PzF-27-UCY" firstAttribute="leading" secondItem="JT8-57-ikg" secondAttribute="leading" id="jg3-0G-II9"/>
+                            <constraint firstItem="lNN-JW-bcY" firstAttribute="top" secondItem="PzF-27-UCY" secondAttribute="bottom" id="njx-sc-hHJ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="72Z-Ip-S6b"/>
+                    <connections>
+                        <outlet property="collectionView" destination="PzF-27-UCY" id="Nw5-iN-dAq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnU-e4-5Mu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

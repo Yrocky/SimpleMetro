@@ -29,10 +29,6 @@
     self.view.backgroundColor = [UIColor customHightWhiteColor];
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle{
-
-    return UIStatusBarStyleLightContent;
-}
 #pragma mark - Method
 
 - (void) setDisplayTitle:(NSString *)title{

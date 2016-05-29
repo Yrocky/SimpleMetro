@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIView *backgroundColorView;
 @property (weak, nonatomic) IBOutlet UILabel *stationNameLabel;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *stationNameLabelLeftConstraint;
 @property (nonatomic ,strong) CAShapeLayer * lineLayer;
 
 // 该站是否开启，一般除了一号线开了，其他线路都没有开
@@ -78,7 +79,11 @@
     
     self.stationNameLabel.textColor = [UIColor customWhiteColor];
     
-    self.lineLayer = nil;
+    if (isLessThenIPhone6) {
+        self.stationNameLabel.font = [UIFont systemFontOfSize:15];
+    }
+    self.stationNameLabelLeftConstraint.constant = 10;
+    self.lineLayer.hidden = YES;
 }
 #pragma mark -
 
@@ -86,6 +91,11 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+//    if (selected) {
+//        self.stationNameLabel.textColor = [UIColor customHightWhiteColor];
+//    }else{
+//        self.stationNameLabel.textColor = [UIColor customWhiteColor];
+//    }
 }
 
 - (void)layoutSubviews{

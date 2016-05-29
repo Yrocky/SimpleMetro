@@ -32,17 +32,18 @@
 - (void) viewDidLoad{
     [super viewDidLoad];
     
-//    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor customHighGrayColor];
     
+    self.aboutMeDescLabel.text = @"      郑州轻地铁是为乘坐郑州轨道交通的市民提供相关地铁时刻以及相关站点附近的服务设施的一款app，拥有简洁的操作以及功能齐全的地铁信息查询，可以根据用户的需求提供智能的LBS服务。";
     //
     self.aboutMeIconImageView.layer.cornerRadius = 5.0f;
     self.aboutMeIconImageView.layer.masksToBounds = YES;
     
-//    self.aboutMeDescLabel.textColor       = [UIColor ];
-//    self.aboutMeVersionLabel.textColor    = [UIColor ];
-//    self.aboutMeCopyrightLabel.textColor  = [UIColor ];
+    self.aboutMeDescLabel.textColor       = [UIColor customHighBlueColor];
+    self.aboutMeVersionLabel.textColor    = [UIColor customHighBlueColor];
+    self.aboutMeCopyrightLabel.textColor  = [UIColor customHighBlueColor];
     
-    UIColor * lineColor                     = [UIColor customGrayColor];
+    UIColor * lineColor                     = [UIColor customHightWhiteColor];
     self.topLineView.backgroundColor        = lineColor;
     self.centerLineView.backgroundColor     = lineColor;
     self.bottomLineView.backgroundColor     = lineColor;
@@ -51,14 +52,14 @@
     [thumbsOUpIcon addAttribute:NSForegroundColorAttributeName value:[UIColor customBlurColor]];
     UIImage * senderFeedbackImage = [thumbsOUpIcon imageWithSize:CGSizeMake(30, 30)];
     [self.feedbackButton setTitle:@"  打赏开发者" forState:UIControlStateNormal];
-    [self.feedbackButton setTitleColor:[UIColor customGrayColor] forState:UIControlStateNormal];
+    [self.feedbackButton setTitleColor:[UIColor customHighBlueColor] forState:UIControlStateNormal];
     [self.feedbackButton setImage:senderFeedbackImage forState:UIControlStateNormal];
     
     FAKFontAwesome *envelopeOIcon = [FAKFontAwesome envelopeOIconWithSize:20];
     [envelopeOIcon addAttribute:NSForegroundColorAttributeName value:[UIColor customBlurColor]];
     UIImage * sendEmailButtonImage = [envelopeOIcon imageWithSize:CGSizeMake(30, 30)];
     [self.emailButton setTitle:@"  发邮件交流" forState:UIControlStateNormal];
-    [self.emailButton setTitleColor:[UIColor customGrayColor] forState:UIControlStateNormal];
+    [self.emailButton setTitleColor:[UIColor customHighBlueColor] forState:UIControlStateNormal];
     [self.emailButton setImage:sendEmailButtonImage forState:UIControlStateNormal];
     
 }

@@ -84,6 +84,15 @@
     
     self.firstSubwayTimeLabel.textColor = [UIColor customHightWhiteColor];
     self.lastSubwayTimeLabel.textColor  = [UIColor customHightWhiteColor];
+    
+    if (isLessThenIPhone6) {
+        
+        self.firstStationLabel.font    = [UIFont systemFontOfSize:14];
+        self.lastStationLabel.font     = [UIFont systemFontOfSize:14];
+        
+        self.firstSubwayTimeLabel.font = [UIFont systemFontOfSize:13];
+        self.lastSubwayTimeLabel.font  = [UIFont systemFontOfSize:13];
+    }
 }
 
 - (void) configureStationInfoWithLineState:(LineState)lineState{

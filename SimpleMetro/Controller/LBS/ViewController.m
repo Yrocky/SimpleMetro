@@ -46,9 +46,10 @@
     _metroLineTitleView = [MetroLineTitleView nib];
     _metroLineTitleView.frame = CGRectMake(0,
                                            0,
-                                           250,
+                                           (isGreaterThenIPhone5?250:200),
                                            CGRectGetHeight(self.navigationController.navigationBar.bounds));
     [_metroLineTitleView configureMetroLineTitleViewWithData:self.dataSource_plist.metroLineData];
+    _metroLineTitleView.backgroundColor = [UIColor clearColor];
     _metroLineTitleView.tapSwapBlock = ^(){
 
         weakSelf.fromTo = !weakSelf.fromTo;
@@ -92,10 +93,6 @@
     [self.tableView addSubview:self.pullToRefreshView];
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle{
-
-    return UIStatusBarStyleLightContent;
-}
 
 #pragma mark - ActionSheet
 
