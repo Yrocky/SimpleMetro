@@ -70,8 +70,18 @@
         self.arrowImageView.hidden = YES;
         self.stationNameLabel.textColor = [UIColor customHightWhiteColor];
     }
-//    [self setNeedsDisplay];
 }
+
+- (void) configureOpenSourceCellWithOpenSourceInfo:(id)openSourceInfo{
+    
+    self.stationNameLabel.text = [NSString stringWithFormat:@"%@",openSourceInfo];
+    
+    self.stationNameLabel.textColor = [UIColor customWhiteColor];
+    
+    self.lineLayer = nil;
+}
+#pragma mark -
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

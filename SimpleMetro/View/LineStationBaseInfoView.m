@@ -144,6 +144,10 @@
 
 - (IBAction)stationInfo:(id)sender{
 
+    if (self.showDisclaimerBlock) {
+        self.showDisclaimerBlock();
+    }
+    
     NSLog(@"info");
 }
 

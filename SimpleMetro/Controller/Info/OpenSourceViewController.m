@@ -7,9 +7,17 @@
 //
 
 #import "OpenSourceViewController.h"
+#import "LineStationCell.h"
+#import <SafariServices/SafariServices.h>
 
-@interface OpenSourceViewController ()
-@property (weak, nonatomic) IBOutlet UIWebView *openSourceWebView;
+
+@interface OpenSourceViewController ()<UITableViewDataSource,UITableViewDelegate,SFSafariViewControllerDelegate>
+
+@property (nonatomic ,strong) NSArray * openSource;
+
+@property (strong,nonatomic) SFSafariViewController *safari;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -19,33 +27,86 @@
 
     [super awakeFromNib];
 
+    _openSource = @[@{@"OpenSourceName":@"BaiduMapSDK v2.10.2",
+                      @"OpenSourceURL":@"http://lbsyun.baidu.com/index.php?title=iossdk"},
+                    @{@"OpenSourceName":@"CSStickyHeaderFlowLayout v0.2.10",
+                      @"OpenSourceURL":@"https://github.com/jamztang/CSStickyHeaderFlowLayout"},
+                    @{@"OpenSourceName":@"FontAwesomeKit v2.2.0",
+                      @"OpenSourceURL":@"https://github.com/PrideChung/FontAwesomeKit"},
+                    @{@"OpenSourceName":@"RESideMenu v4.0.7",
+                      @"OpenSourceURL":@"https://github.com/romaonthego/RESideMenu"}];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.title = @"开源许可";
+    self.title = @"Acknowledges";
     
-    NSString * path = [[NSBundle mainBundle] pathForResource:@"credits" ofType:@"html"];
-    NSString * content = [NSString stringWithContentsOfFile:path
-                                                   encoding:NSUTF8StringEncoding
-                                                      error:nil];
-    [self.openSourceWebView loadHTMLString:content baseURL:nil];
+    UINib * nib = [UINib nibWithNibName:@"LineStationCell" bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:@"metroLineCellIdentifier"];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - UITableViewDataSource,UITableViewDelegate
+
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return self.openSource.count;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    LineStationCell * cell = [tableView dequeueReusableCellWithIdentifier:@"metroLineCellIdentifier"
+                                                             forIndexPath:indexPath];
+    
+    
+    NSDictionary * openSourceInfo = self.openSource[indexPath.row];
+    
+    [cell configureOpenSourceCellWithOpenSourceInfo:openSourceInfo[@"OpenSourceName"]];
+    
+    return cell;
 }
-*/
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    NSString  * urlString = [self.openSource[indexPath.row] objectForKey:@"OpenSourceURL"];
+    
+    if (urlString) {
+        
+        NSURL * url = [NSURL URLWithString:urlString];
+        
+        SFSafariViewController * safari = [[SFSafariViewController alloc] initWithURL:url entersReaderIfAvailable:YES];
+        
+        safari.delegate = self;
+        
+        [self presentViewController:safari animated:YES completion:^{
+            
+        }];
+    }
+}
+
+
+#pragma mark -- SFSafariViewControllerDelegate
+// 添加分享view的自定义按钮
+//- (NSArray<UIActivity *> *)safariViewController:(SFSafariViewController *)controller activityItemsForURL:(NSURL *)URL title:(nullable NSString *)title
+//{
+//    return @[[[CustomActivity alloc] init]];
+//}
+
+// safariViewController 完成加载
+- (void)safariViewController:(SFSafariViewController *)controller didCompleteInitialLoad:(BOOL)didLoadSuccessfully
+{
+    NSLog(@"加载完成");
+}
+
+// safariViewController 点击完成按钮
+- (void)safariViewControllerDidFinish:(SFSafariViewController *)controller
+{
+    NSLog(@"点击完成");
+}
+
 
 @end

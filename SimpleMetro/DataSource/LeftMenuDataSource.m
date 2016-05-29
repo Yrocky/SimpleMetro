@@ -64,7 +64,7 @@ static NSString * const leftMenuCellIdentifier = @"leftMenuCellIdentifier";
                            @[@{kLeftMenuIconKey:feedBackIcons,
                                kLeftMenuTitleKey:@"意见反馈"},
                              @{kLeftMenuIconKey:openSourceIcons,
-                               kLeftMenuTitleKey:@"开源许可"},
+                               kLeftMenuTitleKey:@"Third-Party Lib"},
                              @{kLeftMenuIconKey:aboutIcons,
                                kLeftMenuTitleKey:@"关于"}]];
     }

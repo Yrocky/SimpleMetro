@@ -11,6 +11,21 @@
 #import "LeftMenuViewController.h"
 #import "StoryBoardUtilities.h"
 #import "StoryBoardIdHeader.h"
+#import "AFNetworkReachabilityManager.h"
+
+/* 
+ ## 在oc中使用swift文件
+ 
+ 1. 创建全局编译文件 PrefixHeader.pch
+ 2. 在全局预编译文件PrefixHeader.pch中 添加 '#import "项目名-Swift.h"'
+ 3. 现在就可以在OC中使用swift了
+ 
+ 这样做之后编译器会自动生成swift连接到OC的.h文件，这个文件就是'项目名-Swift.h'
+ 
+ 比如，这里使用一个用swift写的控件'PMAlertViewController',
+ 
+ 先导入PMAlertViewController文件到你的工程 ,然后在预编译文件里面添加'#import "项目名-Swift.h"' 就可以使用了
+ */
 
 @interface AppDelegate ()<BMKGeneralDelegate>
 
@@ -21,6 +36,8 @@
 // baidu-map-SDK-key:vvhjlAaSHL55EQ80jG49tjlM64bDix2l
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [self startNetworkReachability];
     
     [self addBaiduMapSDK];
     
@@ -33,12 +50,23 @@
 
 #pragma mark - App Configure
 
+- (void) startNetworkReachability{
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+}
+
+- (void) stopNetworkReachability{
+    [[AFNetworkReachabilityManager sharedManager] stopMonitoring];
+}
+
 - (void) addBaiduMapSDK{
     
     _mapManager = [[BMKMapManager alloc]init];
 
     BOOL ret = [_mapManager start:@"vvhjlAaSHL55EQ80jG49tjlM64bDix2l"
                   generalDelegate:self];
+    
+    [self storeGetNetworkAndGetPermissionState:ret];
+    
     if (!ret) {
         LOG_DEBUG(@"manager start failed!");
     }
@@ -83,6 +111,29 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
 }
+
+#pragma mark - UIApplicationDelegate
+
+- (void)applicationWillResignActive:(UIApplication *)application {
+    /*
+     从活跃到不活跃的状态。这可能发生某些类型的暂时中断(如电话来电或短信)或当用户退出应用程序开始转换到背景状态.
+     暂停正在进行的任务,禁用计时器,节流OpenGL ES帧率
+     */
+    [self stopNetworkReachability];
+}
+
+- (void)applicationDidEnterBackground:(UIApplication *)application {
+    [self stopNetworkReachability];
+}
+
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+    [self startNetworkReachability];
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    [self startNetworkReachability];
+}
+
 #pragma mark -
 #pragma mark RESideMenu Delegate
 
@@ -114,6 +165,8 @@
  */
 - (void)onGetNetworkState:(int)iError{
 
+    [self storeGetNetworkAndGetPermissionState:!iError];
+    
     if (0 == iError) {
         LOG_DEBUG(@"联网成功");
     }
@@ -128,11 +181,20 @@
  */
 - (void)onGetPermissionState:(int)iError{
 
+    [self storeGetNetworkAndGetPermissionState:!iError];
+    
     if (0 == iError) {
         LOG_DEBUG(@"授权成功");
     }
     else {
         LOG_DEBUG(@"onGetPermissionState %d",iError);
     }
+}
+
+- (void) storeGetNetworkAndGetPermissionState:(int)state{
+        
+    [[NSUserDefaults standardUserDefaults] setBool:state forKey:@"GetNetworkAndGetPermissionState"];
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 @end

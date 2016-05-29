@@ -20,8 +20,11 @@ typedef NS_ENUM(NSInteger ,LineState) {
     LineStateToFrom
 };
 
+typedef void(^ShowDisclaimerInfoBlock)(void);
+
 @interface LineStationBaseInfoView : UIView
 
+@property (nonatomic ,copy) ShowDisclaimerInfoBlock showDisclaimerBlock;
 
 - (void) configureLineStationBaseInfo:(id)stationInfo
                        andFromToState:(LineState)lineState;

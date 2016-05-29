@@ -14,4 +14,6 @@
 @property (nonatomic ,assign) BOOL canTransfer;
 
 - (void) configureStationCellWithInfo:(NSDictionary *)stationInfo;
+
+- (void) configureOpenSourceCellWithOpenSourceInfo:(id)openSourceInfo;
 @end

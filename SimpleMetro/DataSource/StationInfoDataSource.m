@@ -8,6 +8,7 @@
 
 #import "StationInfoDataSource.h"
 #import "BaiduSDKMetroStationAroundBusLineSearch.h"
+#import "AFNetworkReachabilityManager.h"
 
 @interface StationInfoDataSource (){
 
@@ -38,7 +39,14 @@
 
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(acceptSelectedMetroStationNotification:) name:HLL_SelectedMetroStationNotification object:nil];
         
-        [self busStationInfoSearch];
+        BOOL getNetworkAndGetPermissionScuessful = [[NSUserDefaults standardUserDefaults] boolForKey:@"GetNetworkAndGetPermissionState"];
+        
+        BOOL isReachable = [AFNetworkReachabilityManager sharedManager].isReachable;
+        
+        if (getNetworkAndGetPermissionScuessful && isReachable) {
+
+            [self busStationInfoSearch];
+        }
     }
     return self;
 }

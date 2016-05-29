@@ -9,9 +9,18 @@
 #ifndef SimpleMetro_pch
 #define SimpleMetro_pch
 
+#import "SimpleMetro-Swift.h"
+
 #import "LogDefine.h"
+
+#import "UIImage+Common.h"
 #import "UIColor+Common.h"
+#import "UIImage+ImageEffects.h"
+
 #import "FAKFontAwesome.h"
 #import "HLL_NotificationDefine.h"
+
+
+#define FeedbackEmailAddress @""
 
 #endif /* SimpleMetro_pch */

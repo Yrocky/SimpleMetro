@@ -60,6 +60,20 @@
     NSIndexPath * selectedIndexPath = [self.stationInfo objectForKey:@"SelectedStationIndexKey"];
     NSArray * metroLineInfo = [self.stationInfo objectForKey:@"MetroLineInfoKey"];
     [self.lineStateBaseInfoView configureLineStationBaseInfo:metroLineInfo[selectedIndexPath.row] andFromToState:self.fromTo];
+    self.lineStateBaseInfoView.showDisclaimerBlock = ^(){
+    
+        PMAlertController * alertControler = [[PMAlertController alloc] initWithTitle:@"免责声明" description:@"本软件提供的列车时刻仅供参考，可能会与实际列车到达时间有所出入，具体信息以郑州轨道交通官方通知为主。" image:nil style:PMAlertControllerStyleAlert];
+        alertControler.gravityDismissAnimation = NO;
+        alertControler.addMotionEffect = YES;
+//        alertControler.alertMaskBackground.image = [[UIImage imageWithColor:[UIColor colorWithHexString:@"414B56"]] blurImageWithRadius:30];
+        
+        PMAlertAction * sureAction = [[PMAlertAction alloc] initWithTitle:@"确定" style:PMAlertActionStyleDefault action:nil];
+        [alertControler addAction:sureAction];
+        
+        [self presentViewController:alertControler animated:YES completion:^{
+            
+        }];
+    };
     
     //
     [self reloadLayout];
