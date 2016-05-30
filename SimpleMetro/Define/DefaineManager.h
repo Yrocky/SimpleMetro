@@ -7,20 +7,15 @@
 //
 
 #import "LogDefine.h"
+#import "FontsDefine.h"
+
 
 #ifndef DefaineManager_h
 #define DefaineManager_h
 
-
 /**
  *  在此处定义宏
  */
-
-// 此App中使用的自定义字体名称
-#define DEF_Font_DFShaoNvW5     @"DFShaoNvW5"
-#define DEF_Font_8              @"8"
-#define DEF_Font_akaDylanPlain  @"akaDylanPlain"
-#define DEF_Font_MBXS           @"2.0-"
 
 // 判断屏幕尺寸
 //

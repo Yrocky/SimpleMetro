@@ -14,8 +14,8 @@
 		D70C3EA21CF76C4700B7BAB5 /* BaiduMapAPI_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D70C3E9D1CF76C4700B7BAB5 /* BaiduMapAPI_Search.framework */; };
 		D70C3EE91CF95BC700B7BAB5 /* MetroLineTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D70C3EE81CF95BC700B7BAB5 /* MetroLineTitleView.m */; };
 		D70C3EEB1CF95BD000B7BAB5 /* MetroLineTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D70C3EEA1CF95BD000B7BAB5 /* MetroLineTitleView.xib */; };
-		D70C3EF21CF98A2300B7BAB5 /* BaiduSDKMetroLineSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = D70C3EEE1CF98A2300B7BAB5 /* BaiduSDKMetroLineSearch.m */; };
-		D70C3EF31CF98A2300B7BAB5 /* BaiduSDKMetroStationAroundBusLineSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = D70C3EF01CF98A2300B7BAB5 /* BaiduSDKMetroStationAroundBusLineSearch.m */; };
+		D70C3EF21CF98A2300B7BAB5 /* BaiduSDKMetroLineSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = D70C3EEE1CF98A2300B7BAB5 /* BaiduSDKMetroLineSearch.m */; settings = {COMPILER_FLAGS = "-ObjC"; }; };
+		D70C3EF31CF98A2300B7BAB5 /* BaiduSDKMetroStationAroundBusLineSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = D70C3EF01CF98A2300B7BAB5 /* BaiduSDKMetroStationAroundBusLineSearch.m */; settings = {COMPILER_FLAGS = "-ObjC"; }; };
 		D77DCA3E1CF6933C002249CC /* BlurActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = D77DCA3D1CF6933C002249CC /* BlurActionSheetView.m */; };
 		D77DCA421CF6E0AD002249CC /* HLLPullToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = D77DCA411CF6E0AD002249CC /* HLLPullToRefreshView.m */; };
 		D77DCA511CF73E6D002249CC /* MetroLineStationInfoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D77DCA501CF73E6D002249CC /* MetroLineStationInfoHelper.m */; };
@@ -36,7 +36,6 @@
 		D78C6A791CFACCCF00CAF770 /* PMAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78C6A731CFACCCF00CAF770 /* PMAlertAction.swift */; };
 		D78C6A7A1CFACCCF00CAF770 /* PMAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78C6A741CFACCCF00CAF770 /* PMAlertController.swift */; };
 		D78C6A7B1CFACCCF00CAF770 /* PMAlertController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D78C6A751CFACCCF00CAF770 /* PMAlertController.xib */; };
-		D78C6A7C1CFACCCF00CAF770 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6A781CFACCCF00CAF770 /* AFNetworkReachabilityManager.m */; };
 		D78C6A7F1CFAE01A00CAF770 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6A7E1CFAE01A00CAF770 /* UIImage+ImageEffects.m */; };
 		D78C6A871CFAFE8900CAF770 /* zhifubao.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D78C6A861CFAFE8900CAF770 /* zhifubao.jpg */; };
 		D78C6A891CFB060900CAF770 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D78C6A881CFB060900CAF770 /* StoreKit.framework */; };
@@ -45,8 +44,31 @@
 		D78C6A901CFB40C000CAF770 /* AroundServiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6A8F1CFB40C000CAF770 /* AroundServiceCell.m */; };
 		D78C6A951CFB421300CAF770 /* AroundServiceSearchCollectionCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D78C6A941CFB421300CAF770 /* AroundServiceSearchCollectionCellView.xib */; };
 		D78C6A981CFB44E500CAF770 /* AroundServiceSearchCollectionCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6A971CFB44E500CAF770 /* AroundServiceSearchCollectionCellView.m */; };
+		D78C6AC31CFC81B500CAF770 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D78C6ABD1CFC81B500CAF770 /* Lato-Bold.ttf */; };
+		D78C6AC41CFC81B500CAF770 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D78C6ABE1CFC81B500CAF770 /* Lato-Light.ttf */; };
+		D78C6AC51CFC81B500CAF770 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D78C6ABF1CFC81B500CAF770 /* Lato-Regular.ttf */; };
+		D78C6AC61CFC81B500CAF770 /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D78C6AC01CFC81B500CAF770 /* Lato-Thin.ttf */; };
+		D78C6AC71CFC81B500CAF770 /* Lato-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D78C6AC11CFC81B500CAF770 /* Lato-ThinItalic.ttf */; };
+		D78C6AC81CFC81B500CAF770 /* Weather&Time.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D78C6AC21CFC81B500CAF770 /* Weather&Time.ttf */; };
+		D78C6ACD1CFC82E700CAF770 /* WeatherTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6ACC1CFC82E700CAF770 /* WeatherTransform.m */; };
+		D78C6AD11CFC86C000CAF770 /* RequestWeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6AD01CFC86C000CAF770 /* RequestWeatherData.m */; };
+		D78C6AF21CFC889100CAF770 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6AD51CFC889100CAF770 /* AFHTTPSessionManager.m */; };
+		D78C6AF31CFC889100CAF770 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6AD81CFC889100CAF770 /* AFNetworkReachabilityManager.m */; };
+		D78C6AF41CFC889100CAF770 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6ADA1CFC889100CAF770 /* AFSecurityPolicy.m */; };
+		D78C6AF51CFC889100CAF770 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6ADC1CFC889100CAF770 /* AFURLRequestSerialization.m */; };
+		D78C6AF61CFC889100CAF770 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6ADE1CFC889100CAF770 /* AFURLResponseSerialization.m */; };
+		D78C6AF71CFC889100CAF770 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6AE01CFC889100CAF770 /* AFURLSessionManager.m */; };
+		D78C6AF81CFC889100CAF770 /* HLLNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6AE41CFC889100CAF770 /* HLLNetworking.m */; };
+		D78C6AF91CFC889100CAF770 /* HLLRequestBodyType.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6AE71CFC889100CAF770 /* HLLRequestBodyType.m */; };
+		D78C6AFA1CFC889100CAF770 /* HLLRequestMethodType.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6AEB1CFC889100CAF770 /* HLLRequestMethodType.m */; };
+		D78C6AFB1CFC889100CAF770 /* HLLResponseDataType.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6AEF1CFC889100CAF770 /* HLLResponseDataType.m */; };
+		D78C6AFC1CFC889100CAF770 /* V_3_X_Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6AF11CFC889100CAF770 /* V_3_X_Networking.m */; };
+		D78C6AFF1CFC8A8F00CAF770 /* CurrentLocationWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6AFE1CFC8A8F00CAF770 /* CurrentLocationWeather.m */; };
+		D78C6B021CFC8FE400CAF770 /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6B011CFC8FE400CAF770 /* Weather.m */; };
+		D78C6B051CFC905900CAF770 /* MainInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6B041CFC905900CAF770 /* MainInfo.m */; };
+		D78C6B0A1CFC93EC00CAF770 /* MapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6B091CFC93EC00CAF770 /* MapManager.m */; };
 		D7D855801CF34BFF0028B92D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D8557F1CF34BFF0028B92D /* main.m */; };
-		D7D855831CF34BFF0028B92D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D855821CF34BFF0028B92D /* AppDelegate.m */; };
+		D7D855831CF34BFF0028B92D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D855821CF34BFF0028B92D /* AppDelegate.m */; settings = {COMPILER_FLAGS = "-ObjC"; }; };
 		D7D855891CF34BFF0028B92D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D855871CF34BFF0028B92D /* Main.storyboard */; };
 		D7D8558B1CF34BFF0028B92D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7D8558A1CF34BFF0028B92D /* Assets.xcassets */; };
 		D7D8558E1CF34BFF0028B92D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D8558C1CF34BFF0028B92D /* LaunchScreen.storyboard */; };
@@ -174,8 +196,6 @@
 		D78C6A731CFACCCF00CAF770 /* PMAlertAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMAlertAction.swift; sourceTree = "<group>"; };
 		D78C6A741CFACCCF00CAF770 /* PMAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMAlertController.swift; sourceTree = "<group>"; };
 		D78C6A751CFACCCF00CAF770 /* PMAlertController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMAlertController.xib; sourceTree = "<group>"; };
-		D78C6A771CFACCCF00CAF770 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
-		D78C6A781CFACCCF00CAF770 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
 		D78C6A7D1CFAE01A00CAF770 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		D78C6A7E1CFAE01A00CAF770 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		D78C6A861CFAFE8900CAF770 /* zhifubao.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = zhifubao.jpg; sourceTree = "<group>"; };
@@ -188,6 +208,50 @@
 		D78C6A961CFB44E500CAF770 /* AroundServiceSearchCollectionCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AroundServiceSearchCollectionCellView.h; sourceTree = "<group>"; };
 		D78C6A971CFB44E500CAF770 /* AroundServiceSearchCollectionCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AroundServiceSearchCollectionCellView.m; sourceTree = "<group>"; };
 		D78C6A991CFB5C4800CAF770 /* DefaineManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefaineManager.h; sourceTree = "<group>"; };
+		D78C6ABD1CFC81B500CAF770 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		D78C6ABE1CFC81B500CAF770 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		D78C6ABF1CFC81B500CAF770 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		D78C6AC01CFC81B500CAF770 /* Lato-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Thin.ttf"; sourceTree = "<group>"; };
+		D78C6AC11CFC81B500CAF770 /* Lato-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-ThinItalic.ttf"; sourceTree = "<group>"; };
+		D78C6AC21CFC81B500CAF770 /* Weather&Time.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Weather&Time.ttf"; sourceTree = "<group>"; };
+		D78C6AC91CFC81D700CAF770 /* FontsDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FontsDefine.h; sourceTree = "<group>"; };
+		D78C6ACB1CFC82E700CAF770 /* WeatherTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherTransform.h; sourceTree = "<group>"; };
+		D78C6ACC1CFC82E700CAF770 /* WeatherTransform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherTransform.m; sourceTree = "<group>"; };
+		D78C6ACF1CFC86C000CAF770 /* RequestWeatherData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestWeatherData.h; sourceTree = "<group>"; };
+		D78C6AD01CFC86C000CAF770 /* RequestWeatherData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestWeatherData.m; sourceTree = "<group>"; };
+		D78C6AD41CFC889100CAF770 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		D78C6AD51CFC889100CAF770 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		D78C6AD61CFC889100CAF770 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		D78C6AD71CFC889100CAF770 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		D78C6AD81CFC889100CAF770 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		D78C6AD91CFC889100CAF770 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		D78C6ADA1CFC889100CAF770 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		D78C6ADB1CFC889100CAF770 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		D78C6ADC1CFC889100CAF770 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		D78C6ADD1CFC889100CAF770 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		D78C6ADE1CFC889100CAF770 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		D78C6ADF1CFC889100CAF770 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		D78C6AE01CFC889100CAF770 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		D78C6AE31CFC889100CAF770 /* HLLNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLNetworking.h; sourceTree = "<group>"; };
+		D78C6AE41CFC889100CAF770 /* HLLNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLNetworking.m; sourceTree = "<group>"; };
+		D78C6AE61CFC889100CAF770 /* HLLRequestBodyType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLRequestBodyType.h; sourceTree = "<group>"; };
+		D78C6AE71CFC889100CAF770 /* HLLRequestBodyType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLRequestBodyType.m; sourceTree = "<group>"; };
+		D78C6AE81CFC889100CAF770 /* HLLRequestDictionarySerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLRequestDictionarySerializer.h; sourceTree = "<group>"; };
+		D78C6AEA1CFC889100CAF770 /* HLLRequestMethodType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLRequestMethodType.h; sourceTree = "<group>"; };
+		D78C6AEB1CFC889100CAF770 /* HLLRequestMethodType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLRequestMethodType.m; sourceTree = "<group>"; };
+		D78C6AED1CFC889100CAF770 /* HLLResponseDataSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLResponseDataSerializer.h; sourceTree = "<group>"; };
+		D78C6AEE1CFC889100CAF770 /* HLLResponseDataType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLResponseDataType.h; sourceTree = "<group>"; };
+		D78C6AEF1CFC889100CAF770 /* HLLResponseDataType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLResponseDataType.m; sourceTree = "<group>"; };
+		D78C6AF01CFC889100CAF770 /* V_3_X_Networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V_3_X_Networking.h; sourceTree = "<group>"; };
+		D78C6AF11CFC889100CAF770 /* V_3_X_Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V_3_X_Networking.m; sourceTree = "<group>"; };
+		D78C6AFD1CFC8A8F00CAF770 /* CurrentLocationWeather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentLocationWeather.h; sourceTree = "<group>"; };
+		D78C6AFE1CFC8A8F00CAF770 /* CurrentLocationWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentLocationWeather.m; sourceTree = "<group>"; };
+		D78C6B001CFC8FE400CAF770 /* Weather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
+		D78C6B011CFC8FE400CAF770 /* Weather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
+		D78C6B031CFC905900CAF770 /* MainInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainInfo.h; sourceTree = "<group>"; };
+		D78C6B041CFC905900CAF770 /* MainInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainInfo.m; sourceTree = "<group>"; };
+		D78C6B081CFC93EC00CAF770 /* MapManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapManager.h; sourceTree = "<group>"; };
+		D78C6B091CFC93EC00CAF770 /* MapManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapManager.m; sourceTree = "<group>"; };
 		D7D8557B1CF34BFF0028B92D /* SimpleMetro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleMetro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7D8557F1CF34BFF0028B92D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D7D855811CF34BFF0028B92D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -354,6 +418,7 @@
 				D78C6A991CFB5C4800CAF770 /* DefaineManager.h */,
 				D70C3EDB1CF7F58700B7BAB5 /* LogDefine.h */,
 				D78C6A631CF9FFC600CAF770 /* HLL_NotificationDefine.h */,
+				D78C6AC91CFC81D700CAF770 /* FontsDefine.h */,
 			);
 			path = Define;
 			sourceTree = "<group>";
@@ -393,6 +458,9 @@
 			children = (
 				D77DCA4F1CF73E6D002249CC /* MetroLineStationInfoHelper.h */,
 				D77DCA501CF73E6D002249CC /* MetroLineStationInfoHelper.m */,
+				D78C6B071CFC93E200CAF770 /* MapManager */,
+				D78C6ACE1CFC86AC00CAF770 /* RequestWeaterData */,
+				D78C6ACA1CFC82E700CAF770 /* WeatherTimeFontHeper */,
 				D70C3EEC1CF98A2300B7BAB5 /* BaiduSDKHelper */,
 			);
 			path = Model;
@@ -459,15 +527,6 @@
 			path = PMalertViewController;
 			sourceTree = "<group>";
 		};
-		D78C6A761CFACCCF00CAF770 /* Reachability */ = {
-			isa = PBXGroup;
-			children = (
-				D78C6A771CFACCCF00CAF770 /* AFNetworkReachabilityManager.h */,
-				D78C6A781CFACCCF00CAF770 /* AFNetworkReachabilityManager.m */,
-			);
-			path = Reachability;
-			sourceTree = "<group>";
-		};
 		D78C6A851CFAFE8900CAF770 /* Image */ = {
 			isa = PBXGroup;
 			children = (
@@ -492,6 +551,140 @@
 				D70C3EEA1CF95BD000B7BAB5 /* MetroLineTitleView.xib */,
 			);
 			name = view;
+			sourceTree = "<group>";
+		};
+		D78C6ABC1CFC81B500CAF770 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D78C6ABD1CFC81B500CAF770 /* Lato-Bold.ttf */,
+				D78C6ABE1CFC81B500CAF770 /* Lato-Light.ttf */,
+				D78C6ABF1CFC81B500CAF770 /* Lato-Regular.ttf */,
+				D78C6AC01CFC81B500CAF770 /* Lato-Thin.ttf */,
+				D78C6AC11CFC81B500CAF770 /* Lato-ThinItalic.ttf */,
+				D78C6AC21CFC81B500CAF770 /* Weather&Time.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		D78C6ACA1CFC82E700CAF770 /* WeatherTimeFontHeper */ = {
+			isa = PBXGroup;
+			children = (
+				D78C6ACB1CFC82E700CAF770 /* WeatherTransform.h */,
+				D78C6ACC1CFC82E700CAF770 /* WeatherTransform.m */,
+			);
+			path = WeatherTimeFontHeper;
+			sourceTree = "<group>";
+		};
+		D78C6ACE1CFC86AC00CAF770 /* RequestWeaterData */ = {
+			isa = PBXGroup;
+			children = (
+				D78C6ACF1CFC86C000CAF770 /* RequestWeatherData.h */,
+				D78C6AD01CFC86C000CAF770 /* RequestWeatherData.m */,
+				D78C6B061CFC920D00CAF770 /* model */,
+			);
+			path = RequestWeaterData;
+			sourceTree = "<group>";
+		};
+		D78C6AD21CFC889100CAF770 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D78C6AD31CFC889100CAF770 /* AFNetworking */,
+				D78C6AE11CFC889100CAF770 /* Networking */,
+				D78C6AF01CFC889100CAF770 /* V_3_X_Networking.h */,
+				D78C6AF11CFC889100CAF770 /* V_3_X_Networking.m */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		D78C6AD31CFC889100CAF770 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				D78C6AD41CFC889100CAF770 /* AFHTTPSessionManager.h */,
+				D78C6AD51CFC889100CAF770 /* AFHTTPSessionManager.m */,
+				D78C6AD61CFC889100CAF770 /* AFNetworking.h */,
+				D78C6AD71CFC889100CAF770 /* AFNetworkReachabilityManager.h */,
+				D78C6AD81CFC889100CAF770 /* AFNetworkReachabilityManager.m */,
+				D78C6AD91CFC889100CAF770 /* AFSecurityPolicy.h */,
+				D78C6ADA1CFC889100CAF770 /* AFSecurityPolicy.m */,
+				D78C6ADB1CFC889100CAF770 /* AFURLRequestSerialization.h */,
+				D78C6ADC1CFC889100CAF770 /* AFURLRequestSerialization.m */,
+				D78C6ADD1CFC889100CAF770 /* AFURLResponseSerialization.h */,
+				D78C6ADE1CFC889100CAF770 /* AFURLResponseSerialization.m */,
+				D78C6ADF1CFC889100CAF770 /* AFURLSessionManager.h */,
+				D78C6AE01CFC889100CAF770 /* AFURLSessionManager.m */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		D78C6AE11CFC889100CAF770 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D78C6AE21CFC889100CAF770 /* BaseNetworking */,
+				D78C6AE51CFC889100CAF770 /* RequestBodyType */,
+				D78C6AE91CFC889100CAF770 /* RequestMethodType */,
+				D78C6AEC1CFC889100CAF770 /* ResponseDataType */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		D78C6AE21CFC889100CAF770 /* BaseNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				D78C6AE31CFC889100CAF770 /* HLLNetworking.h */,
+				D78C6AE41CFC889100CAF770 /* HLLNetworking.m */,
+			);
+			path = BaseNetworking;
+			sourceTree = "<group>";
+		};
+		D78C6AE51CFC889100CAF770 /* RequestBodyType */ = {
+			isa = PBXGroup;
+			children = (
+				D78C6AE81CFC889100CAF770 /* HLLRequestDictionarySerializer.h */,
+				D78C6AE61CFC889100CAF770 /* HLLRequestBodyType.h */,
+				D78C6AE71CFC889100CAF770 /* HLLRequestBodyType.m */,
+			);
+			path = RequestBodyType;
+			sourceTree = "<group>";
+		};
+		D78C6AE91CFC889100CAF770 /* RequestMethodType */ = {
+			isa = PBXGroup;
+			children = (
+				D78C6AEA1CFC889100CAF770 /* HLLRequestMethodType.h */,
+				D78C6AEB1CFC889100CAF770 /* HLLRequestMethodType.m */,
+			);
+			path = RequestMethodType;
+			sourceTree = "<group>";
+		};
+		D78C6AEC1CFC889100CAF770 /* ResponseDataType */ = {
+			isa = PBXGroup;
+			children = (
+				D78C6AED1CFC889100CAF770 /* HLLResponseDataSerializer.h */,
+				D78C6AEE1CFC889100CAF770 /* HLLResponseDataType.h */,
+				D78C6AEF1CFC889100CAF770 /* HLLResponseDataType.m */,
+			);
+			path = ResponseDataType;
+			sourceTree = "<group>";
+		};
+		D78C6B061CFC920D00CAF770 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				D78C6AFD1CFC8A8F00CAF770 /* CurrentLocationWeather.h */,
+				D78C6AFE1CFC8A8F00CAF770 /* CurrentLocationWeather.m */,
+				D78C6B001CFC8FE400CAF770 /* Weather.h */,
+				D78C6B011CFC8FE400CAF770 /* Weather.m */,
+				D78C6B031CFC905900CAF770 /* MainInfo.h */,
+				D78C6B041CFC905900CAF770 /* MainInfo.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		D78C6B071CFC93E200CAF770 /* MapManager */ = {
+			isa = PBXGroup;
+			children = (
+				D78C6B081CFC93EC00CAF770 /* MapManager.h */,
+				D78C6B091CFC93EC00CAF770 /* MapManager.m */,
+			);
+			path = MapManager;
 			sourceTree = "<group>";
 		};
 		D7D855721CF34BFF0028B92D = {
@@ -595,7 +788,6 @@
 			isa = PBXGroup;
 			children = (
 				D78C6A721CFACCCF00CAF770 /* PMAlertViewController */,
-				D78C6A761CFACCCF00CAF770 /* Reachability */,
 				D70C3E981CF76C4700B7BAB5 /* BaiduSDK */,
 				D78C6A441CF9BED400CAF770 /* CSStickyHeaderFlowLayout */,
 				D7D856171CF4342C0028B92D /* FontAwesomeKit */,
@@ -622,6 +814,7 @@
 			isa = PBXGroup;
 			children = (
 				D7D856551CF53E540028B92D /* StoryBoardIdHeader.h */,
+				D78C6AD21CFC889100CAF770 /* Networking */,
 				D7D8560C1CF3F6670028B92D /* Utils */,
 				D7D855FF1CF3F6450028B92D /* Category */,
 			);
@@ -763,6 +956,7 @@
 			isa = PBXGroup;
 			children = (
 				D7D856AC1CF57A410028B92D /* metroline.plist */,
+				D78C6ABC1CFC81B500CAF770 /* Fonts */,
 				D78C6A851CFAFE8900CAF770 /* Image */,
 				D7D856A11CF56F590028B92D /* OpenSource */,
 			);
@@ -880,11 +1074,15 @@
 			files = (
 				D7D856AD1CF57A410028B92D /* metroline.plist in Resources */,
 				D78C6A4F1CF9C18A00CAF770 /* LineStationsViewCell.xib in Resources */,
+				D78C6AC81CFC81B500CAF770 /* Weather&Time.ttf in Resources */,
 				D78C6A591CF9E91E00CAF770 /* MetroStationEntranceCell.xib in Resources */,
 				D78C6A5E1CF9E93800CAF770 /* MetroStationAroundBusStationCell.xib in Resources */,
 				D7D856341CF4342C0028B92D /* FontAwesome.otf in Resources */,
 				D7D8558E1CF34BFF0028B92D /* LaunchScreen.storyboard in Resources */,
+				D78C6AC41CFC81B500CAF770 /* Lato-Light.ttf in Resources */,
+				D78C6AC51CFC81B500CAF770 /* Lato-Regular.ttf in Resources */,
 				D7D856A91CF56F590028B92D /* credits.html in Resources */,
+				D78C6AC31CFC81B500CAF770 /* Lato-Bold.ttf in Resources */,
 				D7D8567D1CF56E6B0028B92D /* LeftMenuSectionHeaderView.xib in Resources */,
 				D7D856A81CF56F590028B92D /* cocoapods.png in Resources */,
 				D7D8558B1CF34BFF0028B92D /* Assets.xcassets in Resources */,
@@ -896,9 +1094,11 @@
 				D7D856391CF4342C0028B92D /* zocial-regular-webfont.ttf in Resources */,
 				D7D8565E1CF545B60028B92D /* AroundService.storyboard in Resources */,
 				D78C6A871CFAFE8900CAF770 /* zhifubao.jpg in Resources */,
+				D78C6AC71CFC81B500CAF770 /* Lato-ThinItalic.ttf in Resources */,
 				D7D856381CF4342C0028B92D /* octicons.ttf in Resources */,
 				D7D856601CF546CA0028B92D /* MetroInfo.storyboard in Resources */,
 				D78C6A951CFB421300CAF770 /* AroundServiceSearchCollectionCellView.xib in Resources */,
+				D78C6AC61CFC81B500CAF770 /* Lato-Thin.ttf in Resources */,
 				D70C3EEB1CF95BD000B7BAB5 /* MetroLineTitleView.xib in Resources */,
 				D7D856AB1CF56F590028B92D /* style.css in Resources */,
 				D7D856371CF4342C0028B92D /* Material-Design-Iconic-Font.ttf in Resources */,
@@ -922,8 +1122,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D78C6AF81CFC889100CAF770 /* HLLNetworking.m in Sources */,
 				D7D8567C1CF56E6B0028B92D /* LeftMenuSectionHeaderView.m in Sources */,
-				D78C6A7C1CFACCCF00CAF770 /* AFNetworkReachabilityManager.m in Sources */,
 				D7D8569A1CF56EE60028B92D /* OpenSourceViewController.m in Sources */,
 				D7D856971CF56EE60028B92D /* BaseViewController.m in Sources */,
 				D78C6A7A1CFACCCF00CAF770 /* PMAlertController.swift in Sources */,
@@ -932,13 +1132,20 @@
 				D78C6A4A1CF9BED400CAF770 /* CSStickyHeaderFlowLayoutAttributes.m in Sources */,
 				D78C6A421CF99CA900CAF770 /* LineStationsCell.m in Sources */,
 				D7D8567A1CF56E6B0028B92D /* LeftMenuCell.m in Sources */,
+				D78C6AFC1CFC889100CAF770 /* V_3_X_Networking.m in Sources */,
 				D7D8560A1CF3F6450028B92D /* UITableView+Line.m in Sources */,
 				D7D8569B1CF56EE60028B92D /* AboutMetroViewController.m in Sources */,
+				D78C6AF21CFC889100CAF770 /* AFHTTPSessionManager.m in Sources */,
 				D7D856081CF3F6450028B92D /* UIColor+Common.m in Sources */,
+				D78C6AFA1CFC889100CAF770 /* HLLRequestMethodType.m in Sources */,
+				D78C6ACD1CFC82E700CAF770 /* WeatherTransform.m in Sources */,
 				D7D855DF1CF36FF80028B92D /* DropListView.m in Sources */,
 				D7D8562F1CF4342C0028B92D /* FAKIcon.m in Sources */,
+				D78C6AF71CFC889100CAF770 /* AFURLSessionManager.m in Sources */,
+				D78C6B051CFC905900CAF770 /* MainInfo.m in Sources */,
 				D7D855E21CF36FF80028B92D /* HLLSpotlightViewController.m in Sources */,
 				D7D855E01CF36FF80028B92D /* HLLSpotlight.m in Sources */,
+				D78C6AFF1CFC8A8F00CAF770 /* CurrentLocationWeather.m in Sources */,
 				D70C3EF21CF98A2300B7BAB5 /* BaiduSDKMetroLineSearch.m in Sources */,
 				D7D8562E1CF4342C0028B92D /* FAKFoundationIcons.m in Sources */,
 				D7D855831CF34BFF0028B92D /* AppDelegate.m in Sources */,
@@ -947,6 +1154,7 @@
 				D7D855EF1CF3F0C50028B92D /* RECommonFunctions.m in Sources */,
 				D7D856471CF455080028B92D /* UIImage+Common.m in Sources */,
 				D77DCA571CF75966002249CC /* LineStationBaseInfoView.m in Sources */,
+				D78C6AF61CFC889100CAF770 /* AFURLResponseSerialization.m in Sources */,
 				D78C6A981CFB44E500CAF770 /* AroundServiceSearchCollectionCellView.m in Sources */,
 				D7D8569F1CF56EE60028B92D /* LeftMenuViewController.m in Sources */,
 				D70C3EE91CF95BC700B7BAB5 /* MetroLineTitleView.m in Sources */,
@@ -955,9 +1163,11 @@
 				D77DCA3E1CF6933C002249CC /* BlurActionSheetView.m in Sources */,
 				D7D855F11CF3F0C50028B92D /* UIViewController+RESideMenu.m in Sources */,
 				D7D855E31CF36FF80028B92D /* HLLTransition.m in Sources */,
+				D78C6AF91CFC889100CAF770 /* HLLRequestBodyType.m in Sources */,
 				D78C6A611CF9F18C00CAF770 /* NSString+Size.m in Sources */,
 				D70C3EF31CF98A2300B7BAB5 /* BaiduSDKMetroStationAroundBusLineSearch.m in Sources */,
 				D7D8560F1CF3F6740028B92D /* StoryBoardUtilities.m in Sources */,
+				D78C6AFB1CFC889100CAF770 /* HLLResponseDataType.m in Sources */,
 				D7D856311CF4342C0028B92D /* FAKMaterialIcons.m in Sources */,
 				D7D856301CF4342C0028B92D /* FAKIonIcons.m in Sources */,
 				D77DCA421CF6E0AD002249CC /* HLLPullToRefreshView.m in Sources */,
@@ -968,17 +1178,23 @@
 				D7D856781CF56E6B0028B92D /* MetroLineInfoDataSource_Plist.m in Sources */,
 				D7D856321CF4342C0028B92D /* FAKOcticons.m in Sources */,
 				D7D856981CF56EE60028B92D /* GuideViewController.m in Sources */,
+				D78C6B0A1CFC93EC00CAF770 /* MapManager.m in Sources */,
 				D78C6A521CF9D33000CAF770 /* LineStationsSectionHeaderView.m in Sources */,
+				D78C6B021CFC8FE400CAF770 /* Weather.m in Sources */,
 				D7D8569C1CF56EE60028B92D /* AroundServiceViewContrller.m in Sources */,
 				D7D856791CF56E6B0028B92D /* StationInfoDataSource.m in Sources */,
+				D78C6AF51CFC889100CAF770 /* AFURLRequestSerialization.m in Sources */,
 				D77DCA511CF73E6D002249CC /* MetroLineStationInfoHelper.m in Sources */,
 				D77DCA541CF7443F002249CC /* BlurEffectView.m in Sources */,
 				D78C6A581CF9E91E00CAF770 /* MetroStationEntranceCell.m in Sources */,
+				D78C6AF31CFC889100CAF770 /* AFNetworkReachabilityManager.m in Sources */,
 				D7D855F01CF3F0C50028B92D /* RESideMenu.m in Sources */,
 				D78C6A901CFB40C000CAF770 /* AroundServiceCell.m in Sources */,
 				D7D8569D1CF56EE60028B92D /* StationInfoController.m in Sources */,
+				D78C6AD11CFC86C000CAF770 /* RequestWeatherData.m in Sources */,
 				D7D8562D1CF4342C0028B92D /* FAKFontAwesome.m in Sources */,
 				D78C6A7F1CFAE01A00CAF770 /* UIImage+ImageEffects.m in Sources */,
+				D78C6AF41CFC889100CAF770 /* AFSecurityPolicy.m in Sources */,
 				D7D856991CF56EE60028B92D /* AboutMeViewController.m in Sources */,
 				D78C6A5D1CF9E93800CAF770 /* MetroStationAroundBusStationCell.m in Sources */,
 				D7D855801CF34BFF0028B92D /* main.m in Sources */,

@@ -93,7 +93,7 @@
 {
     // 后续版本做地图展示以及LBS搜索
     LOG_DEBUG(@"选择站点");
-    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{

@@ -9,11 +9,24 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "LeftMenuViewController.h"
-#import "StoryBoardUtilities.h"
 #import "StoryBoardIdHeader.h"
 #import "AFNetworkReachabilityManager.h"
 
+/*
+ 
+ ## Note:
+ 
+ 百度地图Api静态方法：setGeometryDelegate 被苹果审核指定为私有方法。
+ 
+ 解决办法：使用百度地图Api时，使用-ObjC方式。
+ 
+ baidu-map-SDK-key: vvhjlAaSHL55EQ80jG49tjlM64bDix2l
+ 
+ OpenWeathermap API Key:  c6e5be8ce71bd3f3b7cfe5c61c03fddb
+ */
+
 /* 
+ 
  ## 在oc中使用swift文件
  
  1. 创建全局编译文件 PrefixHeader.pch
@@ -27,13 +40,26 @@
  先导入PMAlertViewController文件到你的工程 ,然后在预编译文件里面添加'#import "项目名-Swift.h"' 就可以使用了
  */
 
+/*
+ 
+ ## 添加自定义字体
+ 
+ 天气的样式不是图片，并且里面所有的图片都不是图片，而是一些特殊的字体。
+ 
+ 单说一个天气的图片：
+    
+    1.要添加添加自定义字体第一步需要把“Weather&Time.ttf”这个文件拖到工程中
+    
+    2.在"TARGET -> SimpleMetro -> Build Phases -> Copy Bundle Resources"中添加这款字体
+    
+    3.然后就可以使用这个字体了，比如xxxLabel.font = [UIFont fontWithName:@"Weather&Time" size:20];
+ */
 @interface AppDelegate ()<BMKGeneralDelegate>
 
 @end
 
 @implementation AppDelegate
 
-// baidu-map-SDK-key:vvhjlAaSHL55EQ80jG49tjlM64bDix2l
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     

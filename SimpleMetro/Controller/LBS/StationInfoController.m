@@ -12,14 +12,8 @@
 #import "NSString+Size.h"
 #import "StationInfoDataSource.h"
 
-#import "BaiduSDKMetroLineSearch.h"
-#import "BaiduSDKMetroStationAroundBusLineSearch.h"
-
 @interface StationInfoController ()<UICollectionViewDelegateFlowLayout>{
 
-    // debug
-    BaiduSDKMetroLineSearch * metroLineSearch;
-    BaiduSDKMetroStationAroundBusLineSearch * aroundBusStationSearch;
 }
 
 @property (weak, nonatomic) IBOutlet LineStationBaseInfoView * lineStateBaseInfoView;
@@ -84,16 +78,6 @@
     self.dataSource.collectionView = self.collectionView;
     [self.dataSource configureCollectionView];
     [self.dataSource configureMetroStationEntranceInfoWithData:metroLineInfo[selectedIndexPath.row]];
-    
-    //
-    metroLineSearch = [[BaiduSDKMetroLineSearch alloc] init];
-    [metroLineSearch configureDelegate];
-    [metroLineSearch searchSubwayLineInfoWithLineNumber:1];
-    [metroLineSearch searchSubwayLineInfoResult:^(NSArray<BMKBusLineResult *> *metroLines) {
-        LOG_DEBUG(@"metroLines:%@",metroLines);
-    } handleSearchError:^(NSError *error) {
-        NSLog(@"error:%@",[error localizedDescription]);
-    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -161,6 +145,9 @@
     // 后续版本做地图展示以及LBS搜索
     LOG_DEBUG(@"选择站点");
 
+//    UINavigationController * aroundServiceNavigationController = (UINavigationController *)[StoryBoardUtilities viewControllerForStoryboardName:@"AroundService" storyBoardID:AroundServiceNavigationControllerStoryBoardID];
+//    
+//    [self presentViewController:aroundServiceNavigationController animated:YES completion:nil];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{

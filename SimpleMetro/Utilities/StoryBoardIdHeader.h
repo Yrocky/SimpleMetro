@@ -6,6 +6,8 @@
 //  Copyright © 2016年 Rocky Young. All rights reserved.
 //
 
+#import "StoryBoardUtilities.h"
+
 #ifndef StoryBoardIdHeader_h
 #define StoryBoardIdHeader_h
 

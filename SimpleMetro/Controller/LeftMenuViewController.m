@@ -12,12 +12,21 @@
 #import "RESideMenu.h"
 #import <MessageUI/MessageUI.h>
 
-@interface LeftMenuViewController ()<UITableViewDelegate,MFMailComposeViewControllerDelegate>
+// 获取网络数据
+#import "RequestWeatherData.h"
+
+// 管理定位信息
+#import "MapManager.h"
+
+@interface LeftMenuViewController ()<UITableViewDelegate,MFMailComposeViewControllerDelegate,RequestWeatherDataDelegate,MapManagerLocationDelegate>
+
 @property (weak, nonatomic) IBOutlet UITableView *menuTableView;
 
-@property (nonatomic ,strong) LeftMenuDataSource * dataSource;
+@property (nonatomic ,strong) MapManager            * mapLoacation;
+@property (nonatomic ,strong) LeftMenuDataSource    * dataSource;
+@property (nonatomic, strong) RequestWeatherData    * requestWeatherData;
 
-@property (nonatomic ,strong) UIView * leftMenuHeaderView;
+@property (nonatomic ,strong) UIView                * leftMenuHeaderView;
 
 @end
 @implementation LeftMenuViewController
@@ -32,33 +41,97 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor customGrayColor];
-    self.menuTableView.backgroundColor = [UIColor clearColor];
-    self.menuTableView.backgroundView = nil;
-    self.menuTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    _dataSource = [[LeftMenuDataSource alloc] init];
-    self.menuTableView.rowHeight = 44.0f;
-    self.menuTableView.sectionFooterHeight = 0.0f;
-    self.menuTableView.dataSource = self.dataSource;
-//    [self.menuTableView registerClass:self.dataSource.cellClass
-//               forCellReuseIdentifier:self.dataSource.cellIdentifier];
+    // TaleView设置
+    self.menuTableView.backgroundColor      = [UIColor clearColor];
+    self.menuTableView.backgroundView       = nil;
+    self.menuTableView.separatorStyle       = UITableViewCellSeparatorStyleNone;
+    self.menuTableView.rowHeight            = 44.0f;
+    self.menuTableView.sectionFooterHeight  = 0.0f;
+    
+    // TableView的数据源设置
+    _dataSource                             = [[LeftMenuDataSource alloc] init];
+    self.menuTableView.dataSource           = self.dataSource;
     [self.menuTableView registerNib:self.dataSource.nib
              forCellReuseIdentifier:self.dataSource.cellIdentifier];
     [self.menuTableView registerNib:[LeftMenuSectionHeaderView nib]
  forHeaderFooterViewReuseIdentifier:kSectionHeaderViewIdentifier];
+    
+    // 定位请求
+    self.mapLoacation = [[MapManager alloc] init];
+    self.mapLoacation.delegate = self;
+    
+    // 请求天气情况
+    self.requestWeatherData          = [[RequestWeatherData alloc] init];
+    self.requestWeatherData.delegate = self;
+    
+    [self.mapLoacation start];
+
 }
 
-- (void) tableViewFooterView{
 
+- (void)viewDidAppear:(BOOL)animated{
+
+    [super viewDidAppear:animated];
+    
+    LOG_DEBUG(@"Left menu Controller Did Appear...");
     
 }
 
+#pragma mark - Method
+
+- (void) tableViewFooterView{
+
+    //
+}
+
+- (void) delayRunEvent:(CLLocation *)location{
+    
+    self.requestWeatherData.location = location;
+    [self.requestWeatherData startRequestCurrentLocationWeatherData];
+}
 #pragma mark - API
+
 - (void) selectedLeftMenuAtIndex:(NSInteger)index{
 
     [self.menuTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
 }
 
+#pragma mark - MapManagerLocationDelegate
+
+- (void)mapManager:(MapManager *)manager didUpdateAndGetLastCLLocation:(CLLocation *)location{
+
+    // 定位成功，请求天气信息
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    [self performSelector:@selector(delayRunEvent:)
+               withObject:location
+               afterDelay:0.3f];
+}
+
+- (void)mapManager:(MapManager *)manager didFailed:(NSError *)error{
+
+    // 定位失败，不显示天气，显示一张地铁图片
+    LOG_DEBUG(@"Error:%@",error);
+}
+- (void)mapManagerServerClosed:(MapManager *)manager{
+
+//    显示请求代开定位
+    LOG_DEBUG(@"关闭定位服务");
+}
+
+#pragma mark - RequestWeatherDataDelegate
+
+- (void) weatherData:(id)data scuess:(BOOL)scuess{
+    
+    if (scuess) {
+        
+        LOG_DEBUG(@"%@",data);
+    }
+    else{
+    
+        LOG_DEBUG(@"Error");
+    }
+}
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -88,6 +161,8 @@
     return headerView;
 }
 
+#pragma mark - Action
+
 - (void)sendEmial{
     
     MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
@@ -111,6 +186,7 @@
     [self presentViewController:picker animated:YES completion:nil];
 }
 
+#pragma mark -
 -(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
     switch (result)

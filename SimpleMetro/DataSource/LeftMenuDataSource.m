@@ -8,7 +8,6 @@
 
 #import "LeftMenuDataSource.h"
 #import "LeftMenuCell.h"
-#import "StoryBoardUtilities.h"
 
 
 NSString * const kLeftMenuIconKey = @"icon";
