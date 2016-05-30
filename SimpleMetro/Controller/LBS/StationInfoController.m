@@ -34,6 +34,8 @@
         _dataSource = [[StationInfoDataSource alloc] init];
         
         _aroundStationSet = [NSMutableSet set];
+        
+//        [NSNotificationCenter defaultCenter] addObserver:self selector:@selector(nickname) name:<#(nullable NSString *)#> object:<#(nullable id)#>
     }
     return self;
 }
@@ -48,7 +50,7 @@
     
     [super viewDidLoad];
     
-//    LOG_DEBUG(@"stationInfo:%@",_stationInfo);
+    LOG_DEBUG(@"stationInfo:%@",_stationInfo);
     
     //
     NSIndexPath * selectedIndexPath = [self.stationInfo objectForKey:@"SelectedStationIndexKey"];
@@ -59,7 +61,6 @@
         PMAlertController * alertControler = [[PMAlertController alloc] initWithTitle:@"免责声明" description:@"本软件提供的列车时刻仅供参考，可能会与实际列车到达时间有所出入，对由此照成的影响本软件开发方不负任何责任，具体信息以郑州轨道交通官方通知为主。" image:nil style:PMAlertControllerStyleAlert];
         alertControler.gravityDismissAnimation = NO;
         alertControler.addMotionEffect = YES;
-//        alertControler.alertMaskBackground.image = [[UIImage imageWithColor:[UIColor colorWithHexString:@"414B56"]] blurImageWithRadius:30];
         
         PMAlertAction * sureAction = [[PMAlertAction alloc] initWithTitle:@"同意" style:PMAlertActionStyleDefault action:nil];
         [alertControler addAction:sureAction];

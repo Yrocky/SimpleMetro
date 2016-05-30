@@ -11,9 +11,11 @@
 #import "LeftMenuSectionHeaderView.h"
 #import "RESideMenu.h"
 #import <MessageUI/MessageUI.h>
+#import "LeftMenuWeatherView.h"
 
 // 获取网络数据
 #import "RequestWeatherData.h"
+#import "CurrentLocationWeather.h"
 
 // 管理定位信息
 #import "MapManager.h"
@@ -26,7 +28,7 @@
 @property (nonatomic ,strong) LeftMenuDataSource    * dataSource;
 @property (nonatomic, strong) RequestWeatherData    * requestWeatherData;
 
-@property (nonatomic ,strong) UIView                * leftMenuHeaderView;
+@property (nonatomic ,strong) IBOutlet LeftMenuWeatherView   * leftMenuHeaderView;
 
 @end
 @implementation LeftMenuViewController
@@ -87,7 +89,10 @@
 
 - (void) delayRunEvent:(CLLocation *)location{
     
+    LOG_DEBUG(@"loca:%@",location);
+    
     self.requestWeatherData.location = location;
+    
     [self.requestWeatherData startRequestCurrentLocationWeatherData];
 }
 #pragma mark - API
@@ -102,7 +107,10 @@
 - (void)mapManager:(MapManager *)manager didUpdateAndGetLastCLLocation:(CLLocation *)location{
 
     // 定位成功，请求天气信息
+    
+    // 这个方法确保定位信息只发送一次，注销掉看看log的打印次数
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    
     [self performSelector:@selector(delayRunEvent:)
                withObject:location
                afterDelay:0.3f];
@@ -121,11 +129,12 @@
 
 #pragma mark - RequestWeatherDataDelegate
 
-- (void) weatherData:(id)data scuess:(BOOL)scuess{
+- (void) weatherData:(CurrentLocationWeather *)locationWeather scuess:(BOOL)scuess{
     
     if (scuess) {
         
-        LOG_DEBUG(@"%@",data);
+        LOG_DEBUG(@"name:%@",locationWeather.name);
+        LOG_DEBUG(@"desc:%@",[locationWeather.weather[0] valueForKey:@"descriptionInfo"]);
     }
     else{
     

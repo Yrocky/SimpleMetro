@@ -25,7 +25,7 @@
         
         self.method = [HLLGETMethodType type];
         self.requestType = [HLLHTTPBodyType type];
-        self.responseType = [HLLHttpDataType type];
+        self.responseType = [HLLJsonDataType type];
         self.timeoutInterval = @(5);
         
         self.session = [AFHTTPSessionManager manager];
@@ -131,6 +131,7 @@
 - (void) accessResponseSerializer{
 
     if ([self.responseDataSerializer isKindOfClass:[HLLHttpDataType class]]) {
+        
         self.session.responseSerializer = [AFHTTPResponseSerializer serializer];
         self.session.responseSerializer.acceptableContentTypes = [self.session.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
     }else if ([self.responseDataSerializer isKindOfClass:[HLLJsonDataType class]]){
@@ -139,8 +140,8 @@
         self.session.responseSerializer.acceptableContentTypes = [self.session.responseSerializer.acceptableContentTypes setByAddingObject:@"text/json"];
     }else{
         self.session.responseSerializer = [AFHTTPResponseSerializer serializer];
+        self.session.responseSerializer.acceptableContentTypes = [self.session.responseSerializer.acceptableContentTypes setByAddingObject:@"text/plain"];
     }
-    self.session.responseSerializer.acceptableContentTypes = [self.session.responseSerializer.acceptableContentTypes setByAddingObject:@"text/plain"];
 }
 - (void) accessHeaderFiled{
 

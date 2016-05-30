@@ -36,7 +36,7 @@
     [manager stopUpdatingLocation];
     
     if (_delegate && [_delegate respondsToSelector:@selector(mapManager:didUpdateAndGetLastCLLocation:)]) {
-        
+        LOG_DEBUG(@"updateLocation++++++++");
         CLLocation *location = [locations lastObject];
         [_delegate mapManager:self didUpdateAndGetLastCLLocation:location];
     }
@@ -56,7 +56,7 @@
         
     } else {
         
-        LOG_DEBUG(@"定位功能开启");
+        LOG_DEBUG(@"定位功能失败");
         if (_delegate && [_delegate respondsToSelector:@selector(mapManager:didFailed:)]) {
             
             LOG_DEBUG(@"%@", error);

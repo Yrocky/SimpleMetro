@@ -20,9 +20,9 @@
  
  解决办法：使用百度地图Api时，使用-ObjC方式。
  
- baidu-map-SDK-key: vvhjlAaSHL55EQ80jG49tjlM64bDix2l
+ Baidu_Map_SDK_key: vvhjlAaSHL55EQ80jG49tjlM64bDix2l
  
- OpenWeathermap API Key:  c6e5be8ce71bd3f3b7cfe5c61c03fddb
+ OpenWeathermap_API_Key:  c6e5be8ce71bd3f3b7cfe5c61c03fddb
  */
 
 /* 
@@ -88,7 +88,7 @@
     
     _mapManager = [[BMKMapManager alloc]init];
 
-    BOOL ret = [_mapManager start:@"vvhjlAaSHL55EQ80jG49tjlM64bDix2l"
+    BOOL ret = [_mapManager start:Baidu_Map_SDK_key
                   generalDelegate:self];
     
     [self storeGetNetworkAndGetPermissionState:ret];
@@ -221,6 +221,7 @@
     }
 }
 
+// 存储百度地图联网和授权情况，以便后续在没有授权成功的情况下不进行请求
 - (void) storeGetNetworkAndGetPermissionState:(int)state{
         
     [[NSUserDefaults standardUserDefaults] setBool:state forKey:@"GetNetworkAndGetPermissionState"];

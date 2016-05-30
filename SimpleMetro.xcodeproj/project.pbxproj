@@ -67,6 +67,7 @@
 		D78C6B021CFC8FE400CAF770 /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6B011CFC8FE400CAF770 /* Weather.m */; };
 		D78C6B051CFC905900CAF770 /* MainInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6B041CFC905900CAF770 /* MainInfo.m */; };
 		D78C6B0A1CFC93EC00CAF770 /* MapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6B091CFC93EC00CAF770 /* MapManager.m */; };
+		D78C6B0D1CFCA03D00CAF770 /* LeftMenuWeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6B0C1CFCA03D00CAF770 /* LeftMenuWeatherView.m */; };
 		D7D855801CF34BFF0028B92D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D8557F1CF34BFF0028B92D /* main.m */; };
 		D7D855831CF34BFF0028B92D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D855821CF34BFF0028B92D /* AppDelegate.m */; settings = {COMPILER_FLAGS = "-ObjC"; }; };
 		D7D855891CF34BFF0028B92D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D855871CF34BFF0028B92D /* Main.storyboard */; };
@@ -252,6 +253,8 @@
 		D78C6B041CFC905900CAF770 /* MainInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainInfo.m; sourceTree = "<group>"; };
 		D78C6B081CFC93EC00CAF770 /* MapManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapManager.h; sourceTree = "<group>"; };
 		D78C6B091CFC93EC00CAF770 /* MapManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapManager.m; sourceTree = "<group>"; };
+		D78C6B0B1CFCA03D00CAF770 /* LeftMenuWeatherView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuWeatherView.h; sourceTree = "<group>"; };
+		D78C6B0C1CFCA03D00CAF770 /* LeftMenuWeatherView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuWeatherView.m; sourceTree = "<group>"; };
 		D7D8557B1CF34BFF0028B92D /* SimpleMetro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleMetro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7D8557F1CF34BFF0028B92D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D7D855811CF34BFF0028B92D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -538,6 +541,8 @@
 		D78C6A911CFB416800CAF770 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				D78C6B0B1CFCA03D00CAF770 /* LeftMenuWeatherView.h */,
+				D78C6B0C1CFCA03D00CAF770 /* LeftMenuWeatherView.m */,
 				D7D856701CF56E6B0028B92D /* LeftMenuSectionHeaderView.h */,
 				D7D856711CF56E6B0028B92D /* LeftMenuSectionHeaderView.m */,
 				D7D856721CF56E6B0028B92D /* LeftMenuSectionHeaderView.xib */,
@@ -1169,6 +1174,7 @@
 				D7D8560F1CF3F6740028B92D /* StoryBoardUtilities.m in Sources */,
 				D78C6AFB1CFC889100CAF770 /* HLLResponseDataType.m in Sources */,
 				D7D856311CF4342C0028B92D /* FAKMaterialIcons.m in Sources */,
+				D78C6B0D1CFCA03D00CAF770 /* LeftMenuWeatherView.m in Sources */,
 				D7D856301CF4342C0028B92D /* FAKIonIcons.m in Sources */,
 				D77DCA421CF6E0AD002249CC /* HLLPullToRefreshView.m in Sources */,
 				D78C6A4E1CF9C18A00CAF770 /* LineStationsViewCell.m in Sources */,

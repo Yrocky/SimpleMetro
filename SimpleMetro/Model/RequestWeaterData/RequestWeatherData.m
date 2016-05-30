@@ -20,8 +20,69 @@
  Request:
  { lat: 纬度
    lon: 经度
+   APPID:xxx
  }
  */
+
+
+@interface RequestWeatherData ()<HLLNetworkingDelegate>
+
+@property (nonatomic ,strong) V_3_X_Networking * networkWeather;
+
+@end
+@implementation RequestWeatherData
+
+#pragma mark - API
+
+- (void)startRequestCurrentLocationWeatherData{
+    
+    if (self.location == nil) {
+        
+        return;
+    }
+    
+    NSString *latStr = [NSString stringWithFormat:@"%f", self.location.coordinate.latitude];
+    NSString *lonStr = [NSString stringWithFormat:@"%f", self.location.coordinate.longitude];
+    NSDictionary * requestParmars = @{@"lat"   : latStr,
+                                      @"lon"   : lonStr,
+                                      @"APPID" : OpenWeathermap_API_Key};
+    // 请求1
+    self.networkWeather = [V_3_X_Networking getMethodNetworkingWithUrlString:@"http://api.openweathermap.org/data/2.5/weather"
+                                                           requestDictionary:requestParmars
+                                                             requestBodyType:[HLLHTTPBodyType type]
+                                                            responseDataType:[HLLJsonDataType type]];
+    self.networkWeather.delegate        = self;
+    self.networkWeather.timeoutInterval = @(8.f);
+    [self.networkWeather startRequest];
+}
+
+#pragma mark - HLLNetworkingDelegate
+
+- (void) networkingDidRequestSuccess:(HLLNetworking *)networking data:(id)data{
+    
+    NSDictionary * weatherData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+    
+    CurrentLocationWeather * weather = [[CurrentLocationWeather alloc] initWithDictionary:weatherData];
+    
+    if (weather.cod.intValue == 200) {
+        
+        if (self.delegate && [self.delegate respondsToSelector:@selector( weatherData: scuess:)]) {
+            [self.delegate weatherData:weather scuess:YES];
+        }
+    }else{
+        if (self.delegate && [self.delegate respondsToSelector:@selector( weatherData: scuess:)]) {
+            [self.delegate weatherData:nil scuess:NO];
+        }
+    }
+}
+
+- (void) networkingDidRequestFailed:(HLLNetworking *)networking error:(NSError *)error{
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector( weatherData: scuess:)]) {
+        [self.delegate weatherData:nil scuess:NO];
+    }
+}
+@end
 
 /*
 
@@ -67,61 +128,4 @@
     "cod": 200
 }
 */
-static NSString * const kAPIKey = @"c6e5be8ce71bd3f3b7cfe5c61c03fddb";
 
-@interface RequestWeatherData ()<HLLNetworkingDelegate>
-
-@property (nonatomic ,strong) V_3_X_Networking * networkWeather;
-
-@end
-@implementation RequestWeatherData
-
-#pragma mark - API
-
-- (void)startRequestCurrentLocationWeatherData{
-
-    if (self.location == nil) {
-        
-        return;
-    }
-    
-    NSString *latStr = [NSString stringWithFormat:@"%f", self.location.coordinate.latitude];
-    NSString *lonStr = [NSString stringWithFormat:@"%f", self.location.coordinate.longitude];
-    NSDictionary * requestParmars = @{@"lat"   : latStr,
-                                      @"lon"   : lonStr,
-                                      @"APPID" : kAPIKey};
-    // 请求1
-    self.networkWeather = [V_3_X_Networking getMethodNetworkingWithUrlString:@"http://api.openweathermap.org/data/2.5/weather"
-                                                           requestDictionary:requestParmars
-                                                             requestBodyType:[HLLHTTPBodyType type]
-                                                            responseDataType:[HLLJsonDataType type]];
-    self.networkWeather.delegate        = self;
-    self.networkWeather.timeoutInterval = @(8.f);
-    [self.networkWeather startRequest];    
-}
-
-#pragma mark - HLLNetworkingDelegate
-
-- (void) networkingDidRequestSuccess:(HLLNetworking *)networking data:(NSDictionary *)data{
-
-    CurrentLocationWeather * weather = [[CurrentLocationWeather alloc] initWithDictionary:data];
-    
-    if (weather.cod.intValue == 200) {
-        
-        if (self.delegate && [self.delegate respondsToSelector:@selector( weatherData: scuess:)]) {
-            [self.delegate weatherData:weather scuess:NO];
-        }
-    }else{
-        if (self.delegate && [self.delegate respondsToSelector:@selector( weatherData: scuess:)]) {
-            [self.delegate weatherData:nil scuess:NO];
-        }
-    }
-}
-
-- (void) networkingDidRequestFailed:(HLLNetworking *)networking error:(NSError *)error{
-
-    if (self.delegate && [self.delegate respondsToSelector:@selector( weatherData: scuess:)]) {
-        [self.delegate weatherData:nil scuess:NO];
-    }
-}
-@end
