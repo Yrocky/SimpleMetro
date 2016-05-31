@@ -48,6 +48,11 @@ static CGFloat WeatherCityViewAnimationDuration = 2.25f;
         // 23 15 13
         self.weatherCityViewWidthConstraint.constant    = 200.0f;
     }
+    
+//    // 添加手势
+//    UITapGestureRecognizer * tapChangeGesture   = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hidenAnimation)];
+//    tapChangeGesture.numberOfTapsRequired       = 1;
+//    [self addGestureRecognizer:tapChangeGesture];
 }
 
 
@@ -69,44 +74,45 @@ static CGFloat WeatherCityViewAnimationDuration = 2.25f;
 - (void) showAnimation{
     
     CGRect animationOriginRect          = self.cityNameLabel.frame;
-    CGRect animationDestinationRect     = self.cityNameLabel.frame;
+    CGRect animationDestinationRect     = animationOriginRect;
     animationOriginRect.origin.x        = self.frame.size.width;
     self.cityNameLabel.frame            = animationOriginRect;
     self.cityNameLabel.alpha            = .5f;
     
     self.weatherDescLabel.alpha         = 0.0f;
+    self.hidden                         = NO;
     
     [UIView animateWithDuration:WeatherCityViewAnimationDuration delay:0 options:UIViewAnimationOptionCurveEaseOut
                      animations:^{
                          
-                         self.hidden = NO;
-                         self.cityNameLabel.alpha       = 1.0f;
-                         self.cityNameLabel.frame       = animationDestinationRect;
+                         self.alpha                         = 1.0f;
                          
-                         self.weatherDescLabel.alpha    = 1.0f;
+                         self.cityNameLabel.alpha           = 1.0f;
+                         self.cityNameLabel.frame           = animationDestinationRect;
+                         
+                         self.weatherUpdateDateLabel.alpha  = 1.0f;
+                         
+                         self.weatherDescLabel.alpha        = 1.0f;
                      } completion:^(BOOL finished) {
-                         [self performSelector:@selector(showAnimation) withObject:nil afterDelay:2];
                      }];
 }
 
 - (void) hidenAnimation{
 
-    CGRect animationDestinationRect             = self.cityNameLabel.frame;
+    CGRect animationOriginRect                  = self.cityNameLabel.frame;
+    CGRect animationDestinationRect             = animationOriginRect;
     animationDestinationRect.origin.x           = self.frame.size.width;
-    
-    self.cityNameLabel.alpha                    = 1.0f;
-    
-    self.weatherDescLabel.alpha                 = 1.0f;
     
     [UIView animateWithDuration:WeatherCityViewAnimationDuration delay:0 options:UIViewAnimationOptionCurveEaseOut
                      animations:^{
                          
-                         self.hidden                    = YES;
-                         self.cityNameLabel.frame       = animationDestinationRect;
-                         self.cityNameLabel.alpha       = 0.0f;
-                         self.weatherDescLabel.alpha    = 0.0f;
-                     } completion:^(BOOL finished) {
+                         self.cityNameLabel.frame           = animationDestinationRect;
+                         self.cityNameLabel.alpha           = 0.0f;
                          
+                         self.weatherDescLabel.alpha        = 0.0f;
+                         
+                         self.weatherUpdateDateLabel.alpha  = 0.0f;
+                     } completion:^(BOOL finished) {
                      }];
 }
 @end

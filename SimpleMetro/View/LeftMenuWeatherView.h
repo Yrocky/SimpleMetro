@@ -17,7 +17,7 @@
 - (void) configureWeatherViewWithWeatherData:(id)data;
 
 - (void) showAnimation;
-- (void) changeAnimation;
+
 - (void) hidenAnimation;
 
 @end

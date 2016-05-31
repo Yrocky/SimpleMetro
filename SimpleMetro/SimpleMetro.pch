@@ -9,6 +9,8 @@
 #ifndef SimpleMetro_pch
 #define SimpleMetro_pch
 
+#import "AFNetworkReachabilityManager.h"
+
 #import "SimpleMetro-Swift.h"
 
 #import "DefaineManager.h"

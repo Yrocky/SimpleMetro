@@ -16,16 +16,23 @@
 
 @implementation MapManager
 
-- (void)start {
-    
-    _locationManager          = [[CLLocationManager alloc] init];
-    _locationManager.delegate = self;
-    
-    // 适配iOS8，iOS7以及以下没有这方法
-    if ([_locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
         
-        [_locationManager requestWhenInUseAuthorization];
+        _locationManager          = [[CLLocationManager alloc] init];
+        _locationManager.delegate = self;
+        
+        // 适配iOS8，iOS7以及以下没有这方法
+        if ([_locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+            
+            [_locationManager requestWhenInUseAuthorization];
+        }
     }
+    return self;
+}
+- (void)start {
     
     [_locationManager startUpdatingLocation];
 }

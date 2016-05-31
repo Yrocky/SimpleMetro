@@ -34,6 +34,21 @@
 @end
 @implementation LeftMenuViewController
 
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeNetworking) name:AFNetworkingReachabilityDidChangeNotification object:nil];
+    }
+    return self;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)awakeFromNib{
  
     [super awakeFromNib];
@@ -86,6 +101,14 @@
 - (void) tableViewFooterView{
 
     //
+}
+
+- (void) changeNetworking{
+
+    if ([AFNetworkReachabilityManager sharedManager].isReachable) {
+        
+        [self.mapLoacation start];
+    }
 }
 
 - (void) delayRunEvent:(CLLocation *)location{

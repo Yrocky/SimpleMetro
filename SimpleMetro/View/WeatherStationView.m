@@ -47,6 +47,11 @@ static CGFloat const WeatherStationViewAnimationDuration = 2.25f;
     
     CGFloat fontSize = self.weathreStationWidthConstraint.constant - 20;
     self.stationLabel.font = [UIFont fontWithName:WEATHER_TIME size:fontSize];
+    
+//    // 添加手势
+//    UITapGestureRecognizer * tapChangeGesture   = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hidenAnimation)];
+//    tapChangeGesture.numberOfTapsRequired       = 1;
+//    [self addGestureRecognizer:tapChangeGesture];
 }
 
 #pragma mark - API
@@ -65,30 +70,29 @@ static CGFloat const WeatherStationViewAnimationDuration = 2.25f;
     
     self.stationLabel.alpha          = 0.5f;
     
+    self.hidden                      = NO;
+    self.alpha                       = 1.0f;
     [UIView animateWithDuration:WeatherStationViewAnimationDuration delay:0 options:UIViewAnimationOptionCurveEaseOut
                      animations:^{
                          
-                         self.hidden                = NO;
                          self.stationLabel.alpha    = 1.0f;
                          self.stationLabel.frame    = animationDestinationRect;
                      } completion:^(BOOL finished) {
-                         [self performSelector:@selector(showAnimation) withObject:nil afterDelay:2];
                      }];
 }
 
 - (void) hidenAnimation{
 
+    CGRect animationOriginRect              = self.stationLabel.frame;
     CGRect animationDestinationRect         = self.stationLabel.frame;
-    animationDestinationRect.origin.y       = 0.0f;
-    
-    self.stationLabel.alpha                 = 1.0f;
+    animationDestinationRect.origin.y       = -animationOriginRect.size.height;
+    self.stationLabel.frame                 = animationOriginRect;
     
     [UIView animateWithDuration:WeatherStationViewAnimationDuration delay:0 options:UIViewAnimationOptionCurveEaseOut
                      animations:^{
                          
-                         self.stationLabel.alpha    = 0.5f;
+                         self.stationLabel.alpha    = 0.0f;
                          self.stationLabel.frame    = animationDestinationRect;
-                         self.hidden                = YES;
                      } completion:^(BOOL finished) {
                          
                      }];

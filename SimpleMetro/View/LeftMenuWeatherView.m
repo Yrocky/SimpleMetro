@@ -12,6 +12,8 @@
 #import "CurrentLocationWeather.h"
 #import "WeatherCityView.h"
 
+static CGFloat const LeftMenuWeatherViewAnimationDuration       = 2.25f;
+
 @interface LeftMenuWeatherView ()
 
 @property (nonatomic ,weak) IBOutlet  NSLayoutConstraint * leftMenuWeatherHeightConstraint;
@@ -27,6 +29,20 @@
 
 @implementation LeftMenuWeatherView
 
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeNetworking) name:AFNetworkingReachabilityDidChangeNotification object:nil];
+    }
+    return self;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)awakeFromNib{
 
     [super awakeFromNib];
@@ -36,6 +52,11 @@
     self.noWeatherInfoBannerImageView.backgroundColor = [UIColor orangeColor];
     
     [self showNoWeatherInfoBannerImageView];
+    
+    // 添加手势
+    UITapGestureRecognizer * tapChangeGesture   = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(reducedHeightConstraintAnimation)];
+    tapChangeGesture.numberOfTapsRequired       = 1;
+    [self addGestureRecognizer:tapChangeGesture];
 }
 
 #pragma mark - API
@@ -44,13 +65,11 @@
 
     [self reducedHeightConstraintAnimation];
     
-    [self hidenAnimation];
 }
 
 - (void) configureWeatherViewWithWeatherData:(CurrentLocationWeather *)data{
 
     [self groupHeightConstraintAnimation];
-    
     
     Weather * weather = data.weather[0];
     if (weather) {
@@ -65,7 +84,6 @@
     
     [self.temperatureView configureTemperatureWithWeatherData:data.main];
     
-    [self showAnimation];
 }
 
 - (void) showAnimation{
@@ -75,11 +93,6 @@
     [self.temperatureView   showAnimation];
 }
 
-- (void) changeAnimation{
-
-    [self.temperatureView   changeAnimation];
-}
-
 - (void) hidenAnimation{
 
     [self.stationView       hidenAnimation];
@@ -87,15 +100,25 @@
     [self.temperatureView   hidenAnimation];
 }
 
+#pragma mark - Method
+
+- (void) changeNetworking{
+    
+    if (![AFNetworkReachabilityManager sharedManager].isReachable) {
+        [self reducedHeightConstraintAnimation];
+    }
+}
 #pragma mark - Animation
 
+// 获取的到天气信息
 - (void) groupHeightConstraintAnimation{
     
-    [UIView animateWithDuration:0.8 delay:0
-                        options:UIViewAnimationOptionCurveEaseOut animations:^{
+    self.noWeatherInfoBannerImageView.hidden = YES;
+    
+    [UIView animateWithDuration:LeftMenuWeatherViewAnimationDuration delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         
-        self.noWeatherInfoBannerImageView.hidden = YES;
-        
+        self.noWeatherInfoBannerImageView.alpha = 0.0f;
+                            
         if (isIPhone4) {
             self.leftMenuWeatherHeightConstraint.constant = 100.0f;
         }
@@ -111,19 +134,25 @@
     } completion:^(BOOL finished) {
         
     }];
+    
+    [self showAnimation];
 }
 
+// 获取天气信息失败
 - (void) reducedHeightConstraintAnimation{
     
-    [UIView animateWithDuration:0.8 delay:0
+    [self hidenAnimation];
+    
+    self.noWeatherInfoBannerImageView.hidden      = NO;
+    
+    [UIView animateWithDuration:LeftMenuWeatherViewAnimationDuration delay:0
                         options:UIViewAnimationOptionCurveEaseOut animations:^{
                             
-                            self.leftMenuWeatherHeightConstraint.constant = 80.0f;
-                            
-                            self.noWeatherInfoBannerImageView.hidden = NO;
+                            self.noWeatherInfoBannerImageView.alpha       = 1.0f;
                             
                         } completion:^(BOOL finished) {
-                            
+                            self.leftMenuWeatherHeightConstraint.constant = 80.0f;
+//                            [self performSelector:@selector(groupHeightConstraintAnimation) withObject:nil afterDelay:3.0];
                         }];
 }
 @end
