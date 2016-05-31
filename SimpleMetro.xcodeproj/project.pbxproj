@@ -72,6 +72,7 @@
 		D78C6B161CFD32B000CAF770 /* WeatherTemperatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6B151CFD32B000CAF770 /* WeatherTemperatureView.m */; };
 		D78C6B191CFD52FB00CAF770 /* WeatherCityView.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6B181CFD52FB00CAF770 /* WeatherCityView.m */; };
 		D78C6B1F1CFD64F100CAF770 /* NSDate+TimeGap.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6B1E1CFD64F100CAF770 /* NSDate+TimeGap.m */; };
+		D78C6B231CFE01DE00CAF770 /* Guide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D78C6B221CFE01DE00CAF770 /* Guide.storyboard */; };
 		D7D855801CF34BFF0028B92D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D8557F1CF34BFF0028B92D /* main.m */; };
 		D7D855831CF34BFF0028B92D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D855821CF34BFF0028B92D /* AppDelegate.m */; settings = {COMPILER_FLAGS = "-ObjC"; }; };
 		D7D855891CF34BFF0028B92D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D855871CF34BFF0028B92D /* Main.storyboard */; };
@@ -267,6 +268,7 @@
 		D78C6B181CFD52FB00CAF770 /* WeatherCityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherCityView.m; sourceTree = "<group>"; };
 		D78C6B1D1CFD64F100CAF770 /* NSDate+TimeGap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TimeGap.h"; sourceTree = "<group>"; };
 		D78C6B1E1CFD64F100CAF770 /* NSDate+TimeGap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TimeGap.m"; sourceTree = "<group>"; };
+		D78C6B221CFE01DE00CAF770 /* Guide.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Guide.storyboard; sourceTree = "<group>"; };
 		D7D8557B1CF34BFF0028B92D /* SimpleMetro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleMetro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7D8557F1CF34BFF0028B92D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D7D855811CF34BFF0028B92D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -717,6 +719,17 @@
 			name = weatherView;
 			sourceTree = "<group>";
 		};
+		D78C6B211CFE01CF00CAF770 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				D7D855871CF34BFF0028B92D /* Main.storyboard */,
+				D7D8565F1CF546CA0028B92D /* MetroInfo.storyboard */,
+				D7D8565C1CF545B60028B92D /* AroundService.storyboard */,
+				D78C6B221CFE01DE00CAF770 /* Guide.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
 		D7D855721CF34BFF0028B92D = {
 			isa = PBXGroup;
 			children = (
@@ -741,9 +754,7 @@
 			children = (
 				D7D855811CF34BFF0028B92D /* AppDelegate.h */,
 				D7D855821CF34BFF0028B92D /* AppDelegate.m */,
-				D7D855871CF34BFF0028B92D /* Main.storyboard */,
-				D7D8565F1CF546CA0028B92D /* MetroInfo.storyboard */,
-				D7D8565C1CF545B60028B92D /* AroundService.storyboard */,
+				D78C6B211CFE01CF00CAF770 /* Storyboard */,
 				D7D856811CF56EE60028B92D /* Controller */,
 				D7D8566C1CF56E6B0028B92D /* View */,
 				D77DCA4E1CF73E3A002249CC /* Model */,
@@ -1106,6 +1117,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7D856AD1CF57A410028B92D /* metroline.plist in Resources */,
+				D78C6B231CFE01DE00CAF770 /* Guide.storyboard in Resources */,
 				D78C6A4F1CF9C18A00CAF770 /* LineStationsViewCell.xib in Resources */,
 				D78C6AC81CFC81B500CAF770 /* Weather&Time.ttf in Resources */,
 				D78C6A591CF9E91E00CAF770 /* MetroStationEntranceCell.xib in Resources */,

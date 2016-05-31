@@ -64,6 +64,12 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+ 
+    [super viewDidAppear:animated];
+    
+    [self showGuideController];
+}
 - (void) addTableView{
     
     // dataSource
@@ -93,6 +99,22 @@
     [self.tableView addSubview:self.pullToRefreshView];
 }
 
+#pragma mark - Method
+
+- (void) showGuideController{
+    
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"MetroLineGuideKey"]) {
+        
+        GuideViewController * guide = (GuideViewController *)[StoryBoardUtilities viewControllerForStoryboardName:@"Guide"storyBoardID:@"GuideViewController"];
+        
+        [self.navigationController presentViewController:guide animated:YES completion:^(){
+            
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"MetroLineGuideKey"];
+            
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }];
+    }
+}
 
 #pragma mark - ActionSheet
 
@@ -159,11 +181,6 @@
     
     LOG_DEBUG(@"selected -station -line");
     
-//    GuideViewController * guide = [[GuideViewController alloc] init];
-//    [self.navigationController presentViewController:guide animated:YES completion:nil];
-//    
-// return;
-   
     id stationInfo = [self.dataSource_plist elementForIndexPath:indexPath];
     
     BOOL open = [[stationInfo objectForKey:@"open"]boolValue];

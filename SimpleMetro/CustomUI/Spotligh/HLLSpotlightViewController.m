@@ -75,7 +75,17 @@
 - (void) spotlight_setupSpotlightView{
 
     _spotlightView = [[HLLSpotlightView alloc] initWithFrame:self.view.bounds];
-    _spotlightView.backgroundColor = [UIColor colorWithRed:0. green:0. blue:0.00 alpha:0.5];
+    _spotlightView.backgroundColor = [UIColor colorWithRed:0.22 green:0.25 blue:0.32 alpha:0.5];
+    
+    // visual effect view
+    UIView * blurView = [[UIView alloc] initWithFrame:self.spotlightView.bounds];
+    blurView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
+    UIVisualEffectView * blurEffectView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
+    blurView.frame = [UIScreen mainScreen].bounds;
+    [blurView addSubview:blurEffectView];
+    
+    [self.spotlightView addSubview:blurView];
+    
     _spotlightView.userInteractionEnabled = NO;
     [self.view insertSubview:_spotlightView atIndex:0];
     

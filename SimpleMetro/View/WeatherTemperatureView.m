@@ -13,7 +13,7 @@ static CGFloat const WeatherTemperatureAnimationDuration    = 2.25f;
 
 @interface WeatherTemperatureView ()
 
-@property (nonatomic ,assign ,getter=isAnimationing) BOOL animationing;
+//@property (nonatomic ,assign ,getter=isAnimationing) BOOL animationing;
 
 @property (nonatomic ,strong) IBOutlet UILabel * minTemperatureLabel;
 
@@ -97,8 +97,6 @@ static CGFloat const WeatherTemperatureAnimationDuration    = 2.25f;
     self.minTemperatureLabel.layer.transform = CATransform3DScale(self.minTemperatureLabel.layer.transform, currentTemperaturePointSize/minTemperatuerOriginPointSize, currentTemperaturePointSize/minTemperatuerOriginPointSize, 0);
     self.maxTemperatureLabel.layer.transform = CATransform3DScale(self.maxTemperatureLabel.layer.transform, currentTemperaturePointSize/maxTemperatuerOriginPointSize, currentTemperaturePointSize/maxTemperatuerOriginPointSize, 0);
     
-    self.animationing = YES;
-    
     [UIView animateWithDuration:WeatherTemperatureAnimationDuration delay:0 options:UIViewAnimationOptionCurveEaseOut
                      animations:^{
                          
@@ -115,22 +113,16 @@ static CGFloat const WeatherTemperatureAnimationDuration    = 2.25f;
                          self.minTemperatureLabel.center     = minTemperatureCenter;
                          self.maxTemperatureLabel.center     = maxTemperatureCenter;
                      } completion:^(BOOL finished) {
-                         
-                         self.animationing = NO;
+                         self.userInteractionEnabled = YES;
                      }];
 }
 
 - (void) changeAnimation{
 
-#warning 这一部分注定会有bug-----+++++++------++++---++++--++--++-+
-    if (self.isAnimationing) {
-        return;
-    }
+    self.userInteractionEnabled = NO;
     
     self.currentTemperatureLabel.layer.transform = CATransform3DScale(self.currentTemperatureLabel.layer.transform, 1.5, 1.5, 0);
     self.currentTemperatureLabel.hidden          = NO;
-    
-    self.animationing = YES;
     
     CGPoint minTemperatureCenter        = self.minTemperatureLabel.center;
     CGPoint currentTemperatureCenter    = self.currentTemperatureLabel.center;
@@ -152,8 +144,6 @@ static CGFloat const WeatherTemperatureAnimationDuration    = 2.25f;
 
         self.minTemperatureLabel.center     = minTemperatureCenter;
         self.maxTemperatureLabel.center     = maxTemperatureCenter;
-        
-        self.animationing = NO;
         
         [NSObject cancelPreviousPerformRequestsWithTarget:self];
 

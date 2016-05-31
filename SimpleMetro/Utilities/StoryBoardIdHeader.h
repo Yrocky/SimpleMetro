@@ -29,5 +29,6 @@ OpenSourceNavigationControllerStoryBoardID = @"OpenSourceNavigationController";
 static NSString *const
 AboutMeViewControllerStoryBoardID = @"AboutMeViewController";
 
+static NSString * const GuideViewControllerId = @"GuideViewController";
 
 #endif /* StoryBoardIdHeader_h */

@@ -15,7 +15,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        self.backgroundColor = [UIColor colorWithWhite:0.7 alpha:0];
+        self.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.5];
         
         // visual effect view
         UIVisualEffectView * blurView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
