@@ -53,7 +53,7 @@ static CGFloat const LeftMenuWeatherViewAnimationDuration       = 2.25f;
     
     [self showNoWeatherInfoBannerImageView];
     
-//    // 添加手势
+//    // Debug
 //    UITapGestureRecognizer * tapChangeGesture   = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(reducedHeightConstraintAnimation)];
 //    tapChangeGesture.numberOfTapsRequired       = 1;
 //    [self addGestureRecognizer:tapChangeGesture];
@@ -118,7 +118,7 @@ static CGFloat const LeftMenuWeatherViewAnimationDuration       = 2.25f;
     [UIView animateWithDuration:LeftMenuWeatherViewAnimationDuration delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         
         self.noWeatherInfoBannerImageView.alpha = 0.0f;
-                            
+        
         if (isIPhone4) {
             self.leftMenuWeatherHeightConstraint.constant = 100.0f;
         }
@@ -128,7 +128,7 @@ static CGFloat const LeftMenuWeatherViewAnimationDuration       = 2.25f;
         if (isIPhone6) {
             self.leftMenuWeatherHeightConstraint.constant = 150.0f;
         }
-        if (isIPhone6Plus) {
+        if (isIPhone6Plus || isIPad) {
             self.leftMenuWeatherHeightConstraint.constant = 155.0f;
         }
     } completion:^(BOOL finished) {

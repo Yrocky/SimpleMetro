@@ -41,14 +41,15 @@ static CGFloat const WeatherStationViewAnimationDuration = 2.25f;
     if (isIPhone6) {
         self.weathreStationWidthConstraint.constant = 80.0f;
     }
-    if (isIPhone6Plus) {
-        self.weathreStationWidthConstraint.constant = 85.0f;
+    if (isIPhone6Plus || isIPad) {
+        
+        self.weathreStationWidthConstraint.constant = 90.0f;
     }
     
     CGFloat fontSize = self.weathreStationWidthConstraint.constant - 20;
     self.stationLabel.font = [UIFont fontWithName:WEATHER_TIME size:fontSize];
     
-//    // 添加手势
+//    // Debug
 //    UITapGestureRecognizer * tapChangeGesture   = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hidenAnimation)];
 //    tapChangeGesture.numberOfTapsRequired       = 1;
 //    [self addGestureRecognizer:tapChangeGesture];

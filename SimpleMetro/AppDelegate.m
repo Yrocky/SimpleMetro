@@ -124,9 +124,9 @@
     sideMenuViewController.fadeMenuView = NO;
     sideMenuViewController.parallaxEnabled = NO;
     sideMenuViewController.contentViewScaleValue = 1.0f;
-    if (isLessThenIPhone6) {// 小于iPhone6，iPhone5、iPhone4
-        sideMenuViewController.contentViewInPortraitOffsetCenterX = -0.0f;
-    }else{// iPhone6、iPhone6 Plus
+    if (isIPad) {//
+        sideMenuViewController.contentViewInPortraitOffsetCenterX = -90.0f;
+    }else{
         sideMenuViewController.contentViewInPortraitOffsetCenterX = -0.0f;
     }
     sideMenuViewController.contentViewShadowColor = [UIColor lightGrayColor];

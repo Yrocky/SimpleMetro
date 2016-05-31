@@ -49,7 +49,7 @@ static CGFloat WeatherCityViewAnimationDuration = 2.25f;
         self.weatherCityViewWidthConstraint.constant    = 200.0f;
     }
     
-//    // 添加手势
+//    // Debug
 //    UITapGestureRecognizer * tapChangeGesture   = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hidenAnimation)];
 //    tapChangeGesture.numberOfTapsRequired       = 1;
 //    [self addGestureRecognizer:tapChangeGesture];

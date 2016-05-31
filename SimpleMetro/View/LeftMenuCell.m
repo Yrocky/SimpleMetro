@@ -21,7 +21,14 @@
 -(void)awakeFromNib{
 
     [super awakeFromNib];
-    self.leftMenuTitleLabel.textColor = [UIColor customWhiteColor];
+    /*
+     如果是iPhone上，不这样写，不会出现视觉bug，但是如果是iPad的话，不写这一句，就会把cell的背景颜色显示出来，大雾 -_-*
+     */
+    self.backgroundColor                = [UIColor clearColor];
+    /*
+     */
+    self.contentView.backgroundColor    = [UIColor clearColor];
+    self.leftMenuTitleLabel.textColor   = [UIColor customWhiteColor];
     
     _leftMenuSelectedBackgroundView = [[[NSBundle mainBundle] loadNibNamed:@"LeftMenuSelectedBackgroundView" owner:nil options:nil] firstObject];
     _leftMenuSelectedBackgroundView.backgroundColor = [UIColor customHighGrayColor];
