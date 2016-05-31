@@ -37,7 +37,7 @@ static CGFloat const WeatherTemperatureAnimationDuration    = 2.25f;
     self.currentTemperatureLabel.backgroundColor  = [UIColor clearColor];
     self.maxTemperatureLabel.backgroundColor      = [UIColor clearColor];
     
-//    self.currentTemperatureLabel.hidden = YES;
+    self.currentTemperatureLabel.hidden = YES;
     
     if (isLessThenIPhone6) {
         
