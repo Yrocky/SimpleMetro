@@ -128,6 +128,7 @@ static CGFloat const WeatherTemperatureAnimationDuration    = 2.25f;
     }
     
     self.currentTemperatureLabel.layer.transform = CATransform3DScale(self.currentTemperatureLabel.layer.transform, 1.5, 1.5, 0);
+    self.currentTemperatureLabel.hidden          = NO;
     
     self.animationing = YES;
     
@@ -137,13 +138,13 @@ static CGFloat const WeatherTemperatureAnimationDuration    = 2.25f;
     
     [UIView animateWithDuration:WeatherTemperatureAnimationDuration delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
        
-        self.currentTemperatureLabel.hidden         = NO;
         
         self.minTemperatureLabel.center     = currentTemperatureCenter;
         self.maxTemperatureLabel.center     = currentTemperatureCenter;
         
         self.currentTemperatureLabel.layer.transform    = CATransform3DIdentity;
         
+        self.currentTemperatureLabel.alpha  = 1.0f;
         self.minTemperatureLabel.alpha      = 0.0f;
         self.maxTemperatureLabel.alpha      = 0.0f;
     

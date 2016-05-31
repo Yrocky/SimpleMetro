@@ -53,10 +53,10 @@ static CGFloat const LeftMenuWeatherViewAnimationDuration       = 2.25f;
     
     [self showNoWeatherInfoBannerImageView];
     
-    // 添加手势
-    UITapGestureRecognizer * tapChangeGesture   = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(reducedHeightConstraintAnimation)];
-    tapChangeGesture.numberOfTapsRequired       = 1;
-    [self addGestureRecognizer:tapChangeGesture];
+//    // 添加手势
+//    UITapGestureRecognizer * tapChangeGesture   = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(reducedHeightConstraintAnimation)];
+//    tapChangeGesture.numberOfTapsRequired       = 1;
+//    [self addGestureRecognizer:tapChangeGesture];
 }
 
 #pragma mark - API
