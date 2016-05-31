@@ -10,6 +10,8 @@
 #import "WeatherTransform.h"
 #import "Weather.h"
 
+static CGFloat const WeatherStationViewAnimationDuration = 2.25f;
+
 @interface WeatherStationView ()
 
 @property (nonatomic ,weak) IBOutlet  NSLayoutConstraint *weathreStationWidthConstraint;
@@ -56,19 +58,37 @@
 
 - (void) showAnimation{
 
-    [UIView animateWithDuration:0.8 delay:0 options:UIViewAnimationOptionCurveEaseOut
+    CGRect animationOriginRect       = self.stationLabel.frame;
+    CGRect animationDestinationRect  = self.stationLabel.frame;
+    animationOriginRect.origin.y     = animationOriginRect.size.height;
+    self.stationLabel.frame          = animationOriginRect;
+    
+    self.stationLabel.alpha          = 0.5f;
+    
+    [UIView animateWithDuration:WeatherStationViewAnimationDuration delay:0 options:UIViewAnimationOptionCurveEaseOut
                      animations:^{
-                         self.hidden = NO;
-                     } completion:^(BOOL finished) {
                          
+                         self.hidden                = NO;
+                         self.stationLabel.alpha    = 1.0f;
+                         self.stationLabel.frame    = animationDestinationRect;
+                     } completion:^(BOOL finished) {
+                         [self performSelector:@selector(showAnimation) withObject:nil afterDelay:2];
                      }];
 }
 
 - (void) hidenAnimation{
 
-    [UIView animateWithDuration:0.8 delay:0 options:UIViewAnimationOptionCurveEaseOut
+    CGRect animationDestinationRect         = self.stationLabel.frame;
+    animationDestinationRect.origin.y       = 0.0f;
+    
+    self.stationLabel.alpha                 = 1.0f;
+    
+    [UIView animateWithDuration:WeatherStationViewAnimationDuration delay:0 options:UIViewAnimationOptionCurveEaseOut
                      animations:^{
-                         self.hidden = YES;
+                         
+                         self.stationLabel.alpha    = 0.5f;
+                         self.stationLabel.frame    = animationDestinationRect;
+                         self.hidden                = YES;
                      } completion:^(BOOL finished) {
                          
                      }];

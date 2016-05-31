@@ -9,6 +9,8 @@
 #import "WeatherTemperatureView.h"
 #import "MainInfo.h"
 
+static CGFloat const WeatherTemperatureAnimationDuration    = 2.25f;
+
 @interface WeatherTemperatureView ()
 
 @property (nonatomic ,strong) IBOutlet UILabel * minTemperatureLabel;
@@ -35,7 +37,7 @@
     self.currentTemperatureLabel.backgroundColor  = [UIColor clearColor];
     self.maxTemperatureLabel.backgroundColor      = [UIColor clearColor];
     
-    self.currentTemperatureLabel.hidden = YES;
+//    self.currentTemperatureLabel.hidden = YES;
     
     if (isLessThenIPhone6) {
         
@@ -75,11 +77,32 @@
 
 - (void) showAnimation{
 
-    [UIView animateWithDuration:0.8 delay:0 options:UIViewAnimationOptionCurveEaseOut
+    CGPoint minTemperatureCenter        = self.minTemperatureLabel.center;
+    CGPoint currentTemperatureCenter    = self.currentTemperatureLabel.center;
+    CGPoint maxTemperatureCenter        = self.maxTemperatureLabel.center;
+    
+    self.minTemperatureLabel.center     = currentTemperatureCenter;
+    self.maxTemperatureLabel.center     = currentTemperatureCenter;
+    
+    CGFloat currentTemperaturePointSize     = self.currentTemperatureLabel.font.pointSize;
+    CGFloat minTemperatuerOriginPointSize   = self.minTemperatureLabel.font.pointSize;
+    CGFloat maxTemperatuerOriginPointSize   = self.maxTemperatureLabel.font.pointSize;
+    
+    self.minTemperatureLabel.layer.transform = CATransform3DScale(self.minTemperatureLabel.layer.transform, currentTemperaturePointSize/minTemperatuerOriginPointSize, currentTemperaturePointSize/minTemperatuerOriginPointSize, 0);
+    self.maxTemperatureLabel.layer.transform = CATransform3DScale(self.maxTemperatureLabel.layer.transform, maxTemperatuerOriginPointSize/currentTemperaturePointSize, maxTemperatuerOriginPointSize/currentTemperaturePointSize, 0);
+    
+    [UIView animateWithDuration:WeatherTemperatureAnimationDuration delay:0 options:UIViewAnimationOptionCurveEaseOut
                      animations:^{
-                         self.hidden = NO;
-                     } completion:^(BOOL finished) {
                          
+                         self.hidden = NO;
+                         
+                         self.minTemperatureLabel.layer.transform = CATransform3DIdentity;
+                         self.maxTemperatureLabel.layer.transform = CATransform3DIdentity;
+                         
+                         self.minTemperatureLabel.center     = minTemperatureCenter;
+                         self.maxTemperatureLabel.center     = maxTemperatureCenter;
+                     } completion:^(BOOL finished) {
+                         [self performSelector:@selector(showAnimation) withObject:nil afterDelay:2];
                      }];
 }
 
@@ -90,7 +113,8 @@
 
 - (void) hidenAnimation{
 
-    [UIView animateWithDuration:0.8 delay:0 options:UIViewAnimationOptionCurveEaseOut
+    
+    [UIView animateWithDuration:WeatherTemperatureAnimationDuration delay:0 options:UIViewAnimationOptionCurveEaseOut
                      animations:^{
                          self.hidden = YES;
                      } completion:^(BOOL finished) {

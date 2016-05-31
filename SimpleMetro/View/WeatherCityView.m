@@ -9,6 +9,8 @@
 #import "WeatherCityView.h"
 #import "NSDate+TimeGap.h"
 
+static CGFloat WeatherCityViewAnimationDuration = 2.25f;
+
 @interface WeatherCityView ()
 
 @property (nonatomic ,strong) IBOutlet NSLayoutConstraint * weatherCityViewWidthConstraint;
@@ -66,19 +68,43 @@
 
 - (void) showAnimation{
     
-    [UIView animateWithDuration:0.8 delay:0 options:UIViewAnimationOptionCurveEaseOut
+    CGRect animationOriginRect          = self.cityNameLabel.frame;
+    CGRect animationDestinationRect     = self.cityNameLabel.frame;
+    animationOriginRect.origin.x        = self.frame.size.width;
+    self.cityNameLabel.frame            = animationOriginRect;
+    self.cityNameLabel.alpha            = .5f;
+    
+    self.weatherDescLabel.alpha         = 0.0f;
+    
+    [UIView animateWithDuration:WeatherCityViewAnimationDuration delay:0 options:UIViewAnimationOptionCurveEaseOut
                      animations:^{
-                         self.hidden = NO;
-                     } completion:^(BOOL finished) {
                          
+                         self.hidden = NO;
+                         self.cityNameLabel.alpha       = 1.0f;
+                         self.cityNameLabel.frame       = animationDestinationRect;
+                         
+                         self.weatherDescLabel.alpha    = 1.0f;
+                     } completion:^(BOOL finished) {
+                         [self performSelector:@selector(showAnimation) withObject:nil afterDelay:2];
                      }];
 }
 
 - (void) hidenAnimation{
+
+    CGRect animationDestinationRect             = self.cityNameLabel.frame;
+    animationDestinationRect.origin.x           = self.frame.size.width;
     
-    [UIView animateWithDuration:0.8 delay:0 options:UIViewAnimationOptionCurveEaseOut
+    self.cityNameLabel.alpha                    = 1.0f;
+    
+    self.weatherDescLabel.alpha                 = 1.0f;
+    
+    [UIView animateWithDuration:WeatherCityViewAnimationDuration delay:0 options:UIViewAnimationOptionCurveEaseOut
                      animations:^{
-                         self.hidden = YES;
+                         
+                         self.hidden                    = YES;
+                         self.cityNameLabel.frame       = animationDestinationRect;
+                         self.cityNameLabel.alpha       = 0.0f;
+                         self.weatherDescLabel.alpha    = 0.0f;
                      } completion:^(BOOL finished) {
                          
                      }];

@@ -10,7 +10,6 @@
 
 @interface WeatherStationView : UIView
 
-
 - (void) configureWeatherStationWithWeatherData:(id)data;
 
 - (void) showAnimation;

@@ -10,7 +10,6 @@
 
 @interface WeatherCityView : UIView
 
-
 - (void) configureCityAndWeatherDescWithWeatherData:(id)data;
 
 - (void) showAnimation;
