@@ -18,6 +18,9 @@
  */
 
 // 判断屏幕尺寸
+// isLessThenXXX：       e.g，小于iPhone6，iPhone5、iPhone4
+// isXXX：               e.g，等于iPhone6
+// isGreaterThenXXX：    e.g，大于等于iPhone6，iPhone6、iPhone6 Plus
 //
 #define isLessThenIPhone4       ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? [[UIScreen mainScreen] currentMode].size.width < 640 : NO)
 #define isIPhone4               ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)

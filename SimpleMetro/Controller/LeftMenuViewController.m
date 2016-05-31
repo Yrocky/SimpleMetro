@@ -13,6 +13,7 @@
 #import <MessageUI/MessageUI.h>
 #import "LeftMenuWeatherView.h"
 
+
 // 获取网络数据
 #import "RequestWeatherData.h"
 #import "CurrentLocationWeather.h"
@@ -132,12 +133,15 @@
 - (void) weatherData:(CurrentLocationWeather *)locationWeather scuess:(BOOL)scuess{
     
     if (scuess) {
-        
+        LOG_DEBUG(@"temp:%@",locationWeather.main.temp);
         LOG_DEBUG(@"name:%@",locationWeather.name);
         LOG_DEBUG(@"desc:%@",[locationWeather.weather[0] valueForKey:@"descriptionInfo"]);
+        
+        [self.leftMenuHeaderView configureWeatherViewWithWeatherData:locationWeather];
     }
     else{
     
+        [self.leftMenuHeaderView showNoWeatherInfoBannerImageView];
         LOG_DEBUG(@"Error");
     }
 }

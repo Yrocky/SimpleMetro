@@ -68,6 +68,10 @@
 		D78C6B051CFC905900CAF770 /* MainInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6B041CFC905900CAF770 /* MainInfo.m */; };
 		D78C6B0A1CFC93EC00CAF770 /* MapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6B091CFC93EC00CAF770 /* MapManager.m */; };
 		D78C6B0D1CFCA03D00CAF770 /* LeftMenuWeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6B0C1CFCA03D00CAF770 /* LeftMenuWeatherView.m */; };
+		D78C6B131CFD329400CAF770 /* WeatherStationView.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6B121CFD329400CAF770 /* WeatherStationView.m */; };
+		D78C6B161CFD32B000CAF770 /* WeatherTemperatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6B151CFD32B000CAF770 /* WeatherTemperatureView.m */; };
+		D78C6B191CFD52FB00CAF770 /* WeatherCityView.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6B181CFD52FB00CAF770 /* WeatherCityView.m */; };
+		D78C6B1F1CFD64F100CAF770 /* NSDate+TimeGap.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6B1E1CFD64F100CAF770 /* NSDate+TimeGap.m */; };
 		D7D855801CF34BFF0028B92D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D8557F1CF34BFF0028B92D /* main.m */; };
 		D7D855831CF34BFF0028B92D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D855821CF34BFF0028B92D /* AppDelegate.m */; settings = {COMPILER_FLAGS = "-ObjC"; }; };
 		D7D855891CF34BFF0028B92D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D855871CF34BFF0028B92D /* Main.storyboard */; };
@@ -255,6 +259,14 @@
 		D78C6B091CFC93EC00CAF770 /* MapManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapManager.m; sourceTree = "<group>"; };
 		D78C6B0B1CFCA03D00CAF770 /* LeftMenuWeatherView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuWeatherView.h; sourceTree = "<group>"; };
 		D78C6B0C1CFCA03D00CAF770 /* LeftMenuWeatherView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuWeatherView.m; sourceTree = "<group>"; };
+		D78C6B111CFD329400CAF770 /* WeatherStationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherStationView.h; sourceTree = "<group>"; };
+		D78C6B121CFD329400CAF770 /* WeatherStationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherStationView.m; sourceTree = "<group>"; };
+		D78C6B141CFD32B000CAF770 /* WeatherTemperatureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherTemperatureView.h; sourceTree = "<group>"; };
+		D78C6B151CFD32B000CAF770 /* WeatherTemperatureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherTemperatureView.m; sourceTree = "<group>"; };
+		D78C6B171CFD52FB00CAF770 /* WeatherCityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherCityView.h; sourceTree = "<group>"; };
+		D78C6B181CFD52FB00CAF770 /* WeatherCityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherCityView.m; sourceTree = "<group>"; };
+		D78C6B1D1CFD64F100CAF770 /* NSDate+TimeGap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TimeGap.h"; sourceTree = "<group>"; };
+		D78C6B1E1CFD64F100CAF770 /* NSDate+TimeGap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TimeGap.m"; sourceTree = "<group>"; };
 		D7D8557B1CF34BFF0028B92D /* SimpleMetro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleMetro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7D8557F1CF34BFF0028B92D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D7D855811CF34BFF0028B92D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -541,8 +553,6 @@
 		D78C6A911CFB416800CAF770 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				D78C6B0B1CFCA03D00CAF770 /* LeftMenuWeatherView.h */,
-				D78C6B0C1CFCA03D00CAF770 /* LeftMenuWeatherView.m */,
 				D7D856701CF56E6B0028B92D /* LeftMenuSectionHeaderView.h */,
 				D7D856711CF56E6B0028B92D /* LeftMenuSectionHeaderView.m */,
 				D7D856721CF56E6B0028B92D /* LeftMenuSectionHeaderView.xib */,
@@ -690,6 +700,21 @@
 				D78C6B091CFC93EC00CAF770 /* MapManager.m */,
 			);
 			path = MapManager;
+			sourceTree = "<group>";
+		};
+		D78C6B101CFD324900CAF770 /* weatherView */ = {
+			isa = PBXGroup;
+			children = (
+				D78C6B0B1CFCA03D00CAF770 /* LeftMenuWeatherView.h */,
+				D78C6B0C1CFCA03D00CAF770 /* LeftMenuWeatherView.m */,
+				D78C6B111CFD329400CAF770 /* WeatherStationView.h */,
+				D78C6B121CFD329400CAF770 /* WeatherStationView.m */,
+				D78C6B141CFD32B000CAF770 /* WeatherTemperatureView.h */,
+				D78C6B151CFD32B000CAF770 /* WeatherTemperatureView.m */,
+				D78C6B171CFD52FB00CAF770 /* WeatherCityView.h */,
+				D78C6B181CFD52FB00CAF770 /* WeatherCityView.m */,
+			);
+			name = weatherView;
 			sourceTree = "<group>";
 		};
 		D7D855721CF34BFF0028B92D = {
@@ -843,6 +868,8 @@
 				D7D856071CF3F6450028B92D /* UIView+Common.m */,
 				D78C6A5F1CF9F18C00CAF770 /* NSString+Size.h */,
 				D78C6A601CF9F18C00CAF770 /* NSString+Size.m */,
+				D78C6B1D1CFD64F100CAF770 /* NSDate+TimeGap.h */,
+				D78C6B1E1CFD64F100CAF770 /* NSDate+TimeGap.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -904,6 +931,7 @@
 				D78C6A541CF9E5A900CAF770 /* collectionViewCell */,
 				D78C6A531CF9E58C00CAF770 /* tableViewCell */,
 				D78C6A911CFB416800CAF770 /* view */,
+				D78C6B101CFD324900CAF770 /* weatherView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1129,6 +1157,7 @@
 			files = (
 				D78C6AF81CFC889100CAF770 /* HLLNetworking.m in Sources */,
 				D7D8567C1CF56E6B0028B92D /* LeftMenuSectionHeaderView.m in Sources */,
+				D78C6B161CFD32B000CAF770 /* WeatherTemperatureView.m in Sources */,
 				D7D8569A1CF56EE60028B92D /* OpenSourceViewController.m in Sources */,
 				D7D856971CF56EE60028B92D /* BaseViewController.m in Sources */,
 				D78C6A7A1CFACCCF00CAF770 /* PMAlertController.swift in Sources */,
@@ -1142,6 +1171,7 @@
 				D7D8569B1CF56EE60028B92D /* AboutMetroViewController.m in Sources */,
 				D78C6AF21CFC889100CAF770 /* AFHTTPSessionManager.m in Sources */,
 				D7D856081CF3F6450028B92D /* UIColor+Common.m in Sources */,
+				D78C6B191CFD52FB00CAF770 /* WeatherCityView.m in Sources */,
 				D78C6AFA1CFC889100CAF770 /* HLLRequestMethodType.m in Sources */,
 				D78C6ACD1CFC82E700CAF770 /* WeatherTransform.m in Sources */,
 				D7D855DF1CF36FF80028B92D /* DropListView.m in Sources */,
@@ -1153,6 +1183,7 @@
 				D78C6AFF1CFC8A8F00CAF770 /* CurrentLocationWeather.m in Sources */,
 				D70C3EF21CF98A2300B7BAB5 /* BaiduSDKMetroLineSearch.m in Sources */,
 				D7D8562E1CF4342C0028B92D /* FAKFoundationIcons.m in Sources */,
+				D78C6B1F1CFD64F100CAF770 /* NSDate+TimeGap.m in Sources */,
 				D7D855831CF34BFF0028B92D /* AppDelegate.m in Sources */,
 				D7D856331CF4342C0028B92D /* FAKZocial.m in Sources */,
 				D7D856091CF3F6450028B92D /* UIImage+Tint.m in Sources */,
@@ -1161,6 +1192,7 @@
 				D77DCA571CF75966002249CC /* LineStationBaseInfoView.m in Sources */,
 				D78C6AF61CFC889100CAF770 /* AFURLResponseSerialization.m in Sources */,
 				D78C6A981CFB44E500CAF770 /* AroundServiceSearchCollectionCellView.m in Sources */,
+				D78C6B131CFD329400CAF770 /* WeatherStationView.m in Sources */,
 				D7D8569F1CF56EE60028B92D /* LeftMenuViewController.m in Sources */,
 				D70C3EE91CF95BC700B7BAB5 /* MetroLineTitleView.m in Sources */,
 				D7D8569E1CF56EE60028B92D /* ViewController.m in Sources */,

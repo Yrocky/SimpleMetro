@@ -10,14 +10,18 @@
 
 @interface MainInfo : NSObject
 
+// 这一部分的参数的单位根据发送请求的时候传的单位参数决定，这里使用`metric`表示摄氏度C
 
-@property (nonatomic, strong) NSNumber       *humidity;   // Humidity, %
-@property (nonatomic, strong) NSNumber       *temp_min;   // Minimum temperature at the moment. This is deviation from current temp that is possible for large cities and megalopolises geographically expanded (use these parameter optionally)
-@property (nonatomic, strong) NSNumber       *temp_max;   // Maximum temperature at the moment. This is deviation from current temp that is possible for large cities and megalopolises geographically expanded (use these parameter optionally)
-@property (nonatomic, strong) NSNumber       *temp;       // Temperature, Kelvin (subtract 273.15 to convert to Celsius)
-@property (nonatomic, strong) NSNumber       *pressure;   // Atmospheric pressure (on the sea level, if there is no sea_level or grnd_level data), hPa
-@property (nonatomic, strong) NSNumber       *sea_level;  // Atmospheric pressure on the sea level, hPa
-@property (nonatomic, strong) NSNumber       *grnd_level; // Atmospheric pressure on the ground level, hPa
+// 具体参数说明参考:
+// http://openweathermap.org/weather-data
+
+@property (nonatomic, strong) NSNumber       * humidity;   // 湿度
+@property (nonatomic, strong) NSNumber       * temp_min;   // 最低气温
+@property (nonatomic, strong) NSNumber       * temp_max;   // 最高温度
+@property (nonatomic, strong) NSNumber       * temp;       // 开尔文温度
+@property (nonatomic, strong) NSNumber       * pressure;   // 大气压
+@property (nonatomic, strong) NSNumber       * sea_level;  // 海平面大气压
+@property (nonatomic, strong) NSNumber       * grnd_level; // 地面大气压
 
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key;
 

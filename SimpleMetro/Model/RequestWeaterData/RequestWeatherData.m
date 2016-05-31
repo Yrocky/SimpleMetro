@@ -45,7 +45,9 @@
     NSString *lonStr = [NSString stringWithFormat:@"%f", self.location.coordinate.longitude];
     NSDictionary * requestParmars = @{@"lat"   : latStr,
                                       @"lon"   : lonStr,
-                                      @"APPID" : OpenWeathermap_API_Key};
+                                      @"APPID" : OpenWeathermap_API_Key,
+                                      @"units" : @"metric",
+                                      @"lang"  : @"zh_cn"};
     // 请求1
     self.networkWeather = [V_3_X_Networking getMethodNetworkingWithUrlString:@"http://api.openweathermap.org/data/2.5/weather"
                                                            requestDictionary:requestParmars
@@ -63,7 +65,7 @@
     NSDictionary * weatherData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
     
     CurrentLocationWeather * weather = [[CurrentLocationWeather alloc] initWithDictionary:weatherData];
-    
+    LOG_DEBUG(@"weather:<%@>",weather);
     if (weather.cod.intValue == 200) {
         
         if (self.delegate && [self.delegate respondsToSelector:@selector( weatherData: scuess:)]) {
@@ -81,8 +83,13 @@
     if (self.delegate && [self.delegate respondsToSelector:@selector( weatherData: scuess:)]) {
         [self.delegate weatherData:nil scuess:NO];
     }
+    
+    LOG_DEBUG(@"Error:%@",error.localizedDescription);
 }
 @end
+
+// 参数说明:
+// http://openweathermap.org/weather-data
 
 /*
 

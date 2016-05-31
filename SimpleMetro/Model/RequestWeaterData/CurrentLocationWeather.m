@@ -18,7 +18,7 @@
     }
 }
 
-// 在这里将一些特殊的key进行转换，然后再调用super的方法
+// 在这里将一些特殊的key进行转换，然后再调用super的方法，比如将字典转成模型
 - (void)setValue:(id)value forKey:(NSString *)key
 {
     if ([value isKindOfClass:[NSNull class]]) {
