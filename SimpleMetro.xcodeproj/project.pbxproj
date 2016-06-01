@@ -41,7 +41,7 @@
 		D78C6A891CFB060900CAF770 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D78C6A881CFB060900CAF770 /* StoreKit.framework */; };
 		D78C6A8B1CFB062400CAF770 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D78C6A8A1CFB062400CAF770 /* SafariServices.framework */; };
 		D78C6A8D1CFB062C00CAF770 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D78C6A8C1CFB062C00CAF770 /* MessageUI.framework */; };
-		D78C6A901CFB40C000CAF770 /* AroundServiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6A8F1CFB40C000CAF770 /* AroundServiceCell.m */; };
+		D78C6A901CFB40C000CAF770 /* AroundServiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6A8F1CFB40C000CAF770 /* AroundServiceCell.m */; settings = {COMPILER_FLAGS = "-ObjC"; }; };
 		D78C6A951CFB421300CAF770 /* AroundServiceSearchCollectionCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D78C6A941CFB421300CAF770 /* AroundServiceSearchCollectionCellView.xib */; };
 		D78C6A981CFB44E500CAF770 /* AroundServiceSearchCollectionCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6A971CFB44E500CAF770 /* AroundServiceSearchCollectionCellView.m */; };
 		D78C6AC31CFC81B500CAF770 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D78C6ABD1CFC81B500CAF770 /* Lato-Bold.ttf */; };
@@ -73,6 +73,15 @@
 		D78C6B191CFD52FB00CAF770 /* WeatherCityView.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6B181CFD52FB00CAF770 /* WeatherCityView.m */; };
 		D78C6B1F1CFD64F100CAF770 /* NSDate+TimeGap.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6B1E1CFD64F100CAF770 /* NSDate+TimeGap.m */; };
 		D78C6B231CFE01DE00CAF770 /* Guide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D78C6B221CFE01DE00CAF770 /* Guide.storyboard */; };
+		D78C6B291CFF1D4700CAF770 /* BaiduSDKTakeMetroSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6B281CFF1D4700CAF770 /* BaiduSDKTakeMetroSearch.m */; settings = {COMPILER_FLAGS = "-ObjC"; }; };
+		D78C6B2B1CFF1DC300CAF770 /* TakeMetro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D78C6B2A1CFF1DC300CAF770 /* TakeMetro.storyboard */; };
+		D78C6B2E1CFF1F8400CAF770 /* TakeMetroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6B2D1CFF1F8400CAF770 /* TakeMetroViewController.m */; settings = {COMPILER_FLAGS = "-ObjC"; }; };
+		D78C6B311CFF233A00CAF770 /* TakeMetroSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6B301CFF233A00CAF770 /* TakeMetroSelectView.m */; settings = {COMPILER_FLAGS = "-ObjC"; }; };
+		D78C6B341CFF234B00CAF770 /* TakeMetroResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6B331CFF234B00CAF770 /* TakeMetroResultView.m */; settings = {COMPILER_FLAGS = "-ObjC"; }; };
+		D78C6B381CFF2F3200CAF770 /* BaiduSDKLBSInfoSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6B371CFF2F3200CAF770 /* BaiduSDKLBSInfoSearch.m */; settings = {COMPILER_FLAGS = "-ObjC"; }; };
+		D78C6B3B1CFF401D00CAF770 /* AroundSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6B3A1CFF401D00CAF770 /* AroundSearchResultViewController.m */; settings = {COMPILER_FLAGS = "-ObjC"; }; };
+		D78C6B3F1CFF40FA00CAF770 /* AroundSearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6B3D1CFF40FA00CAF770 /* AroundSearchResultCell.m */; settings = {COMPILER_FLAGS = "-ObjC"; }; };
+		D78C6B401CFF40FA00CAF770 /* AroundSearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D78C6B3E1CFF40FA00CAF770 /* AroundSearchResultCell.xib */; };
 		D7D855801CF34BFF0028B92D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D8557F1CF34BFF0028B92D /* main.m */; };
 		D7D855831CF34BFF0028B92D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D855821CF34BFF0028B92D /* AppDelegate.m */; settings = {COMPILER_FLAGS = "-ObjC"; }; };
 		D7D855891CF34BFF0028B92D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D855871CF34BFF0028B92D /* Main.storyboard */; };
@@ -122,7 +131,7 @@
 		D7D856991CF56EE60028B92D /* AboutMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D856891CF56EE60028B92D /* AboutMeViewController.m */; };
 		D7D8569A1CF56EE60028B92D /* OpenSourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D8568B1CF56EE60028B92D /* OpenSourceViewController.m */; };
 		D7D8569B1CF56EE60028B92D /* AboutMetroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D8568E1CF56EE60028B92D /* AboutMetroViewController.m */; };
-		D7D8569C1CF56EE60028B92D /* AroundServiceViewContrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D856901CF56EE60028B92D /* AroundServiceViewContrller.m */; };
+		D7D8569C1CF56EE60028B92D /* AroundServiceViewContrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D856901CF56EE60028B92D /* AroundServiceViewContrller.m */; settings = {COMPILER_FLAGS = "-ObjC"; }; };
 		D7D8569D1CF56EE60028B92D /* StationInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D856921CF56EE60028B92D /* StationInfoController.m */; };
 		D7D8569E1CF56EE60028B92D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D856941CF56EE60028B92D /* ViewController.m */; };
 		D7D8569F1CF56EE60028B92D /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D856961CF56EE60028B92D /* LeftMenuViewController.m */; };
@@ -269,6 +278,22 @@
 		D78C6B1D1CFD64F100CAF770 /* NSDate+TimeGap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TimeGap.h"; sourceTree = "<group>"; };
 		D78C6B1E1CFD64F100CAF770 /* NSDate+TimeGap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TimeGap.m"; sourceTree = "<group>"; };
 		D78C6B221CFE01DE00CAF770 /* Guide.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Guide.storyboard; sourceTree = "<group>"; };
+		D78C6B271CFF1D4700CAF770 /* BaiduSDKTakeMetroSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduSDKTakeMetroSearch.h; sourceTree = "<group>"; };
+		D78C6B281CFF1D4700CAF770 /* BaiduSDKTakeMetroSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaiduSDKTakeMetroSearch.m; sourceTree = "<group>"; };
+		D78C6B2A1CFF1DC300CAF770 /* TakeMetro.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TakeMetro.storyboard; sourceTree = "<group>"; };
+		D78C6B2C1CFF1F8400CAF770 /* TakeMetroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakeMetroViewController.h; sourceTree = "<group>"; };
+		D78C6B2D1CFF1F8400CAF770 /* TakeMetroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakeMetroViewController.m; sourceTree = "<group>"; };
+		D78C6B2F1CFF233A00CAF770 /* TakeMetroSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakeMetroSelectView.h; sourceTree = "<group>"; };
+		D78C6B301CFF233A00CAF770 /* TakeMetroSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakeMetroSelectView.m; sourceTree = "<group>"; };
+		D78C6B321CFF234B00CAF770 /* TakeMetroResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakeMetroResultView.h; sourceTree = "<group>"; };
+		D78C6B331CFF234B00CAF770 /* TakeMetroResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakeMetroResultView.m; sourceTree = "<group>"; };
+		D78C6B361CFF2F3200CAF770 /* BaiduSDKLBSInfoSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduSDKLBSInfoSearch.h; sourceTree = "<group>"; };
+		D78C6B371CFF2F3200CAF770 /* BaiduSDKLBSInfoSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaiduSDKLBSInfoSearch.m; sourceTree = "<group>"; };
+		D78C6B391CFF401D00CAF770 /* AroundSearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AroundSearchResultViewController.h; sourceTree = "<group>"; };
+		D78C6B3A1CFF401D00CAF770 /* AroundSearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AroundSearchResultViewController.m; sourceTree = "<group>"; };
+		D78C6B3C1CFF40FA00CAF770 /* AroundSearchResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AroundSearchResultCell.h; sourceTree = "<group>"; };
+		D78C6B3D1CFF40FA00CAF770 /* AroundSearchResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AroundSearchResultCell.m; sourceTree = "<group>"; };
+		D78C6B3E1CFF40FA00CAF770 /* AroundSearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AroundSearchResultCell.xib; sourceTree = "<group>"; };
 		D7D8557B1CF34BFF0028B92D /* SimpleMetro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleMetro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7D8557F1CF34BFF0028B92D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D7D855811CF34BFF0028B92D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -448,6 +473,10 @@
 				D70C3EEE1CF98A2300B7BAB5 /* BaiduSDKMetroLineSearch.m */,
 				D70C3EEF1CF98A2300B7BAB5 /* BaiduSDKMetroStationAroundBusLineSearch.h */,
 				D70C3EF01CF98A2300B7BAB5 /* BaiduSDKMetroStationAroundBusLineSearch.m */,
+				D78C6B361CFF2F3200CAF770 /* BaiduSDKLBSInfoSearch.h */,
+				D78C6B371CFF2F3200CAF770 /* BaiduSDKLBSInfoSearch.m */,
+				D78C6B271CFF1D4700CAF770 /* BaiduSDKTakeMetroSearch.h */,
+				D78C6B281CFF1D4700CAF770 /* BaiduSDKTakeMetroSearch.m */,
 			);
 			path = BaiduSDKHelper;
 			sourceTree = "<group>";
@@ -503,6 +532,9 @@
 				D7D856741CF56E6B0028B92D /* LineStationCell.h */,
 				D7D856751CF56E6B0028B92D /* LineStationCell.m */,
 				D7D856761CF56E6B0028B92D /* LineStationCell.xib */,
+				D78C6B3C1CFF40FA00CAF770 /* AroundSearchResultCell.h */,
+				D78C6B3D1CFF40FA00CAF770 /* AroundSearchResultCell.m */,
+				D78C6B3E1CFF40FA00CAF770 /* AroundSearchResultCell.xib */,
 			);
 			name = tableViewCell;
 			sourceTree = "<group>";
@@ -725,9 +757,21 @@
 				D7D855871CF34BFF0028B92D /* Main.storyboard */,
 				D7D8565F1CF546CA0028B92D /* MetroInfo.storyboard */,
 				D7D8565C1CF545B60028B92D /* AroundService.storyboard */,
+				D78C6B2A1CFF1DC300CAF770 /* TakeMetro.storyboard */,
 				D78C6B221CFE01DE00CAF770 /* Guide.storyboard */,
 			);
 			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		D78C6B351CFF236000CAF770 /* takeMetro */ = {
+			isa = PBXGroup;
+			children = (
+				D78C6B2F1CFF233A00CAF770 /* TakeMetroSelectView.h */,
+				D78C6B301CFF233A00CAF770 /* TakeMetroSelectView.m */,
+				D78C6B321CFF234B00CAF770 /* TakeMetroResultView.h */,
+				D78C6B331CFF234B00CAF770 /* TakeMetroResultView.m */,
+			);
+			name = takeMetro;
 			sourceTree = "<group>";
 		};
 		D7D855721CF34BFF0028B92D = {
@@ -939,10 +983,11 @@
 		D7D8566C1CF56E6B0028B92D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D78C6A541CF9E5A900CAF770 /* collectionViewCell */,
-				D78C6A531CF9E58C00CAF770 /* tableViewCell */,
 				D78C6A911CFB416800CAF770 /* view */,
 				D78C6B101CFD324900CAF770 /* weatherView */,
+				D78C6A541CF9E5A900CAF770 /* collectionViewCell */,
+				D78C6A531CF9E58C00CAF770 /* tableViewCell */,
+				D78C6B351CFF236000CAF770 /* takeMetro */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -988,10 +1033,14 @@
 				D7D856941CF56EE60028B92D /* ViewController.m */,
 				D7D856911CF56EE60028B92D /* StationInfoController.h */,
 				D7D856921CF56EE60028B92D /* StationInfoController.m */,
+				D78C6B2C1CFF1F8400CAF770 /* TakeMetroViewController.h */,
+				D78C6B2D1CFF1F8400CAF770 /* TakeMetroViewController.m */,
 				D7D8568D1CF56EE60028B92D /* AboutMetroViewController.h */,
 				D7D8568E1CF56EE60028B92D /* AboutMetroViewController.m */,
 				D7D8568F1CF56EE60028B92D /* AroundServiceViewContrller.h */,
 				D7D856901CF56EE60028B92D /* AroundServiceViewContrller.m */,
+				D78C6B391CFF401D00CAF770 /* AroundSearchResultViewController.h */,
+				D78C6B3A1CFF401D00CAF770 /* AroundSearchResultViewController.m */,
 			);
 			path = LBS;
 			sourceTree = "<group>";
@@ -1122,7 +1171,9 @@
 				D78C6A4F1CF9C18A00CAF770 /* LineStationsViewCell.xib in Resources */,
 				D78C6AC81CFC81B500CAF770 /* Weather&Time.ttf in Resources */,
 				D78C6A591CF9E91E00CAF770 /* MetroStationEntranceCell.xib in Resources */,
+				D78C6B401CFF40FA00CAF770 /* AroundSearchResultCell.xib in Resources */,
 				D78C6A5E1CF9E93800CAF770 /* MetroStationAroundBusStationCell.xib in Resources */,
+				D78C6B2B1CFF1DC300CAF770 /* TakeMetro.storyboard in Resources */,
 				D7D856341CF4342C0028B92D /* FontAwesome.otf in Resources */,
 				D7D8558E1CF34BFF0028B92D /* LaunchScreen.storyboard in Resources */,
 				D78C6AC41CFC81B500CAF770 /* Lato-Light.ttf in Resources */,
@@ -1174,9 +1225,11 @@
 				D7D8569A1CF56EE60028B92D /* OpenSourceViewController.m in Sources */,
 				D7D856971CF56EE60028B92D /* BaseViewController.m in Sources */,
 				D78C6A7A1CFACCCF00CAF770 /* PMAlertController.swift in Sources */,
+				D78C6B2E1CFF1F8400CAF770 /* TakeMetroViewController.m in Sources */,
 				D78C6A491CF9BED400CAF770 /* CSStickyHeaderFlowLayout.m in Sources */,
 				D7D856C21CF59F490028B92D /* LeftMenuDataSource.m in Sources */,
 				D78C6A4A1CF9BED400CAF770 /* CSStickyHeaderFlowLayoutAttributes.m in Sources */,
+				D78C6B3B1CFF401D00CAF770 /* AroundSearchResultViewController.m in Sources */,
 				D78C6A421CF99CA900CAF770 /* LineStationsCell.m in Sources */,
 				D7D8567A1CF56E6B0028B92D /* LeftMenuCell.m in Sources */,
 				D78C6AFC1CFC889100CAF770 /* V_3_X_Networking.m in Sources */,
@@ -1199,6 +1252,7 @@
 				D78C6B1F1CFD64F100CAF770 /* NSDate+TimeGap.m in Sources */,
 				D7D855831CF34BFF0028B92D /* AppDelegate.m in Sources */,
 				D7D856331CF4342C0028B92D /* FAKZocial.m in Sources */,
+				D78C6B3F1CFF40FA00CAF770 /* AroundSearchResultCell.m in Sources */,
 				D7D856091CF3F6450028B92D /* UIImage+Tint.m in Sources */,
 				D7D855EF1CF3F0C50028B92D /* RECommonFunctions.m in Sources */,
 				D7D856471CF455080028B92D /* UIImage+Common.m in Sources */,
@@ -1207,6 +1261,7 @@
 				D78C6A981CFB44E500CAF770 /* AroundServiceSearchCollectionCellView.m in Sources */,
 				D78C6B131CFD329400CAF770 /* WeatherStationView.m in Sources */,
 				D7D8569F1CF56EE60028B92D /* LeftMenuViewController.m in Sources */,
+				D78C6B381CFF2F3200CAF770 /* BaiduSDKLBSInfoSearch.m in Sources */,
 				D70C3EE91CF95BC700B7BAB5 /* MetroLineTitleView.m in Sources */,
 				D7D8569E1CF56EE60028B92D /* ViewController.m in Sources */,
 				D7D855E11CF36FF80028B92D /* HLLSpotlightView.m in Sources */,
@@ -1214,6 +1269,7 @@
 				D7D855F11CF3F0C50028B92D /* UIViewController+RESideMenu.m in Sources */,
 				D7D855E31CF36FF80028B92D /* HLLTransition.m in Sources */,
 				D78C6AF91CFC889100CAF770 /* HLLRequestBodyType.m in Sources */,
+				D78C6B311CFF233A00CAF770 /* TakeMetroSelectView.m in Sources */,
 				D78C6A611CF9F18C00CAF770 /* NSString+Size.m in Sources */,
 				D70C3EF31CF98A2300B7BAB5 /* BaiduSDKMetroStationAroundBusLineSearch.m in Sources */,
 				D7D8560F1CF3F6740028B92D /* StoryBoardUtilities.m in Sources */,
@@ -1229,6 +1285,7 @@
 				D7D856781CF56E6B0028B92D /* MetroLineInfoDataSource_Plist.m in Sources */,
 				D7D856321CF4342C0028B92D /* FAKOcticons.m in Sources */,
 				D7D856981CF56EE60028B92D /* GuideViewController.m in Sources */,
+				D78C6B291CFF1D4700CAF770 /* BaiduSDKTakeMetroSearch.m in Sources */,
 				D78C6B0A1CFC93EC00CAF770 /* MapManager.m in Sources */,
 				D78C6A521CF9D33000CAF770 /* LineStationsSectionHeaderView.m in Sources */,
 				D78C6B021CFC8FE400CAF770 /* Weather.m in Sources */,
@@ -1243,6 +1300,7 @@
 				D78C6A901CFB40C000CAF770 /* AroundServiceCell.m in Sources */,
 				D7D8569D1CF56EE60028B92D /* StationInfoController.m in Sources */,
 				D78C6AD11CFC86C000CAF770 /* RequestWeatherData.m in Sources */,
+				D78C6B341CFF234B00CAF770 /* TakeMetroResultView.m in Sources */,
 				D7D8562D1CF4342C0028B92D /* FAKFontAwesome.m in Sources */,
 				D78C6A7F1CFAE01A00CAF770 /* UIImage+ImageEffects.m in Sources */,
 				D78C6AF41CFC889100CAF770 /* AFSecurityPolicy.m in Sources */,
@@ -1342,6 +1400,7 @@
 				PROVISIONING_PROFILE = "772c1ae8-21a0-435e-a7b2-f035452cc16d";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};
@@ -1382,7 +1441,7 @@
 				PROVISIONING_PROFILE = "772c1ae8-21a0-435e-a7b2-f035452cc16d";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
+				VALIDATE_PRODUCT = NO;
 			};
 			name = Release;
 		};

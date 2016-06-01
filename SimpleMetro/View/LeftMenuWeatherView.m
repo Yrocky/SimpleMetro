@@ -49,7 +49,7 @@ static CGFloat const LeftMenuWeatherViewAnimationDuration       = 2.25f;
     
     self.backgroundColor = [UIColor clearColor];
     
-    self.noWeatherInfoBannerImageView.backgroundColor = [UIColor orangeColor];
+    self.noWeatherInfoBannerImageView.backgroundColor = [UIColor customGrayColor];
     
     [self showNoWeatherInfoBannerImageView];
     
@@ -113,27 +113,30 @@ static CGFloat const LeftMenuWeatherViewAnimationDuration       = 2.25f;
 // 获取的到天气信息
 - (void) groupHeightConstraintAnimation{
     
-    self.noWeatherInfoBannerImageView.hidden = YES;
-    
-    [UIView animateWithDuration:LeftMenuWeatherViewAnimationDuration delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+    if (self.noWeatherInfoBannerImageView.hidden == NO) {
         
-        self.noWeatherInfoBannerImageView.alpha = 0.0f;
+        self.noWeatherInfoBannerImageView.hidden = YES;
         
-        if (isIPhone4) {
-            self.leftMenuWeatherHeightConstraint.constant = 100.0f;
-        }
-        if (isIPhone5) {
-            self.leftMenuWeatherHeightConstraint.constant = 120.0f;
-        }
-        if (isIPhone6) {
-            self.leftMenuWeatherHeightConstraint.constant = 150.0f;
-        }
-        if (isIPhone6Plus || isIPad) {
-            self.leftMenuWeatherHeightConstraint.constant = 155.0f;
-        }
-    } completion:^(BOOL finished) {
-        
-    }];
+        [UIView animateWithDuration:LeftMenuWeatherViewAnimationDuration delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            
+            self.noWeatherInfoBannerImageView.alpha = 0.0f;
+            
+            if (isIPhone4) {
+                self.leftMenuWeatherHeightConstraint.constant = 100.0f;
+            }
+            if (isIPhone5) {
+                self.leftMenuWeatherHeightConstraint.constant = 120.0f;
+            }
+            if (isIPhone6) {
+                self.leftMenuWeatherHeightConstraint.constant = 150.0f;
+            }
+            if (isIPhone6Plus || isIPad) {
+                self.leftMenuWeatherHeightConstraint.constant = 155.0f;
+            }
+        } completion:^(BOOL finished) {
+            
+        }];
+    }
     
     [self showAnimation];
 }

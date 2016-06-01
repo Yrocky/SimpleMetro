@@ -1,14 +1,15 @@
 //
-//  BaiduSDKStationAroundBusLineSearch.m
-//  BaiduDemo
+//  BaiduSDKLBSInfoSearch.m
+//  SimpleMetro
 //
-//  Created by Youngrocky on 16/5/27.
+//  Created by Youngrocky on 16/6/1.
 //  Copyright © 2016年 Rocky Young. All rights reserved.
 //
 
-#import "BaiduSDKMetroStationAroundBusLineSearch.h"
+#import "BaiduSDKLBSInfoSearch.h"
 
-@interface BaiduSDKMetroStationAroundBusLineSearch ()<BMKPoiSearchDelegate>
+
+@interface BaiduSDKLBSInfoSearch ()<BMKPoiSearchDelegate>
 
 // search
 @property (nonatomic ,strong) BMKPoiSearch * poiSearcher;
@@ -17,10 +18,10 @@
 @property (nonatomic ,copy) SubwayAroundSearchResultBlock   searchResultBlock;
 @property (nonatomic ,copy) SearchError                     searchError;
 
-@property (nonatomic ,strong) NSMutableArray<BMKPoiInfo *> * filterBusLinePoiInfo;
-
 @end
-@implementation BaiduSDKMetroStationAroundBusLineSearch
+
+@implementation BaiduSDKLBSInfoSearch
+
 
 - (instancetype)init
 {
@@ -34,7 +35,6 @@
         //初始化poi检索对象
         _poiSearcher =[[BMKPoiSearch alloc]init];
         
-        _filterBusLinePoiInfo = [NSMutableArray array];
     }
     return self;
 }
@@ -65,63 +65,7 @@
     });
 }
 
-- (void) filterMetroInfoWithSearchResult:(BMKPoiResult*)poiResult{
-    
-    if (self.filterBusLinePoiInfo && self.filterBusLinePoiInfo.count >= 1) {
-        
-        [self.filterBusLinePoiInfo removeAllObjects];
-    }
-    
-    for (BMKPoiInfo * poiInfo in poiResult.poiInfoList) {
-        
-        ///epoitype:POI类型，0:普通点 1:公交站 2:公交线路 3:地铁站 4:地铁线路
-        if (poiInfo.epoitype == 1) {
-            
-            [self.filterBusLinePoiInfo addObject:poiInfo];
-        }
-    }
-    
-}
-
 #pragma mark - API
-
-- (void) searchMetroStationAroundBusInfoWithMetroStation:(BMKBusStation *)metroStation{
-
-    [self configureDelegate];
-    
-    //发起检索
-    BMKNearbySearchOption *option = [[BMKNearbySearchOption alloc]init];
-    option.pageCapacity = self.resultCapacity;
-    option.radius = self.searchRadius;
-    option.location = metroStation.location;
-    option.keyword = @"公交站";
-    
-    BOOL flag = [self.poiSearcher poiSearchNearBy:option];
-    if(!flag){
-        
-        [self buildErrorInfoWithErrorCode:ErrorCodeForSearchFaild
-                     localizedDescription:@"周边检索发送失败"];
-    }
-}
-
-- (void) searchMetroStationAroundBusInfoWithLocation:(CLLocationCoordinate2D)location{
-
-    [self configureDelegate];
-    
-    //发起检索
-    BMKNearbySearchOption *option = [[BMKNearbySearchOption alloc]init];
-    option.pageCapacity = self.resultCapacity;
-    option.radius = self.searchRadius;
-    option.location = location;
-    option.keyword = @"公交站";
-    
-    BOOL flag = [self.poiSearcher poiSearchNearBy:option];
-    if(!flag){
-        
-        [self buildErrorInfoWithErrorCode:ErrorCodeForSearchFaild
-                     localizedDescription:@"周边检索发送失败"];
-    }
-}
 
 - (void) searchLBSInfoWithKeyWord:(NSString *)keyWaord atLocation:(CLLocationCoordinate2D)location{
     
@@ -152,7 +96,7 @@
 #pragma mark - BaiduSDKSearchProtocol
 
 - (void) configureDelegate{
-
+    
     if (self.poiSearcher.delegate == nil &&
         self.poiSearcher.delegate != self) {
         
@@ -172,18 +116,16 @@
 - (void)onGetPoiResult:(BMKPoiSearch*)searcher result:(BMKPoiResult*)poiResult errorCode:(BMKSearchErrorCode)errorCode{
     
     [self clearDelegate];
-        
+    
     if (errorCode == BMK_SEARCH_NO_ERROR) {
-        
-        [self filterMetroInfoWithSearchResult:poiResult];
-        
-        NSLog(@"搜索到的公交站个数：%lu",(unsigned long)self.filterBusLinePoiInfo.count);
+                
+        NSLog(@"搜索到的个数：%lu",(unsigned long)poiResult.poiInfoList.count);
         
         dispatch_async(dispatch_get_main_queue(), ^{
-           
+            
             if (self.searchResultBlock) {
                 
-                self.searchResultBlock(self.filterBusLinePoiInfo);
+                self.searchResultBlock(poiResult.poiInfoList);
             }
         });
     }
@@ -194,5 +136,6 @@
                      localizedDescription:@"没有找到想要的结果"];
     }
 }
+
 
 @end

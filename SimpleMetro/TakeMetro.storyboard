@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Take Metro View Controller-->
+        <scene sceneID="1zc-6c-UuB">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="G1k-f9-QfV" customClass="TakeMetroViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cpj-Yi-Ygh"/>
+                        <viewControllerLayoutGuide type="bottom" id="AkG-o6-N8Y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZqO-Yv-txA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L0h-aD-2c4" customClass="TakeMetroResultView">
+                                <rect key="frame" x="0.0" y="214" width="600" height="200"/>
+                                <color key="backgroundColor" red="0.8862745098" green="0.2274509804" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="u1b-Ys-jb7"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="00c-nh-frN" customClass="TakeMetroSelectView">
+                                <rect key="frame" x="0.0" y="64" width="600" height="150"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="je9-Ly-gNk">
+                                        <rect key="frame" x="45" y="35" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQK-Ug-etc">
+                                        <rect key="frame" x="45" y="83" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="GHt-68-YIO"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0qT-iY-Nv2">
+                                <rect key="frame" x="0.0" y="414" width="600" height="186"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0qT-iY-Nv2" firstAttribute="leading" secondItem="ZqO-Yv-txA" secondAttribute="leading" id="2B3-UM-rka"/>
+                            <constraint firstItem="L0h-aD-2c4" firstAttribute="top" secondItem="00c-nh-frN" secondAttribute="bottom" id="G0f-nP-9YQ"/>
+                            <constraint firstItem="00c-nh-frN" firstAttribute="leading" secondItem="ZqO-Yv-txA" secondAttribute="leading" id="Iog-oK-hdy"/>
+                            <constraint firstItem="L0h-aD-2c4" firstAttribute="leading" secondItem="ZqO-Yv-txA" secondAttribute="leading" id="WFb-Sn-i1K"/>
+                            <constraint firstItem="00c-nh-frN" firstAttribute="top" secondItem="Cpj-Yi-Ygh" secondAttribute="bottom" id="cjZ-gB-ArL"/>
+                            <constraint firstAttribute="trailing" secondItem="L0h-aD-2c4" secondAttribute="trailing" id="d4J-61-JXc"/>
+                            <constraint firstAttribute="trailing" secondItem="00c-nh-frN" secondAttribute="trailing" id="fre-KN-q6r"/>
+                            <constraint firstAttribute="trailing" secondItem="0qT-iY-Nv2" secondAttribute="trailing" id="hPq-5G-VLR"/>
+                            <constraint firstItem="0qT-iY-Nv2" firstAttribute="top" secondItem="L0h-aD-2c4" secondAttribute="bottom" id="rSu-Td-YAr"/>
+                            <constraint firstItem="AkG-o6-N8Y" firstAttribute="top" secondItem="0qT-iY-Nv2" secondAttribute="bottom" id="tMf-hs-Ung"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Mw8-bd-tIw"/>
+                    <connections>
+                        <outlet property="resultView" destination="L0h-aD-2c4" id="VEg-G9-4OM"/>
+                        <outlet property="selectView" destination="00c-nh-frN" id="WLh-w9-0jB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uYv-rj-61j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1725" y="-34"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="byi-RH-cfx">
+            <objects>
+                <navigationController storyboardIdentifier="TakeMetroNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="sBK-ra-fs7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zm0-D7-nZY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="G1k-f9-QfV" kind="relationship" relationship="rootViewController" id="BKE-QN-r9u"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aaZ-De-QOH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="913" y="-34"/>
+        </scene>
+    </scenes>
+</document>

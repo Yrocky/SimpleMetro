@@ -30,6 +30,13 @@ typedef void(^SubwaySearchResultBlock)(NSArray<BMKBusLineResult *> * metroLines)
 typedef void(^SubwayAroundSearchResultBlock)(NSArray<BMKPoiInfo *> * busStations);
 
 /**
+ *  搜索两个地铁站之间的乘车路线
+ *
+ *  @param routeLine 乘坐地铁的路线，装有起点、终点，起点站、终点站以及时间，票价这个需要自己算好了返回去
+ */
+typedef void(^SubwayTakeMetroLineSearvhResultBlock)(BMKTransitRouteLine * routeLine);
+
+/**
  *  进行搜索的时候的Error获取
  *
  *  其中error的code：

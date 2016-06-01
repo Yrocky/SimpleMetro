@@ -10,10 +10,27 @@
 #import "AroundServiceCell.h"
 #import "CSStickyHeaderFlowLayout.h"
 #import "AroundServiceSearchCollectionCellView.h"
+#import "AroundSearchResultViewController.h"
 
-@interface AroundServiceViewContrller ()<UICollectionViewDelegateFlowLayout,UICollectionViewDataSource>
 
-@property (nonatomic ,copy) NSArray * aroundServiceItems;
+// 百度搜索
+#import "BaiduSDKLBSInfoSearch.h"
+
+// 管理定位信息
+#import "MapManager.h"
+
+static NSString * const showSearchResultIdentifier = @"showSearchResultIdentifier";
+
+
+@interface AroundServiceViewContrller ()<UICollectionViewDelegateFlowLayout,UICollectionViewDataSource,MapManagerLocationDelegate,AroundServiceSearchViewDelegate>{
+
+    BaiduSDKLBSInfoSearch * LBSInfoSearch;
+}
+
+@property (nonatomic ,copy) NSArray                 * aroundServiceItems;
+@property (nonatomic ,strong) NSString              * keyWord;
+@property (nonatomic ,strong) MapManager            * mapLoacation;
+@property (nonatomic ,strong) CLLocation            * currentLocation;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
@@ -38,7 +55,12 @@
                                 @"快捷酒店",
                                 @"银行",
                                 @"停车场",
-                                @"药店"];
+                                @"药店",
+                                @"公交站",
+                                @"健身房",
+                                @"",
+                                @"",
+                                @""];
     }
     return self;
 }
@@ -50,14 +72,75 @@
     
     [self reloadLayout];
     
+    // 配置CollectionView
     self.collectionView.scrollIndicatorInsets = UIEdgeInsetsMake(0, 0, 0, 0);
     self.collectionView.backgroundColor = [UIColor clearColor];
     
     [self.collectionView registerNib:[AroundServiceSearchCollectionCellView nib] forSupplementaryViewOfKind:CSStickyHeaderParallaxHeader withReuseIdentifier:@"searchViewIdentifier"];
+    
+    // 定位请求
+    self.mapLoacation = [[MapManager alloc] init];
+    self.mapLoacation.delegate = self;
+    
+    // 初始化百度搜索
+    [self getLocationAndThenBeginLBSInfoSearch];
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+ 
+    [super viewDidAppear:animated];
+    
+    [self.mapLoacation start];
+}
 
 #pragma mark - Method
+
+- (void) getLocationAndThenBeginLBSInfoSearch{
+    
+    LBSInfoSearch = [[BaiduSDKLBSInfoSearch alloc] init];
+    [LBSInfoSearch configureDelegate];
+    [LBSInfoSearch searchMetroStationAroundBusInfoResult:^(NSArray<BMKPoiInfo *> *LBSInfo) {
+        
+        if (LBSInfo.count) {
+            
+            for (BMKPoiInfo * poi in LBSInfo) {
+                
+                NSLog(@"name:%@--》address:%@",poi.name,poi.address);
+            }
+            
+            NSDictionary * sender = @{@"keyWord":self.keyWord,
+                                      @"data":LBSInfo};
+            [self performSegueWithIdentifier:showSearchResultIdentifier sender:sender];
+        }
+        else{
+        
+            NSString * message = [NSString stringWithFormat:@"在您附近没有发现与%@有关的地点。",self.keyWord];
+            PMAlertController * alertControler = [[PMAlertController alloc] initWithTitle:nil description:message image:nil style:PMAlertControllerStyleAlert];
+            alertControler.gravityDismissAnimation = NO;
+            alertControler.addMotionEffect = YES;
+            
+            PMAlertAction * sureAction = [[PMAlertAction alloc] initWithTitle:@"确定" style:PMAlertActionStyleDefault action:nil];
+            [alertControler addAction:sureAction];
+            
+            [self presentViewController:alertControler animated:YES completion:nil];
+            
+            LOG_DEBUG(@"灭有在规定范围内搜索到您要的");
+        }
+        
+    } handleSearchError:^(NSError *error) {
+        
+        LOG_DEBUG(@"LBS info search error:%@",error.localizedDescription);
+    }];
+    
+}
+
+- (void) searchWithKeyWord:(NSString *)keyWord{
+    
+    if (self.currentLocation) {
+        
+        [LBSInfoSearch searchLBSInfoWithKeyWord:keyWord atLocation:self.currentLocation.coordinate];
+    }
+}
 
 - (void) reloadLayout{
     
@@ -73,19 +156,57 @@
     }
 }
 
+#pragma mark - Navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+
+    AroundSearchResultViewController * destinationViewController = (AroundSearchResultViewController *)segue.destinationViewController;
+    
+    [destinationViewController configureAroundSearchResultViewControllerWithResult:sender];
+}
+
+#pragma mark - MapManagerLocationDelegate
+// 定位成功
+- (void)mapManager:(MapManager *)manager didUpdateAndGetLastCLLocation:(CLLocation *)location{
+    
+    // 这个方法确保定位信息只发送一次，注销掉看看log的打印次数
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    
+    if (self.currentLocation) {
+        self.currentLocation = nil;
+    }
+    self.currentLocation = location;
+}
+// 定位失败
+- (void)mapManager:(MapManager *)manager didFailed:(NSError *)error{
+
+    LOG_DEBUG(@"Location Error:%@",error.localizedDescription);
+}
+// 没有开启定位信息
+- (void)mapManagerServerClosed:(MapManager *)manager{
+
+    LOG_DEBUG(@"灭有开启定位信息");
+}
+
+#pragma mark - AroundServiceSearchViewDelegate
+
+- (void) aroundServiceSearchViewDidClickDoneButton:(AroundServiceSearchCollectionCellView*)aroundServiceView{
+
+    [self.view endEditing:YES];
+    
+    [self searchWithKeyWord:self.keyWord];
+}
+
+- (void) aroundServiceSearchView:(AroundServiceSearchCollectionCellView*)aroundServiceView changeSearchText:(NSString *)searchText{
+
+    self.keyWord = searchText;
+}
+
 #pragma mark - UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath{
     
     if (indexPath.item == 1) {
-        
-//        if (self.aroundStationSet && ![self.aroundStationSet containsObject:indexPath]) {
-//            
-//            [self.aroundStationSet addObject:indexPath];
-//            
-//            
-//        }
-//        
+
     }
 }
 
@@ -93,13 +214,10 @@
 {
     // 后续版本做地图展示以及LBS搜索
     LOG_DEBUG(@"选择站点");
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    LOG_DEBUG(@"不选中某点");
+    self.keyWord = self.aroundServiceItems[indexPath.item];
     
+    [self searchWithKeyWord:self.keyWord];
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
@@ -154,8 +272,8 @@
     
     if ([kind isEqualToString:CSStickyHeaderParallaxHeader]) {
 
-        UICollectionReusableView *cell = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"searchViewIdentifier" forIndexPath:indexPath];
-        
+        AroundServiceSearchCollectionCellView *cell = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"searchViewIdentifier" forIndexPath:indexPath];
+        cell.delegate = self;
         return cell;
 
     }
@@ -175,28 +293,12 @@
         
         CGFloat horizontalWidth = CGRectGetWidth(self.collectionView.frame) - layout.minimumInteritemSpacing * (isIPhone6Plus?itemCount:(itemCount-1)) - layout.sectionInset.left - layout.sectionInset.right;
         
-        LOG_DEBUG(@"horizontalWidth:%f",horizontalWidth / itemCount);
+//        LOG_DEBUG(@"horizontalWidth:%f",horizontalWidth / itemCount);
         
         itemSize = CGSizeMake(horizontalWidth / itemCount, layout.itemSize.height);
     }
     
     return itemSize;
-}
-
-- (CGFloat) resetMinimumLineSpacingWithLayout:(CSStickyHeaderFlowLayout *)layout atSection:(NSInteger)section{
-    
-    CGFloat minimumLineSpacing = .0f;
-//    if (section == 0) {
-//        
-//        minimumLineSpacing = layout.minimumLineSpacing;
-//    }
-//    
-//    if (section == 1) {
-//        
-//        minimumLineSpacing = 5.0f;
-//    }
-//    
-    return minimumLineSpacing;
 }
 
 @end

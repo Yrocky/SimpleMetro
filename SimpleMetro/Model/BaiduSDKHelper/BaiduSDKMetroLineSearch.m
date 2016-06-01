@@ -195,9 +195,9 @@
  */
 - (void)onGetPoiResult:(BMKPoiSearch*)searcher result:(BMKPoiResult*)poiResult errorCode:(BMKSearchErrorCode)errorCode{
     
-    if (errorCode == BMK_SEARCH_NO_ERROR) {
+    [self clearDelegate];
         
-        [self clearDelegate];
+    if (errorCode == BMK_SEARCH_NO_ERROR) {
         
         [self filterMetroInfoWithSearchResult:poiResult];
         

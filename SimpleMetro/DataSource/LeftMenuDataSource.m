@@ -32,39 +32,41 @@ static NSString * const leftMenuCellIdentifier = @"leftMenuCellIdentifier";
         FAKIcon *squareOIcon = [FAKFontAwesome squareOIconWithSize:35];
         [squareOIcon addAttribute:NSForegroundColorAttributeName value:[UIColor customWhiteColor]];
         
+        // 站点信息
         FAKIcon * stationInfo = [FAKFontAwesome subwayIconWithSize:inSideSize];
         [stationInfo addAttribute:NSForegroundColorAttributeName value:[UIColor customWhiteColor]];
         NSArray * stationInfoIcons = @[stationInfo, squareOIcon];
         
-//        NSArray * convenientIcons = @[[FAKFontAwesome twitterIconWithSize:inSideSize], squareOIcon];
-        
-        FAKIcon * map = [FAKFontAwesome mapOIconWithSize:20];
+        // 便捷乘车
+        FAKIcon * map = [FAKFontAwesome mapOIconWithSize:25];
         [map addAttribute:NSForegroundColorAttributeName value:[UIColor customWhiteColor]];
-        NSArray * aroundServerIcons = @[map];
+        NSArray * convenientIcons = @[map];
         
+        // 周边服务
+        FAKIcon * mapMarket = [FAKFontAwesome mapMarkerIconWithSize:30];
+        [mapMarket addAttribute:NSForegroundColorAttributeName value:[UIColor customWhiteColor]];
+        NSArray * aroundServerIcons = @[mapMarket];
+        
+        // 地铁公告
         FAKIcon * ad = [FAKFontAwesome infoCircleIconWithSize:30];
         [ad addAttribute:NSForegroundColorAttributeName value:[UIColor customWhiteColor]];
         NSArray * adIcons = @[ad];
-        
-        NSArray * feedBackIcons = @[];
-//        [FAKFontAwesome twitterIconWithSize:inSideSize], squareOIcon
-        NSArray * openSourceIcons = @[];
-//        [FAKFontAwesome twitterIconWithSize:inSideSize], squareOIcon
-        NSArray * aboutIcons = @[];
-//        [FAKFontAwesome twitterIconWithSize:inSideSize], squareOIcon
+
         _leftMenuItems = @[@[@{kLeftMenuIconKey:stationInfoIcons,
                                kLeftMenuTitleKey:@"站点信息"},
+                             @{kLeftMenuIconKey:convenientIcons,
+                               kLeftMenuTitleKey:@"便捷乘车"},
                              @{kLeftMenuIconKey:aroundServerIcons,
                                kLeftMenuTitleKey:@"周边服务"},
                              @{kLeftMenuIconKey:adIcons,
                                kLeftMenuTitleKey:@"地铁公告"}],
 //                           @[@{kLeftMenuIconKey:adIcons,
 //                               kLeftMenuTitleKey:@"地铁公告"}],
-                           @[@{kLeftMenuIconKey:feedBackIcons,
+                           @[@{kLeftMenuIconKey:[NSNull new],
                                kLeftMenuTitleKey:@"意见反馈"},
-                             @{kLeftMenuIconKey:openSourceIcons,
+                             @{kLeftMenuIconKey:[NSNull new],
                                kLeftMenuTitleKey:@"Third-Party Lib"},
-                             @{kLeftMenuIconKey:aboutIcons,
+                             @{kLeftMenuIconKey:[NSNull new],
                                kLeftMenuTitleKey:@"关于"}]];
     }
     return self;
@@ -82,18 +84,24 @@ static NSString * const leftMenuCellIdentifier = @"leftMenuCellIdentifier";
                 return metroNavigationController;
             }
                 break;
-            case 2:
+            case 1:
             {
-                UINavigationController * aboutNavigationController = (UINavigationController *)[StoryBoardUtilities viewControllerForStoryboardName:@"Main" storyBoardID:AboutMetroNavigationControllerStoryBoardID];
-                
-                return aboutNavigationController;
+                UINavigationController * takeMetroNavigationController = (UINavigationController *)[StoryBoardUtilities viewControllerForStoryboardName:@"TakeMetro" storyBoardID:TakeMetroNavigationControllerID];
+                return takeMetroNavigationController;
             }
                 break;
-            case 1:
+            case 2:
             {
                 UINavigationController * aroundServiceNavigationController = (UINavigationController *)[StoryBoardUtilities viewControllerForStoryboardName:@"AroundService" storyBoardID:AroundServiceNavigationControllerStoryBoardID];
                 
                 return aroundServiceNavigationController;
+            }
+                break;
+            case 3:
+            {
+                UINavigationController * aboutNavigationController = (UINavigationController *)[StoryBoardUtilities viewControllerForStoryboardName:@"Main" storyBoardID:AboutMetroNavigationControllerStoryBoardID];
+                
+                return aboutNavigationController;
             }
                 break;
             default:
