@@ -10,6 +10,8 @@
 
 @interface AroundServiceCell ()
 
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
+
 @property (weak, nonatomic) IBOutlet UILabel *serviceNameLabel;
 
 @end
@@ -21,8 +23,15 @@
 
     [super awakeFromNib];
     
-//    self.serviceNameLabel.textColor = [UIColor ];
-    self.serviceNameLabel.backgroundColor = [UIColor orangeColor];
+    self.contentView.layer.cornerRadius     = 5.0f;
+    self.contentView.layer.masksToBounds    = YES;
+    self.contentView.backgroundColor        = [UIColor customGrayColor];
+    self.backgroundColor                    = [UIColor clearColor];
+    
+    self.serviceNameLabel.font              = [UIFont systemFontOfSize:14];
+    self.serviceNameLabel.textColor         = [UIColor customHighBlueColor];
+    self.iconImageView.backgroundColor      = [UIColor clearColor];
+    self.serviceNameLabel.backgroundColor   = [UIColor clearColor];
 }
 #pragma mark - API
 
@@ -33,6 +42,10 @@
 
 - (void) configureAroundServiceCellWithItem:(id)item{
 
-    self.serviceNameLabel.text = [NSString stringWithFormat:@"%@",item];
+    NSString * title            = [item objectForKey:kTitleKey];
+    NSString * iconName         = [item objectForKey:kIconImageKey];
+    UIImage * iconImage         = [UIImage imageNamed:iconName];
+    self.iconImageView.image    = iconImage;
+    self.serviceNameLabel.text  = [NSString stringWithFormat:@"%@",title];
 }
 @end

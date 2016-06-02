@@ -43,24 +43,42 @@ static NSString * const showSearchResultIdentifier = @"showSearchResultIdentifie
 {
     self = [super initWithCoder:coder];
     if (self) {
-        _aroundServiceItems = @[@"KTV",
-                                @"美食",
-                                @"公园",
-                                @"图书馆",
-                                @"加油站",
-                                @"ATM",
-                                @"超市",
-                                @"医院",
-                                @"酒店",
-                                @"快捷酒店",
-                                @"银行",
-                                @"停车场",
-                                @"药店",
-                                @"公交站",
-                                @"健身房",
-                                @"",
-                                @"",
-                                @""];
+        _aroundServiceItems = @[@{kIconImageKey:@"Treble.png",
+                                  kTitleKey:@"KTV"},
+                                @{kIconImageKey:@"bento.png",
+                                  kTitleKey:@"美食"},
+                                @{kIconImageKey:@"audience.png",
+                                  kTitleKey:@"电影院"},
+                                @{kIconImageKey:@"hamburger",
+                                  kTitleKey:@"快餐店"},
+                                @{kIconImageKey:@"coffee_to_go.png",
+                                  kTitleKey:@"咖啡馆"},
+                                @{kIconImageKey:@"Classroom.png",
+                                  kTitleKey:@"学校"},
+                                @{kIconImageKey:@"Book.png",
+                                  kTitleKey:@"图书馆"},
+                                @{kIconImageKey:@"GasStation.png",
+                                  kTitleKey:@"加油站"},
+                                @{kIconImageKey:@"insertCard.png",
+                                  kTitleKey:@"ATM"},
+                                @{kIconImageKey:@"Shopping.png",
+                                  kTitleKey:@"超市"},
+                                @{kIconImageKey:@"Hospital.png",
+                                  kTitleKey:@"医院"},
+                                @{kIconImageKey:@"Hotel.png",
+                                  kTitleKey:@"快捷酒店"},
+                                @{kIconImageKey:@"Bank.png",
+                                  kTitleKey:@"银行"},
+                                @{kIconImageKey:@"parking.png",
+                                  kTitleKey:@"停车场"},
+                                @{kIconImageKey:@"pill.png",
+                                  kTitleKey:@"药店"},
+                                @{kIconImageKey:@"Bus.png",
+                                  kTitleKey:@"公交站"},
+                                @{kIconImageKey:@"dumbbell.png",
+                                  kTitleKey:@"健身房"},
+                                @{kIconImageKey:@"city_bench.png",
+                                  kTitleKey:@"公园"}];
     }
     return self;
 }
@@ -215,7 +233,7 @@ static NSString * const showSearchResultIdentifier = @"showSearchResultIdentifie
     // 后续版本做地图展示以及LBS搜索
     LOG_DEBUG(@"选择站点");
     
-    self.keyWord = self.aroundServiceItems[indexPath.item];
+    self.keyWord = [self.aroundServiceItems[indexPath.item] objectForKey:kTitleKey];
     
     [self searchWithKeyWord:self.keyWord];
 }
@@ -234,19 +252,6 @@ static NSString * const showSearchResultIdentifier = @"showSearchResultIdentifie
     return CGSizeZero;
 }
 
-//- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
-//    
-//    if ([collectionViewLayout isKindOfClass:[CSStickyHeaderFlowLayout class]]) {
-//        
-//        CSStickyHeaderFlowLayout * customLayout = (CSStickyHeaderFlowLayout *)collectionViewLayout;
-//        
-//        return  [self resetMinimumLineSpacingWithLayout:customLayout
-//                                              atSection:section];
-//    }
-//    
-//    return 0.0f;
-//}
-
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -260,8 +265,6 @@ static NSString * const showSearchResultIdentifier = @"showSearchResultIdentifie
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 
     AroundServiceCell * cell = (AroundServiceCell *)[collectionView dequeueReusableCellWithReuseIdentifier:[AroundServiceCell cellIdentifier] forIndexPath:indexPath];
-    
-    cell.contentView.backgroundColor = [UIColor whiteColor];
     
     [cell configureAroundServiceCellWithItem:self.aroundServiceItems[indexPath.row]];
     
