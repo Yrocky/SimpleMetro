@@ -12,4 +12,7 @@
 @interface BaseViewController : UIViewController
 
 - (void) setDisplayTitle:(NSString *)title;
+
+// 仅有一段提示文字以及一个`确定`按钮
+- (void) showAlertControllerWithInfo:(NSString *)info;
 @end

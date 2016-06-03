@@ -133,19 +133,24 @@ static NSString * const showSearchResultIdentifier = @"showSearchResultIdentifie
         else{
         
             NSString * message = [NSString stringWithFormat:@"在您附近没有发现与%@有关的地点。",self.keyWord];
-            PMAlertController * alertControler = [[PMAlertController alloc] initWithTitle:nil description:message image:nil style:PMAlertControllerStyleAlert];
-            alertControler.gravityDismissAnimation = NO;
-            alertControler.addMotionEffect = YES;
             
-            PMAlertAction * sureAction = [[PMAlertAction alloc] initWithTitle:@"确定" style:PMAlertActionStyleDefault action:nil];
-            [alertControler addAction:sureAction];
-            
-            [self presentViewController:alertControler animated:YES completion:nil];
+            [self showAlertControllerWithInfo:message];
             
             LOG_DEBUG(@"灭有在规定范围内搜索到您要的");
         }
         
     } handleSearchError:^(NSError *error) {
+        
+        NSString * errorInfo ;
+        
+        if (error.code == ErrorCodeForSearchFaild) {
+            
+            errorInfo = [NSString stringWithFormat:@"%@。",error.localizedDescription];
+        }else{
+            errorInfo = [NSString stringWithFormat:@"%@。请稍后重试，并检查是否开启定位以及是否开启网络。",error.localizedDescription];
+        }
+        
+        [self showAlertControllerWithInfo:errorInfo];
         
         LOG_DEBUG(@"LBS info search error:%@",error.localizedDescription);
     }];

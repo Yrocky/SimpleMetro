@@ -12,6 +12,8 @@
 #import "StoryBoardIdHeader.h"
 #import "AFNetworkReachabilityManager.h"
 
+#import "ShareManager.h"
+
 /*
  
  ## Note:
@@ -70,6 +72,8 @@
     [self setupNavigationBar];
     
     [self setupSideMenuView];
+    
+    [ShareManager linkShareSDK];
     
     return YES;
 }

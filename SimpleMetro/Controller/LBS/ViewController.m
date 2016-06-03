@@ -194,19 +194,7 @@
         [self performSegueWithIdentifier:StationInfoSegueIdentifier sender:notificationInfo];
     }else{
     
-#warning 灭有找打合适的图片
-        UIImage * alertImage = [UIImage imageNamed:@""];
-        
-        PMAlertController * alertControler = [[PMAlertController alloc] initWithTitle:@"" description:@"目前郑州仅开通有轨道交通一号线，其余线路正在建设中，我们与您一样期待新地铁线路的开通，具体信息敬请关注本软件后续版本的更新。" image:nil style:PMAlertControllerStyleAlert];
-        alertControler.gravityDismissAnimation = NO;
-        alertControler.addMotionEffect = YES;
-        
-        PMAlertAction * sureAction = [[PMAlertAction alloc] initWithTitle:@"确定" style:PMAlertActionStyleDefault action:nil];
-        [alertControler addAction:sureAction];
-        
-        [self presentViewController:alertControler animated:YES completion:^{
-            
-        }];
+        [self showAlertControllerWithInfo:@"目前郑州仅开通有轨道交通一号线，其余线路正在建设中，我们与您一样期待新地铁线路的开通，具体信息敬请关注本软件后续版本的更新。"];
     }
 }
 

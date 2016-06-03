@@ -36,6 +36,20 @@
     self.navigationItem.title = [NSString stringWithFormat:@"%@",title];
 }
 
+- (void) showAlertControllerWithInfo:(NSString *)info{
+    
+    PMAlertController * alertControler = [[PMAlertController alloc] initWithTitle:@"" description:info image:nil style:PMAlertControllerStyleAlert];
+    alertControler.gravityDismissAnimation = NO;
+    alertControler.addMotionEffect = YES;
+    
+    PMAlertAction * sureAction = [[PMAlertAction alloc] initWithTitle:@"确定" style:PMAlertActionStyleDefault action:nil];
+    [alertControler addAction:sureAction];
+    
+    [self presentViewController:alertControler animated:YES completion:^{
+        
+    }];
+}
+
 #pragma mark - Action Handle
 
 - (void) leftBarButtonHandle:(UIBarButtonItem *)sende{

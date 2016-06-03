@@ -10,6 +10,8 @@
 #import <MessageUI/MessageUI.h>
 #import "StoreKit/SKStoreProductViewController.h"
 
+#import "ShareManager.h"
+
 @interface AboutMeViewController ()<MFMailComposeViewControllerDelegate,SKStoreProductViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *aboutMeIconImageView;
@@ -20,8 +22,11 @@
 @property (weak, nonatomic) IBOutlet UIView *centerLineView;
 @property (weak, nonatomic) IBOutlet UIView *bottomLineView;
 
+@property (weak, nonatomic) IBOutlet UIView *lastLineView;
+
 @property (weak, nonatomic) IBOutlet UIButton *feedbackButton;
 @property (weak, nonatomic) IBOutlet UIButton *emailButton;
+@property (weak, nonatomic) IBOutlet UIButton *shareButton;
 
 @property (weak, nonatomic) IBOutlet UILabel *aboutMeCopyrightLabel;
 
@@ -33,6 +38,8 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor customHighGrayColor];
+    
+    self.aboutMeCopyrightLabel.hidden = YES;
     
     self.aboutMeDescLabel.text = @"      郑州轻地铁是为乘坐郑州轨道交通的市民提供相关地铁时刻以及相关站点附近的服务设施的一款app，拥有简洁的操作以及功能齐全的地铁信息查询，可以根据用户的需求提供智能的LBS服务。";
     //
@@ -47,7 +54,9 @@
     self.topLineView.backgroundColor        = lineColor;
     self.centerLineView.backgroundColor     = lineColor;
     self.bottomLineView.backgroundColor     = lineColor;
+    self.lastLineView.backgroundColor       = lineColor;
     
+    //
     FAKFontAwesome *thumbsOUpIcon = [FAKFontAwesome thumbsOUpIconWithSize:23];
     [thumbsOUpIcon addAttribute:NSForegroundColorAttributeName value:[UIColor customBlurColor]];
     UIImage * senderFeedbackImage = [thumbsOUpIcon imageWithSize:CGSizeMake(30, 30)];
@@ -55,12 +64,21 @@
     [self.feedbackButton setTitleColor:[UIColor customHighBlueColor] forState:UIControlStateNormal];
     [self.feedbackButton setImage:senderFeedbackImage forState:UIControlStateNormal];
     
+    //
     FAKFontAwesome *envelopeOIcon = [FAKFontAwesome envelopeOIconWithSize:20];
     [envelopeOIcon addAttribute:NSForegroundColorAttributeName value:[UIColor customBlurColor]];
     UIImage * sendEmailButtonImage = [envelopeOIcon imageWithSize:CGSizeMake(30, 30)];
     [self.emailButton setTitle:@"  发邮件交流" forState:UIControlStateNormal];
     [self.emailButton setTitleColor:[UIColor customHighBlueColor] forState:UIControlStateNormal];
     [self.emailButton setImage:sendEmailButtonImage forState:UIControlStateNormal];
+    
+    //
+    FAKFontAwesome *shareIcon = [FAKFontAwesome shareAltIconWithSize:20];
+    [shareIcon addAttribute:NSForegroundColorAttributeName value:[UIColor customBlurColor]];
+    UIImage * shareButtonImage = [shareIcon imageWithSize:CGSizeMake(30, 30)];
+    [self.shareButton setTitle:@"  分享给好友" forState:UIControlStateNormal];
+    [self.shareButton setTitleColor:[UIColor customHighBlueColor] forState:UIControlStateNormal];
+    [self.shareButton setImage:shareButtonImage forState:UIControlStateNormal];
     
 }
 
@@ -166,6 +184,27 @@
 
 - (IBAction)emailButtonDidPressed:(UIButton *)sender {
     [self sendEmail];
+}
+
+- (IBAction)shareButtonDidPressed:(UIButton *)sender {
+    
+    LOG_DEBUG(@"分享app");
+    [ShareManager simplyShareParamsWithImage:[UIImage imageNamed:@"zhifubao.jpg"]
+                                     content:@"斯蒂芬斯蒂芬死垃圾不多久了大方公开。豆瓣塑料袋方式的；发"
+                                   urlString:nil
+                                       begin:^(SSDKPlatformType platformType){
+                                           
+                                           
+                                       }
+                                      sucess:^(SSDKPlatformType platformType){
+                                          
+                                          
+                                      } failed:^(SSDKPlatformType platformType,NSError *error) {
+                                          
+                                          
+                                      } cancel:^(SSDKPlatformType platformType){
+                                          
+                                      }];
 }
 
 @end
