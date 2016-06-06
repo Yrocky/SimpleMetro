@@ -127,11 +127,45 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="P0D-pN-OH7" id="4Bc-01-TXd"/>
+                        <segue destination="dDd-bA-wUp" kind="show" identifier="showResultInMapIdentifier" id="SGR-ON-Qlp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5tk-Ho-teM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1824" y="1203"/>
+            <point key="canvasLocation" x="1851" y="1203"/>
+        </scene>
+        <!--Show Result In Map View Controller-->
+        <scene sceneID="iyr-gw-Hq0">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="dDd-bA-wUp" customClass="ShowResultInMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="02J-BS-vNr"/>
+                        <viewControllerLayoutGuide type="bottom" id="nuP-Rt-eEm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ord-nq-DU1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1n7-Fh-cPa">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nuP-Rt-eEm" firstAttribute="top" secondItem="1n7-Fh-cPa" secondAttribute="bottom" id="QnM-Xq-f4d"/>
+                            <constraint firstAttribute="trailing" secondItem="1n7-Fh-cPa" secondAttribute="trailing" id="dSU-CR-tMZ"/>
+                            <constraint firstItem="1n7-Fh-cPa" firstAttribute="leading" secondItem="Ord-nq-DU1" secondAttribute="leading" id="mJ5-oc-DVu"/>
+                            <constraint firstItem="1n7-Fh-cPa" firstAttribute="top" secondItem="02J-BS-vNr" secondAttribute="bottom" id="uYq-WZ-te3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="0P2-JA-Tu3"/>
+                    <connections>
+                        <outlet property="mapView" destination="1n7-Fh-cPa" id="R2W-ls-KHn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yp2-cX-Ztd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2642" y="1203"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="apo-o3-bzf">

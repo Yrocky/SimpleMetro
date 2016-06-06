@@ -79,7 +79,7 @@ import UIKit
             alertActionStackView.axis = .Horizontal
         }
         
-        alertAction.addTarget(self, action: #selector(PMAlertController.dismissAlertController(_:)), forControlEvents: .TouchUpInside)
+        alertAction.addTarget(self, action: "dismissAlertController:", forControlEvents: .TouchUpInside)
         
     }
     

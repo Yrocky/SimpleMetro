@@ -88,7 +88,7 @@
                                     <constraint firstAttribute="height" constant="21" id="qQM-uQ-Ae4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="      郑州轻地铁是为以郑州轨道交通为出行工具的人群提供的一款操作简介功能齐全的地铁信息查询app，并且根据用户的需求提供智能的LBS服务。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jei-cH-b62">
@@ -97,7 +97,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="2" id="bIz-d9-y4X"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YAH-Le-c1R">
@@ -149,7 +149,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="2" id="c1s-1A-tWd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EoB-4V-lGt">
@@ -418,11 +418,11 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="4Ym-3j-8Yv"/>
-                                        <exclude reference="CJ8-5R-YaA"/>
                                         <exclude reference="ccf-e7-bN9"/>
                                         <exclude reference="L6M-b6-kDT"/>
                                         <exclude reference="PF0-si-m1c"/>
+                                        <exclude reference="4Ym-3j-8Yv"/>
+                                        <exclude reference="CJ8-5R-YaA"/>
                                         <exclude reference="EtV-Rr-IUc"/>
                                         <exclude reference="cR2-nx-2DP"/>
                                     </mask>
@@ -437,7 +437,7 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="121" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="tBh-6U-zQh">
                                 <rect key="frame" x="0.0" y="80" width="600" height="520"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="delegate" destination="LAs-cA-9Z3" id="b9T-TT-0Vi"/>
                                 </connections>

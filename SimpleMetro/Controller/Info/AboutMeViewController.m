@@ -190,18 +190,17 @@
     
     LOG_DEBUG(@"分享app");
     [ShareManager simplyShareParamsWithImage:[UIImage imageNamed:@"zhifubao.jpg"]
-                                     content:@"斯蒂芬斯蒂芬死垃圾不多久了大方公开。豆瓣塑料袋方式的；发"
+                                     content:@"这个软件很好用的，分享给你，扫一下这个二维码就可以下载了。😜"
                                    urlString:nil
                                        begin:^(SSDKPlatformType platformType){
-                                           
                                            
                                        }
                                       sucess:^(SSDKPlatformType platformType){
                                           
-                                          
+                                          [self showAlertControllerWithInfo:@"分享成功"];
                                       } failed:^(SSDKPlatformType platformType,NSError *error) {
                                           
-                                          
+                                          [self showAlertControllerWithInfo:@"分享失败，轻稍后重试"];
                                       } cancel:^(SSDKPlatformType platformType){
                                           
                                       }];

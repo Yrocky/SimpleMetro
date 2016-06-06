@@ -31,7 +31,7 @@ import UIKit
         self.init()
         
         self.action = action
-        self.addTarget(self, action: #selector(PMAlertAction.tapped(_:)), forControlEvents: .TouchUpInside)
+        self.addTarget(self, action: "tapped:", forControlEvents: .TouchUpInside)
         
         self.setTitle(title, forState: UIControlState.Normal)
         self.titleLabel?.font = UIFont(name: "Avenir-Heavy", size: 17)

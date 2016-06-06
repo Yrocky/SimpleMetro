@@ -8,7 +8,9 @@
 
 #import "AroundSearchResultViewController.h"
 #import "AroundSearchResultCell.h"
+#import "ShowResultInMapViewController.h"
 
+static NSString * const showResultInMapIdentifier = @"showResultInMapIdentifier";
 
 @interface AroundSearchResultViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -44,7 +46,10 @@
 
 - (void) showAllResultAtMapView{
  
+    NSDictionary * sender = @{@"title":@"地图展示",
+                              @"result":self.result};
     LOG_DEBUG(@"在地图中展示所有的搜索结果");
+    [self performSegueWithIdentifier:showResultInMapIdentifier sender:sender];
     
     for (BMKPoiInfo * poi in self.result) {
         NSLog(@"poi:%@'s location:{%f,%f}",poi.name,poi.pt.latitude,poi.pt.longitude);
@@ -59,7 +64,6 @@
     
     self.result             = data;
     
-//    [self setDisplayTitle:title];
     self.title = title;
     
     [self.tableView reloadData];
@@ -86,19 +90,27 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+    BMKPoiInfo * poi = self.result[indexPath.row];
     
-    LOG_DEBUG(@"%@",self.result[indexPath.row]);
-    
+    NSDictionary * sender = @{@"title":poi.name,
+                              @"result":@[poi]};
+    [self performSegueWithIdentifier:showResultInMapIdentifier sender:sender];
+
     LOG_DEBUG(@"around search list did slected");
 }
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+  
+    if([segue.destinationViewController isKindOfClass:[ShowResultInMapViewController class]]){
+    
+        ShowResultInMapViewController * distinationController = (ShowResultInMapViewController *)segue.destinationViewController;
+        distinationController.showInMapPints = sender;
+    }
 }
-*/
+
 
 @end

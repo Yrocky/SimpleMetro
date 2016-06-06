@@ -58,10 +58,9 @@ static NSString * const leftMenuCellIdentifier = @"leftMenuCellIdentifier";
                                kLeftMenuTitleKey:@"便捷乘车"},
                              @{kLeftMenuIconKey:aroundServerIcons,
                                kLeftMenuTitleKey:@"周边服务"},
-                             @{kLeftMenuIconKey:adIcons,
-                               kLeftMenuTitleKey:@"地铁公告"}],
-//                           @[@{kLeftMenuIconKey:adIcons,
-//                               kLeftMenuTitleKey:@"地铁公告"}],
+//                             @{kLeftMenuIconKey:adIcons,
+//                               kLeftMenuTitleKey:@"地铁公告"}
+                             ],
                            @[@{kLeftMenuIconKey:[NSNull new],
                                kLeftMenuTitleKey:@"意见反馈"},
                              @{kLeftMenuIconKey:[NSNull new],
