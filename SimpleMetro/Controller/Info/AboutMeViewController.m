@@ -41,7 +41,9 @@
     
     self.aboutMeCopyrightLabel.hidden = YES;
     
-    self.aboutMeDescLabel.text = @"      郑州轻地铁是为乘坐郑州轨道交通的市民提供相关地铁时刻以及相关站点附近的服务设施的一款app，拥有简洁的操作以及功能齐全的地铁信息查询，可以根据用户的需求提供智能的LBS服务。";
+//    self.aboutMeIconImageView.image     = [UIImage imageNamed:@"aboutMe.png"];
+    self.aboutMeVersionLabel.text       = [NSString stringWithFormat:@"郑州轻地铁V%@.%@",DEF_Version,DEF_BuildVersion];
+    self.aboutMeDescLabel.text          = @"      郑州轻地铁是为乘坐郑州轨道交通的市民提供相关地铁时刻以及相关站点附近的服务设施的一款app，拥有简洁的操作以及功能齐全的地铁信息查询，可以根据用户的需求提供智能的LBS服务。";
     //
     self.aboutMeIconImageView.layer.cornerRadius = 5.0f;
     self.aboutMeIconImageView.layer.masksToBounds = YES;
@@ -170,13 +172,14 @@
     feedback.addMotionEffect = YES;
     feedback.gravityDismissAnimation = NO;
     
+//    由于没有appID，先不加
     PMAlertAction * haopingAction = [[PMAlertAction alloc] initWithTitle:@"给好评" style:PMAlertActionStyleDefault action:^{
         [self haoping];
     }];
     
     PMAlertAction * jujueAction = [[PMAlertAction alloc] initWithTitle:@"我拒绝" style:PMAlertActionStyleCancel action:nil];
     
-    [feedback addAction:haopingAction];
+//    [feedback addAction:haopingAction];
     [feedback addAction:jujueAction];
     
     [self presentViewController:feedback animated:YES completion:nil];
@@ -189,8 +192,8 @@
 - (IBAction)shareButtonDidPressed:(UIButton *)sender {
     
     LOG_DEBUG(@"分享app");
-    [ShareManager simplyShareParamsWithImage:[UIImage imageNamed:@"zhifubao.jpg"]
-                                     content:@"这个软件很好用的，分享给你，扫一下这个二维码就可以下载了。😜"
+    [ShareManager simplyShareParamsWithImage:[UIImage imageNamed:@"aboutMe.png"]
+                                     content:@"这个地铁查询软件很好用，分享给你，记得在App Store里搜索“郑州轻地铁”。"
                                    urlString:nil
                                        begin:^(SSDKPlatformType platformType){
                                            

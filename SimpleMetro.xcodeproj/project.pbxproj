@@ -18,6 +18,7 @@
 		D70C3EF31CF98A2300B7BAB5 /* BaiduSDKMetroStationAroundBusLineSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = D70C3EF01CF98A2300B7BAB5 /* BaiduSDKMetroStationAroundBusLineSearch.m */; settings = {COMPILER_FLAGS = "-ObjC"; }; };
 		D723E8061D05639D0016E7B2 /* ShowResultInMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D723E8051D05639D0016E7B2 /* ShowResultInMapViewController.m */; };
 		D723E8421D05CF3A0016E7B2 /* ResultAnnoation.m in Sources */ = {isa = PBXBuildFile; fileRef = D723E8411D05CF3A0016E7B2 /* ResultAnnoation.m */; };
+		D723E8841D071EEB0016E7B2 /* aboutMe.png in Resources */ = {isa = PBXBuildFile; fileRef = D723E8831D071EEB0016E7B2 /* aboutMe.png */; };
 		D77DCA3E1CF6933C002249CC /* BlurActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = D77DCA3D1CF6933C002249CC /* BlurActionSheetView.m */; };
 		D77DCA421CF6E0AD002249CC /* HLLPullToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = D77DCA411CF6E0AD002249CC /* HLLPullToRefreshView.m */; };
 		D77DCA511CF73E6D002249CC /* MetroLineStationInfoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D77DCA501CF73E6D002249CC /* MetroLineStationInfoHelper.m */; };
@@ -202,6 +203,7 @@
 		D723E8051D05639D0016E7B2 /* ShowResultInMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowResultInMapViewController.m; sourceTree = "<group>"; };
 		D723E8401D05CF3A0016E7B2 /* ResultAnnoation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultAnnoation.h; sourceTree = "<group>"; };
 		D723E8411D05CF3A0016E7B2 /* ResultAnnoation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultAnnoation.m; sourceTree = "<group>"; };
+		D723E8831D071EEB0016E7B2 /* aboutMe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aboutMe.png; sourceTree = "<group>"; };
 		D77DCA3C1CF6933C002249CC /* BlurActionSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlurActionSheetView.h; sourceTree = "<group>"; };
 		D77DCA3D1CF6933C002249CC /* BlurActionSheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlurActionSheetView.m; sourceTree = "<group>"; };
 		D77DCA401CF6E0AD002249CC /* HLLPullToRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLPullToRefreshView.h; sourceTree = "<group>"; };
@@ -657,6 +659,7 @@
 		D78C6A851CFAFE8900CAF770 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				D723E8831D071EEB0016E7B2 /* aboutMe.png */,
 				D78C6A861CFAFE8900CAF770 /* zhifubao.jpg */,
 			);
 			path = Image;
@@ -1365,6 +1368,7 @@
 				D7D856351CF4342C0028B92D /* foundation-icons.ttf in Resources */,
 				D7D8567B1CF56E6B0028B92D /* LeftMenuCell.xib in Resources */,
 				D7B2C0531D01F3450082C069 /* ShareSDKUI.bundle in Resources */,
+				D723E8841D071EEB0016E7B2 /* aboutMe.png in Resources */,
 				D7D855891CF34BFF0028B92D /* Main.storyboard in Resources */,
 				D7D856391CF4342C0028B92D /* zocial-regular-webfont.ttf in Resources */,
 				D7D8565E1CF545B60028B92D /* AroundService.storyboard in Resources */,

@@ -10,11 +10,13 @@
 #import "TakeMetroSelectView.h"
 #import "TakeMetroResultView.h"
 
+@interface TakeMetroViewController ()<UITableViewDataSource,UITableViewDelegate>
 
-@interface TakeMetroViewController ()
+@property (weak, nonatomic) IBOutlet TakeMetroResultView *resultHeaderView;
 
 @property (weak, nonatomic) IBOutlet TakeMetroSelectView *selectView;
-@property (weak, nonatomic) IBOutlet TakeMetroResultView *resultView;
+@property (weak, nonatomic) IBOutlet UITableView *resultTableView;
+
 
 @end
 
@@ -36,14 +38,25 @@
     [super viewDidLoad];
 
     [self setDisplayTitle:@"便捷乘车"];
+    
+    self.resultTableView.layer.masksToBounds = YES;
+    self.resultTableView.layer.cornerRadius = 5.0f;
+    [self.resultTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
 
 }
+#pragma mark - UITableViewDataSource,UITableViewDelegate
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+ 
+    return 10;
 }
 
+- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    cell.textLabel.text = @"cell---";
+    return cell;
+}
 /*
 #pragma mark - Navigation
 
