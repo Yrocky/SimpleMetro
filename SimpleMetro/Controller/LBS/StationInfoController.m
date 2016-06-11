@@ -42,7 +42,7 @@
 
 -(void)dealloc{
 
-    LOG_DEBUG(@"StationInfoController did dealloc...");
+//    LOG_DEBUG(@"StationInfoController did dealloc...");
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
@@ -50,7 +50,7 @@
     
     [super viewDidLoad];
     
-    LOG_DEBUG(@"stationInfo:%@",_stationInfo);
+//    LOG_DEBUG(@"stationInfo:%@",_stationInfo);
     
     //
     NSIndexPath * selectedIndexPath = [self.stationInfo objectForKey:@"SelectedStationIndexKey"];
@@ -97,14 +97,14 @@
     // 把通知在这里发送时因为在didload的时候通知的接收方还没有初始化完成，发了也接收不到，但在这个方法内接收方已经初始化完毕，这么做会导致一些后续开发麻烦
     [[NSNotificationCenter defaultCenter] postNotificationName:HLL_ShowDetailMetroStationInfonNotification object:self.stationInfo];
     
-    LOG_DEBUG(@"StationInfoController post notification:%@",HLL_ShowDetailMetroStationInfonNotification);
+//    LOG_DEBUG(@"StationInfoController post notification:%@",HLL_ShowDetailMetroStationInfonNotification);
 }
 
 - (void)viewDidDisappear:(BOOL)animated{
 
     [super viewDidDisappear:animated];
     
-    LOG_DEBUG(@"StationInfoController did disappear...");
+//    LOG_DEBUG(@"StationInfoController did disappear...");
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
@@ -144,7 +144,7 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
 {
     // 后续版本做地图展示以及LBS搜索
-    LOG_DEBUG(@"选择站点");
+//    LOG_DEBUG(@"选择站点");
 
 //    UINavigationController * aroundServiceNavigationController = (UINavigationController *)[StoryBoardUtilities viewControllerForStoryboardName:@"AroundService" storyBoardID:AroundServiceNavigationControllerStoryBoardID];
 //    
@@ -153,7 +153,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    LOG_DEBUG(@"不选中某点");
+//    LOG_DEBUG(@"不选中某点");
     
 }
 

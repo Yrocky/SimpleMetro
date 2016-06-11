@@ -110,7 +110,6 @@ static CGFloat GuideViewAnimationDuration       = 0.25f;
 
 - (void) spotlightViewControllerDidTap:(HLLSpotlightViewController *)spotlightViewController{
     
-    LOG_DEBUG(@"tap");
     [self next:YES];
 }
 

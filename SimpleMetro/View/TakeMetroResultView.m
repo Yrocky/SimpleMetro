@@ -10,7 +10,6 @@
 #import "BaiduSDKTakeMetroSearch.h"
 #import "TakeMetroCalculateHelper.h"
 
-
 @interface TakeMetroResultView ()
 
 @property (nonatomic ,strong) IBOutlet UILabel * distnceTitleLabel;

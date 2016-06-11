@@ -26,7 +26,7 @@
     
     NSArray * result = [self.showInMapPints objectForKey:@"result"];
     
-    LOG_DEBUG(@"showInMap:%@",[self.showInMapPints objectForKey:@"result"]);
+//    LOG_DEBUG(@"showInMap:%@",[self.showInMapPints objectForKey:@"result"]);
     
     NSString * title = [self.showInMapPints objectForKey:@"title"];
     self.title = [NSString stringWithFormat:@"%@",title];

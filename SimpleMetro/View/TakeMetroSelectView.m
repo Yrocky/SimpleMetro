@@ -130,7 +130,7 @@
     
     for (NSInteger index = tempArray.count - 1; index >= 0; index --) {
         
-        LOG_DEBUG(@"%ld",(long)index);
+//        LOG_DEBUG(@"%ld",(long)index);
         [self.busStations addObject:tempArray[index]];
     }
 }

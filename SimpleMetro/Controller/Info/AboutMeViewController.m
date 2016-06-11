@@ -92,7 +92,7 @@
     SKStoreProductViewController * storeController = [[SKStoreProductViewController alloc] init];
     storeController.delegate = self;
     
-    NSDictionary * parameters = @{SKStoreProductParameterITunesItemIdentifier : @"417200582"};
+    NSDictionary * parameters = @{SKStoreProductParameterITunesItemIdentifier : @"1123341280"};
     
     [storeController loadProductWithParameters:parameters completionBlock:^(BOOL result, NSError *error) {
          
@@ -160,7 +160,7 @@
 - (void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController{
 
     [viewController dismissViewControllerAnimated:YES completion:nil];
-    LOG_DEBUG(@"完成评分");
+//    LOG_DEBUG(@"完成评分");
 }
 
 #pragma mark - Action
@@ -175,14 +175,13 @@
     feedback.addMotionEffect = YES;
     feedback.gravityDismissAnimation = NO;
     
-//    由于没有appID，先不加
     PMAlertAction * haopingAction = [[PMAlertAction alloc] initWithTitle:@"给好评" style:PMAlertActionStyleDefault action:^{
         [self haoping];
     }];
     
     PMAlertAction * jujueAction = [[PMAlertAction alloc] initWithTitle:@"我拒绝" style:PMAlertActionStyleCancel action:nil];
     
-//    [feedback addAction:haopingAction];
+    [feedback addAction:haopingAction];
     [feedback addAction:jujueAction];
     
     [self presentViewController:feedback animated:YES completion:nil];
@@ -194,7 +193,7 @@
 
 - (IBAction)shareButtonDidPressed:(UIButton *)sender {
     
-    LOG_DEBUG(@"分享app");
+//    LOG_DEBUG(@"分享app");
     [ShareManager simplyShareParamsWithImage:[UIImage imageNamed:@"aboutMe.png"]
                                      content:@"这个地铁查询软件很好用，分享给你，记得在App Store里搜索“郑州轻地铁”。"
                                    urlString:nil

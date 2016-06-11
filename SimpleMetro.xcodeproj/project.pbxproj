@@ -16,13 +16,13 @@
 		D70C3EEB1CF95BD000B7BAB5 /* MetroLineTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D70C3EEA1CF95BD000B7BAB5 /* MetroLineTitleView.xib */; };
 		D70C3EF21CF98A2300B7BAB5 /* BaiduSDKMetroLineSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = D70C3EEE1CF98A2300B7BAB5 /* BaiduSDKMetroLineSearch.m */; settings = {COMPILER_FLAGS = "-ObjC"; }; };
 		D70C3EF31CF98A2300B7BAB5 /* BaiduSDKMetroStationAroundBusLineSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = D70C3EF01CF98A2300B7BAB5 /* BaiduSDKMetroStationAroundBusLineSearch.m */; settings = {COMPILER_FLAGS = "-ObjC"; }; };
-		D723E8061D05639D0016E7B2 /* ShowResultInMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D723E8051D05639D0016E7B2 /* ShowResultInMapViewController.m */; };
+		D723E8061D05639D0016E7B2 /* ShowResultInMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D723E8051D05639D0016E7B2 /* ShowResultInMapViewController.m */; settings = {COMPILER_FLAGS = "-ObjC"; }; };
 		D723E8421D05CF3A0016E7B2 /* ResultAnnoation.m in Sources */ = {isa = PBXBuildFile; fileRef = D723E8411D05CF3A0016E7B2 /* ResultAnnoation.m */; };
 		D723E8841D071EEB0016E7B2 /* aboutMe.png in Resources */ = {isa = PBXBuildFile; fileRef = D723E8831D071EEB0016E7B2 /* aboutMe.png */; };
 		D723E88A1D0BE9660016E7B2 /* TakeMetroCalculateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D723E8891D0BE9660016E7B2 /* TakeMetroCalculateHelper.m */; };
-		D723E88D1D0BF2CF0016E7B2 /* StationInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = D723E88C1D0BF2CF0016E7B2 /* StationInputView.m */; };
+		D723E88D1D0BF2CF0016E7B2 /* StationInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = D723E88C1D0BF2CF0016E7B2 /* StationInputView.m */; settings = {COMPILER_FLAGS = "-ObjC"; }; };
 		D723E88F1D0BF44A0016E7B2 /* StationInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D723E88E1D0BF44A0016E7B2 /* StationInputView.xib */; };
-		D723E8931D0C351B0016E7B2 /* SpecialStationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D723E8911D0C351B0016E7B2 /* SpecialStationCell.m */; };
+		D723E8931D0C351B0016E7B2 /* SpecialStationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D723E8911D0C351B0016E7B2 /* SpecialStationCell.m */; settings = {COMPILER_FLAGS = "-ObjC"; }; };
 		D723E8941D0C351B0016E7B2 /* SpecialStationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D723E8921D0C351B0016E7B2 /* SpecialStationCell.xib */; };
 		D723E8981D0C4D390016E7B2 /* price@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D723E8971D0C4D390016E7B2 /* price@2x.png */; };
 		D77DCA3E1CF6933C002249CC /* BlurActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = D77DCA3D1CF6933C002249CC /* BlurActionSheetView.m */; };
@@ -112,7 +112,7 @@
 		D7B2C0671D01F3AC0082C069 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B2C0661D01F3AC0082C069 /* ImageIO.framework */; };
 		D7B2C0691D01F3B60082C069 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B2C0681D01F3B60082C069 /* AdSupport.framework */; };
 		D7B2C06B1D01F3C40082C069 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B2C06A1D01F3C40082C069 /* libsqlite3.tbd */; };
-		D7B2C06F1D01F5710082C069 /* ShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B2C06E1D01F5710082C069 /* ShareManager.m */; };
+		D7B2C06F1D01F5710082C069 /* ShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B2C06E1D01F5710082C069 /* ShareManager.m */; settings = {COMPILER_FLAGS = "-ObjC"; }; };
 		D7D855801CF34BFF0028B92D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D8557F1CF34BFF0028B92D /* main.m */; };
 		D7D855831CF34BFF0028B92D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D855821CF34BFF0028B92D /* AppDelegate.m */; settings = {COMPILER_FLAGS = "-ObjC"; }; };
 		D7D855891CF34BFF0028B92D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D855871CF34BFF0028B92D /* Main.storyboard */; };
@@ -149,7 +149,7 @@
 		D7D8565E1CF545B60028B92D /* AroundService.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D8565C1CF545B60028B92D /* AroundService.storyboard */; };
 		D7D856601CF546CA0028B92D /* MetroInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D8565F1CF546CA0028B92D /* MetroInfo.storyboard */; };
 		D7D856781CF56E6B0028B92D /* MetroLineInfoDataSource_Plist.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D856691CF56E6B0028B92D /* MetroLineInfoDataSource_Plist.m */; };
-		D7D856791CF56E6B0028B92D /* StationInfoDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D8566B1CF56E6B0028B92D /* StationInfoDataSource.m */; };
+		D7D856791CF56E6B0028B92D /* StationInfoDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D8566B1CF56E6B0028B92D /* StationInfoDataSource.m */; settings = {COMPILER_FLAGS = "-ObjC"; }; };
 		D7D8567A1CF56E6B0028B92D /* LeftMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D8566E1CF56E6B0028B92D /* LeftMenuCell.m */; };
 		D7D8567B1CF56E6B0028B92D /* LeftMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7D8566F1CF56E6B0028B92D /* LeftMenuCell.xib */; };
 		D7D8567C1CF56E6B0028B92D /* LeftMenuSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D856711CF56E6B0028B92D /* LeftMenuSectionHeaderView.m */; };
@@ -1338,6 +1338,7 @@
 				TargetAttributes = {
 					D7D8557A1CF34BFF0028B92D = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 4B6N4V9BAX;
 					};
 					D7D855931CF34BFF0028B92D = {
 						CreatedOnToolsVersion = 7.3;
@@ -1666,7 +1667,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ZhiXiang Xu (4B6N4V9BAX)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1700,7 +1701,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ZhiXiang Xu (4B6N4V9BAX)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (

@@ -98,7 +98,7 @@
     [self storeGetNetworkAndGetPermissionState:ret];
     
     if (!ret) {
-        LOG_DEBUG(@"manager start failed!");
+//        LOG_DEBUG(@"manager start failed!");
     }
 }
 
@@ -202,10 +202,10 @@
     [self storeGetNetworkAndGetPermissionState:!iError];
     
     if (0 == iError) {
-        LOG_DEBUG(@"联网成功");
+//        LOG_DEBUG(@"联网成功");
     }
     else{
-        LOG_DEBUG(@"onGetNetworkState %d",iError);
+//        LOG_DEBUG(@"onGetNetworkState %d",iError);
     }
 }
 
@@ -218,10 +218,10 @@
     [self storeGetNetworkAndGetPermissionState:!iError];
     
     if (0 == iError) {
-        LOG_DEBUG(@"授权成功");
+//        LOG_DEBUG(@"授权成功");
     }
     else {
-        LOG_DEBUG(@"onGetPermissionState %d",iError);
+//        LOG_DEBUG(@"onGetPermissionState %d",iError);
     }
 }
 

@@ -92,7 +92,7 @@
 
     [super viewDidAppear:animated];
     
-    LOG_DEBUG(@"Left menu Controller Did Appear...");
+//    LOG_DEBUG(@"Left menu Controller Did Appear...");
     
 }
 
@@ -113,7 +113,7 @@
 
 - (void) delayRunEvent:(CLLocation *)location{
     
-    LOG_DEBUG(@"loca:%@",location);
+//    LOG_DEBUG(@"loca:%@",location);
     
     self.requestWeatherData.location = location;
     
@@ -143,12 +143,12 @@
 - (void)mapManager:(MapManager *)manager didFailed:(NSError *)error{
 
     // 定位失败，不显示天气，显示一张地铁图片
-    LOG_DEBUG(@"Error:%@",error);
+//    LOG_DEBUG(@"Error:%@",error);
 }
 - (void)mapManagerServerClosed:(MapManager *)manager{
 
 //    显示请求代开定位
-    LOG_DEBUG(@"关闭定位服务");
+//    LOG_DEBUG(@"关闭定位服务");
 }
 
 #pragma mark - RequestWeatherDataDelegate
@@ -156,23 +156,23 @@
 - (void) weatherData:(CurrentLocationWeather *)locationWeather scuess:(BOOL)scuess{
     
     if (scuess) {
-        LOG_DEBUG(@"temp:%@",locationWeather.main.temp);
-        LOG_DEBUG(@"name:%@",locationWeather.name);
-        LOG_DEBUG(@"desc:%@",[locationWeather.weather[0] valueForKey:@"descriptionInfo"]);
+//        LOG_DEBUG(@"temp:%@",locationWeather.main.temp);
+//        LOG_DEBUG(@"name:%@",locationWeather.name);
+//        LOG_DEBUG(@"desc:%@",[locationWeather.weather[0] valueForKey:@"descriptionInfo"]);
         
         [self.leftMenuHeaderView configureWeatherViewWithWeatherData:locationWeather];
     }
     else{
     
         [self.leftMenuHeaderView showNoWeatherInfoBannerImageView];
-        LOG_DEBUG(@"Error");
+//        LOG_DEBUG(@"Error");
     }
 }
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    LOG_DEBUG(@"left menu select");
+//    LOG_DEBUG(@"left menu select");
     
     UIViewController * contentViewController = [self.dataSource viewControllerWithIndexPath:indexPath];
     if (contentViewController != nil) {

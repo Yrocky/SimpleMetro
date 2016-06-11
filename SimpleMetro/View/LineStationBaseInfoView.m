@@ -35,7 +35,7 @@
     self = [super initWithCoder:coder];
     if (self) {
         
-        LOG_DEBUG(@"LineStationBaseInfoView add notification:%@",HLL_SelectedMetroStationNotification);
+//        LOG_DEBUG(@"LineStationBaseInfoView add notification:%@",HLL_SelectedMetroStationNotification);
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(acceptSelectedMetroStationNotification:) name:HLL_SelectedMetroStationNotification object:nil];
     }
@@ -44,7 +44,7 @@
 
 - (void)dealloc{
 
-    LOG_DEBUG(@"LineStationBaseInfoView did dealloc...");
+//    LOG_DEBUG(@"LineStationBaseInfoView did dealloc...");
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
@@ -129,7 +129,7 @@
 
 - (void) acceptSelectedMetroStationNotification:(NSNotification *)notification{
     
-    LOG_DEBUG(@"LineStationBaseInfoView accept notification:%@",notification.name);
+//    LOG_DEBUG(@"LineStationBaseInfoView accept notification:%@",notification.name);
 
     NSDictionary * stationInfo = notification.object;
     

@@ -48,7 +48,7 @@ static NSString * const showResultInMapIdentifier = @"showResultInMapIdentifier"
  
     NSDictionary * sender = @{@"title":@"地图展示",
                               @"result":self.result};
-    LOG_DEBUG(@"在地图中展示所有的搜索结果");
+//    LOG_DEBUG(@"在地图中展示所有的搜索结果");
     [self performSegueWithIdentifier:showResultInMapIdentifier sender:sender];
     
     for (BMKPoiInfo * poi in self.result) {
@@ -97,7 +97,7 @@ static NSString * const showResultInMapIdentifier = @"showResultInMapIdentifier"
                               @"result":@[poi]};
     [self performSegueWithIdentifier:showResultInMapIdentifier sender:sender];
 
-    LOG_DEBUG(@"around search list did slected");
+//    LOG_DEBUG(@"around search list did slected");
 }
 
 #pragma mark - Navigation

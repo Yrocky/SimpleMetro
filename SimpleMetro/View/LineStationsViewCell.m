@@ -22,7 +22,7 @@
     self = [super initWithCoder:coder];
     if (self) {
         
-        LOG_DEBUG(@"LineStationsViewCell add nofitication");
+//        LOG_DEBUG(@"LineStationsViewCell add nofitication");
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(acceptShowDetailMetroStationInfonNotification:) name:HLL_ShowDetailMetroStationInfonNotification object:nil];
         
     }
@@ -31,7 +31,7 @@
 
 - (void)dealloc
 {
-    LOG_DEBUG(@"LineStationsViewCell did dealloc...");
+//    LOG_DEBUG(@"LineStationsViewCell did dealloc...");
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
@@ -66,7 +66,7 @@
 
 - (void) acceptShowDetailMetroStationInfonNotification:(NSNotification *)notification{
     
-    LOG_DEBUG(@"LineStationsViewCell did accept notification:%@",notification.name);
+//    LOG_DEBUG(@"LineStationsViewCell did accept notification:%@",notification.name);
     
     if (self.metroStationInfo && self.metroStationInfo.count > 0) {
         
@@ -85,7 +85,7 @@
                                           animated:YES
                                     scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
         
-        LOG_DEBUG(@"post notification name:<HLL_SelectedMetroStationNotification>");
+//        LOG_DEBUG(@"post notification name:<HLL_SelectedMetroStationNotification>");
         
         [[NSNotificationCenter defaultCenter] postNotificationName:HLL_SelectedMetroStationNotification object:self.metroStationInfo[selectedIndexPath.row]];
     }
@@ -119,7 +119,7 @@
                                atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
                                        animated:YES];
         
-        LOG_DEBUG(@"post notification name:<HLL_SelectedMetroStationNotification>");
+//        LOG_DEBUG(@"post notification name:<HLL_SelectedMetroStationNotification>");
         
         // fix bug ，由于发通知之后接受通知的有另一个CollectionView，他会reload，但是这个类是一resuseView的形式添加到另一个CollectionView上的，所以，他一刷新，这里就有肉眼可见的卡顿。使用一个延时队列暂时修改一下吧，因为如果快速切换，还会出现卡顿。
 

@@ -35,7 +35,7 @@
 
         _aroundBusStationInfo       = [NSMutableArray array];
         
-        LOG_DEBUG(@"StationInfoDataSource add notification:%@",HLL_SelectedMetroStationNotification);
+//        LOG_DEBUG(@"StationInfoDataSource add notification:%@",HLL_SelectedMetroStationNotification);
 
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(acceptSelectedMetroStationNotification:) name:HLL_SelectedMetroStationNotification object:nil];
         
@@ -53,7 +53,7 @@
 
 - (void)dealloc
 {
-    LOG_DEBUG(@"StationInfoDataSource did dealloc...");
+//    LOG_DEBUG(@"StationInfoDataSource did dealloc...");
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
@@ -62,7 +62,7 @@
 
 - (void) acceptSelectedMetroStationNotification:(NSNotification *)notification{
     
-    LOG_DEBUG(@"StationInfoDataSource accept notification:%@",notification.name);
+//    LOG_DEBUG(@"StationInfoDataSource accept notification:%@",notification.name);
 
     [self configureMetroStationEntranceInfoWithData:notification.object];
     
@@ -101,7 +101,7 @@
         
     } handleSearchError:^(NSError *error) {
        
-        LOG_DEBUG(@"erroe:%@",error.localizedDescription);
+//        LOG_DEBUG(@"erroe:%@",error.localizedDescription);
     }];
     
 }

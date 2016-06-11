@@ -43,7 +43,7 @@
     [manager stopUpdatingLocation];
     
     if (_delegate && [_delegate respondsToSelector:@selector(mapManager:didUpdateAndGetLastCLLocation:)]) {
-        LOG_DEBUG(@"updateLocation++++++++");
+//        LOG_DEBUG(@"updateLocation++++++++");
         CLLocation *location = [locations lastObject];
         [_delegate mapManager:self didUpdateAndGetLastCLLocation:location];
     }
@@ -51,11 +51,11 @@
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     
-    LOG_DEBUG(@"定位失败");
+//    LOG_DEBUG(@"定位失败");
     
     if ([CLLocationManager locationServicesEnabled] == NO) {
         
-        LOG_DEBUG(@"定位功能关闭");
+//        LOG_DEBUG(@"定位功能关闭");
         if (_delegate && [_delegate respondsToSelector:@selector(mapManagerServerClosed:)]) {
             
             [_delegate mapManagerServerClosed:self];
@@ -63,10 +63,10 @@
         
     } else {
         
-        LOG_DEBUG(@"定位功能失败");
+//        LOG_DEBUG(@"定位功能失败");
         if (_delegate && [_delegate respondsToSelector:@selector(mapManager:didFailed:)]) {
             
-            LOG_DEBUG(@"%@", error);
+//            LOG_DEBUG(@"%@", error);
             [_delegate mapManager:self didFailed:error];
         }
     }

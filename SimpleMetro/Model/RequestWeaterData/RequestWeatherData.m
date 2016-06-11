@@ -65,7 +65,7 @@
     NSDictionary * weatherData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
     
     CurrentLocationWeather * weather = [[CurrentLocationWeather alloc] initWithDictionary:weatherData];
-    LOG_DEBUG(@"weather:<%@>",weather);
+//    LOG_DEBUG(@"weather:<%@>",weather);
     if (weather.cod.intValue == 200) {
         
         if (self.delegate && [self.delegate respondsToSelector:@selector( weatherData: scuess:)]) {
@@ -84,7 +84,7 @@
         [self.delegate weatherData:nil scuess:NO];
     }
     
-    LOG_DEBUG(@"Error:%@",error.localizedDescription);
+//    LOG_DEBUG(@"Error:%@",error.localizedDescription);
 }
 @end
 

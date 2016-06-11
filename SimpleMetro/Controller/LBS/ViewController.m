@@ -129,7 +129,7 @@
     
     [actionSheetView showBlurActionSheetWithTitles:[MetroLineStationInfoHelper lineNameArray] withContainerView:self.navigationController.view handle:^(NSString * title, NSInteger index) {
         
-        LOG_DEBUG(@"BlurActionSheetView did selected index:%ld",(long)index);
+//        LOG_DEBUG(@"BlurActionSheetView did selected index:%ld",(long)index);
         
         self.fromTo = NO;
         
@@ -169,7 +169,7 @@
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     
-        LOG_DEBUG(@"end dragging---");
+//        LOG_DEBUG(@"end dragging---");
     if (self.pullToRefreshView.fullState) {
         
         [self showBottomActionSheet];
@@ -182,7 +182,7 @@
 
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    LOG_DEBUG(@"selected -station -line");
+//    LOG_DEBUG(@"selected -station -line");
     
     id stationInfo = [self.dataSource_plist elementForIndexPath:indexPath];
     

@@ -149,12 +149,9 @@ CGFloat const OffsetThreshold               = 80.0f;
 
 - (void)animationDidStart:(CAAnimation *)anim{
 
-    LOG_DEBUG(@"start");
 }
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
-
-    LOG_DEBUG(@"finish");
     
     if (self.completion) {
         self.completion(YES);

@@ -89,12 +89,6 @@
 
 - (IBAction)tapTitleViewSwapFirstToLastStation:(UITapGestureRecognizer *)sender {
     
-//    NSString * firstStationName     = self.firstStationLabel.text;
-//    NSString * lastStationName      = self.lastStationLabel.text;
-//    
-//    self.firstStationLabel.text     = lastStationName;
-//    self.lastStationLabel.text      = firstStationName;
-//    
     [self swapAnimation];
 }
 

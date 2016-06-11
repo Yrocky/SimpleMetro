@@ -136,7 +136,7 @@ static NSString * const showSearchResultIdentifier = @"showSearchResultIdentifie
             
             [self showAlertControllerWithInfo:message];
             
-            LOG_DEBUG(@"灭有在规定范围内搜索到您要的");
+//            LOG_DEBUG(@"灭有在规定范围内搜索到您要的");
         }
         
     } handleSearchError:^(NSError *error) {
@@ -152,7 +152,7 @@ static NSString * const showSearchResultIdentifier = @"showSearchResultIdentifie
         
         [self showAlertControllerWithInfo:errorInfo];
         
-        LOG_DEBUG(@"LBS info search error:%@",error.localizedDescription);
+//        LOG_DEBUG(@"LBS info search error:%@",error.localizedDescription);
     }];
     
 }
@@ -202,12 +202,12 @@ static NSString * const showSearchResultIdentifier = @"showSearchResultIdentifie
 // 定位失败
 - (void)mapManager:(MapManager *)manager didFailed:(NSError *)error{
 
-    LOG_DEBUG(@"Location Error:%@",error.localizedDescription);
+//    LOG_DEBUG(@"Location Error:%@",error.localizedDescription);
 }
 // 没有开启定位信息
 - (void)mapManagerServerClosed:(MapManager *)manager{
 
-    LOG_DEBUG(@"灭有开启定位信息");
+//    LOG_DEBUG(@"灭有开启定位信息");
 }
 
 #pragma mark - AroundServiceSearchViewDelegate
@@ -236,7 +236,7 @@ static NSString * const showSearchResultIdentifier = @"showSearchResultIdentifie
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
 {
     // 后续版本做地图展示以及LBS搜索
-    LOG_DEBUG(@"选择站点");
+//    LOG_DEBUG(@"选择站点");
     
     self.keyWord = [self.aroundServiceItems[indexPath.item] objectForKey:kTitleKey];
     
