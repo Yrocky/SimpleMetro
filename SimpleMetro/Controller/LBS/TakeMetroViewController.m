@@ -9,6 +9,7 @@
 #import "TakeMetroViewController.h"
 #import "TakeMetroSelectView.h"
 #import "TakeMetroResultView.h"
+#import "SpecialStationCell.h"
 
 @interface TakeMetroViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -22,49 +23,58 @@
 
 @implementation TakeMetroViewController
 
-//- (void)loadView{
-//
-////    if (self.view) {
-//    
-////    UIScrollView * scrollView = [[UIScrollView alloc] init];
-////    scrollView.backgroundColor = [UIColor redColor];
-//    self.view = [[UIScrollView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-//    
-////    }
-////    [super loadView];
-//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     [self setDisplayTitle:@"便捷乘车"];
     
-    self.resultTableView.layer.masksToBounds = YES;
-    self.resultTableView.layer.cornerRadius = 5.0f;
-    [self.resultTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    [self.resultTableView registerNib:[SpecialStationCell nib]
+               forCellReuseIdentifier:[SpecialStationCell cellIdentifier]];
+    self.resultTableView.tableFooterView = nil;
+    
+    self.resultTableView.hidden = YES;
 
+    self.selectView.block = ^(id data){
+    
+        [self.resultHeaderView configureResultHeaderViewWithData:data];
+        self.resultTableView.hidden = NO;
+        [self.resultTableView reloadData];
+    };
+
+    self.selectView.infoHandleBlock = ^(id data){
+    
+        UIImage * image = [UIImage imageNamed:@"price.png"];
+        PMAlertController * alertControler = [[PMAlertController alloc] initWithTitle:nil description:@"目前郑州地铁票价实行的是【递远递减】的原则，具体计费方式参考官方图解。" image:image style:PMAlertControllerStyleWalkthrough];
+        alertControler.gravityDismissAnimation = NO;
+        alertControler.addMotionEffect = YES;
+        
+        PMAlertAction * sureAction = [[PMAlertAction alloc] initWithTitle:@"确定" style:PMAlertActionStyleDefault action:nil];
+        [alertControler addAction:sureAction];
+        
+        [self presentViewController:alertControler animated:YES completion:nil];
+    };
 }
 #pragma mark - UITableViewDataSource,UITableViewDelegate
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
  
-    return 10;
+    if (self.selectView.resultStations.count) {
+        return self.selectView.resultStations.count;
+    }
+    return 0;
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    cell.textLabel.text = @"cell---";
+    SpecialStationCell * cell = [tableView dequeueReusableCellWithIdentifier:[SpecialStationCell cellIdentifier] forIndexPath:indexPath];
+    
+    if (self.selectView.resultStations.count) {
+        
+        [cell configureSpecialStationCellWithData:self.selectView.resultStations[indexPath.row] atIndexPath:indexPath sectionRows:[tableView numberOfRowsInSection:indexPath.section]];
+    }
+    
     return cell;
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

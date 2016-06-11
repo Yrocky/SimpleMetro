@@ -10,4 +10,5 @@
 
 @interface TakeMetroResultView : UIView
 
+- (void) configureResultHeaderViewWithData:(id)data;
 @end

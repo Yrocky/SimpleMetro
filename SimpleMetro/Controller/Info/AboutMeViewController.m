@@ -88,7 +88,7 @@
 
 - (void) haoping{
 
-    // 跳转到App Store
+    // 跳转到App Store,待到上架之后的版本才有这个id，先去掉
     SKStoreProductViewController * storeController = [[SKStoreProductViewController alloc] init];
     storeController.delegate = self;
     
@@ -115,10 +115,11 @@
     
     [emailController setSubject:@"郑州轻地铁"];
     
+    abort();// 设置自己的邮箱账号 --> FeedbackEmailAddress，然后把这段注释掉
+    
     NSArray *toRecipients = [NSArray arrayWithObjects:FeedbackEmailAddress,nil];
     [emailController setToRecipients:toRecipients];
-    
-//    NSAssert(NO, @"设置自己的反馈邮箱");
+
     
     NSString *emailBody = @"\n\n\n\n\n-----------------";
     [emailController setMessageBody:emailBody isHTML:NO];
@@ -164,6 +165,8 @@
 
 #pragma mark - Action
 - (IBAction)feedbackButtonDidPressed:(UIButton *)sender {
+    
+    abort();// 把这个图片改成自己的 --> zhifubao.jpg，然后把这段注释掉
     
     UIImage * qImage = [UIImage imageNamed:@"zhifubao.jpg"];
     NSString * description = @"郑州轻地铁是本人利用业余时间开发的一款日常生活辅助类软件，希望这款小App能为您减少乘坐地铁时遇到的麻烦，如果您觉得她给您的生活带来了便利，不妨扫一下二维码请我喝瓶可乐^_^";

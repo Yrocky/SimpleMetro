@@ -7,6 +7,9 @@
 //
 
 #import "TakeMetroResultView.h"
+#import "BaiduSDKTakeMetroSearch.h"
+#import "TakeMetroCalculateHelper.h"
+
 
 @interface TakeMetroResultView ()
 
@@ -28,8 +31,8 @@
     [super awakeFromNib];
     
     self.backgroundColor = [UIColor customGrayColor];
-    self.layer.masksToBounds = YES;
-    self.layer.cornerRadius = 5.0f;
+//    self.layer.masksToBounds = YES;
+//    self.layer.cornerRadius = 5.0f;
     
     self.distnceTitleLabel.textColor = [UIColor customHighBlueColor];
     self.distnceLabel.textColor = [UIColor customHighBlueColor];
@@ -43,11 +46,11 @@
     [self configureResultHeaderViewWithData:nil];
 }
 
-- (void) configureResultHeaderViewWithData:(id)data{
+- (void) configureResultHeaderViewWithData:(BMKTransitStep *)step{
     
-    self.distnceLabel.text = @"3.5km";
-    self.timeLabel.text =  @"12分钟";
-    self.priceLabel.text = @"3元";
+    self.distnceLabel.text = [TakeMetroCalculateHelper calculateStationDistanceInfoWithDistance:step.distance];//@"3.5km";
+    self.timeLabel.text = [TakeMetroCalculateHelper calculateStationDurationInfoWithDuration:step.duration];//@"12分钟";
+    self.priceLabel.text = [TakeMetroCalculateHelper calculateTicketPriceInfoWithDistance:step.distance];
 }
 /*
 // Only override drawRect: if you perform custom drawing.

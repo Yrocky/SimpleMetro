@@ -19,6 +19,12 @@
 		D723E8061D05639D0016E7B2 /* ShowResultInMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D723E8051D05639D0016E7B2 /* ShowResultInMapViewController.m */; };
 		D723E8421D05CF3A0016E7B2 /* ResultAnnoation.m in Sources */ = {isa = PBXBuildFile; fileRef = D723E8411D05CF3A0016E7B2 /* ResultAnnoation.m */; };
 		D723E8841D071EEB0016E7B2 /* aboutMe.png in Resources */ = {isa = PBXBuildFile; fileRef = D723E8831D071EEB0016E7B2 /* aboutMe.png */; };
+		D723E88A1D0BE9660016E7B2 /* TakeMetroCalculateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D723E8891D0BE9660016E7B2 /* TakeMetroCalculateHelper.m */; };
+		D723E88D1D0BF2CF0016E7B2 /* StationInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = D723E88C1D0BF2CF0016E7B2 /* StationInputView.m */; };
+		D723E88F1D0BF44A0016E7B2 /* StationInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D723E88E1D0BF44A0016E7B2 /* StationInputView.xib */; };
+		D723E8931D0C351B0016E7B2 /* SpecialStationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D723E8911D0C351B0016E7B2 /* SpecialStationCell.m */; };
+		D723E8941D0C351B0016E7B2 /* SpecialStationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D723E8921D0C351B0016E7B2 /* SpecialStationCell.xib */; };
+		D723E8981D0C4D390016E7B2 /* price@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D723E8971D0C4D390016E7B2 /* price@2x.png */; };
 		D77DCA3E1CF6933C002249CC /* BlurActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = D77DCA3D1CF6933C002249CC /* BlurActionSheetView.m */; };
 		D77DCA421CF6E0AD002249CC /* HLLPullToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = D77DCA411CF6E0AD002249CC /* HLLPullToRefreshView.m */; };
 		D77DCA511CF73E6D002249CC /* MetroLineStationInfoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D77DCA501CF73E6D002249CC /* MetroLineStationInfoHelper.m */; };
@@ -204,6 +210,15 @@
 		D723E8401D05CF3A0016E7B2 /* ResultAnnoation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultAnnoation.h; sourceTree = "<group>"; };
 		D723E8411D05CF3A0016E7B2 /* ResultAnnoation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultAnnoation.m; sourceTree = "<group>"; };
 		D723E8831D071EEB0016E7B2 /* aboutMe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aboutMe.png; sourceTree = "<group>"; };
+		D723E8881D0BE9660016E7B2 /* TakeMetroCalculateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakeMetroCalculateHelper.h; sourceTree = "<group>"; };
+		D723E8891D0BE9660016E7B2 /* TakeMetroCalculateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakeMetroCalculateHelper.m; sourceTree = "<group>"; };
+		D723E88B1D0BF2CF0016E7B2 /* StationInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationInputView.h; sourceTree = "<group>"; };
+		D723E88C1D0BF2CF0016E7B2 /* StationInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationInputView.m; sourceTree = "<group>"; };
+		D723E88E1D0BF44A0016E7B2 /* StationInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StationInputView.xib; sourceTree = "<group>"; };
+		D723E8901D0C351B0016E7B2 /* SpecialStationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialStationCell.h; sourceTree = "<group>"; };
+		D723E8911D0C351B0016E7B2 /* SpecialStationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialStationCell.m; sourceTree = "<group>"; };
+		D723E8921D0C351B0016E7B2 /* SpecialStationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpecialStationCell.xib; sourceTree = "<group>"; };
+		D723E8971D0C4D390016E7B2 /* price@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "price@2x.png"; sourceTree = "<group>"; };
 		D77DCA3C1CF6933C002249CC /* BlurActionSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlurActionSheetView.h; sourceTree = "<group>"; };
 		D77DCA3D1CF6933C002249CC /* BlurActionSheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlurActionSheetView.m; sourceTree = "<group>"; };
 		D77DCA401CF6E0AD002249CC /* HLLPullToRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLPullToRefreshView.h; sourceTree = "<group>"; };
@@ -583,6 +598,8 @@
 				D77DCA501CF73E6D002249CC /* MetroLineStationInfoHelper.m */,
 				D723E8401D05CF3A0016E7B2 /* ResultAnnoation.h */,
 				D723E8411D05CF3A0016E7B2 /* ResultAnnoation.m */,
+				D723E8881D0BE9660016E7B2 /* TakeMetroCalculateHelper.h */,
+				D723E8891D0BE9660016E7B2 /* TakeMetroCalculateHelper.m */,
 				D7B2C06C1D01F5710082C069 /* ShareManager */,
 				D78C6B071CFC93E200CAF770 /* MapManager */,
 				D78C6ACE1CFC86AC00CAF770 /* RequestWeaterData */,
@@ -615,6 +632,9 @@
 				D78C6B3C1CFF40FA00CAF770 /* AroundSearchResultCell.h */,
 				D78C6B3D1CFF40FA00CAF770 /* AroundSearchResultCell.m */,
 				D78C6B3E1CFF40FA00CAF770 /* AroundSearchResultCell.xib */,
+				D723E8901D0C351B0016E7B2 /* SpecialStationCell.h */,
+				D723E8911D0C351B0016E7B2 /* SpecialStationCell.m */,
+				D723E8921D0C351B0016E7B2 /* SpecialStationCell.xib */,
 			);
 			name = tableViewCell;
 			sourceTree = "<group>";
@@ -659,6 +679,7 @@
 		D78C6A851CFAFE8900CAF770 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				D723E8971D0C4D390016E7B2 /* price@2x.png */,
 				D723E8831D071EEB0016E7B2 /* aboutMe.png */,
 				D78C6A861CFAFE8900CAF770 /* zhifubao.jpg */,
 			);
@@ -679,6 +700,9 @@
 				D70C3EE71CF95BC700B7BAB5 /* MetroLineTitleView.h */,
 				D70C3EE81CF95BC700B7BAB5 /* MetroLineTitleView.m */,
 				D70C3EEA1CF95BD000B7BAB5 /* MetroLineTitleView.xib */,
+				D723E88B1D0BF2CF0016E7B2 /* StationInputView.h */,
+				D723E88C1D0BF2CF0016E7B2 /* StationInputView.m */,
+				D723E88E1D0BF44A0016E7B2 /* StationInputView.xib */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -1359,12 +1383,15 @@
 				D7B2C0561D01F3450082C069 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				D78C6AC41CFC81B500CAF770 /* Lato-Light.ttf in Resources */,
 				D78C6AC51CFC81B500CAF770 /* Lato-Regular.ttf in Resources */,
+				D723E8941D0C351B0016E7B2 /* SpecialStationCell.xib in Resources */,
 				D7B2C05A1D01F3450082C069 /* read_me.txt in Resources */,
 				D78C6AC31CFC81B500CAF770 /* Lato-Bold.ttf in Resources */,
 				D7D8567D1CF56E6B0028B92D /* LeftMenuSectionHeaderView.xib in Resources */,
 				D7D8558B1CF34BFF0028B92D /* Assets.xcassets in Resources */,
+				D723E88F1D0BF44A0016E7B2 /* StationInputView.xib in Resources */,
 				D7D856361CF4342C0028B92D /* ionicons.ttf in Resources */,
 				D78C6A431CF99CA900CAF770 /* LineStationsCell.xib in Resources */,
+				D723E8981D0C4D390016E7B2 /* price@2x.png in Resources */,
 				D7D856351CF4342C0028B92D /* foundation-icons.ttf in Resources */,
 				D7D8567B1CF56E6B0028B92D /* LeftMenuCell.xib in Resources */,
 				D7B2C0531D01F3450082C069 /* ShareSDKUI.bundle in Resources */,
@@ -1428,6 +1455,7 @@
 				D78C6AF71CFC889100CAF770 /* AFURLSessionManager.m in Sources */,
 				D78C6B051CFC905900CAF770 /* MainInfo.m in Sources */,
 				D7D855E21CF36FF80028B92D /* HLLSpotlightViewController.m in Sources */,
+				D723E88A1D0BE9660016E7B2 /* TakeMetroCalculateHelper.m in Sources */,
 				D7D855E01CF36FF80028B92D /* HLLSpotlight.m in Sources */,
 				D78C6AFF1CFC8A8F00CAF770 /* CurrentLocationWeather.m in Sources */,
 				D70C3EF21CF98A2300B7BAB5 /* BaiduSDKMetroLineSearch.m in Sources */,
@@ -1454,9 +1482,11 @@
 				D7D855E31CF36FF80028B92D /* HLLTransition.m in Sources */,
 				D78C6AF91CFC889100CAF770 /* HLLRequestBodyType.m in Sources */,
 				D78C6B311CFF233A00CAF770 /* TakeMetroSelectView.m in Sources */,
+				D723E88D1D0BF2CF0016E7B2 /* StationInputView.m in Sources */,
 				D78C6A611CF9F18C00CAF770 /* NSString+Size.m in Sources */,
 				D70C3EF31CF98A2300B7BAB5 /* BaiduSDKMetroStationAroundBusLineSearch.m in Sources */,
 				D7D8560F1CF3F6740028B92D /* StoryBoardUtilities.m in Sources */,
+				D723E8931D0C351B0016E7B2 /* SpecialStationCell.m in Sources */,
 				D78C6AFB1CFC889100CAF770 /* HLLResponseDataType.m in Sources */,
 				D7D856311CF4342C0028B92D /* FAKMaterialIcons.m in Sources */,
 				D78C6B0D1CFCA03D00CAF770 /* LeftMenuWeatherView.m in Sources */,

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="StationInputView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U86-is-XFR">
+                    <rect key="frame" x="0.0" y="384" width="600" height="216"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="216" id="uIU-ck-Ind"/>
+                    </constraints>
+                </pickerView>
+                <toolbar hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bR4-Qv-8Iu">
+                    <rect key="frame" x="0.0" y="340" width="600" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="gvp-8x-y3P"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem title="取消" id="Gjy-al-Ilm">
+                            <color key="tintColor" red="0.039215686270000001" green="0.70588235290000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="cancelHandle:" destination="iN0-l3-epB" id="d8Y-Qf-yqZ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="oCe-Hy-RTf"/>
+                        <barButtonItem title="确定" id="YFt-GE-Txc">
+                            <color key="tintColor" red="0.039215686270000001" green="0.70588235290000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="chooseHandle:" destination="iN0-l3-epB" id="gPG-Oc-l1Q"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+            </subviews>
+            <color key="backgroundColor" red="1" green="0.47235377379999999" blue="0.31133888589999997" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="U86-is-XFR" secondAttribute="trailing" id="2ne-kp-ArZ"/>
+                <constraint firstItem="U86-is-XFR" firstAttribute="top" secondItem="bR4-Qv-8Iu" secondAttribute="bottom" id="Rc9-m1-AFd"/>
+                <constraint firstItem="U86-is-XFR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="YVx-yD-DJL"/>
+                <constraint firstAttribute="trailing" secondItem="bR4-Qv-8Iu" secondAttribute="trailing" id="jD2-Ll-aFC"/>
+                <constraint firstAttribute="bottom" secondItem="U86-is-XFR" secondAttribute="bottom" id="jqp-yj-fay"/>
+                <constraint firstItem="bR4-Qv-8Iu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qeK-k6-qJ6"/>
+            </constraints>
+            <connections>
+                <outlet property="stationPickerView" destination="U86-is-XFR" id="4F2-vM-DKc"/>
+            </connections>
+        </view>
+    </objects>
+</document>

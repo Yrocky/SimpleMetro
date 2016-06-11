@@ -207,6 +207,8 @@
 
     [picker setSubject:@"意见反馈"];
     
+    abort();// 设置自己的邮箱账号 --> FeedbackEmailAddress,然后把这段注释掉
+    
     NSArray *toRecipients = [NSArray arrayWithObjects:FeedbackEmailAddress,nil];
     [picker setToRecipients:toRecipients];
     

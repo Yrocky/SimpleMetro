@@ -129,7 +129,7 @@
     
     [self configureMetolLineData];
     
-    [self.tableView reloadData];
+//    [self.tableView reloadData];
 }
 
 - (NSArray <NSDictionary *>*) queryMetroLineInfoWithLineNumber:(NSInteger)lineNumber{
@@ -156,7 +156,7 @@
     
     [self configureMetolLineData];
     
-    [self.tableView reloadData];
+//    [self.tableView reloadData];
     
     
     return queryLineStations;

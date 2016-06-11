@@ -55,6 +55,8 @@
         weakSelf.fromTo = !weakSelf.fromTo;
         
         [weakSelf.dataSource_plist swapFirstStationToLastStation];
+        
+        [weakSelf.tableView reloadData];
     };
     self.navigationItem.titleView = self.metroLineTitleView;
 }
@@ -89,6 +91,7 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     [self.dataSource_plist queryMetroLineInfoWithLineNumber:1];
+    [self.tableView reloadData];
     
     // pull to refresh view
     CGFloat pullToRefreshHeight = 40.0f;
@@ -131,7 +134,7 @@
         self.fromTo = NO;
         
         [self.dataSource_plist queryMetroLineInfoWithLineNumber:index + 1];
-        
+        [self.tableView reloadData];
         [self.metroLineTitleView configureMetroLineTitleViewWithData:self.dataSource_plist.metroLineData];
     }];
 }

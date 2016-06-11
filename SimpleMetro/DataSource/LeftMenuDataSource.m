@@ -38,7 +38,7 @@ static NSString * const leftMenuCellIdentifier = @"leftMenuCellIdentifier";
         NSArray * stationInfoIcons = @[stationInfo, squareOIcon];
         
         // 便捷乘车
-        FAKIcon * map = [FAKFontAwesome mapOIconWithSize:25];
+        FAKIcon * map = [FAKFontAwesome mapOIconWithSize:23];
         [map addAttribute:NSForegroundColorAttributeName value:[UIColor customWhiteColor]];
         NSArray * convenientIcons = @[map];
         
