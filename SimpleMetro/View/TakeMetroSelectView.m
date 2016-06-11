@@ -112,9 +112,12 @@
 
 - (void) changeButtonState{
 
-    if (self.startStationTextField.text.length > 0 && self.endStationTextField.text.length > 0) {
+    if (self.startStationTextField.text.length > 0 && self.endStationTextField.text.length > 0 && (![self.startStationTextField.text isEqualToString:self.endStationTextField.text])) {
         
         self.searchButton.enabled = self.swapButton.enabled = YES;
+    }else{
+        
+        self.searchButton.enabled = self.swapButton.enabled = NO;
     }
 }
 

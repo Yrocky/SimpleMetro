@@ -27,6 +27,6 @@
 static NSString * const Baidu_Map_SDK_key       = @"vvhjlAaSHL55EQ80jG49tjlM64bDix2l";
 static NSString * const OpenWeathermap_API_Key  = @"c6e5be8ce71bd3f3b7cfe5c61c03fddb";
 
-#define FeedbackEmailAddress @""
+#define FeedbackEmailAddress @"yrocky369@gmail.com"
 
 #endif /* SimpleMetro_pch */
