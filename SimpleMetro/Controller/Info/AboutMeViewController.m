@@ -83,8 +83,8 @@
     [self.shareButton setImage:shareButtonImage forState:UIControlStateNormal];
  
     /*
-    self.topLineView.hidden = YES;
-    self.feedbackButton.hidden = YES;
+     self.topLineView.hidden = YES;
+     self.feedbackButton.hidden = YES;
      */
 }
 
@@ -92,7 +92,6 @@
 
 - (void) haoping{
 
-    // 跳转到App Store,待到上架之后的版本才有这个id，先去掉
     SKStoreProductViewController * storeController = [[SKStoreProductViewController alloc] init];
     storeController.delegate = self;
     

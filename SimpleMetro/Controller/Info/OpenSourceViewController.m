@@ -27,7 +27,7 @@
 
     [super awakeFromNib];
 
-    _openSource = @[@{@"OpenSourceName":@"BaiduMapSDK v2.10.2",
+    _openSource = @[@{@"OpenSourceName":@"BaiduMapSDK v3.0.0",
                       @"OpenSourceURL":@"http://lbsyun.baidu.com/index.php?title=iossdk"},
                     @{@"OpenSourceName":@"CSStickyHeaderFlowLayout v0.2.10",
                       @"OpenSourceURL":@"https://github.com/jamztang/CSStickyHeaderFlowLayout"},
