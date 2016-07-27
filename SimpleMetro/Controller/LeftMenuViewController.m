@@ -196,7 +196,6 @@
     [headerView configureSectioinHeaderView:section == 0? @"LBS服务" : @"版权信息"];
     return headerView;
 }
-
 #pragma mark - Action
 
 - (void)sendEmial{

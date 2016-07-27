@@ -9,9 +9,24 @@
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
 
+
+@protocol ProcotolName <NSObject>
+
+@required
+
+- (void) someMethod;
+
+@optional;
+
+- (void) optionMethod;
+
+@end
+
 static NSString * const StationInfoSegueIdentifier = @"stationInfo";
 
 @interface StationInfoController : BaseViewController
+
+@property (nonatomic ,weak) id<ProcotolName> delegate;
 
 @property (nonatomic ,assign) BOOL fromTo;
 

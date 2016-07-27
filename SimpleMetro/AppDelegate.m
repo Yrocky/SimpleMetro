@@ -179,6 +179,14 @@
 - (void)sideMenu:(RESideMenu *)sideMenu didShowMenuViewController:(UIViewController *)menuViewController
 {
 //    LOG_DEBUG(@"didShowMenuViewController: %@", NSStringFromClass([menuViewController class]));
+    if ([sideMenu.contentViewController isKindOfClass:[ViewController class]]) {
+        
+        LeftMenuViewController * leftViewController = (LeftMenuViewController *)sideMenu.leftMenuViewController;
+        
+        [leftViewController selectedLeftMenuAtIndex:0];
+    }
+    
+    
 }
 
 - (void)sideMenu:(RESideMenu *)sideMenu willHideMenuViewController:(UIViewController *)menuViewController

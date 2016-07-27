@@ -12,7 +12,13 @@ extern NSString * const PullToRefreshNormalInfo;
 extern NSString * const PullToRefreshReleaseInfo;
 extern CGFloat const OffsetThreshold;
 
+/**
+ *  为了解决由于NavigationBar导致的显示问题
+ */
 static CGFloat ScrollViewTopMargin          = 0.0f;
+/**
+ *  圆环和显示Label的宽度比例
+ */
 static CGFloat RefreshProportion            = 0.4;
 
 typedef void(^CompletionBlock)(BOOL finished);

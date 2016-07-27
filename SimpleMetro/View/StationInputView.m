@@ -11,6 +11,7 @@
 
 @interface StationInputView ()<UIPickerViewDelegate,UIPickerViewDataSource>
 @property (weak, nonatomic) IBOutlet UIPickerView *stationPickerView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @property (nonatomic ,strong) BaiduSDKMetroLineSearch * metroLineSearch;
 
@@ -27,6 +28,8 @@
     self.stationPickerView.delegate = self;
     
     self.stationPickerView.backgroundColor = [UIColor customGrayColor];
+    
+    [self.activityIndicator startAnimating];
 }
 
 
@@ -40,6 +43,8 @@
 - (void) configureDataSourceWithData:(BMKBusLineResult *)metroLine{
 
     self.metroLines = metroLine.busStations;
+    
+    [self.activityIndicator stopAnimating];
     
     [self.stationPickerView reloadAllComponents];
     

@@ -201,6 +201,7 @@
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         
         LineStationsSectionHeaderView * sectionHeaderView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:SectionHeaderIdentifier forIndexPath:indexPath];
+        sectionHeaderView.backgroundColor = [UIColor randomColor];
         
         if (indexPath.section == 0) {
             sectionHeaderView.sectionTextLabel.text = [NSString stringWithFormat:@"出/入站口 共%ld个",self.entranceInfo.count];

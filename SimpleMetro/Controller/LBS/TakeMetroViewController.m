@@ -32,7 +32,6 @@
     [self.resultTableView registerNib:[SpecialStationCell nib]
                forCellReuseIdentifier:[SpecialStationCell cellIdentifier]];
     self.resultTableView.tableFooterView = nil;
-    
     self.resultTableView.hidden = YES;
 
     self.selectView.block = ^(id data){
@@ -41,18 +40,17 @@
         self.resultTableView.hidden = NO;
         [self.resultTableView reloadData];
     };
-
     self.selectView.infoHandleBlock = ^(id data){
     
-        UIImage * image = [UIImage imageNamed:@"price.png"];
-        PMAlertController * alertControler = [[PMAlertController alloc] initWithTitle:nil description:@"目前郑州地铁票价实行的是【递远递减】的原则，具体计费方式参考官方图解。" image:image style:PMAlertControllerStyleWalkthrough];
-        alertControler.gravityDismissAnimation = NO;
-        alertControler.addMotionEffect = YES;
-        
-        PMAlertAction * sureAction = [[PMAlertAction alloc] initWithTitle:@"确定" style:PMAlertActionStyleDefault action:nil];
-        [alertControler addAction:sureAction];
-        
-        [self presentViewController:alertControler animated:YES completion:nil];
+//        UIImage * image = [UIImage imageNamed:@"price.png"];
+//        PMAlertController * alertControler = [[PMAlertController alloc] initWithTitle:nil description:@"目前郑州地铁票价实行的是【递远递减】的原则，具体计费方式参考官方图解。" image:image style:PMAlertControllerStyleWalkthrough];
+//        alertControler.gravityDismissAnimation = NO;
+//        alertControler.addMotionEffect = YES;
+//        
+//        PMAlertAction * sureAction = [[PMAlertAction alloc] initWithTitle:@"确定" style:PMAlertActionStyleDefault action:nil];
+//        [alertControler addAction:sureAction];
+//        
+//        [self presentViewController:alertControler animated:YES completion:nil];
     };
 }
 #pragma mark - UITableViewDataSource,UITableViewDelegate

@@ -11,6 +11,7 @@
 #import "LineStationsViewCell.h"
 #import "NSString+Size.h"
 #import "StationInfoDataSource.h"
+#import "AboutMetroViewController.h"
 
 @interface StationInfoController ()<UICollectionViewDelegateFlowLayout>{
 
@@ -58,14 +59,14 @@
     [self.lineStateBaseInfoView configureLineStationBaseInfo:metroLineInfo[selectedIndexPath.row] andFromToState:self.fromTo];
     self.lineStateBaseInfoView.showDisclaimerBlock = ^(){
     
-        PMAlertController * alertControler = [[PMAlertController alloc] initWithTitle:@"免责声明" description:@"本软件提供的列车时刻仅供参考，可能会与实际列车到达时间有所出入，对由此照成的影响本软件开发方不负任何责任，具体信息以郑州轨道交通官方通知为主。" image:nil style:PMAlertControllerStyleAlert];
-        alertControler.gravityDismissAnimation = NO;
-        alertControler.addMotionEffect = YES;
-        
-        PMAlertAction * sureAction = [[PMAlertAction alloc] initWithTitle:@"同意" style:PMAlertActionStyleDefault action:nil];
-        [alertControler addAction:sureAction];
-        
-        [self presentViewController:alertControler animated:YES completion:nil];
+//        PMAlertController * alertControler = [[PMAlertController alloc] initWithTitle:@"免责声明" description:@"本软件提供的列车时刻仅供参考，可能会与实际列车到达时间有所出入，对由此照成的影响本软件开发方不负任何责任，具体信息以郑州轨道交通官方通知为主。" image:nil style:PMAlertControllerStyleAlert];
+//        alertControler.gravityDismissAnimation = NO;
+//        alertControler.addMotionEffect = YES;
+//        
+//        PMAlertAction * sureAction = [[PMAlertAction alloc] initWithTitle:@"同意" style:PMAlertActionStyleDefault action:nil];
+//        [alertControler addAction:sureAction];
+//        
+//        [self presentViewController:alertControler animated:YES completion:nil];
     };
     
     //
@@ -83,6 +84,8 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    
+#pragma mark - MMMM
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     
     self.navigationController.interactivePopGestureRecognizer.delegate = nil;
@@ -126,7 +129,6 @@
 
 #pragma mark - UICollectionViewDelegate
 
-
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath{
 
     if (indexPath.item == 1) {
@@ -146,6 +148,9 @@
     // 后续版本做地图展示以及LBS搜索
 //    LOG_DEBUG(@"选择站点");
 
+    AboutMetroViewController * viewCon = [[AboutMetroViewController alloc] init];
+    [self.navigationController pushViewController:viewCon animated:YES];
+    
 //    UINavigationController * aroundServiceNavigationController = (UINavigationController *)[StoryBoardUtilities viewControllerForStoryboardName:@"AroundService" storyBoardID:AroundServiceNavigationControllerStoryBoardID];
 //    
 //    [self presentViewController:aroundServiceNavigationController animated:YES completion:nil];

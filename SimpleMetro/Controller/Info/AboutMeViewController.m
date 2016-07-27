@@ -166,26 +166,26 @@
 #pragma mark - Action
 - (IBAction)feedbackButtonDidPressed:(UIButton *)sender {
     
-    abort();// 把这个图片改成自己的 --> zhifubao.jpg，然后把这段注释掉,
+//    abort();// 把这个图片改成自己的 --> zhifubao.jpg，然后把这段注释掉,
 //    如果不想要这个，可以把85行的注释打开
     
     UIImage * qImage = [UIImage imageNamed:@"zhifubao.jpg"];
     NSString * description = @"郑州轻地铁是本人利用业余时间开发的一款日常生活辅助类软件，希望这款小App能为您减少乘坐地铁时遇到的麻烦，如果您觉得她给您的生活带来了便利，不妨扫一下二维码请我喝瓶可乐^_^";
     
-    PMAlertController * feedback = [[PMAlertController alloc] initWithTitle:@"" description:description image:qImage style:PMAlertControllerStyleAlert];
-    feedback.addMotionEffect = YES;
-    feedback.gravityDismissAnimation = NO;
-    
-    PMAlertAction * haopingAction = [[PMAlertAction alloc] initWithTitle:@"给好评" style:PMAlertActionStyleDefault action:^{
-        [self haoping];
-    }];
-    
-    PMAlertAction * jujueAction = [[PMAlertAction alloc] initWithTitle:@"我拒绝" style:PMAlertActionStyleCancel action:nil];
-    
-    [feedback addAction:haopingAction];
-    [feedback addAction:jujueAction];
-    
-    [self presentViewController:feedback animated:YES completion:nil];
+//    PMAlertController * feedback = [[PMAlertController alloc] initWithTitle:@"" description:description image:qImage style:PMAlertControllerStyleAlert];
+//    feedback.addMotionEffect = YES;
+//    feedback.gravityDismissAnimation = NO;
+//    
+//    PMAlertAction * haopingAction = [[PMAlertAction alloc] initWithTitle:@"给好评" style:PMAlertActionStyleDefault action:^{
+//        [self haoping];
+//    }];
+//    
+//    PMAlertAction * jujueAction = [[PMAlertAction alloc] initWithTitle:@"我拒绝" style:PMAlertActionStyleCancel action:nil];
+//    
+//    [feedback addAction:haopingAction];
+//    [feedback addAction:jujueAction];
+//    
+//    [self presentViewController:feedback animated:YES completion:nil];
 }
 
 - (IBAction)emailButtonDidPressed:(UIButton *)sender {

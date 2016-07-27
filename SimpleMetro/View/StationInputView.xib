@@ -37,10 +37,16 @@
                         </barButtonItem>
                     </items>
                 </toolbar>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="NKV-dj-gXc">
+                    <rect key="frame" x="290" y="482" width="20" height="20"/>
+                    <color key="color" red="0.70196078429999997" green="0.78039215689999997" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
+                </activityIndicatorView>
             </subviews>
-            <color key="backgroundColor" red="1" green="0.47235377379999999" blue="0.31133888589999997" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="U86-is-XFR" secondAttribute="trailing" id="2ne-kp-ArZ"/>
+                <constraint firstItem="NKV-dj-gXc" firstAttribute="centerX" secondItem="U86-is-XFR" secondAttribute="centerX" id="5Ds-bu-09e"/>
+                <constraint firstItem="NKV-dj-gXc" firstAttribute="centerY" secondItem="U86-is-XFR" secondAttribute="centerY" id="Kp7-em-lyH"/>
                 <constraint firstItem="U86-is-XFR" firstAttribute="top" secondItem="bR4-Qv-8Iu" secondAttribute="bottom" id="Rc9-m1-AFd"/>
                 <constraint firstItem="U86-is-XFR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="YVx-yD-DJL"/>
                 <constraint firstAttribute="trailing" secondItem="bR4-Qv-8Iu" secondAttribute="trailing" id="jD2-Ll-aFC"/>
@@ -48,6 +54,7 @@
                 <constraint firstItem="bR4-Qv-8Iu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qeK-k6-qJ6"/>
             </constraints>
             <connections>
+                <outlet property="activityIndicator" destination="NKV-dj-gXc" id="m7a-GK-0DM"/>
                 <outlet property="stationPickerView" destination="U86-is-XFR" id="4F2-vM-DKc"/>
             </connections>
         </view>

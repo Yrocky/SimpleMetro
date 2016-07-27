@@ -10,4 +10,8 @@
 
 @implementation ResultAnnoation
 
+- (void) some{
+    NSString * stin = [NSString string];
+    
+}
 @end

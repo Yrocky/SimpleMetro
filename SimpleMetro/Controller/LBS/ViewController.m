@@ -108,14 +108,14 @@
     
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"MetroLineGuideKey"]) {
         
-        GuideViewController * guide = (GuideViewController *)[StoryBoardUtilities viewControllerForStoryboardName:@"Guide"storyBoardID:@"GuideViewController"];
+//        GuideViewController * guide = (GuideViewController *)[StoryBoardUtilities viewControllerForStoryboardName:@"Guide"storyBoardID:@"GuideViewController"];
         
-        [self.navigationController presentViewController:guide animated:YES completion:^(){
-            
-            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"MetroLineGuideKey"];
-            
-            [[NSUserDefaults standardUserDefaults] synchronize];
-        }];
+//        [self.navigationController presentViewController:guide animated:YES completion:^(){
+//            
+//            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"MetroLineGuideKey"];
+//            
+//            [[NSUserDefaults standardUserDefaults] synchronize];
+//        }];
     }
 }
 

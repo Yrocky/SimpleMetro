@@ -42,9 +42,6 @@
 		D78C6A5D1CF9E93800CAF770 /* MetroStationAroundBusStationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6A5B1CF9E93800CAF770 /* MetroStationAroundBusStationCell.m */; };
 		D78C6A5E1CF9E93800CAF770 /* MetroStationAroundBusStationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D78C6A5C1CF9E93800CAF770 /* MetroStationAroundBusStationCell.xib */; };
 		D78C6A611CF9F18C00CAF770 /* NSString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6A601CF9F18C00CAF770 /* NSString+Size.m */; };
-		D78C6A791CFACCCF00CAF770 /* PMAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78C6A731CFACCCF00CAF770 /* PMAlertAction.swift */; };
-		D78C6A7A1CFACCCF00CAF770 /* PMAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78C6A741CFACCCF00CAF770 /* PMAlertController.swift */; };
-		D78C6A7B1CFACCCF00CAF770 /* PMAlertController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D78C6A751CFACCCF00CAF770 /* PMAlertController.xib */; };
 		D78C6A7F1CFAE01A00CAF770 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6A7E1CFAE01A00CAF770 /* UIImage+ImageEffects.m */; };
 		D78C6A871CFAFE8900CAF770 /* zhifubao.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D78C6A861CFAFE8900CAF770 /* zhifubao.jpg */; };
 		D78C6A891CFB060900CAF770 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D78C6A881CFB060900CAF770 /* StoreKit.framework */; };
@@ -250,9 +247,6 @@
 		D78C6A5F1CF9F18C00CAF770 /* NSString+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Size.h"; sourceTree = "<group>"; };
 		D78C6A601CF9F18C00CAF770 /* NSString+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Size.m"; sourceTree = "<group>"; };
 		D78C6A631CF9FFC600CAF770 /* HLL_NotificationDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLL_NotificationDefine.h; sourceTree = "<group>"; };
-		D78C6A731CFACCCF00CAF770 /* PMAlertAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMAlertAction.swift; sourceTree = "<group>"; };
-		D78C6A741CFACCCF00CAF770 /* PMAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMAlertController.swift; sourceTree = "<group>"; };
-		D78C6A751CFACCCF00CAF770 /* PMAlertController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMAlertController.xib; sourceTree = "<group>"; };
 		D78C6A7D1CFAE01A00CAF770 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		D78C6A7E1CFAE01A00CAF770 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		D78C6A861CFAFE8900CAF770 /* zhifubao.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = zhifubao.jpg; sourceTree = "<group>"; };
@@ -665,17 +659,6 @@
 			name = collectionViewCell;
 			sourceTree = "<group>";
 		};
-		D78C6A721CFACCCF00CAF770 /* PMAlertViewController */ = {
-			isa = PBXGroup;
-			children = (
-				D78C6A731CFACCCF00CAF770 /* PMAlertAction.swift */,
-				D78C6A741CFACCCF00CAF770 /* PMAlertController.swift */,
-				D78C6A751CFACCCF00CAF770 /* PMAlertController.xib */,
-			);
-			name = PMAlertViewController;
-			path = PMalertViewController;
-			sourceTree = "<group>";
-		};
 		D78C6A851CFAFE8900CAF770 /* Image */ = {
 			isa = PBXGroup;
 			children = (
@@ -1078,7 +1061,6 @@
 			isa = PBXGroup;
 			children = (
 				D7B2C02C1D01F3450082C069 /* ShareSDK */,
-				D78C6A721CFACCCF00CAF770 /* PMAlertViewController */,
 				D70C3E981CF76C4700B7BAB5 /* BaiduSDK */,
 				D78C6A441CF9BED400CAF770 /* CSStickyHeaderFlowLayout */,
 				D7D856171CF4342C0028B92D /* FontAwesomeKit */,
@@ -1410,7 +1392,6 @@
 				D7D856371CF4342C0028B92D /* Material-Design-Iconic-Font.ttf in Resources */,
 				D7B2C0581D01F3450082C069 /* WeiboSDK.bundle in Resources */,
 				D7D856801CF56E6B0028B92D /* LineStationCell.xib in Resources */,
-				D78C6A7B1CFACCCF00CAF770 /* PMAlertController.xib in Resources */,
 				D7D8567E1CF56E6B0028B92D /* LeftMenuSelectedBackgroundView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1434,7 +1415,6 @@
 				D78C6B161CFD32B000CAF770 /* WeatherTemperatureView.m in Sources */,
 				D7D8569A1CF56EE60028B92D /* OpenSourceViewController.m in Sources */,
 				D7D856971CF56EE60028B92D /* BaseViewController.m in Sources */,
-				D78C6A7A1CFACCCF00CAF770 /* PMAlertController.swift in Sources */,
 				D78C6B2E1CFF1F8400CAF770 /* TakeMetroViewController.m in Sources */,
 				D78C6A491CF9BED400CAF770 /* CSStickyHeaderFlowLayout.m in Sources */,
 				D7D856C21CF59F490028B92D /* LeftMenuDataSource.m in Sources */,
@@ -1495,7 +1475,6 @@
 				D77DCA421CF6E0AD002249CC /* HLLPullToRefreshView.m in Sources */,
 				D78C6A4E1CF9C18A00CAF770 /* LineStationsViewCell.m in Sources */,
 				D7D8560B1CF3F6450028B92D /* UIView+Common.m in Sources */,
-				D78C6A791CFACCCF00CAF770 /* PMAlertAction.swift in Sources */,
 				D7D8567F1CF56E6B0028B92D /* LineStationCell.m in Sources */,
 				D7D856781CF56E6B0028B92D /* MetroLineInfoDataSource_Plist.m in Sources */,
 				D7D856321CF4342C0028B92D /* FAKOcticons.m in Sources */,
