@@ -88,6 +88,11 @@
 		D78C6B3B1CFF401D00CAF770 /* AroundSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6B3A1CFF401D00CAF770 /* AroundSearchResultViewController.m */; settings = {COMPILER_FLAGS = "-ObjC"; }; };
 		D78C6B3F1CFF40FA00CAF770 /* AroundSearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6B3D1CFF40FA00CAF770 /* AroundSearchResultCell.m */; settings = {COMPILER_FLAGS = "-ObjC"; }; };
 		D78C6B401CFF40FA00CAF770 /* AroundSearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D78C6B3E1CFF40FA00CAF770 /* AroundSearchResultCell.xib */; };
+		D7A2F9AE1E5E79940089E41A /* HLLClusterAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A2F9A71E5E79940089E41A /* HLLClusterAnnotation.m */; };
+		D7A2F9AF1E5E79940089E41A /* HLLCoordinateQuadTree.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A2F9A91E5E79940089E41A /* HLLCoordinateQuadTree.m */; };
+		D7A2F9B01E5E79940089E41A /* HLLMapPOI.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A2F9AB1E5E79940089E41A /* HLLMapPOI.m */; };
+		D7A2F9B11E5E79940089E41A /* HLLQuadTree.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A2F9AD1E5E79940089E41A /* HLLQuadTree.m */; };
+		D7A2F9B41E5E79C10089E41A /* HLLClusterAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A2F9B31E5E79C10089E41A /* HLLClusterAnnotationView.m */; };
 		D7B2C0501D01F3450082C069 /* ShareSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B2C02D1D01F3450082C069 /* ShareSDK.framework */; };
 		D7B2C0511D01F3450082C069 /* ShareSDKExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B2C0301D01F3450082C069 /* ShareSDKExtension.framework */; };
 		D7B2C0521D01F3450082C069 /* ShareSDKInterfaceAdapter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B2C0311D01F3450082C069 /* ShareSDKInterfaceAdapter.framework */; };
@@ -330,6 +335,16 @@
 		D78C6B3C1CFF40FA00CAF770 /* AroundSearchResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AroundSearchResultCell.h; sourceTree = "<group>"; };
 		D78C6B3D1CFF40FA00CAF770 /* AroundSearchResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AroundSearchResultCell.m; sourceTree = "<group>"; };
 		D78C6B3E1CFF40FA00CAF770 /* AroundSearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AroundSearchResultCell.xib; sourceTree = "<group>"; };
+		D7A2F9A61E5E79940089E41A /* HLLClusterAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLClusterAnnotation.h; sourceTree = "<group>"; };
+		D7A2F9A71E5E79940089E41A /* HLLClusterAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLClusterAnnotation.m; sourceTree = "<group>"; };
+		D7A2F9A81E5E79940089E41A /* HLLCoordinateQuadTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLCoordinateQuadTree.h; sourceTree = "<group>"; };
+		D7A2F9A91E5E79940089E41A /* HLLCoordinateQuadTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLCoordinateQuadTree.m; sourceTree = "<group>"; };
+		D7A2F9AA1E5E79940089E41A /* HLLMapPOI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLMapPOI.h; sourceTree = "<group>"; };
+		D7A2F9AB1E5E79940089E41A /* HLLMapPOI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLMapPOI.m; sourceTree = "<group>"; };
+		D7A2F9AC1E5E79940089E41A /* HLLQuadTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLQuadTree.h; sourceTree = "<group>"; };
+		D7A2F9AD1E5E79940089E41A /* HLLQuadTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLQuadTree.m; sourceTree = "<group>"; };
+		D7A2F9B21E5E79C10089E41A /* HLLClusterAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLClusterAnnotationView.h; sourceTree = "<group>"; };
+		D7A2F9B31E5E79C10089E41A /* HLLClusterAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLClusterAnnotationView.m; sourceTree = "<group>"; };
 		D7B2C02D1D01F3450082C069 /* ShareSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDK.framework; sourceTree = "<group>"; };
 		D7B2C0301D01F3450082C069 /* ShareSDKExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKExtension.framework; sourceTree = "<group>"; };
 		D7B2C0311D01F3450082C069 /* ShareSDKInterfaceAdapter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKInterfaceAdapter.framework; sourceTree = "<group>"; };
@@ -594,6 +609,7 @@
 				D723E8411D05CF3A0016E7B2 /* ResultAnnoation.m */,
 				D723E8881D0BE9660016E7B2 /* TakeMetroCalculateHelper.h */,
 				D723E8891D0BE9660016E7B2 /* TakeMetroCalculateHelper.m */,
+				D7A2F9A51E5E797F0089E41A /* Clutser */,
 				D7B2C06C1D01F5710082C069 /* ShareManager */,
 				D78C6B071CFC93E200CAF770 /* MapManager */,
 				D78C6ACE1CFC86AC00CAF770 /* RequestWeaterData */,
@@ -686,6 +702,8 @@
 				D723E88B1D0BF2CF0016E7B2 /* StationInputView.h */,
 				D723E88C1D0BF2CF0016E7B2 /* StationInputView.m */,
 				D723E88E1D0BF44A0016E7B2 /* StationInputView.xib */,
+				D7A2F9B21E5E79C10089E41A /* HLLClusterAnnotationView.h */,
+				D7A2F9B31E5E79C10089E41A /* HLLClusterAnnotationView.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -860,6 +878,21 @@
 				D78C6B331CFF234B00CAF770 /* TakeMetroResultView.m */,
 			);
 			name = takeMetro;
+			sourceTree = "<group>";
+		};
+		D7A2F9A51E5E797F0089E41A /* Clutser */ = {
+			isa = PBXGroup;
+			children = (
+				D7A2F9A61E5E79940089E41A /* HLLClusterAnnotation.h */,
+				D7A2F9A71E5E79940089E41A /* HLLClusterAnnotation.m */,
+				D7A2F9A81E5E79940089E41A /* HLLCoordinateQuadTree.h */,
+				D7A2F9A91E5E79940089E41A /* HLLCoordinateQuadTree.m */,
+				D7A2F9AA1E5E79940089E41A /* HLLMapPOI.h */,
+				D7A2F9AB1E5E79940089E41A /* HLLMapPOI.m */,
+				D7A2F9AC1E5E79940089E41A /* HLLQuadTree.h */,
+				D7A2F9AD1E5E79940089E41A /* HLLQuadTree.m */,
+			);
+			name = Clutser;
 			sourceTree = "<group>";
 		};
 		D7B2C02C1D01F3450082C069 /* ShareSDK */ = {
@@ -1321,6 +1354,7 @@
 					D7D8557A1CF34BFF0028B92D = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 4B6N4V9BAX;
+						ProvisioningStyle = Automatic;
 					};
 					D7D855931CF34BFF0028B92D = {
 						CreatedOnToolsVersion = 7.3;
@@ -1418,12 +1452,15 @@
 				D78C6B2E1CFF1F8400CAF770 /* TakeMetroViewController.m in Sources */,
 				D78C6A491CF9BED400CAF770 /* CSStickyHeaderFlowLayout.m in Sources */,
 				D7D856C21CF59F490028B92D /* LeftMenuDataSource.m in Sources */,
+				D7A2F9B41E5E79C10089E41A /* HLLClusterAnnotationView.m in Sources */,
 				D78C6A4A1CF9BED400CAF770 /* CSStickyHeaderFlowLayoutAttributes.m in Sources */,
 				D78C6B3B1CFF401D00CAF770 /* AroundSearchResultViewController.m in Sources */,
 				D78C6A421CF99CA900CAF770 /* LineStationsCell.m in Sources */,
 				D7D8567A1CF56E6B0028B92D /* LeftMenuCell.m in Sources */,
+				D7A2F9AE1E5E79940089E41A /* HLLClusterAnnotation.m in Sources */,
 				D7B2C06F1D01F5710082C069 /* ShareManager.m in Sources */,
 				D78C6AFC1CFC889100CAF770 /* V_3_X_Networking.m in Sources */,
+				D7A2F9AF1E5E79940089E41A /* HLLCoordinateQuadTree.m in Sources */,
 				D7D8560A1CF3F6450028B92D /* UITableView+Line.m in Sources */,
 				D7D8569B1CF56EE60028B92D /* AboutMetroViewController.m in Sources */,
 				D78C6AF21CFC889100CAF770 /* AFHTTPSessionManager.m in Sources */,
@@ -1443,11 +1480,13 @@
 				D7D8562E1CF4342C0028B92D /* FAKFoundationIcons.m in Sources */,
 				D78C6B1F1CFD64F100CAF770 /* NSDate+TimeGap.m in Sources */,
 				D7D855831CF34BFF0028B92D /* AppDelegate.m in Sources */,
+				D7A2F9B11E5E79940089E41A /* HLLQuadTree.m in Sources */,
 				D7D856331CF4342C0028B92D /* FAKZocial.m in Sources */,
 				D78C6B3F1CFF40FA00CAF770 /* AroundSearchResultCell.m in Sources */,
 				D7D856091CF3F6450028B92D /* UIImage+Tint.m in Sources */,
 				D7D855EF1CF3F0C50028B92D /* RECommonFunctions.m in Sources */,
 				D7D856471CF455080028B92D /* UIImage+Common.m in Sources */,
+				D7A2F9B01E5E79940089E41A /* HLLMapPOI.m in Sources */,
 				D77DCA571CF75966002249CC /* LineStationBaseInfoView.m in Sources */,
 				D78C6AF61CFC889100CAF770 /* AFURLResponseSerialization.m in Sources */,
 				D78C6A981CFB44E500CAF770 /* AroundServiceSearchCollectionCellView.m in Sources */,
@@ -1647,7 +1686,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ZhiXiang Xu (4B6N4V9BAX)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1681,7 +1720,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ZhiXiang Xu (4B6N4V9BAX)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
